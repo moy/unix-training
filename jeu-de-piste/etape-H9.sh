@@ -18,6 +18,16 @@ assez amusants.
 * Faire vos propres étapes, et les soumettre à Matthieu.Moy@imag.fr,
 ça pourrait bien être un premier pas vers la célébrité ;-).
 
+Concrètement, le code source du jeu de piste est disponible à l'URL
+suivante :
+
+  http://gitorious.org/unix-training/unix-training/trees/master
+
+Si vous savez utiliser Git, vous pouvez cloner ce dépôt, le modifier
+chez vous et envoyer vos améliorations si vous pensez qu'elles sont
+bonnes. Si vous ne savez pas utiliser Git et que vous êtes arrivés
+jusqu'ici, il est sans doute temps d'apprendre ;-).
+
 En attendant, je dois couper la connection pour des raisons de sécurité ...
 
 Au revoir,"

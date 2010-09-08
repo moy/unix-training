@@ -1,0 +1,12 @@
+16108, c'est bien ça. En bon informaticien, j'aurais bien choisi 42,
+mais honnetement, c'était trop petit, alors j'ai pris une autre source
+d'inspiration.
+
+Au fait, quand on parlait de "script", en fait, on peut s'en sortir
+en ligne de commande, avec un programme d'une ligne (one-liner dans le
+jargon). Moi, j'ai fait simplement :
+
+  x=1; while [ ! -f "etape-H4/${x}.txt" ]; do x=$((x + 1)) ; done; cat etape-H4/$x.txt
+
+L'étape suivante se trouve dans le répertoire
+~moy/jeu-de-piste/dntsoaue/etape-H5/, dans le fichier README.txt.

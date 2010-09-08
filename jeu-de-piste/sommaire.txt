@@ -1,0 +1,81 @@
+Correspondance entre les numéros d'étapes et le contenu, pour le jeu
+de piste 2008. Notation :
+
+numéro-d'etape: contenu (Chapitre où la notion est vue)
+
+Le numéro correspond au point de départ (i.e. 3: blablabla signifie
+que pour aller de l'étape 3 au sujet de l'étape 4, il faut faire
+blablabla).
+
+Les nouveaux noms sont du type A1/B2/... pour permettre d'insérer plus
+facilement des étapes sans tout renuméroter.
+
+Si le numéro est « TODO: » que l'étape ne faisait pas partie du jeu de
+piste 2008.
+
+Chapitre 3 : internet
+A1: web (site de Matthieu Moy) (Chap 3)
+A2: google (encodage rot13) (Chap 3)
+A3: EnsiWiki (onglet discussion) (Chap 3)
+A4: EnsiWiki (voir le source de la page) (Chap 3)
+A5: script qui envoie un mail à l'étudiant, avec les instructions dans
+   le corps du message. (Chap 3)
+
+Chapitre 4 : b-a-ba
+B1: compilation de programme Ada. (Chap 4 ou Chap 6)
+
+Chapitre 5 : Applications utiles
+C1: compilation de LaTeX. (Chap 5)
+C2: ouverture de document OpenOffice. (Chap 5)
+C3: ouverture d'une image (PNG) (Chap 5)
+
+Chapitre 6 : Editeurs de texte
+D1: programme Ada comme 1:, mais non-compilable (manque un « ; »
+      quelque part par exemple)
+D2: programme Ada découpé en morceaux (1 fichier OOo, un fichier
+      texte, ...) => copier-coller entre applications.
+
+Chapitre 7 : Commandes et outils
+E1: commande 'file', ouverture de PDF. (Chap 7 ou avant)
+E2: Un fichier caché (.etape-XXX.txt) dans un répertoire. (Chap 7)
+E3: extraction d'archive .tar
+E4: compilation de pgme Ada, et redirection < (Chap 7)
+E5: pipe (Chap 7)
+E6: accès à un répertoire local sur telesun, find . -name \*.txt (Chap 7)
+E7: plus gros fichier dans un répertoire (find, sort, ...) DIFFICILE. (Chap 7)
+E8: grep -r (Chap 7)
+E9: facile, juste du web.
+E10: grep
+E11: grep, diff. (Chap 7)
+E12: Une archive tar créée avec --mode 000, les étudiants doivent
+      faire un chmod pour voir le contenu.
+
+Idées à faire :
+E13: regarder le contenu d'un fichier texte appelé *.txt (quote)
+E14: regarder le contenu d'un fichier texte appelé -n (less ./-n)
+
+Chapitre 8 : Bash
+F1: sur l'idée de 6:, une question style 'le seul fichier commençant
+      par un x, contenant un c, et terminant par autre chose qu'un z'
+      (x*c*[^z])
+
+Chapitre 9 : accès distant
+G1: sftp sur ensibull (Chap 9)
+G2: ssh -X sur ensibull, executer un binaire qui donne le résultat
+      dans une fenetre X11 (à base de system("xterm -e"); si besoin).
+
+Étapes bonnus :
+H1: telnet (réseau) => DIFFICILE pour le stage de rentrée. Faisable
+    une fois qu'ils auront fini le cours de réseau. (Après)
+H2: juste du web
+H3: script pour énumérer des noms de fichiers possibles.
+H4: juste ouvrir un fichier README.txt
+H5-H6: caché dans les logs Git (mal numérotée, tant pis)
+H7: caché dans l'historique Git (contenu de README.txt)
+H8: strace ou ls -l /proc/<...>/fd/
+H9: ssh et clé.
+
+
+17: fin.
+9: fin partie 1.
+

@@ -1,0 +1,20 @@
+Bon, le jeu de piste d'introduction est terminé. Nous commençons
+maintenant une partie un peu plus avancée, les notions du stage de
+rentrée ne vous suffiront plus, mais avec le cours de réseau, et le
+stage unix avancé, vous devriez pouvoir en venir à bout.
+
+
+Pour l'etape suivante, on va faire un peu de reseau. La reponse se
+trouve dans les en-tetes HTTP envoyes par la page
+
+http://www-verimag.imag.fr/~moy/jeu-de-piste/dxz/etape-H2/
+
+Utilisez l'outil de votre choix pour le recuperer.
+
+Une solution est de se connecter sur le serveur, sur le port 80, et
+d'envoyer la requete
+
+HEAD /~moy/jeu-de-piste/dxz/etape-H2/ HTTP/1.1
+Host: www-verimag.imag.fr
+
+(suivie de deux retours charriots)

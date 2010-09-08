@@ -1,0 +1,8 @@
+À placer sur
+https://ensiwiki.ensimag.fr/index.php?title=TP_Unix_-_Jeu_de_piste&action=edit
+
+== Deuxième partie : Étape H1 ==
+
+Une deuxième partie est disponible pour le jeu de piste, mais les étapes sont plus techniques. Ne vous affolez pas si vous n'arrivez pas à les résoudre.
+
+http://www-verimag.imag.fr/~moy/jeu-de-piste/lasuite/etape-H1.txt

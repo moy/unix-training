@@ -1,0 +1,9 @@
+À placer sur
+https://ensiwiki.ensimag.fr/index.php?title=TP_Unix_-_Jeu_de_piste&action=edit
+
+
+== Départ : Étape A1 ==
+
+Pour l'instant, c'est très simple, il suffit de suivre le lien suivant :
+
+http://www-verimag.imag.fr/~moy/jeu-de-piste/etape-A2.txt

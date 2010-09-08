@@ -1,0 +1,12 @@
+À placer sur
+https://ensiwiki.ensimag.fr/index.php?title=Discussion:TP_Unix_-_Jeu_de_piste&action=edit
+
+== Etape A4 du TP ==
+
+(attention, merci de laisser cette partie, elle fait partie intégrante
+du jeu de piste)
+
+L'étape suivante est encore une fois sur le wiki. En fait, elle est
+même sur la page principale du jeu de piste, mais elle n'est pas
+affichée. Allez voir dans le source de la page (onglet « voir le texte
+source » qui devient « modifier » si vous êtes loggés).

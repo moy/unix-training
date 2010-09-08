@@ -1,0 +1,16 @@
+L'étape suivante est un fichier dans le répertoire
+~moy/jeu-de-piste/etape-H4/ sur telesun (pas sur le site web), mais
+j'ai deux mauvaises nouvelles :
+
+1) Vous n'avez pas la permission de lister le contenu de ce
+répertoire.
+
+2) Je ne vais pas non plus vous donner le nom du fichier.
+
+Mais il y a quand même une bonne nouvelle : le nom du fichier est de
+la forme <un-nombre>.txt. Par exemple, ça aurait pu être 42.txt, ou
+450.txt, mais ce n'est ni l'un ni l'autre.
+
+Il vous reste deux solutions : essayer toutes les combinaisons à la
+main, ou bien faire un script. Vu le nombre qui a été choisi, je vous
+conseille plutôt le script ...

@@ -22,6 +22,7 @@ exec > jeu-de-piste.sh
 printf "%s\n\n" '#! /bin/sh'
 
 cat rotlib-decode.sh
+cat rotlib-encode.sh
 
 printf "%s" '
 echo "'

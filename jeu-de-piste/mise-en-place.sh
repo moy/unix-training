@@ -73,10 +73,10 @@ todo chmod 700 jeu-de-piste/etape-H9.sh
 
 # echo "$todo_var"
 
-if ssh telesun "$todo_var"; then
-    echo 'setup completed on telesun'
+if ssh "$mainmachine" "$todo_var"; then
+    echo "setup completed on $mainmachine"
 else
-    echo 'Setup on telesun failed'
+    echo "Setup on $mainmachine failed"
     exit 1
 fi
 

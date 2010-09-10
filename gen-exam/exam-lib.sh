@@ -1,3 +1,62 @@
+#
+# User API: smart_question, smart_question_dec, and sql_question
+# Simplest way to define a question.
+#
+# $1 = short name for the question.
+# $2 = number of points (coefficient).
+#
+# This will call:
+#
+# - desc_question_$1 to get the question (the question displayed
+#   to the user will be the standard output of the function),
+#
+# - gen_question_$1 to generate required files. The expected answer is
+#   passed as first argument of gen_question_$1 (it is computed as
+#   $(hash "$1")).
+smart_question () {
+    if [ "$verbose" = "yes" ]; then
+	echo "smart_question $@"
+	time=time
+    else
+	time=""
+    fi
+    cd "$studentdir"
+    eval $time gen_question_"$1" $(hash "$1")
+    sql_question "$2" "$(desc_question_"$1")" $(hash "$1")
+}
+
+# Decimal variant of smart_question (used when the answer has to be
+# decimal, and sufficiently small).
+smart_question_dec () {
+    if [ "$verbose" = "yes" ]; then
+	echo "smart_question $@"
+	time=time
+    else
+	time=""
+    fi
+    cd "$studentdir"
+    eval $time gen_question_"$1" $(dechash "$1")
+    sql_question "$2" "$(desc_question_"$1")" $(dechash "$1")
+}
+
+# Inserts a question in the database. This is a low-level function,
+# you probably want to use smart_question and smart_question_dec
+# instead.
+#
+# $1 = coefficient
+# $2 = question
+# $3 = expected answer
+sql_question () {
+    coefficients["$question"]="$1"
+    printf "INSERT INTO exam_unix_question
+       (id, id_subject, machine, session, question_text, correct_answer, student_answer)
+VALUES ('%s',     '%s',    '%s',    '%s',          '%s',           '%s',           NULL);\n" \
+       "$question" "$subject" "$machine" "$session" "$(sql_escape "$2")" "$(sql_escape "$3")" >> "$outsql"
+    question=$((question + 1))
+}
+
+# End of user API.
+
 if [ "$(command -v all_questions)" != all_questions ]; then
     echo "ERROR: function all_questions is not defined."
     echo "You should create an exam file defining this function and"
@@ -20,6 +79,11 @@ die () {
     exit 1
 }
 
+absolute_path () {
+    printf "%s/%s" "$(cd "$(dirname "$1")"; pwd)" "$(basename "$1")"
+}
+
+# CSV parsing functions.
 get_logins () {
     cut -d \; -f 1 < "$list_students"
 }
@@ -40,45 +104,14 @@ get_machine () {
     grep "^$1;" "$list_students" | cut -d \; -f 5
 }
 
-# hash "chaine quelconque": fait un hash de la chaine et du login de l'étudiant.
+# hash "any string": makes a hash of $1, the student login, and
+# some other arbitrary string.
 hash () {
     echo "$login $1 exam unix 2010" | sha1sum | head -c 8
 }
 
 dechash () {
-    hash $1 | tr '[a-f]' '[0-6]' | head -c 4
-}
-
-# Simplest way to define a question.
-#
-# $1 = short name for the question.
-# $2 = number of points (coefficient).
-#
-# Calls desc_question_$1 to get the question, gen_question_$1 to
-# generate required files, and considers that the answer has to
-# be $(hash "$1").
-smart_question () {
-    if [ "$verbose" = "yes" ]; then
-	echo "smart_question $@"
-	time=time
-    else
-	time=""
-    fi
-    cd "$studentdir"
-    eval $time gen_question_"$1" $(hash "$1")
-    sql_question "$2" "$(desc_question_"$1")" $(hash "$1")
-}
-
-smart_question_dec () {
-    if [ "$verbose" = "yes" ]; then
-	echo "smart_question $@"
-	time=time
-    else
-	time=""
-    fi
-    cd "$studentdir"
-    eval $time gen_question_"$1" $(dechash "$1")
-    sql_question "$2" "$(desc_question_"$1")" $(dechash "$1")
+    hash "$1" | tr '[a-f]' '[0-6]' | head -c 4
 }
 
 sql_escape_pipe () {
@@ -98,18 +131,6 @@ php_escape () {
     printf "%s" "$1" | php_escape_pipe
 }
 
-# $1 = coefficient
-# $2 = question
-# $3 = answer
-sql_question () {
-    coefficients["$question"]="$1"
-    printf "INSERT INTO exam_unix_question
-       (id, id_subject, machine, session, question_text, correct_answer, student_answer)
-VALUES ('%s',     '%s',    '%s',    '%s',          '%s',           '%s',           NULL);\n" \
-       "$question" "$subject" "$machine" "$session" "$(sql_escape "$2")" "$(sql_escape "$3")" >> "$outsql"
-    question=$((question + 1))
-}
-
 sql_newline () {
     echo >> "$outsql"
 }
@@ -122,6 +143,9 @@ sql_raw () {
     echo "$@" >> "$outsql"
 }
 
+# Inserts the coefficient associated to a question number in the
+# database.
+# 
 # $1 = question number
 # $2 = coefficient
 sql_coef () {
@@ -140,7 +164,7 @@ exam_read_dbpass () {
     echo >&2
 }
 
-
+# Generate custom config.php file.
 exam_config_php () {
     echo "<?php"
     echo "defined('_VALID_INCLUDE') or die('Direct access not allowed.');"

@@ -46,10 +46,11 @@ if [ "$cleanup" = "yes" ]; then
 fi
 
 # make $outphp absolute
-outphp=$(cd "$(dirname "$outphp")"; pwd)/$(basename "$outphp")
+outphp=$(absolute_path "$outphp")
 
 if [ -f "$outphp" ]; then
-    die "$outphp already exists"
+    die "$outphp already exists.
+Remove it manually or use --cleanup."
 fi
 mkdir "$outdir" || die "Cannot create directory $outdir"
 cd "$outdir"
@@ -76,6 +77,7 @@ studentdir="$outdir/$session/$machine"
 mkdir -p "$studentdir"
 cd "$studentdir"
 
+# Redefine sql_question not to do SQL ...
 sql_question () {
     printf '$demo_questions[] = array("question_text" => "%s",
    "correct_answer" => "%s",
@@ -89,11 +91,6 @@ sql_question () {
 all_questions
 
 echo '?>' >> "$outphp"
-
-
-exam_escape_pipe () {
-    php_escape_pipe
-}
 
 exam_config_php demo > "$basedir"/config.php
 

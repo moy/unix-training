@@ -62,8 +62,11 @@ while test $# -ne 0; do
 	"--mysql")
 	    dbtype=mysql
 	    ;;
+	"--demo")
+	    die "--demo must be the first option, sorry"
+	    ;;
         *)
-            echo "unrecognized option $1"
+            echo "Unrecognized option $1"
             usage
             exit 1
             ;;
@@ -80,13 +83,12 @@ if [ "$cleanup" = "yes" ]; then
     rm -f "$outsql"
 fi
 
-# make $list_students absolute
-list_students=$(cd "$(dirname "$list_students")"; pwd)/$(basename "$list_students")
-# make $outsql absolute
-outsql=$(cd "$(dirname "$outsql")"; pwd)/$(basename "$outsql")
+list_students=$(absolute_path "$list_students")
+outsql=$(absolute_path "$outsql")
 
 if [ -f "$outsql" ]; then
-    die "$outsql already exists"
+    die "$outsql already exists.
+Remove it manually or use --cleanup."
 fi
 mkdir "$outdir" || die "Cannot create directory $outdir"
 cd "$outdir"

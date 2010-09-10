@@ -1,0 +1,109 @@
+#! /bin/sh
+
+
+usage () {
+            cat << EOF
+Usage: $(basename $0) [options]
+Options:
+	--help		This help message.
+	--postgresql	Use PostgreSQL syntax.
+	--drop-tables	Generate "DROP TABLE" statements to cleanup the database.
+
+Typical usage:
+
+./init-db.sh --drop-tables | mysql -h arpont.imag.fr -p --database=moy
+
+EOF
+}
+
+dbtype=mysql
+drop=no
+apply=no
+
+while test $# -ne 0; do
+    case "$1" in
+        "--help"|"-h")
+            usage
+            exit 0
+            ;;
+        "--postgresql")
+	    dbtype=postgresql
+            ;;
+	"--drop-tables")
+	    drop=yes
+	    ;;
+	"--apply")
+	    apply=yes
+	    ;;
+        *)
+            echo "unrecognized option $1"
+            usage
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+if [ "$dbtype" = "mysql" ]; then
+    engine=" ENGINE=InnoDB"
+else
+    engine=""
+fi
+
+drops=""
+creates=""
+
+create_table() {
+    # drop tables in reverse order, otherwise it breaks foreign key.
+    if [ "$drop" = "yes" ]; then
+	drops="DROP TABLE IF EXISTS $1;
+$drops"
+    fi
+    creates="$creates
+CREATE TABLE $1 (
+$(cat)
+)${engine};
+"
+}
+
+create_table exam_unix_subject <<\EOF
+    id integer NOT NULL PRIMARY KEY,
+    descriptif text NOT NULL
+EOF
+
+create_table exam_unix_logins <<\EOF
+    id_subject integer NOT NULL,
+    session integer NOT NULL,
+    machine varchar(256) NOT NULL,
+    login varchar(8) NOT NULL,
+    first_name text NOT NULL,
+    familly_name text NOT NULL,
+    PRIMARY KEY (id_subject, session, machine),
+    FOREIGN KEY (id_subject) REFERENCES exam_unix_subject(id)
+EOF
+
+create_table exam_unix_question <<\EOF
+    id integer NOT NULL, -- Question number, not unique (one instance per student)
+    machine varchar(256) NOT NULL,
+    question_text text NOT NULL,
+    correct_answer text NOT NULL,
+    student_answer text,
+    session integer,
+    id_subject integer,
+    FOREIGN KEY (id_subject) REFERENCES exam_unix_subject(id)
+EOF
+
+create_table exam_unix_subject_questions <<\EOF
+    id_subject integer,
+    id_question integer, -- Not strictly speaking a foreign key:
+                         -- Reference the question number, which isn't unique.
+    coeff integer,
+    FOREIGN KEY (id_subject) REFERENCES exam_unix_subject(id)
+EOF
+
+if [ "$dbtype" = "postgresql" ]; then
+    echo "SET search_path=public;
+"
+fi
+
+printf "%s%s" "$drops" "$creates"

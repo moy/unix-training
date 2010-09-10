@@ -110,6 +110,12 @@ hash () {
     echo "$login $1 exam unix 2010" | sha1sum | head -c 8
 }
 
+# array of arbitrary hashes. It's quicker to access an array than to
+# actually compute the hash each time.
+for i in $(seq 100); do
+    hashes[$i]=$(hash $i)
+done
+
 dechash () {
     hash "$1" | tr '[a-f]' '[0-6]' | head -c 4
 }

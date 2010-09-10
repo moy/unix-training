@@ -62,13 +62,6 @@ prepare_questions
 echo '<?php' > "$outphp"
 echo "defined('_VALID_INCLUDE') or die('Direct access not allowed.');" >> "$outphp"
 
-# array of arbitrary hashes. It's quicker to access an array than to
-# actually compute the hash each time.
-for i in $(seq 100); do
-    hashes[$i]=$(hash $i)
-done
-
-
 login=guest
 question=1
 session=1

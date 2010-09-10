@@ -118,13 +118,6 @@ sql_newline
 
 coefficients=()
 
-# array of arbitrary hashes. It's quicker to access an array than to
-# actually compute the hash each time.
-for i in $(seq 100); do
-    hashes[$i]=$(hash $i)
-done
-
-
 for login in $(get_logins); do
     question=1
     session=$(get_session "$login")

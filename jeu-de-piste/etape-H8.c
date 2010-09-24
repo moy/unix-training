@@ -15,7 +15,7 @@ int main (int argc, char ** argv) {
 	f = fopen(filename, "r");
 	if (!f) {
 		fprintf(stderr, "Oups, le fichier que je cherche à ouvrir\n"
-			"n'existe pas. Contacter l'auteur du jeu de piste ...");
+			"n'existe pas. Contacter l'auteur du jeu de piste ...\n");
 		exit(1);
 	}
 	printf("Je viens d'ouvrir le fichier\n");

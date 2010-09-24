@@ -1,4 +1,6 @@
+*~
 *.log
+*.aux
 *.tar.gz
 etape-A2.txt
 etape-B2.pdf
@@ -34,3 +36,7 @@ etape-E11-bis.txt
 etape-E11.txt
 etape-H5
 etape-H8/etape-H8
+etape-XX.sh
+
+# Who produces that Berkeley DB file?
+__db.

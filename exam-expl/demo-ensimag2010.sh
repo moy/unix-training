@@ -12,7 +12,7 @@ devrez commencer par télécharger et extraire l'archive
 <a href=\"demo.tar.gz\">demo.tar.gz</a>. Toute référence à un fichier dans
 les questions ci-dessous font référence aux fichiers de
 l'archive. La question utilisant l'exécutable suspend ne marchera que
-sur des machines Linux (ce qui inclue telesun).</p>
+sur des machines Linux (ce qui inclut telesun).</p>
 
 <p>Certaines questions ont été extraites directement du sujet d'examen final.</p>
 

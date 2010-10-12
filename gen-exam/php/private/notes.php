@@ -3,6 +3,9 @@ define('_VALID_INCLUDE', TRUE);
 chdir('..');
 include_once './inc/common.php';
 
+if ($mode == 'demo')
+   die("Grades cannot be computed in demo mode");
+
 exam_connect_maybe();
 
 isset($subject) or die("FATAL ERROR: Subject not specified");

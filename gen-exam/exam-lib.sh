@@ -107,7 +107,7 @@ get_machine () {
 # hash "any string": makes a hash of $1, the student login, and
 # some other arbitrary string.
 hash () {
-    echo "$login $1 exam unix 2010" | sha1sum | head -c 8
+    echo "$login $1 $exam_hash_key" | sha1sum | head -c 8
 }
 
 # array of arbitrary hashes. It's quicker to access an array than to

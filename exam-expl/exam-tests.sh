@@ -28,6 +28,13 @@ exam_subject_number=1
 # displayed on top of the web page.
 exam_subject_title="Example exam"
 
+# (optional) key used for generating hash-based answers.
+# The pseudo-random anwser generation uses this variable. One needs
+# this string to be able to guess the answers, hence, even if the
+# source code of the exam (except this key) is public, no one can
+# guess the answers.
+exam_hash_key="xbCZ;9101"
+
 # Welcome message, displayed below the title in the web page. You can
 # use HTML formatting if you want (but it is your responsibility
 # to write valid HTML here).

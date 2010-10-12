@@ -173,4 +173,5 @@ echo
 echo "Generated files:"
 echo "- $outsql"
 echo "- config.php"
-echo "Copy config.php into the exam directory on the web server to get the demo running."
+echo "Copy config.php into the exam directory on the web server"
+echo "(in the inc/ subdirectory) to get the demo running."

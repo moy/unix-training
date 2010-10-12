@@ -95,6 +95,7 @@ echo "
 Generated files:
 - $outphp
 - config.php
-- "$outdir"/demo.tar.gz
-Copy them into the exam directory (the first two should be named 
-demo-questions.sh and config.sh) on the web server to get the demo running."
+- $outdir/demo.tar.gz
+Copy them into the exam directory (the first two should be named
+inc/demo-questions.sh and inc/config.sh) on the web server to get the
+demo running."

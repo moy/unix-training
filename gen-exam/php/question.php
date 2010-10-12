@@ -1,6 +1,7 @@
 <?php 
 define('_VALID_INCLUDE', TRUE);
-include 'common.php';
+include_once 'inc/common.php';
+
 exam_header();
 
 if (isset($answer)) {

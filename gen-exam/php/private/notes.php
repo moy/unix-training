@@ -1,6 +1,7 @@
 <?php 
 define('_VALID_INCLUDE', TRUE);
-include 'common.php';
+chdir('..');
+include_once './inc/common.php';
 
 exam_connect_maybe();
 

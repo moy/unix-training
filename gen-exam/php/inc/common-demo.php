@@ -12,7 +12,7 @@ if (isset($_GET['reset'])) {
 if (!isset($_SESSION['demo_questions'])) {
 	$i = 0;
 	$demo_questions = array();
-	include "./demo-questions.php";
+	include_once './inc/demo-questions.php';
 	foreach($demo_questions as $key => $value) {
 		$demo_questions[$key]['question'] = $key;
 		$demo_questions[$key]['student_answer'] = NULL;

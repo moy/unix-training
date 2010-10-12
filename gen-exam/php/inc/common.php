@@ -35,7 +35,7 @@ if (isSet($_SERVER["HTTP_X_FORWARDED_FOR"])) {
 }
 $machine = gethostbyaddr($IP);
 
-include_once('./config.php');
+include_once('./inc/config.php');
 
 if (isset($_GET["answer"])) {
 	$answer = trim($_GET["answer"]);
@@ -46,9 +46,9 @@ if (!isset($mode)) {
 }
 
 if ($mode == "demo") {
-	include_once "./common-demo.php";
+	include_once './inc/common-demo.php';
 } else {
-	include_once "./common-sql.php";
+	include_once './inc/common-sql.php';
 }
 
 ?>

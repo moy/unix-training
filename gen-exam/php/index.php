@@ -1,6 +1,6 @@
 <?php
 define('_VALID_INCLUDE', TRUE);
-include 'common.php';
+include_once 'inc/common.php';
 
 if ($mode == "sql") {
 	isset($subject) or die("FATAL ERROR: Subject not specified, please check config.php.");

@@ -4,7 +4,7 @@ make_subdirs () {
         mkdir $(uuid | sed 's/..........$//')
     done
     for i in c d $(seq $(($RANDOM % 5))); do
-        mkdir $RANDOM
+        mkdir -p $RANDOM
     done
     for i in e f $(seq $(($RANDOM % 7))); do
         uuid > $(uuid | sed 's/........$//')
@@ -18,7 +18,7 @@ La reponse est $RANDOM ." > $(uuid | sed 's/..........$//')
 
 make_big_dir () {
     for i in $(seq "${1:-20}"); do
-	mkdir $RANDOM
+	mkdir -p $RANDOM
     done
     
     echo "toplevel bigdir created"

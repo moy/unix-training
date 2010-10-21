@@ -162,12 +162,16 @@ VALUES ('%s',       '%s',        '%s');\n" \
 }
 
 exam_read_dbpass () {
-    printf "%s" "Please, enter database password (to be inserted into config.php): " >&2
-    stty -echo
-    read passwd
-    stty echo
-    printf "%s" "$passwd"
-    echo >&2
+    if [ "$exam_dbpass" = "" ]; then
+	printf "%s" "Please, enter database password (to be inserted into config.php): " >&2
+	stty -echo
+	read passwd
+	stty echo
+	printf "%s" "$passwd"
+	echo >&2
+    else
+	echo "$exam_dbpass"
+    fi
 }
 
 # Generate custom config.php file.

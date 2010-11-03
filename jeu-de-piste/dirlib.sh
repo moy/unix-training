@@ -1,7 +1,7 @@
 # Create noise in current directory.
 make_subdirs () {
     for i in a b $(seq $(($RANDOM % 7))); do
-        mkdir $(uuid | sed 's/..........$//')
+        mkdir -p $(uuid | sed 's/..........$//')
     done
     for i in c d $(seq $(($RANDOM % 5))); do
         mkdir -p $RANDOM

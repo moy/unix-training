@@ -15,6 +15,7 @@ Options:
 	--verbose	Be verbose
 	--postgresql	Use PostgreSQL syntax
 	--mysql		Use MySQL syntax
+	--list list.csv	Use list.csv as student list file
 EOF
 }
 
@@ -65,8 +66,12 @@ while test $# -ne 0; do
 	"--demo")
 	    die "--demo must be the first option, sorry"
 	    ;;
+	"--list")
+	    shift
+	    list_students="$1"
+	    ;;
         *)
-            echo "Unrecognized option $1"
+            echo "ERROR: Unrecognized option $1"
             usage
             exit 1
             ;;

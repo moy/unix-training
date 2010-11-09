@@ -38,7 +38,7 @@ ORDER BY exam_unix_logins.login
 ";
 $result = exam_query($query);
 
-header("Content-type: text/plain");
+header("Content-type: text/plain;charset=utf-8");
 
 echo "login;first name;familly name;grade\n";
 $previous_login=NULL;

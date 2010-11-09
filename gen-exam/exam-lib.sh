@@ -29,7 +29,7 @@ smart_question () {
 # decimal, and sufficiently small).
 smart_question_dec () {
     if [ "$verbose" = "yes" ]; then
-	echo "smart_question $@"
+	echo "smart_question_dec $@"
 	time=time
     else
 	time=""
@@ -37,6 +37,20 @@ smart_question_dec () {
     cd "$studentdir"
     eval $time gen_question_"$1" $(dechash "$1")
     sql_question "$2" "$(desc_question_"$1")" $(dechash "$1")
+}
+
+# Constant variant of smart_question (used when the answer does not
+# depend on the student).
+smart_question_const () {
+    if [ "$verbose" = "yes" ]; then
+	echo "smart_question_const $@"
+	time=time
+    else
+	time=""
+    fi
+    cd "$studentdir"
+    eval $time gen_question_"$1" $(consthash "$1")
+    sql_question "$2" "$(desc_question_"$1")" $(consthash "$1")
 }
 
 # Inserts a question in the database. This is a low-level function,
@@ -108,6 +122,10 @@ get_machine () {
 # some other arbitrary string.
 hash () {
     echo "$login $1 $exam_hash_key" | sha1sum | head -c 8
+}
+
+consthash () {
+    echo "$1 $exam_hash_key" | sha1sum | head -c 8
 }
 
 # array of arbitrary hashes. It's quicker to access an array than to

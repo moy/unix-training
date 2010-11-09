@@ -21,7 +21,7 @@ EOF
 
 list_students=list_students.csv
 outdir=exam_genere
-outsql=questions.sql
+outsql=
 cleanup=no
 clean_db=no
 apply=no
@@ -79,6 +79,10 @@ while test $# -ne 0; do
     shift
 done
 
+if [ "$outsql" = "" ]; then
+    outsql=$outdir/questions.sql
+fi
+
 if [ "$subject" = "" ]; then
     die "Please specify subject number with --subject N."
 fi
@@ -88,15 +92,17 @@ if [ "$cleanup" = "yes" ]; then
     rm -f "$outsql"
 fi
 
+mkdir -p "$outdir" || die "Cannot create directory $outdir"
 list_students=$(absolute_path "$list_students")
 outsql=$(absolute_path "$outsql")
+EXAM_DIR=$(absolute_path "$EXAM_DIR")
 
 if [ -f "$outsql" ]; then
     die "$outsql already exists.
 Remove it manually or use --cleanup."
 fi
-mkdir "$outdir" || die "Cannot create directory $outdir"
-cd "$outdir"
+
+cd "$outdir" || die "Cannot enter directory $outdir"
 # make outdir absolute.
 outdir=$(pwd)
 
@@ -157,7 +163,6 @@ done
 echo "Number of questions: ${#coefficients[@]}"
 echo "Total coefficients: $sum"
 
-exam_config_php sql > "$basedir"/config.php
 
 if [ "$apply" = "yes" ]; then
     # needs a password.
@@ -174,9 +179,13 @@ if [ "$apply" = "yes" ]; then
     esac
 fi
 
+(cd "$EXAM_DIR"; git ls-files php | tar cf - -T -) | \
+    (cd "$outdir"; tar xf -)
+exam_config_php sql > "$outdir"/php/inc/config.php
+
+
 echo
-echo "Generated files:"
+echo "Generated files in $outdir"
 echo "- $outsql"
-echo "- config.php"
-echo "Copy config.php into the exam directory on the web server"
-echo "(in the inc/ subdirectory) to get the demo running."
+echo "- 1/ and 2/ : files to put on students account for sessions 1 and 2"
+echo "- php/ : PHP files to put on the server. php/inc/config.php is the configuration file."

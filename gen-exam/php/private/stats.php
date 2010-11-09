@@ -63,7 +63,6 @@ AND exam_unix_question.id_subject = '". $subject ."'"
 
 ?>
 </ul></div>
-<?php
 
-exam_footer();
-?>
+<p><a href="grades.php">See grades</a></p>
+<?php exam_footer(); ?>

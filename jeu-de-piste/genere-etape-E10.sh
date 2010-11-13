@@ -1,12 +1,6 @@
 #! /bin/bash
 
-faire_du_bruit () {
-    for i in $(seq $(($RANDOM % 4 + 1))); do
-        head -n $(($RANDOM % 10)) chap1
-        uuid
-        date
-    done
-}
+. textlib.sh
 
 exec > etape-E10.txt
 
@@ -59,6 +53,6 @@ Les plus 'Geek' d'entre vous s'en sortiront
 avec seulement la commande grep, ceci dit.
 " | while read line; do
     echo "$line                                              ETAPE-E10"
-    faire_du_bruit
+    make_noise
 done
 

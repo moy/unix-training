@@ -1,5 +1,5 @@
 
-faire_du_bruit () {
+make_noise () {
     for i in $(seq $(($RANDOM % 4 + 1))); do
         head -n $(($RANDOM % 10)) chap1
         date

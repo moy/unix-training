@@ -28,7 +28,7 @@ Pour l'etape suivante, elle se trouve dans l'archive tar disponible sur
 C'est le fichier etape-E12.txt de l'archive. Vous savez déjà extraire une
 archive tar, donc ça devrait être facile ... ou pas.
 " | while read line; do
-    bruit=$(faire_du_bruit)
+    bruit=$(make_noise)
     echo "$bruit
 $line" >> etape-E11.txt
     echo "$bruit" >> etape-E11-bis.txt

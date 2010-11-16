@@ -33,8 +33,8 @@ New_Line () {
 }
 
 Noise () {
-    for i in a b $(seq $(($RANDOM % 7))); do
-	for j in c d $(seq $(($RANDOM % 5))); do
+    for i in a b $(seq $(($RANDOM % 10))); do
+	for j in c d $(seq $(($RANDOM % 3))); do
 	    printf "   if 0 /= 0 then Put_Line(\"$RANDOM\"); end if;"
 	done
 	echo ''

@@ -53,7 +53,8 @@ ses sous-repertoires.
 
 (les commandes find et sort peuvent vous aider. Regardez en
 particulier l'option -exec de find ou bien documentez-vous sur la
-commande xargs)" \
+commande xargs. Cette etape est tres difficile, n'hesitez pas a
+demander de l'aide a votre enseignant ou a vos collegues)" \
     > "$E7_dir"/$(uuid | sed 's/....$//').txt
 
 echo "Bien vu !
@@ -71,7 +72,9 @@ ou (sans doute plus propre) :
   find etape-E6/ -type f -exec wc -c {} \; | sort -n
 
 Vous pouvez aller chercher l'etape E8, c'est le seul fichier (a part
-celui-ci) du repertoire qui contienne la chaine :
+celui-ci) du repertoire
+/home/perms/moy/jeu-de-piste/kmcvoaue/etape-E6/ qui contienne la
+chaine :
 
   Bravo, vous avez trouve l'etape E8.
 
@@ -109,6 +112,28 @@ en ascii-art :
 " > "$E8_dir"/$(uuid)
 
 echo "Bravo, vous avez trouve l'etape E8.
+
+Si vous avez utilisé une commande comme
+
+  find . -type f | xargs grep Bravo
+
+sachez qu'il y a plus simple : l'option -r de grep a ete faite
+exactement pour cela :
+
+  grep -r Bravo .
+
+(le . a la fin veut dire \"dans le repertoire courant\")
+
+Une subtilité, si on veut chercher correctement la chaine complete :
+on ne peut pas écrire simplement
+
+  grep -r Bravo, vous avez trouve l'etape E8 .
+
+qui tenterait d'appeler grep avec les arguments 'Bravo,', 'vous' ...
+On peut dire a notre shell de considerer la chaine comme un seul
+argument en ajoutant des guillemets :
+
+  grep -r \"Bravo, vous avez trouve l'etape E8\" .
 
 Pour l'étape suivante, elle se trouve à l'adresse
 

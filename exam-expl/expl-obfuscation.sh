@@ -12,7 +12,7 @@ exam_mode=demo
 
 all_questions () {
     # Just a warm-up.
-    sql_question 1 "The answer is 42." 42
+    basic_question 1 "The answer is 42." 42
 
     # Real questions
     smart_question text 2

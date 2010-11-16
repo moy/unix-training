@@ -57,11 +57,11 @@ all_questions () {
     smart_question simple 1
     
     # Low-level way to define a question. Here, we explicitely chose the question and the answer.
-    sql_question 2 "The answer for $login, on $machine, in session $session for exam number $subject is $(hash reponse)" $(hash reponse)
-    sql_question 1 "Another answer to another question: $(hash autrereponse)" $(hash autrereponse)
+    basic_question 2 "The answer for $login, on $machine, in session $session for exam number $subject is $(hash reponse)" $(hash reponse)
+    basic_question 1 "Another answer to another question: $(hash autrereponse)" $(hash autrereponse)
 
     # You don't have to make the answer different for everybody, it's just a possibility.
-    sql_question 1 "This is a <em>simple</em> question, whose anser is basically 42." 42
+    basic_question 1 "This is a <em>simple</em> question, whose anser is basically 42." 42
 }
 
 # Functions called by smart_question simple above.

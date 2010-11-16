@@ -78,8 +78,8 @@ studentdir="$outdir/$session/$machine"
 mkdir -p "$studentdir"
 cd "$studentdir"
 
-# Redefine sql_question not to do SQL ...
-sql_question () {
+# Redefine basic_question not to do SQL ...
+basic_question () {
     printf '$demo_questions[] = array("question_text" => "%s",
    "correct_answer" => "%s",
    "coeff" => %s);\n' \

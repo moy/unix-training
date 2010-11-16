@@ -26,9 +26,9 @@ exam_mode=demo
 
 all_questions () {
     # Just to train ...
-    sql_question 1 "The answer for this question is basically 42." 42
-    sql_question 1 "What is the (short) name of the reference server for Ensimag 1st year students?" telesun
-    sql_question 1 "What is the name of the wiki in the Ensimag (without capitalization)?" ensiwiki
+    basic_question 1 "The answer for this question is basically 42." 42
+    basic_question 1 "What is the (short) name of the reference server for Ensimag 1st year students?" telesun
+    basic_question 1 "What is the name of the wiki in the Ensimag (without capitalization)?" ensiwiki
     smart_question simple 1
 
     # Actual questions (taken from the exam)

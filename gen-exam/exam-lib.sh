@@ -1,5 +1,5 @@
 #
-# User API: smart_question, smart_question_dec, and sql_question
+# User API: smart_question, smart_question_dec, and basic_question
 # Simplest way to define a question.
 #
 # $1 = short name for the question.
@@ -22,7 +22,7 @@ smart_question () {
     fi
     cd "$studentdir"
     eval $time gen_question_"$1" $(hash "$1")
-    sql_question "$2" "$(desc_question_"$1")" $(hash "$1")
+    basic_question "$2" "$(desc_question_"$1")" $(hash "$1")
 }
 
 # Decimal variant of smart_question (used when the answer has to be
@@ -36,7 +36,7 @@ smart_question_dec () {
     fi
     cd "$studentdir"
     eval $time gen_question_"$1" $(dechash "$1")
-    sql_question "$2" "$(desc_question_"$1")" $(dechash "$1")
+    basic_question "$2" "$(desc_question_"$1")" $(dechash "$1")
 }
 
 # Constant variant of smart_question (used when the answer does not
@@ -50,17 +50,17 @@ smart_question_const () {
     fi
     cd "$studentdir"
     eval $time gen_question_"$1" $(consthash "$1")
-    sql_question "$2" "$(desc_question_"$1")" $(consthash "$1")
+    basic_question "$2" "$(desc_question_"$1")" $(consthash "$1")
 }
 
 # Inserts a question in the database. This is a low-level function,
-# you probably want to use smart_question and smart_question_dec
+# you probably want to use smart_question and smart_question_* above
 # instead.
 #
 # $1 = coefficient
 # $2 = question
 # $3 = expected answer
-sql_question () {
+basic_question () {
     coefficients["$question"]="$1"
     printf "INSERT INTO exam_unix_question
        (id, id_subject, machine, session, question_text, correct_answer, student_answer)

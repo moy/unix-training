@@ -10,7 +10,7 @@ EOF
 }
 
 outdir=exam_genere
-outphp=demo-questions.php
+outphp=
 cleanup=no
 basedir=$(pwd)
 verbose=no
@@ -45,14 +45,22 @@ if [ "$cleanup" = "yes" ]; then
     rm -f "$outphp"
 fi
 
-# make $outphp absolute
-outphp=$(absolute_path "$outphp")
-
 if [ -f "$outphp" ]; then
     die "$outphp already exists.
 Remove it manually or use --cleanup."
 fi
-mkdir "$outdir" || die "Cannot create directory $outdir"
+
+if [ "$outphp" = "" ]; then
+    outphp=$outdir/php/inc/demo-questions.php
+fi
+
+mkdir -p "$outdir" || die "Cannot create directory $outdir"
+mkdir -p "$(dirname "$outphp")" || die "Cannote create base directory for $outphp"
+
+# make $outphp absolute
+outphp=$(absolute_path "$outphp")
+EXAM_DIR=$(absolute_path "$EXAM_DIR")
+
 cd "$outdir"
 # make outdir absolute.
 outdir=$(pwd)
@@ -85,17 +93,19 @@ all_questions
 
 echo '?>' >> "$outphp"
 
-exam_config_php demo > "$basedir"/config.php
+(cd "$EXAM_DIR"; git ls-files php | tar cf - -T -) | \
+    (cd "$outdir"; tar xf -)
+exam_config_php demo > "$outdir"/php/inc/config.php
 
 cd "$outdir"/1
 tar czf demo.tar.gz demo/
-mv demo.tar.gz ..
+mv demo.tar.gz ../php
 
 echo "
 Generated files:
 - $outphp
-- config.php
-- $outdir/demo.tar.gz
-Copy them into the exam directory (the first two should be named
-inc/demo-questions.sh and inc/config.sh) on the web server to get the
-demo running."
+- $outdir/php/inc/config.php
+- $outdir/php/demo.tar.gz
+
+Hopefully, the $output/php/ directory should be ready to be copied on
+a webserver to start the demo."

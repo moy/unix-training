@@ -139,9 +139,6 @@ for login in $(get_logins); do
     studentdir="$outdir/$session/$machine"
     mkdir -p "$studentdir"
     cd "$studentdir"
-    echo "Bonjour,
-
-Vous êtes $login, la réponse 1 est $(hash reponse1)." > README.txt
 
     sql_comment "Etudiant $login"
     sql_raw "INSERT INTO exam_unix_logins (id_subject, session, machine, login, first_name, familly_name)

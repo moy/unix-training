@@ -1,4 +1,4 @@
-all: check test
+all: check exam_test.tar.gz demo_ensimag2010.tar.gz demo_ensimag2010-en.tar.gz
 
 .PHONY: check
 check: list_test.csv
@@ -10,8 +10,6 @@ check: list_test.csv
 		else echo "Session $$session OK"; fi \
 	done
 
-test: exam_test.tar.gz
-
 TMP=$(HOME)/local/tmp
 
 exam_%.tar.gz: list_%.csv ./exam-%.sh
@@ -19,3 +17,8 @@ exam_%.tar.gz: list_%.csv ./exam-%.sh
 	../gen-exam/init-db.sh > $(TMP)/exam_$*/init-db.sql
 	(cd $(TMP); tar czf - exam_$*) > $@
 	-$(RM) -fr $(TMP)/exam_$*
+
+demo_%.tar.gz: ./demo-%.sh
+	./demo-$*.sh --cleanup
+	cd exam_genere/ && mv php demo_$* && tar czvf ../demo_$*.tar.gz demo_$*
+	-$(RM) -fr exam_genere/

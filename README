@@ -1,0 +1,16 @@
+This is the public par of the « Introduction to Unix » course given in
+the Ensimag. It is published to satisfy the curiosity of Ensimag's
+students, and in the hope that it will be usefull to other scools.
+
+It contains :
+
+* treasure-hunt/ : a set of scripts to generate a treasure hunt for
+  students. The treasure hunt is a game, where each level requires a
+  technical manipulation, and give access to the next level. The game
+  is in french, and tailored for the Ensimag, but could be easily
+  adapted to other environments.
+
+* gen-exam/ and exam-expl/ : a lab-work exam generation
+  infrastructure. gen-exam/ is the generation library, and exam-expl/
+  gives an example use of it. Read exam-expl/exam-tests.sh for a
+  commented example, which serves as documentation.

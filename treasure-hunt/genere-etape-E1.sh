@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 printf "%s" "
 \documentclass[a4paper]{article}

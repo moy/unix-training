@@ -1,3 +1,4 @@
+. uuidlib.sh
 
 make_noise () {
     for i in $(seq $(($RANDOM % 4 + 1))); do

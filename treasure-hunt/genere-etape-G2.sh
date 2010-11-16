@@ -1,10 +1,10 @@
-#! /bin/sh
+#! /bin/bash
 
 . ./rotlib.sh
 
 exec > etape-G2.sh
 
-printf "%s\n\n" '#!/bin/sh'
+printf "%s\n\n" '#!/bin/bash'
 
 cat ./rotlib-decode.sh
 

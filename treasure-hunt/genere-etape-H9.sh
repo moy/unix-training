@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 telehome=$(ssh telesun pwd)
 telekeys=$(ssh telesun cat .ssh/authorized_keys)

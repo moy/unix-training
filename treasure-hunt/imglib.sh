@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 # Usage:
 # echo 'some text' | txt2img file.png

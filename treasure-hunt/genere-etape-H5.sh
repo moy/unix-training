@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 rm -fr etape-H5
 mkdir etape-H5

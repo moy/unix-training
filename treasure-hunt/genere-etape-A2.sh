@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 alphabet="abcdefghijklmnopqrstuvwxyz"
 alphabetdecale="zabcdefghijklmnopqrstuvwxy"
 

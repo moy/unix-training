@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 alphabet="abcdefghijklmnopqrstuvwxyz"
 alphabetdecale="zabcdefghijklmnopqrstuvwxy"
@@ -19,7 +19,7 @@ rot () {
 
 exec > jeu-de-piste.sh
 
-printf "%s\n\n" '#! /bin/sh'
+printf "%s\n\n" '#! /bin/bash'
 
 cat rotlib-decode.sh
 cat rotlib-encode.sh

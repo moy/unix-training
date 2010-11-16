@@ -1,3 +1,5 @@
+. uuidlib.sh
+
 # Create noise in current directory.
 make_subdirs () {
     for i in a b $(seq $(($RANDOM % 7))); do

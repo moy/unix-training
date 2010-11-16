@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 src=etape-XX-to-be-obfuscated.sh
 dest=etape-XX.sh
 
 exec > "$dest"
 
-printf "%s\n" '#!/bin/sh
+printf "%s\n" '#!/bin/bash
 
 exec 4<&1
 

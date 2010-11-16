@@ -3,7 +3,7 @@
 # solution Geek :
 # grep -vFf etape-E11-bis.txt etape-E11.txt
 
-. textlib.sh
+. ./textlib.sh
 
 rm -f etape-E11.txt
 rm -f etape-E11-bis.txt

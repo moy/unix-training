@@ -206,6 +206,7 @@ exam_config_php () {
 	echo "\$dbtype = '$dbtype';"
     else
 	echo "\$session = 'demo';"
+        echo "\$exam_php_session = '$(uuid)';"
     fi
 echo "
 \$mode = '$1'; // 'sql' or 'demo'

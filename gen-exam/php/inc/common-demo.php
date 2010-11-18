@@ -1,6 +1,7 @@
 <?php
 defined('_VALID_INCLUDE') or die('Direct access not allowed.');
 
+session_name($exam_php_session);
 session_start();
 
 if (isset($_GET['reset'])) {

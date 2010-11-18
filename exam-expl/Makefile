@@ -1,4 +1,5 @@
-all: check exam_test.tar.gz demo_ensimag2010.tar.gz demo_ensimag2010-en.tar.gz
+TARBALLS=exam_test.tar.gz demo_ensimag2010.tar.gz demo_ensimag2010-en.tar.gz
+all: check $(TARBALLS)
 
 .PHONY: check
 check: list_test.csv
@@ -22,3 +23,7 @@ demo_%.tar.gz: ./demo-%.sh
 	./demo-$*.sh --cleanup
 	cd exam_genere/ && mv php demo_$* && tar czvf ../demo_$*.tar.gz demo_$*
 	-$(RM) -fr exam_genere/
+
+.PHONY: clean
+clean:
+	-$(RM) $(TARBALLS)

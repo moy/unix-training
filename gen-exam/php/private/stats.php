@@ -28,15 +28,15 @@ function display_request_question($name, $query) {
 function display_request($name, $query) {
 	//echo '<pre>QUERY='. $query .'</pre>';
 	$result = exam_query($query);
-	echo '<li><strong>'. $name . '</strong>: <ul>';
+	echo '<li><strong>'. $name . "</strong>: <ul>\n";
 	$total = 0;
 	while ($line=exam_fetch_array($result)) {
 		$session = 'Session '. $line['session'];
-		echo '<li>'. $session .': '. $line['count'] . '</li>';
+		echo '    <li>'. $session .': '. $line['count'] . "</li>\n";
 		$total += $line['count'];
 	}
-	echo '<li>Total: '. $total . '</li>';
-	echo '</ul></li>';
+	echo '    <li>Total: '. $total . "</li>\n";
+	echo "</ul></li>\n";
 }
 
 ?>
@@ -60,6 +60,27 @@ AND exam_unix_question.id = exam_unix_subject_questions.id_question
 AND exam_unix_question.id_subject = exam_unix_subject_questions.id_subject
 AND exam_unix_question.id_subject = '". $subject ."'"
 		." GROUP BY session;");
+
+// TODO: it would be nice to have a notion of "question id" (first
+// argument of smart_question), but it's not stored in the database.
+$query="SELECT exam_unix_subject_questions.id_question AS ". exam_field('id_question') .",
+               SUM(exam_unix_subject_questions.coeff) AS ". exam_field('score') ."
+FROM exam_unix_subject_questions, exam_unix_question
+WHERE student_answer = correct_answer
+AND exam_unix_question.id = exam_unix_subject_questions.id_question
+AND exam_unix_question.id_subject = exam_unix_subject_questions.id_subject
+AND exam_unix_question.id_subject = '". $subject ."'"
+	." GROUP BY exam_unix_subject_questions.id_question;";
+$result = exam_query($query);
+echo "<li><strong>Per-question score</strong>: <ul>\n";
+$total = 0;
+while ($line=exam_fetch_array($result)) {
+	$session = 'Question '. $line['id_question'];
+	echo '    <li>'. $session .': '. $line['score'] . "</li>\n";
+	$total += $line['score'];
+}
+echo '    <li>Total: '. $total . "</li>\n";
+echo "</ul></li>\n";
 
 ?>
 </ul></div>

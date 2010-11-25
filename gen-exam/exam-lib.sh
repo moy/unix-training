@@ -135,7 +135,9 @@ for i in $(seq 100); do
 done
 
 dechash () {
-    hash "$1" | tr '[a-f]' '[0-6]' | head -c 4
+    # A non-nul number in decimal form.
+    # xargs expr 1 + ensures non-zero, and remove leading zeros.
+    hash "$1" | tr '[a-f]' '[1-7]' | head -c 4 | xargs expr 1 +
 }
 
 sql_escape_pipe () {

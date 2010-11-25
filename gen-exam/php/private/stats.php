@@ -93,6 +93,7 @@ echo "</ul></li>\n";
 </ul></div>
 
 <p><a href="grades.php">See grades</a></p>
+<p><a href="answers.php">See student's answers</a></p>
 <?php if ($_GET['verbose'] === 'yes') { ?>
     <p><a href="?verbose=no">See non-verbose stats</a></p>
 <?php } else { ?>

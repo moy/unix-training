@@ -109,7 +109,9 @@ function get_questions ($machine, $session, $subject) {
 	exam_connect_maybe();
 	$query = "SELECT exam_unix_subject_questions.id_question AS question,
                  exam_unix_question.question_text AS question_text,
-                 exam_unix_subject_questions.coeff AS coeff
+                 exam_unix_subject_questions.coeff AS coeff,
+		 exam_unix_question.student_answer AS student_answer,
+		 exam_unix_question.correct_answer AS correct_answer
 FROM exam_unix_subject, exam_unix_subject_questions, exam_unix_question
 WHERE exam_unix_subject_questions.id_subject  = exam_unix_subject.id
   AND exam_unix_subject_questions.id_question = exam_unix_question.id
@@ -133,6 +135,18 @@ FROM exam_unix_logins
 WHERE id_subject = '". exam_escape_string($subject) ."'
   AND session    = '". exam_escape_string($session) ."'
   AND machine    = '". exam_escape_string($machine) ."'
+";
+	$result = exam_query($query);
+	$line = exam_fetch_array($result);
+	return $line;
+}
+
+function get_login_info ($login, $subject) {
+	exam_connect_maybe();
+	$query = "SELECT first_name, familly_name, session, machine
+FROM exam_unix_logins
+WHERE id_subject = '". exam_escape_string($subject) ."'
+  AND login      = '". exam_escape_string($login) ."'
 ";
 	$result = exam_query($query);
 	$line = exam_fetch_array($result);

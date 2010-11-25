@@ -45,6 +45,14 @@ if (!isset($mode)) {
 	$mode = "sql";
 }
 
+function echo_correct($path) {
+	echo '<span><img class="invisible" src="'. $path .'/ok.png" width="15px" height="15px" alt="ok" />&nbsp;Réponse correcte validée</span>';
+}
+
+function echo_incorrect($path) {
+	echo '<span><img class="invisible" src="'. $path .'/ko.png" width="15px" height="15px" alt="ko" />&nbsp;</span>';
+}
+
 if ($mode == "demo") {
 	include_once './inc/common-demo.php';
 } else {

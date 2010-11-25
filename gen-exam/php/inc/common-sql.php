@@ -39,6 +39,13 @@ case "postgresql":
 		return $name;
 	}
 
+	function exam_dump() {
+		 global $dbhost, $dbuser, $dbpass, $dbname;
+		 echo "-- *** WARNING: Untested feature *** dump in PostgreSQL ***\n";
+		 $command = "PGPASSWORD='$dbpass' pg_dump -h $dbhost -U $dbuser -d $dbname";
+		 system($command);
+	}
+
 	break;
 case "mysql":
 	function exam_escape_string($str) {
@@ -72,6 +79,13 @@ case "mysql":
 	function exam_field($name) {
 		return "'". $name ."'";
 	}
+	
+	function exam_dump() {
+		 global $dbhost, $dbuser, $dbpass, $dbname;
+		 $command = "mysqldump --opt -h $dbhost -u $dbuser -p$dbpass $dbname";
+		 system($command);
+	}
+
 	break;
 }
 /* end of portability layer */

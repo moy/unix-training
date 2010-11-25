@@ -64,19 +64,26 @@ AND exam_unix_question.id_subject = '". $subject ."'"
 // TODO: it would be nice to have a notion of "question id" (first
 // argument of smart_question), but it's not stored in the database.
 $query="SELECT exam_unix_subject_questions.id_question AS ". exam_field('id_question') .",
-               SUM(exam_unix_subject_questions.coeff) AS ". exam_field('score') ."
+               COUNT(exam_unix_subject_questions.coeff) AS ". exam_field('score') .",
+               MAX(exam_unix_question.question_text) AS ". exam_field('question') ."
 FROM exam_unix_subject_questions, exam_unix_question
 WHERE student_answer = correct_answer
 AND exam_unix_question.id = exam_unix_subject_questions.id_question
 AND exam_unix_question.id_subject = exam_unix_subject_questions.id_subject
 AND exam_unix_question.id_subject = '". $subject ."'"
-	." GROUP BY exam_unix_subject_questions.id_question;";
+	." GROUP BY exam_unix_subject_questions.id_question
+           ORDER BY score;";
 $result = exam_query($query);
-echo "<li><strong>Per-question score</strong>: <ul>\n";
+echo "<li><strong>Per-question correct answers</strong>: <ul>\n";
 $total = 0;
 while ($line=exam_fetch_array($result)) {
 	$session = 'Question '. $line['id_question'];
-	echo '    <li>'. $session .': '. $line['score'] . "</li>\n";
+	if ($_GET['verbose'] === 'yes') {
+		$details = ' ('. $line['question'] .')';
+	} else {
+		$details = '';
+	}
+	echo '    <li>'. $session . $details . ' : '. $line['score'] . "</li>\n";
 	$total += $line['score'];
 }
 echo '    <li>Total: '. $total . "</li>\n";
@@ -86,4 +93,9 @@ echo "</ul></li>\n";
 </ul></div>
 
 <p><a href="grades.php">See grades</a></p>
-<?php exam_footer(); ?>
+<?php if ($_GET['verbose'] === 'yes') { ?>
+    <p><a href="?verbose=no">See non-verbose stats</a></p>
+<?php } else { ?>
+    <p><a href="?verbose=yes">See verbose stats</a></p>
+<?php }
+exam_footer(); ?>

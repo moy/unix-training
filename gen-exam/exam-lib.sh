@@ -137,7 +137,7 @@ done
 dechash () {
     # A non-nul number in decimal form.
     # xargs expr 1 + ensures non-zero, and remove leading zeros.
-    hash "$1" | tr '[a-f]' '[1-7]' | head -c 4 | xargs expr 1 +
+    hash "$1" | tr '[a-f]' '[1-6]' | head -c 4 | xargs expr 1 +
 }
 
 sql_escape_pipe () {

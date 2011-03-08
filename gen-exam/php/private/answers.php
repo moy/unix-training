@@ -61,6 +61,8 @@ if ($machine == "")
 </ul></div>
 <?php
 
+$total_score = 0;
+
 // List questions.
 foreach (get_questions($machine, $session, $subject) as $line) {
 	echo '<div class="question">';
@@ -70,6 +72,7 @@ foreach (get_questions($machine, $session, $subject) as $line) {
 	echo '<div style="float: left; background-color: white; padding: .3ex; border: solid 1px grey; width: 10em"><strong>&nbsp;'. $line["student_answer"] ."</strong></div>";
 	if ($line["student_answer"] == $line["correct_answer"]) {
 		echo_correct('..');
+		$total_score += $line["coeff"];
 	} elseif ($line["student_answer"] == "") {
 		echo ' (pas de réponse)';
 	} else {
@@ -83,6 +86,8 @@ foreach (get_questions($machine, $session, $subject) as $line) {
 
 	echo "</div>\n";
 }
+
+echo "<div class=\"info\"><strong>Total score: ". $total_score ."/". $points ." points.</strong></div>\n";
 
 exam_footer();
 ?>

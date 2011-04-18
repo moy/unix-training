@@ -212,6 +212,7 @@ exam_config_php () {
     fi
 echo "
 \$mode = '$1'; // 'sql' or 'demo'
+\$lang = '$exam_lang'; // 'en' or 'fr'
 
 \$welcome_msg = \"$(exam_welcome | php_escape_pipe)\";
 ?>"

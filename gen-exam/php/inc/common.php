@@ -22,6 +22,51 @@ function exam_header($title = '') {
 	  }
 }
 
+// Very basic internationalization (avoid external dependency for such
+// simple thing)
+$exam_i18n = array(
+	'fr' => array(
+		'submit' => 'Soumettre',
+		'demo_warning' => 'Attention! Vous utilisez le mode « demo », rien ne sera enregistré dans la base de données',
+		'reset_answers' => "Réinitialiser les réponses",
+		'correct_answer' => "Réponse correcte validée",
+		'retry' => "Réessayer",
+		'login' => "Utilisateur (login)",
+		'name' => "Nom",
+		'machine' => "Machine",
+		'session' => "Session",
+		'questions' => "questions",
+		'points' => "points"
+		),
+	
+	'en' => array(
+		'submit' => 'Submit',
+		'demo_warning' => "Warning: You're running in demo mode. Nothing will be recorded in the database",
+		'reset_answers' => "Reset Answers",
+		'correct_answer' => "Correct answer validated",
+		'retry' => "Retry",
+		'login' => "Login",
+		'name' => "Name",
+		'machine' => "Machine",
+		'session' => "Session",
+		'questions' => "questions",
+		'points' => "points"
+		)
+	);
+
+function exam_get_string($id) {
+	global $exam_i18n;
+	global $lang;
+	if (!isset($lang)) {
+		$lang = 'fr';
+	}
+	if (isset($exam_i18n[$lang][$id])) {
+		return $exam_i18n[$lang][$id];
+	} else {
+		return $id;
+	}
+}
+
 function exam_footer() {
 	echo '</body></html>';
 }
@@ -46,7 +91,7 @@ if (!isset($mode)) {
 }
 
 function echo_correct($path) {
-	echo '<span><img class="invisible" src="'. $path .'/ok.png" width="15px" height="15px" alt="ok" />&nbsp;Réponse correcte validée</span>';
+	echo '<span><img class="invisible" src="'. $path .'/ok.png" width="15px" height="15px" alt="ok" />&nbsp;'. exam_get_string('correct_answer') .'</span>';
 }
 
 function echo_incorrect($path) {

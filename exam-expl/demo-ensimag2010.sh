@@ -20,6 +20,7 @@ sur des machines Linux (ce qui inclut telesun).</p>
 }
 
 exam_mode=demo
+exam_lang=fr
 
 all_questions () {
     # Juste pour s'entrainer ...

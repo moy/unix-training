@@ -23,6 +23,7 @@ on Linux machines.</p>
 }
 
 exam_mode=demo
+exam_lang=en
 
 all_questions () {
     # Just to train ...

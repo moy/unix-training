@@ -19,10 +19,10 @@ $line = get_answer($question, $machine, $session, $subject);
 	if ($line["student_answer"] == $line["correct_answer"]) {
 		echo_correct('.');
 	} elseif ($line["student_answer"] == "") {
-		echo '<input type="submit" name="submit" value="Soumettre" />';
+		echo '<input type="submit" name="submit" value="'. exam_get_string('submit') .'" />';
 	} else {
 		echo_incorrect('.');
-	        echo '<input type="submit" name="submit" value="Réessayer" />';
+	        echo '<input type="submit" name="submit" value="'. exam_get_string('retry') .'" />';
 	}
 	?>
         </fieldset>

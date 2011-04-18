@@ -12,8 +12,8 @@ $line = get_exam_info($subject);
 exam_header(htmlspecialchars($line["desc"]));
 
 if ($mode == "demo") {
-	echo "<p><strong>Warning: You're running in demo mode. Nothing will be recorded in the database</strong></p>";
-	echo '<p><a href="?reset=yes&amp;mode=demo">Reset answers</a></p>';
+	echo "<p><strong>". exam_get_string('demo_warning') ."</strong></p>";
+	echo '<p><a href="?reset=yes&amp;mode=demo">'. exam_get_string('reset_answers') .'</a></p>';
 }
 
 /*
@@ -37,12 +37,12 @@ if ($login == "")
 <?php echo $welcome_msg ?>
 
 <div class="info"><ul>
-<li><strong>Machine: <?php echo $machine ?></strong></li>
-<li><strong>Session: <?php echo $session ?></strong></li>
-<li><strong>Login: <?php echo $login ?></strong></li>
-<li><strong>Name: <?php echo $first_name ." ". $familly_name ?></strong></li>
-<li><strong><?php echo $count ?> questions</strong></li>
-<li><strong><?php echo $points ?> points</strong></li>
+<li><strong><?php echo exam_get_string('machine') .': '. $machine ?></strong></li>
+<li><strong><?php echo exam_get_string('session') .': '. $session ?></strong></li>
+<li><strong><?php echo exam_get_string('login') .': '. $login ?></strong></li>
+<li><strong><?php echo exam_get_string('name') .': '. $first_name ." ". $familly_name ?></strong></li>
+<li><strong><?php echo $count ." ". exam_get_string('questions') ?></strong></li>
+<li><strong><?php echo $points ." ". exam_get_string('points') ?></strong></li>
 </ul></div>
 <?php
 

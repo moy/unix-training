@@ -208,7 +208,7 @@ exam_config_php () {
     echo "<?php"
     echo "defined('_VALID_INCLUDE') or die('Direct access not allowed.');"
     if [ "$1" = "sql" ]; then
-	echo "\$subject = $subject;"
+	echo "\$subject = ${subject:-1};"
 	echo "\$session = 1; // To be changed manually between sessions"
 	echo "\$dbname = '$exam_dbname';"
 	echo "\$dbuser = '$exam_dbuser';"

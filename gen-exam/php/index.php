@@ -61,5 +61,21 @@ foreach (get_questions($machine, $session, $subject) as $line) {
 	echo "</div>\n";
 }
 
+// If $exam_footer_include is set in config.php, include it.
+
+if (isset($exam_footer_include) && $exam_footer_include) {
+	// allow only simple filenames, to make sure
+				// /etc/passwd, ../../etc/passwd or http://whatever
+	// are not allowed.
+	if (! preg_match('/^[a-zA-Z0-9\.-]*$/', $exam_footer_include)) {
+		die("\$exam_footer_include should only contain letters, digits, dots and dashes");
+	}
+	// belt-and-suspenders security check.
+	// include($variable) makes me nervous ...
+	if (! file_exists('inc/' . $exam_footer_include)) {
+		die("File 'inc/". $exam_footer_include ."' does not exist, sorry.");
+	}
+	include('inc/' . $exam_footer_include);
+}
 exam_footer();
 ?>

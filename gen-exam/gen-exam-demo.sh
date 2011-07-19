@@ -93,8 +93,7 @@ all_questions
 
 echo '?>' >> "$outphp"
 
-(cd "$EXAM_DIR"; git ls-files php | tar cf - -T -) | \
-    (cd "$outdir"; tar xf -)
+exam_install_php
 exam_config_php demo > "$outdir"/php/inc/config.php
 
 cd "$outdir"/1

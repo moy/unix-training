@@ -176,8 +176,7 @@ if [ "$apply" = "yes" ]; then
     esac
 fi
 
-(cd "$EXAM_DIR"; git ls-files php | tar cf - -T -) | \
-    (cd "$outdir"; tar xf -)
+exam_install_php
 exam_config_php sql > "$outdir"/php/inc/config.php
 
 

@@ -1,7 +1,7 @@
 <?php
 defined('_VALID_INCLUDE') or die('Direct access not allowed.');
 
-function exam_header($title = '') {
+function exam_header($title = '', $basedir = '.') {
 	echo '<'.'?xml version="1.0" encoding="UTF-8" ?'.'>';
  	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -12,7 +12,7 @@ function exam_header($title = '') {
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><?php echo $title ?></title>
 	<style type="text/css">
-	@import "./style.css";
+	@import "<?php echo $basedir ?>/style.css";
 	</style>
 </head>
 <body>

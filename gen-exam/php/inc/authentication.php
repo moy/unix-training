@@ -1,4 +1,12 @@
 <?php
+// http://vonlind.com/2009/04/php-script-switch-page-to-https/
+if(empty($_SERVER['HTTPS'])) {
+    // If not, redirect
+    $newurl = 'https://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+    header("location: $newurl");
+    exit();
+}
+
 defined('_VALID_INCLUDE') or die('Direct access not allowed.');
 include_once './inc/config.php';
 
@@ -21,7 +29,7 @@ if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
 // analyze the PHP_AUTH_DIGEST variable
 if (!($data = http_digest_parse($_SERVER['PHP_AUTH_DIGEST'])) ||
     !isset($users[$data['username']]))
-    die('Wrong Credentials!');
+    die('Wrong Credentials! Try loading https://otherlogin:otherpassword@server.com/path/to/this/file/');
 
 
 // generate the valid response
@@ -30,7 +38,7 @@ $A2 = md5($_SERVER['REQUEST_METHOD'].':'.$data['uri']);
 $valid_response = md5($A1.':'.$data['nonce'].':'.$data['nc'].':'.$data['cnonce'].':'.$data['qop'].':'.$A2);
 
 if ($data['response'] != $valid_response)
-    die('Wrong Credentials!');
+    die('Wrong Credentials! Try loading https://otherlogin:otherpassword@server.com/path/to/this/file/');
 
 // function to parse the http auth header
 function http_digest_parse($txt)

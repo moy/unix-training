@@ -16,6 +16,11 @@ set -x
 ./genere-etape-E10.sh
 ./genere-etape-E11.sh
 ./genere-etape-E12.sh
+
+rm -fr ./demo-exam-ensimag2011/
+(cd ../exam-expl/ && ./demo-ensimag2011.sh)
+mv ../exam-expl/exam_genere/php/ ./demo-exam-ensimag2011/
+
 ./genere-etape-E1.sh
 ./genere-etape-E4.sh
 ./genere-etape-E5.sh

@@ -53,6 +53,7 @@ rsync etape-E3.tar.gz "$web"
 rsync -r etape-E6/ "$dir"/kmcvoaue/etape-E6/
 rsync etape-E10.txt etape-E11.txt etape-E11-bis.txt "$web"/yntsf/
 rsync etape-E12.tar.gz "$dir"/123654/
+rsync -r ./demo-exam-ensimag2011/ ~/WWW/demo-exam-ensimag2011/
 
 rsync etape-G1.txt etape-G2.sh "$auxiliarymachine":/home/perms/moy/
 ssh "$auxiliarymachine" 'chmod 755 etape-G2.sh'

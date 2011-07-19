@@ -11,6 +11,7 @@ EOF
 }
 
 apply=no
+group=1A
 
 while test $# -ne 0; do
     case "$1" in
@@ -23,6 +24,10 @@ while test $# -ne 0; do
             ;;
 	"--apply")
 	    apply=yes
+	    ;;
+	"--group")
+	    shift
+	    group="$1"
 	    ;;
        *)
             echo "unrecognized option $1"
@@ -39,6 +44,6 @@ grep '[0-9].*;.*;.*;.*;.*;' | while read line; do
     login=$(echo "$line" | cut -d \; -f 2)
     first=$(echo "$line" | cut -d \; -f 4)
     last=$( echo "$line" | cut -d \; -f 5)
-    echo 'INSERT INTO `hunt_student` (`login` , `first_name` , `familly_name`)'
-    echo "                    VALUES ('$login', '$first',      '$last');"
+    echo 'INSERT INTO `hunt_student` (`login` , `group`, `first_name` , `familly_name`)'
+    echo "                    VALUES ('$login', '$group', '$first',      '$last');"
 done | $db_cmd

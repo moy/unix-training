@@ -53,9 +53,9 @@ case "postgresql":
 case "mysql":
 	function exam_escape_string($str) {
 		if (get_magic_quotes_gpc())
-			return mysql_escape_string(stripslashes($str));
+			return mysql_real_escape_string(stripslashes($str));
 		else
-			return mysql_escape_string($str);
+			return mysql_real_escape_string($str);
 	}
 
 	// Don't rely on isset(), since $dbconn may come from $_GET

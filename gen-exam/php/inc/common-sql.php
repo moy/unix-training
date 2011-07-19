@@ -71,7 +71,8 @@ case "mysql":
 	}
 
 	function exam_query($query) {
-		return mysql_query($query);
+		$result = mysql_query($query) or die("SQL Query failed: ". mysql_error());
+		return $result;
 	}
 
 	function exam_num_rows($result) {

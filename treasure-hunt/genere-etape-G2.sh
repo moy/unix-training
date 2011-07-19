@@ -35,6 +35,8 @@ et lisez l'énoncé de l'étape H1.
 
 printf "%s" \"'| unrotpipe > /tmp/tmp-G2.$$
 
+wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/spy/record.php?login=$LOGNAME&step=G2" -O /dev/null 2>/dev/null
+
 LANG=en_US.UTF-8 LESS= xterm -e less /tmp/tmp-G2.$$ || \
 LANG=en_US.UTF-8 LESS= gnome-terminal -e less /tmp/tmp-G2.$$
 rm -f /tmp/tmp-G2.$$

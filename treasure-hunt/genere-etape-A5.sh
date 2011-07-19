@@ -62,5 +62,6 @@ suivante."
 
 echo '" | rotpipe | mail -s "Enonce etape B1" "$LOGNAME@$(hostname --long)"'
 
+echo 'wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/spy/record.php?login=$LOGNAME&step=A5" -O /dev/null 2>/dev/null'
 echo 'echo "Un message a ete envoye a $LOGNAME@$(hostname --long).
 Consultez cette boite mail pour avoir les instructions pour l'"'"'etape suivante."'

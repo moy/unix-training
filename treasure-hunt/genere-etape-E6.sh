@@ -137,6 +137,6 @@ argument en ajoutant des guillemets :
 
 Pour l'étape suivante, elle se trouve à l'adresse
 
-http://www-verimag.imag.fr/~moy/jeu-de-piste/yntsf/etape-E10.txt
+http://www-verimag.imag.fr/~moy/jeu-de-piste/yntsf/etape-E9.php
 " \
     > "$E9_dir"/$(uuid)

@@ -51,7 +51,7 @@ rsync etape-E1 "$dir"/oaue/
 rsync dot-etape-E2.txt "$dir"/kmcv/.etape-E2.txt
 rsync etape-E3.tar.gz "$web"
 rsync -r etape-E6/ "$dir"/kmcvoaue/etape-E6/
-rsync etape-E10.txt etape-E11.txt etape-E11-bis.txt "$web"/yntsf/
+rsync etape-E9.php etape-E10.txt etape-E11.txt etape-E11-bis.txt "$web"/yntsf/
 rsync etape-E12.tar.gz "$dir"/123654/
 rsync -r ./demo-exam-ensimag2011/ ~/WWW/demo-exam-ensimag2011/
 

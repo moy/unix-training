@@ -2,6 +2,7 @@
 defined('_VALID_INCLUDE') or die('Direct access not allowed.');
 include_once './inc/config.php';
 
+// slightly adapted from http://php.net/manual/en/features.http-auth.php
 $realm = 'Restricted area';
 
 //user => password
@@ -30,10 +31,6 @@ $valid_response = md5($A1.':'.$data['nonce'].':'.$data['nc'].':'.$data['cnonce']
 
 if ($data['response'] != $valid_response)
     die('Wrong Credentials!');
-
-// ok, valid username & password
-echo 'Your are logged in as: ' . $data['username'];
-
 
 // function to parse the http auth header
 function http_digest_parse($txt)

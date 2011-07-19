@@ -1,7 +1,8 @@
 <?php
 chdir('..');
 define('_VALID_INCLUDE', TRUE);
-include_once 'inc/common.php';
+include_once './inc/common.php';
+include_once './inc/authentication.php';
 
 if ($mode == "sql") {
 	isset($subject) or die("FATAL ERROR: Subject not specified, please check config.php.");

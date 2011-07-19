@@ -213,6 +213,8 @@ exam_config_php () {
         echo "\$exam_php_session = '$(uuid)';"
     fi
 echo "
+\$exam_webuser = '${exam_webuser:-user}';
+\$exam_webpass = '${exam_webpass:-$(uuid)}';
 \$mode = '$1'; // 'sql' or 'demo'
 \$lang = '$exam_lang'; // 'en' or 'fr'
 

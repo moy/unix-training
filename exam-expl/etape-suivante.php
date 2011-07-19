@@ -1,10 +1,10 @@
 <div class="info" id="next-step">
 <?php
 $summary = all_answers_summary();
-echo '<p>Correct answers: ' . $summary['current'] .'/'. $summary['total'];
+echo '<p>Score : ' . $summary['current'] .'/'. $summary['total'];
 // Make sure cache is refreshed with a dummy get parameter
 $n = intval($_GET['n'])+1;
-echo ' (<a href="?n='. $n . '#next-step">Click here</a> or reload page in your browser to update score)</p>';
+echo ' (<a href="?n='. $n . '#next-step">Cliquez ici</a> ou rechargez la page pour mettre à jour le score)</p>';
 if ($summary['current'] == $summary['total']) {
 	echo "<p><strong>Bravo !</strong> Pour l'etape suivante, elle se trouve dans l'archive tar disponible sur telesun, dans le fichier :<br>
 <pre>

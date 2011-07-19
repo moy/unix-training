@@ -11,9 +11,12 @@ case "postgresql":
 			return pg_escape_string($str);
 	}
 
+	// Don't rely on isset(), since $dbconn may come from $_GET
+	// parameters ...
+	$dbconn = NULL;
 	function exam_connect_maybe() {
 		global $dbconn, $dbhost, $dbname, $dbuser, $dbpass;
-		if (! isset($dbconn)) {
+		if ($dbconn == NULL) {
 			$dbconn_string = "host=". $dbhost
 				." dbname=". $dbname
 				." user=". $dbuser
@@ -55,9 +58,12 @@ case "mysql":
 			return mysql_escape_string($str);
 	}
 
+	// Don't rely on isset(), since $dbconn may come from $_GET
+	// parameters ...
+	$dbconn = NULL;
 	function exam_connect_maybe() {
 		global $dbconn, $dbhost, $dbname, $dbuser, $dbpass;
-		if (! isset($dbconn)) {
+		if ($dbconn == NULL) {
 			$dbconn = mysql_connect($dbhost, $dbuser, $dbpass) or die("Connexion impossible");;
 			mysql_select_db($dbname, $dbconn) or die("Unable to select database");
 			mysql_set_charset("UTF8");

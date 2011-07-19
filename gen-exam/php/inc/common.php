@@ -71,6 +71,20 @@ function exam_footer() {
 	echo '</body></html>';
 }
 
+// Useful in $exam_footer_include for example. Returns
+// ('current' => points, 'total' => total points)
+function all_answers_summary() {
+	$current_points = 0;
+	$total_points = 0;
+	foreach (get_questions($machine, $session, $subject) as $line) {
+		if ($line["student_answer"] == $line["correct_answer"]) {
+			$current_points += $line["coeff"];
+		}
+		$total_points += $line["coeff"];
+	}
+	return array('current' => $current_points, 'total' => $total_points);
+}
+
 $question = $_GET["question"];
 //$machine = $_GET["machine"];
 if (isSet($_SERVER["HTTP_X_FORWARDED_FOR"])) {

@@ -80,7 +80,7 @@ gen_question_suspend () {
     cd suspend
     cp "$basedir"/suspend.c suspend.c
     reponse=$(echo "La reponse est $1 ." | perl -pe 's/./ord($&)." "/ge')
-    perl -pi -e "s/REPONSE/$reponse/" suspend.c
+    perl -pi -e "s/ANSWER/$reponse/" suspend.c
     gcc suspend.c -o suspend
     rm -f suspend.c
 }

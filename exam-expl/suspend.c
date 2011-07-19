@@ -36,7 +36,7 @@ int main (void) {
 
 	while(1) {
 		if (answer) {
-			dprint("REPONSE");
+			dprint("ANSWER");
 		} else {
 			printf("Sleeping...\n");
 		}

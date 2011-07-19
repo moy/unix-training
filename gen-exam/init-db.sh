@@ -106,4 +106,16 @@ if [ "$dbtype" = "postgresql" ]; then
 "
 fi
 
-printf "%s%s" "$drops" "$creates"
+if [ "$apply" = "yes" ]; then
+    case "$dbtype" in
+	"mysql")
+	    printf "%s%s" "$drops" "$creates" | mysql -h arpont.imag.fr -p --database=moy
+	    ;;
+	*)
+	    echo "dbtype $dbtype not managed with --apply, sorry"
+	    exit 1
+	    ;;
+    esac
+else
+    printf "%s%s" "$drops" "$creates"
+fi

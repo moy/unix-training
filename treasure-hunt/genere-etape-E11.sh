@@ -21,12 +21,15 @@ grep '^<'
 
 (et alors, quelqu'un a trouvé la commande avec seulement grep ?)
 
-Pour l'etape suivante, elle se trouve dans l'archive tar disponible sur
+Pour l'étape suivante, on va s'entrainer au futur examen de TP. Une version de démonstration est disponible ici :
 
-~moy/jeu-de-piste/123654/etape-E12.tar.gz
+http://www-verimag.imag.fr/~moy/demo-exam-ensimag2011/
 
-C'est le fichier etape-E12.txt de l'archive. Vous savez déjà extraire une
-archive tar, donc ça devrait être facile ... ou pas.
+Répondez correctement à toutes les questions, puis suivez les
+instructions en bas de page.
+
+La réponse à la dernière question sera : b3147554
+
 " | while read line; do
     bruit=$(make_noise)
     echo "$bruit

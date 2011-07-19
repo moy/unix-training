@@ -24,7 +24,6 @@ on Linux machines.</p>
 
 exam_mode=demo
 exam_lang=en
-exam_footer_include=next-step.php
 
 all_questions () {
     # Just to train ...

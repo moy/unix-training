@@ -21,6 +21,7 @@ sur des machines Linux (ce qui inclut telesun).</p>
 
 exam_mode=demo
 exam_lang=fr
+exam_footer_include=etape-suivante.php
 
 all_questions () {
     # Juste pour s'entrainer ...
@@ -33,6 +34,9 @@ all_questions () {
     smart_question text 2
     smart_question_dec size 2
     smart_question suspend 2
+
+    # pour vérifier qu'on vient bien du jeu de piste ...
+    basic_question 3 "La réponse à cette question vous a été donnée par l'étape précédente du jeu de piste (E11)" b3147554
 }
 
 desc_question_simple () {

@@ -1,16 +1,16 @@
 #! /bin/bash
 
 rm -fr F1/
-rm -f etape-E12.txt
+rm -f etape-E13.txt
 
 echo "Voila, vous terminez ainsi la partie E du jeu de piste.
 
 L'étape suivante se trouve dans le répertoire F1 de ce répertoire
-(dans la même archive etape-E12.tar.gz).
+(dans la même archive etape-E13.tar.gz).
 
 C'est le seul fichier dont le nom commence par x, et terminant par
 autre chose qu'un z.
-" > etape-E12.txt
+" > etape-E13.txt
 
 
 mkdir -p F1
@@ -32,4 +32,4 @@ façons de faire cela) pour continuer. " > xabcdefg1
 
 cd ..
 
-tar czvf etape-E12.tar.gz --mode 000 etape-E12.txt F1/
+tar czvf etape-E13.tar.gz --mode 000 etape-E13.txt F1/

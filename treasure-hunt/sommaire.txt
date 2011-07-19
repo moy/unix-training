@@ -47,7 +47,8 @@ E8: grep -r (Chap 7)
 E9: facile, juste du web.
 E10: grep
 E11: grep, diff. (Chap 7)
-E12: Une archive tar créée avec --mode 000, les étudiants doivent
+E12: version de démo du jeu de piste
+E13: Une archive tar créée avec --mode 000, les étudiants doivent
       faire un chmod pour voir le contenu.
 
 Idées à faire :

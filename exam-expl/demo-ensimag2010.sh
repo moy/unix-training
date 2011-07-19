@@ -76,7 +76,7 @@ puis relancez-le en tâche de fond pour avoir la réponse."
 }
 
 gen_question_suspend () {
-    mkdir suspend
+    mkdir -p suspend
     cd suspend
     cp "$basedir"/suspend.c suspend.c
     reponse=$(echo "La reponse est $1 ." | perl -pe 's/./ord($&)." "/ge')

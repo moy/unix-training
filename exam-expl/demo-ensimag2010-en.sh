@@ -77,7 +77,7 @@ with the keyboard, and resume it in background to get the answer."
 }
 
 gen_question_suspend () {
-    mkdir suspend
+    mkdir -p suspend
     cd suspend
     cp "$basedir"/suspend.c suspend.c
     reponse=$(echo "The answer is $1 ." | perl -pe 's/./ord($&)." "/ge')

@@ -29,7 +29,7 @@ if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
 // analyze the PHP_AUTH_DIGEST variable
 if (!($data = http_digest_parse($_SERVER['PHP_AUTH_DIGEST'])) ||
     !isset($users[$data['username']]))
-    die('Wrong Credentials! Try loading https://otherlogin:otherpassword@server.com/path/to/this/file/');
+    die('Invalid user '. $data['username'] .'. Try loading https://otherlogin:otherpassword@server.com/path/to/this/file/');
 
 
 // generate the valid response

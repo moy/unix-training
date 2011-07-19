@@ -90,6 +90,13 @@ if [ "$(command -v prepare_questions)" != prepare_questions ]; then
     }
 fi
 
+if [ "$(command -v exam_welcome)" != exam_welcome ]; then
+    exam_welcome () {
+	# default welcome message
+	echo 'Welcome to the exam'
+    }
+fi
+
 die () {
     echo "FATAL ERROR: $@"
     exit 1

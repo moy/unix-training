@@ -204,3 +204,21 @@ td.sect {
 .invisible:hover {
         background-color: transparent;
 }
+
+/* Sortable tables */
+table.sortable th {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+    border-collapse:collapse;
+    border: solid 1px black;
+}
+
+table.sortable {
+    border-collapse:collapse;
+}
+
+table.sortable td {
+    border: solid 1px black;
+}

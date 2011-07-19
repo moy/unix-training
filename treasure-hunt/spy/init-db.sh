@@ -1,6 +1,5 @@
 #! /bin/sh
 
-
 usage () {
             cat << EOF
 Usage: $(basename $0) [options]
@@ -16,7 +15,6 @@ Typical usage:
 EOF
 }
 
-dbtype=mysql
 drop=no
 apply=no
 
@@ -27,7 +25,7 @@ while test $# -ne 0; do
             exit 0
             ;;
         "--postgresql")
-	    dbtype=postgresql
+	    exam_dbtype=postgresql
             ;;
 	"--drop-tables")
 	    drop=yes
@@ -44,7 +42,9 @@ while test $# -ne 0; do
     shift
 done
 
-if [ "$dbtype" = "mysql" ]; then
+. ./spy-lib.sh
+
+if [ "$exam_dbtype" = "mysql" ]; then
     engine=" ENGINE=InnoDB"
 else
     engine=""
@@ -78,9 +78,11 @@ create_table hunt_access <<\EOF
     date DATETIME NOT NULL
 EOF
 
-if [ "$dbtype" = "postgresql" ]; then
+(
+if [ "$exam_dbtype" = "postgresql" ]; then
     echo "SET search_path=public;
 "
 fi
 
 printf "%s%s" "$drops" "$creates"
+) | $db_cmd

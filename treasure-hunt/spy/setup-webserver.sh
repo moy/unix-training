@@ -48,4 +48,4 @@ exam_config_php sql > php/inc/config.php
 rm -fr php/*.png php/*.php php/private/
 
 (cd src && git ls-files | tar cf - -T -) | \
-    (mkdir -p php/spy; cd php/spy && tar xf -)
+    (cd php/ && tar xf -)

@@ -1,6 +1,6 @@
 <?php
 if (preg_match('/^[a-z][a-zA-Z0-9]*$/', $_GET['login'])) {
-	file_get_contents('http://www-verimag.imag.fr/~moy/monitoring-jdp/spy/record.php?login='. $_GET['login'] .'&step=E9');
+	file_get_contents('http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login='. $_GET['login'] .'&step=E9');
 	header('location: http://www-verimag.imag.fr/~moy/jeu-de-piste/yntsf/etape-E10.txt');
 	exit();
 }

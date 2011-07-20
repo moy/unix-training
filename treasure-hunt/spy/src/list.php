@@ -1,13 +1,12 @@
 <?php
 define('_VALID_INCLUDE', TRUE);
-chdir('..');
 include_once './inc/common.php';
 include_once './inc/authentication.php';
 
 exam_connect_maybe();
-exam_header('Treasure Hunt monitoring', '..');
+exam_header('Treasure Hunt monitoring');
 
-echo '<script src="../sorttable.js"></script>';
+echo '<script src="./sorttable.js"></script>';
 
 echo '<p>Click on table headers to sort</p>';
 

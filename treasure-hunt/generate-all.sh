@@ -8,7 +8,7 @@ multi_generate () {
     LANG=en_US.UTF-8 "$@"
 }
 
-./generate-step-A2.sh
+multi_generate ./generate-step-A2.sh
 multi_generate ./generate-step-A5.sh
 
 ./generate-step-B1.sh

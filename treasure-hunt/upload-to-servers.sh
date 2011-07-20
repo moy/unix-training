@@ -3,7 +3,7 @@
 . ./treasure-setup.sh
 . ./i18n-lib.sh
 
-unset TEXTDOMAIN
+export TEXTDOMAIN=base
 
 # You probably want to run ./tout-generer.sh before this one.
 
@@ -32,20 +32,20 @@ dir="$mainmachine":"$maindir"
 
 upload_lang () {
     # listing interdit, acces autorisé.
-    ssh "$mainmachine" 'rm -fr '$(gettext base treasure-hunt/)'; mkdir -p '$(gettext base treasure-hunt/)'; chmod 711 '$(gettext base treasure-hunt/)''
+    ssh "$mainmachine" 'rm -fr '$(gettext treasure-hunt/)'; mkdir -p '$(gettext treasure-hunt/)'; chmod 711 '$(gettext treasure-hunt/)''
     # Give read permission, but not directory listing
-    todo chmod -R ugo+r $(gettext base treasure-hunt/)
-    todo chmod 711 $(gettext base treasure-hunt/)
-    todo 'find '$(gettext base treasure-hunt/)' -type d -exec chmod ugo+x {} \;'
+    todo chmod -R ugo+r $(gettext treasure-hunt/)
+    todo chmod 711 $(gettext treasure-hunt/)
+    todo 'find '$(gettext treasure-hunt/)' -type d -exec chmod ugo+x {} \;'
     rsync $(gettext A5 jeu-de-piste.sh) "$mainmachine":/home/perms/moy/$(gettext A5 jeu-de-piste.sh)
     todo chmod 755 $(gettext A5 jeu-de-piste.sh)
+    rsync $(gettext etape-A2.txt) "$web"/
 }
 
 LANG=fr_FR.UTF-8 upload_lang
 LANG=en_US.UTF-8 upload_lang
 
 # code below this point still to be internationalized
-rsync etape-A2.txt "$web"/
 
 rsync etape_b1.adb "$dir"
 rsync etape-C1.tex "$web"

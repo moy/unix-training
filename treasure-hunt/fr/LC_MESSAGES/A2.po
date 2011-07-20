@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-20 15:16+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: generate-step-A2.sh:17
+msgid ""
+"Voila, vous avez resolu l'etape A1.\n"
+"\n"
+"Pour l'étape suivante (A2), la voici, mais elle est encodée en rot13.\n"
+"\n"
+"Au point où vous en êtes, vous devriez être capables de trouver ce\n"
+"qu'est rot13, et un moyen de le décoder.\n"
+"\n"
+msgstr ""
+
+#: generate-step-A2.sh:26
+msgid ""
+"Voila, le rot13 est decode.\n"
+"\n"
+"Si vous etes malins, vous avez sans doute remarque que le web regorge\n"
+"de codeur/decodeur rot13 en ligne, donc, un bon moteur de recherche a\n"
+"la main, on trouve rapidement son bonheur (et c'etait bien le but de\n"
+"l'exercice !). Les Emacsiens auront prefere M-x rot13-region RET, mais\n"
+"c'est une autre histoire.\n"
+"\n"
+"Pour l'etape suivante (A3), il faudra vous rendre sur EnsiWiki :\n"
+"retournez sur la page de depart du jeu de piste\n"
+"(http://ensiwiki.ensimag.fr/index.php/TP_Unix_-_Jeu_de_piste),\n"
+"et ouvrez l'onglet 'discussion'. On se retrouve la bas !"
+msgstr ""

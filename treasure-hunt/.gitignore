@@ -2,7 +2,10 @@
 *.log
 *.aux
 *.tar.gz
+*.ali
+*.o
 etape-A2.txt
+step-A2.txt
 etape-B2.pdf
 etape-B2.tex
 etape-C3.png
@@ -12,6 +15,8 @@ etape-E1.tex
 etape-E13.txt
 etape_b1
 etape_b1.adb
+step_b1
+step_b1.adb
 etape_d1
 etape_d1.adb
 etape_d2

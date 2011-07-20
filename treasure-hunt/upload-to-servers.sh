@@ -1,6 +1,9 @@
 #! /bin/zsh
 
 . ./treasure-setup.sh
+. ./i18n-lib.sh
+
+unset TEXTDOMAIN
 
 # You probably want to run ./tout-generer.sh before this one.
 
@@ -24,19 +27,26 @@ echo 'AddCharset UTF-8 .txt' > "$web"/.htaccess
 
 echo '<html><head><title>Interdit</title></head><body>Listing de repertoire interdit</body></html>' > "$web"/index.html
 
-# listing interdit, acces autorisé.
-ssh "$mainmachine" 'rm -fr jeu-de-piste/; mkdir -p jeu-de-piste/; chmod 711 jeu-de-piste/'
-# Give read permission, but not directory listing
-todo chmod -R ugo+r jeu-de-piste/
-todo chmod 711 jeu-de-piste/
-todo 'find jeu-de-piste/ -type d -exec chmod ugo+x {} \;'
-
 dir="$mainmachine":"$maindir"
 
+
+upload_lang () {
+    # listing interdit, acces autorisé.
+    ssh "$mainmachine" 'rm -fr '$(gettext base treasure-hunt/)'; mkdir -p '$(gettext base treasure-hunt/)'; chmod 711 '$(gettext base treasure-hunt/)''
+    # Give read permission, but not directory listing
+    todo chmod -R ugo+r $(gettext base treasure-hunt/)
+    todo chmod 711 $(gettext base treasure-hunt/)
+    todo 'find '$(gettext base treasure-hunt/)' -type d -exec chmod ugo+x {} \;'
+    rsync $(gettext A5 jeu-de-piste.sh) "$mainmachine":/home/perms/moy/$(gettext A5 jeu-de-piste.sh)
+    todo chmod 755 $(gettext A5 jeu-de-piste.sh)
+}
+
+LANG=fr_FR.UTF-8 upload_lang
+LANG=en_US.UTF-8 upload_lang
+
+# code below this point still to be internationalized
 rsync etape-A2.txt "$web"/
 
-rsync jeu-de-piste.sh "$mainmachine":/home/perms/moy/jeu-de-piste.sh
-todo chmod 755 jeu-de-piste.sh
 rsync etape_b1.adb "$dir"
 rsync etape-C1.tex "$web"
 rsync etape-C2.odt etape-C3.png "$dir"

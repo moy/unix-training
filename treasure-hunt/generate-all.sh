@@ -3,8 +3,13 @@
 set -x
 set -e
 
+multi_generate () {
+    LANG=fr_FR.UTF-8 "$@"
+    LANG=en_US.UTF-8 "$@"
+}
+
 ./generate-step-A2.sh
-./generate-step-A5.sh
+multi_generate ./generate-step-A5.sh
 
 ./generate-step-B1.sh
 

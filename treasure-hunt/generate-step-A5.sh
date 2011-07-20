@@ -1,5 +1,7 @@
 #! /bin/bash
 
+. i18n-lib.sh
+
 alphabet="abcdefghijklmnopqrstuvwxyz"
 alphabetdecale="zabcdefghijklmnopqrstuvwxy"
 
@@ -17,7 +19,7 @@ rot () {
     echo "$1" | rotpipe
 }
 
-exec > jeu-de-piste.sh
+exec > $(gettext jeu-de-piste.sh)
 
 printf "%s\n\n" '#! /bin/bash'
 
@@ -27,7 +29,7 @@ cat rotlib-encode.sh
 printf "%s" '
 echo "'
 
-rot "Bonjour,
+gettext "Bonjour,
 
 Cet email vous est envoye par le script jeu-de-piste.sh. Il fait
 partie du TP 'Jeu de piste'.
@@ -58,10 +60,11 @@ puis executez-le avec
   ./etape_b1
 
 Le programme genere vous donnera les indications pour aller a l'etape
-suivante."
+suivante.
+" | rotpipe
 
-echo '" | rotpipe | mail -s "Enonce etape B1" "$LOGNAME@$(hostname --long)"'
+echo '" | rotpipe | mail -s "'"$(gettext "Enonce etape B1")"'" "$LOGNAME@$(hostname --long)"'
 
 echo 'wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=$LOGNAME&step=A5" -O /dev/null 2>/dev/null'
-echo 'echo "Un message a ete envoye a $LOGNAME@$(hostname --long).
-Consultez cette boite mail pour avoir les instructions pour l'"'"'etape suivante."'
+printf 'printf "%s\n" $LOGNAME@$(hostname --long)\n' "$(eval_gettext "Un message a ete envoye a %s.
+Consultez cette boite mail pour avoir les instructions pour l'etape suivante.")"

@@ -48,7 +48,7 @@ Noise
 Put_Line "Et le dernier est ici :"
 New_Line
 
-./genere-etape-D2.sh
+./generate-step-D2.sh
 cat etape_d2-3.txt | sed 's/"/""/g' | while read line; do
     Put_Line "   $line"
 done

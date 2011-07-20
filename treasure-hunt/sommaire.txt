@@ -62,8 +62,8 @@ F1: sur l'idée de 6:, une question style 'le seul fichier commençant
 F2: Control-z, Control-d
 
 Chapitre 9 : accès distant
-G1: sftp sur ensibull (Chap 9)
-G2: ssh -X sur ensibull, executer un binaire qui donne le résultat
+G1: sftp sur ensilinux (Chap 9)
+G2: ssh -X sur ensilinux, executer un binaire qui donne le résultat
       dans une fenetre X11 (à base de system("xterm -e"); si besoin).
 
 Étapes bonnus :

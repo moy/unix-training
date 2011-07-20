@@ -20,8 +20,12 @@ retry () {
 ok () {
     echo "Bravo ! fin de l'étape...
 
-L'étape suivante se trouve sur ensibull. Elle est dans le fichier
-~moy/etape-G1.txt. Récupérez-la via sftp (cf.
+L'étape suivante se trouve sur le serveur ensilinux.imag.fr. Elle est
+dans le fichier
+
+  ~moy/etape-G1.txt
+
+Récupérez-la via sftp (cf.
 http://ensiwiki.ensimag.fr/index.php/Travailler_à_distance pour 1001
 façons de faire cela) pour continuer.
 "

@@ -1,6 +1,7 @@
 #! /bin/bash
 
 set -x
+set -e
 
 ./genere-etape-A2.sh
 ./genere-etape-A5.sh
@@ -15,7 +16,7 @@ set -x
 
 ./genere-etape-E10.sh
 ./genere-etape-E11.sh
-./genere-etape-E12.sh
+./genere-etape-E13.sh
 
 rm -fr ./demo-exam-ensimag2011/
 (cd ../exam-expl/ && ./demo-ensimag2011.sh)
@@ -27,6 +28,8 @@ mv ../exam-expl/exam_genere/php/ ./demo-exam-ensimag2011/
 # Must come after E4 and E5.
 ./genere-etape-E3.sh
 ./genere-etape-E6.sh
+
+./genere-etape-F2.sh
 
 ./genere-etape-G2.sh
 

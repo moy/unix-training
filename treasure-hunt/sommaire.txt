@@ -59,6 +59,7 @@ Chapitre 8 : Bash
 F1: sur l'idée de 6:, une question style 'le seul fichier commençant
       par un x, contenant un c, et terminant par autre chose qu'un z'
       (x*c*[^z])
+F2: Control-z, Control-d
 
 Chapitre 9 : accès distant
 G1: sftp sur ensibull (Chap 9)

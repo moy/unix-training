@@ -25,10 +25,12 @@ done
 
 echo "Oui, c'est bien celui là.
 
-L'étape suivante se trouve sur ensibull. Elle est dans le fichier
-~moy/etape-G1.txt. Récupérez-la via sftp (cf.
-http://ensiwiki.ensimag.fr/index.php/Travailler_à_distance pour 1001
-façons de faire cela) pour continuer. " > xabcdefg1
+Pour l'étape suivante, exécutez (sur telesun) le script
+
+  ~moy/jeu-de-piste/979b5c3/etape-F2.sh
+
+et laissez-vous guider par les instructions. Le chapitre 8 du
+polycopié devrait vous aider." > xabcdefg1
 
 cd ..
 

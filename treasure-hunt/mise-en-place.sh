@@ -46,13 +46,14 @@ rsync etape_d1.adb "$web"/abc/
 rsync etape_d2-1.odt "$web"
 rsync etape_d2-2.txt "$dir"
 
-ssh "$mainmachine" "cd jeu-de-piste; mkdir ./oaue/ ./kmcv/ ./kmcvoaue/ ./123654/"
+ssh "$mainmachine" "cd jeu-de-piste; mkdir ./oaue/ ./kmcv/ ./kmcvoaue/ ./123654/ ./979b5c3/"
 rsync etape-E1 "$dir"/oaue/
 rsync dot-etape-E2.txt "$dir"/kmcv/.etape-E2.txt
 rsync etape-E3.tar.gz "$web"
 rsync -r etape-E6/ "$dir"/kmcvoaue/etape-E6/
 rsync etape-E9.php etape-E10.txt etape-E11.txt etape-E11-bis.txt "$web"/yntsf/
-rsync etape-E12.tar.gz "$dir"/123654/
+rsync etape-E13.tar.gz "$dir"/123654/
+rsync etape-F2.sh "$dir"/979b5c3/etape-F2.sh
 rsync -r ./demo-exam-ensimag2011/ ~/WWW/demo-exam-ensimag2011/
 
 rsync etape-G1.txt etape-G2.sh "$auxiliarymachine":/home/perms/moy/

@@ -38,6 +38,8 @@ upload_lang () {
     rsync $(gettext jeu-de-piste.sh) "$mainmachine":/home/perms/moy/$(gettext jeu-de-piste.sh)
     todo chmod 755 $(gettext jeu-de-piste.sh)
     rsync $(gettext etape-A2.txt) "$web"/
+
+    rsync $(gettext etape_b1.adb) "$dir"
 }
 
 LANG=fr_FR.UTF-8 upload_lang
@@ -45,7 +47,6 @@ LANG=en_US.UTF-8 upload_lang
 
 # code below this point still to be internationalized
 
-rsync etape_b1.adb "$dir"
 rsync etape-C1.tex "$web"
 rsync etape-C2.odt etape-C3.png "$dir"
 

@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-21 11:37+0200\n"
+"PO-Revision-Date: 2011-07-21 11:48+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: generate-step-A2.sh:23 generate-step-base.sh:7
+msgid "etape-A2.txt"
+msgstr ""
+
+#: generate-step-A2.sh:25
+msgid ""
+"Voila, vous avez résolu l'etape A1.\n"
+"\n"
+"Pour l'étape suivante (A2), la voici, mais elle est encodée en rot13.\n"
+"\n"
+"Au point où vous en êtes, vous devriez être capables de trouver (en\n"
+"quelques secondes) ce qu'est rot13, et un moyen de le décoder\n"
+"facilement.\n"
+"\n"
+msgstr ""
+
+#: generate-step-A2.sh:35
+msgid ""
+"Voila, le rot13 est decode.\n"
+"\n"
+"Si vous etes malins, vous avez sans doute remarque que le web regorge\n"
+"de codeur/decodeur rot13 en ligne, donc, un bon moteur de recherche a\n"
+"la main, on trouve rapidement son bonheur (et c'etait bien le but de\n"
+"l'exercice !). Les Emacsiens auront prefere M-x rot13-region RET, mais\n"
+"c'est une autre histoire.\n"
+"\n"
+"Pour l'etape suivante (A3), il faudra vous rendre sur EnsiWiki :\n"
+"retournez sur la page de depart du jeu de piste\n"
+"(http://ensiwiki.ensimag.fr/index.php/TP_Unix_-_Jeu_de_piste),\n"
+"et ouvrez l'onglet 'discussion'. On se retrouve la bas !\n"
+msgstr ""
+
+#: generate-step-A5.sh:22
+msgid "jeu-de-piste.sh"
+msgstr ""
+
+#: generate-step-A5.sh:32
+msgid ""
+"Bonjour,\n"
+"\n"
+"Cet email vous est envoye par le script jeu-de-piste.sh. Il fait\n"
+"partie du TP 'Jeu de piste'.\n"
+"\n"
+"L'etape suivante est une compilation de programme Ada. Un programme\n"
+"Ada se trouve dans le fichier etape_b1.adb dans le repertoire\n"
+"jeu-de-piste sur le compte de l'utilisateur moy.\n"
+"\n"
+"Vous n'avez pas le droit d'utiliser la commande 'ls' dans ce\n"
+"repertoire (vous pouvez essayer, mais ca ne marchera pas), mais vous\n"
+"pouvez tout de meme recuperer le fichier en question (vous verrez plus\n"
+"tard comment utiliser la commande chmod pour obtenir ce genre de\n"
+"permissions).\n"
+"\n"
+"Recuperez ce fichier chez vous, par exemple avec\n"
+"\n"
+"  cp le-fichier-en-question ~\n"
+"\n"
+"(~ veut dire 'mon repertoire personnel')\n"
+"\n"
+"Puis revenez dans votre repertoire personnel et compilez le fichier\n"
+"avec la commande\n"
+"\n"
+"  gnatmake etape_b1\n"
+"\n"
+"puis executez-le avec\n"
+"\n"
+"  ./etape_b1\n"
+"\n"
+"Le programme genere vous donnera les indications pour aller a l'etape\n"
+"suivante.\n"
+msgstr ""
+
+#: generate-step-A5.sh:66
+msgid "Enonce etape B1"
+msgstr ""
+
+#: generate-step-A5.sh:69
+#, sh-format
+msgid ""
+"Un message a ete envoye a %s.\n"
+"Consultez cette boite mail pour avoir les instructions pour l'etape suivante."
+msgstr ""
+
+#: generate-step-B1.sh:6 generate-step-B1.sh:33 generate-step-base.sh:8
+msgid "etape_b1.adb"
+msgstr ""
+
+#: generate-step-B1.sh:8
+msgid "--"
+msgstr ""
+
+#: generate-step-B1.sh:16
+msgid "procedure Etape_B1 is"
+msgstr ""
+
+#: generate-step-B1.sh:20
+msgid "Bonjour,"
+msgstr ""
+
+#: generate-step-B1.sh:22
+msgid "Si vous lisez ceci, c'est que vous avez reussi l'etape B1"
+msgstr ""
+
+#: generate-step-B1.sh:23
+msgid "du jeu de piste."
+msgstr ""
+
+#: generate-step-B1.sh:25
+msgid "L'etape suivante se trouve dans le fichier."
+msgstr ""
+
+#: generate-step-B1.sh:26
+msgid "http://www-verimag.imag.fr/~moy/jeu-de-piste/etape-C1.tex"
+msgstr ""
+
+#: generate-step-B1.sh:28
+msgid "Cette fois-ci, c'est une fichier LaTeX. Vous pouvez le compiler"
+msgstr ""
+
+#: generate-step-B1.sh:29
+msgid "avec la commande pdflatex etape-C1.tex pour obtenir un fichier PDF."
+msgstr ""
+
+#: generate-step-base.sh:6
+msgid "treasure-hunt/"
+msgstr ""
+
+#: i18n-lib.sh:9
+msgid "Generating step using locale:"
+msgstr ""

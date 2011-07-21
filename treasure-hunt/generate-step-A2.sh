@@ -20,14 +20,15 @@ rot () {
     echo "$1" | rotpipe
 }
 
-exec > $(gettext base etape-A2.txt)
+exec > $(gettext etape-A2.txt)
 
-gettext "Voila, vous avez resolu l'etape A1.
+gettext "Voila, vous avez résolu l'etape A1.
 
 Pour l'étape suivante (A2), la voici, mais elle est encodée en rot13.
 
-Au point où vous en êtes, vous devriez être capables de trouver ce
-qu'est rot13, et un moyen de le décoder.
+Au point où vous en êtes, vous devriez être capables de trouver (en
+quelques secondes) ce qu'est rot13, et un moyen de le décoder
+facilement.
 
 "
 

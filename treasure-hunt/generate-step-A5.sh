@@ -50,7 +50,7 @@ Recuperez ce fichier chez vous, par exemple avec
 
 (~ veut dire 'mon repertoire personnel')
 
-Puis revenez dans votre répertoire personnel et compilez le fichier
+Puis revenez dans votre repertoire personnel et compilez le fichier
 avec la commande
 
   gnatmake etape_b1

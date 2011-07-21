@@ -15,10 +15,10 @@ En fait,
 ca n'etait pas si dur,
 il suffisait
 de faire
-diff etape-E11.txt etape-E11-bis.txt | \\\\
-grep '^<'
-(pour grep, ^ veut dire
-'debut de ligne')
+
+  diff etape-E11.txt etape-E11-bis.txt | grep '^<'
+
+(pour grep, ^ veut dire 'debut de ligne')
 
 (et alors, quelqu'un a trouvé la commande avec seulement grep ?)
 

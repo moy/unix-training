@@ -12,7 +12,7 @@ compilez-le et executez-le pour continuer.
 
 Le fichier est volontairement illisible pour rendre l'exercice plus
 \"amusant\".
-"
+" | ada_comment_out
 
 adawithuse
 

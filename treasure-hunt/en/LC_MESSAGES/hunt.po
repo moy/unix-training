@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 18:08+0200\n"
-"PO-Revision-Date: 2011-07-21 18:08+0200\n"
+"POT-Creation-Date: 2011-07-21 19:20+0200\n"
+"PO-Revision-Date: 2011-07-21 19:21+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -27,17 +27,16 @@ msgstr ""
 #: generate-step-E3.sh:7 generate-step-E3.sh:23 generate-step-E3.sh:25
 #: generate-step-E4.sh:6 generate-step-E4.sh:23 generate-step-E5.sh:14
 #: generate-step-E6.sh:6 generate-step-E6.sh:7 generate-step-E6.sh:8
-#: generate-step-E9.sh:5 generate-step-E9.sh:9 generate-step-F2.sh:5
-#: generate-step-G2.sh:6 upload-to-servers.sh:40 upload-to-servers.sh:42
-#: upload-to-servers.sh:43 upload-to-servers.sh:44 upload-to-servers.sh:46
-#: upload-to-servers.sh:47 upload-to-servers.sh:48 upload-to-servers.sh:51
-#: upload-to-servers.sh:52 upload-to-servers.sh:53 upload-to-servers.sh:54
-#: upload-to-servers.sh:55 upload-to-servers.sh:56 upload-to-servers.sh:57
-#: upload-to-servers.sh:60 upload-to-servers.sh:71 upload-to-servers.sh:72
-#: upload-to-servers.sh:73 upload-to-servers.sh:74 upload-to-servers.sh:75
-#: upload-to-servers.sh:76 upload-to-servers.sh:77 upload-to-servers.sh:78
-#: upload-to-servers.sh:79 upload-to-servers.sh:80 upload-to-servers.sh:81
-#: upload-to-servers.sh:82
+#: generate-step-E9.sh:5 generate-step-F2.sh:5 generate-step-G2.sh:6
+#: upload-to-servers.sh:40 upload-to-servers.sh:42 upload-to-servers.sh:43
+#: upload-to-servers.sh:44 upload-to-servers.sh:46 upload-to-servers.sh:47
+#: upload-to-servers.sh:48 upload-to-servers.sh:51 upload-to-servers.sh:52
+#: upload-to-servers.sh:53 upload-to-servers.sh:54 upload-to-servers.sh:55
+#: upload-to-servers.sh:56 upload-to-servers.sh:57 upload-to-servers.sh:60
+#: upload-to-servers.sh:71 upload-to-servers.sh:72 upload-to-servers.sh:73
+#: upload-to-servers.sh:74 upload-to-servers.sh:75 upload-to-servers.sh:76
+#: upload-to-servers.sh:77 upload-to-servers.sh:78 upload-to-servers.sh:79
+#: upload-to-servers.sh:80 upload-to-servers.sh:81 upload-to-servers.sh:82
 msgid "etape"
 msgstr "step"
 
@@ -493,7 +492,7 @@ msgstr ""
 
 #: generate-step-E10.sh:57
 msgid "ETAPE-E10"
-msgstr "STEP-E11"
+msgstr "STEP-E10"
 
 #: generate-step-E11.sh:12
 msgid ""
@@ -503,9 +502,10 @@ msgid ""
 "ca n'etait pas si dur,\n"
 "il suffisait\n"
 "de faire\n"
-"diff etape-E11.txt etape-E11-bis.txt | \\\\grep '^<'\n"
-"(pour grep, ^ veut dire\n"
-"'debut de ligne')\n"
+"\n"
+"  diff etape-E11.txt etape-E11-bis.txt | grep '^<'\n"
+"\n"
+"(pour grep, ^ veut dire 'debut de ligne')\n"
 "\n"
 "(et alors, quelqu'un a trouvé la commande avec seulement grep ?)\n"
 "\n"
@@ -525,7 +525,7 @@ msgstr ""
 "Indeed, it wasn't that hard,\n"
 "it was sufficient to do\n"
 "\n"
-"diff etape-E11.txt etape-E11-bis.txt | \\\\grep '^<'\n"
+"  diff step-E11.txt step-E11-bis.txt | \\grep '^<'\n"
 "\n"
 "(^ means \"beginning of line\" for grep)\n"
 "\n"
@@ -600,7 +600,7 @@ msgstr ""
 "\n"
 "You'll find the next step in the following directory:\n"
 "\n"
-"\"\\\\verb|~moy/jeu-de-piste/kmcv/|\n"
+"\\verb|~moy/jeu-de-piste/kmcv/|\n"
 "\n"
 "There is a file per language (French, English), but these files are\n"
 "hidden, hence you won't see them immediately ...\n"
@@ -894,6 +894,14 @@ msgstr ""
 "  http://www-verimag.imag.fr/~moy/jeu-de-piste/yntsf/step-E9.php\n"
 "\n"
 
+#: generate-step-E9.sh:20
+msgid "Etape"
+msgstr "Step"
+
+#: generate-step-E9.sh:27
+msgid "Quel est votre login a l'Ensimag? :"
+msgstr "What is your login at Ensimag:"
+
 #: generate-step-F2.sh:33
 msgid "Non ..."
 msgstr "No ..."
@@ -943,6 +951,7 @@ msgstr ""
 "See you soon..."
 
 #: generate-step-F2.sh:79
+#, fuzzy
 msgid ""
 "Me revoila. J'attends maintenant un caractere de fin de fichier.\n"
 "Si la commande avait été lancée avec une entree redirigee\n"
@@ -950,7 +959,7 @@ msgid ""
 "le caractere de fin de fichier aurait ete recu en arrivant\n"
 "a la fin du fichier ou de la commande d'entree. Ici, l'entree de\n"
 "%s est le clavier. On peut simuler une fin de fichier avec\n"
-"Control-d."
+"Control-d.\n"
 msgstr ""
 "Here am I again. I'm now waiting for an end-of-file character.\n"
 "Had the command been launched with a redirected input\n"
@@ -958,9 +967,9 @@ msgstr ""
 "the end-of-file character would have been received reaching the end of\n"
 "the input file, or the end of the input command. Here, the standard\n"
 "input for %s is the keyboard. We can simulate an end of file by typing\n"
-"Control-d."
+"Control-d.\n"
 
-#: generate-step-F2.sh:89
+#: generate-step-F2.sh:90
 msgid "Suspends moi..."
 msgstr "Suspend me..."
 

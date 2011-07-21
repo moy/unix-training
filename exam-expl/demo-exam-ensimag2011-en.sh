@@ -38,6 +38,9 @@ all_questions () {
     smart_question text 2
     smart_question_dec size 2
     smart_question suspend 2
+
+    # To check that we do come from the previous step of the hunt.
+    basic_question 3 "The answer has been given to you by the previous step of the treasure hunt (E11)." b3147554
 }
 
 desc_question_simple () {
@@ -83,7 +86,7 @@ gen_question_suspend () {
     cp "$basedir"/suspend.c suspend.c
     reponse=$(echo "The answer is $1 ." | perl -pe 's/./ord($&)." "/ge')
     perl -pi -e "s/ANSWER/$reponse/" suspend.c
-    gcc suspend.c -o suspend
+    gcc -static suspend.c -o suspend
     rm -f suspend.c
 }
 

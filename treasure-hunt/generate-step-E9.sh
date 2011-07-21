@@ -6,7 +6,7 @@ cat > $(gettext etape)-E9.php <<EOF
 <?php
 if (preg_match('/^[a-z][a-zA-Z0-9]*\$/', \$_GET['login'])) {
 	file_get_contents('http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login='. \$_GET['login'] .'&step=E9');
-	header('location: 'http://www-verimag.imag.fr/~moy/jeu-de-piste/yntsf/$(gettext etape)-E10.txt)');
+	header('location: http://www-verimag.imag.fr/~moy/jeu-de-piste/yntsf/$(gettext etape)-E10.txt');
 	exit();
 }
 ?>
@@ -24,7 +24,7 @@ if (preg_match('/^[a-z][a-zA-Z0-9]*\$/', \$_GET['login'])) {
 </head>
 <body>
 <form name="input" action="etape-E9.php" method="get">
-$(gettext "Quel est votre login &agrave; l'Ensimag? :") <input type="text" name="login" />
+$(gettext "Quel est votre login a l'Ensimag? :") <input type="text" name="login" />
 <input type="submit" value="OK" />
 </form>
 </body>

@@ -1,8 +1,9 @@
 #! /bin/bash
 
+. ./i18n-lib.sh
 . ./imglib.sh
 
-echo "Voilà, cette image est une image au format PNG.
+gettext "Voilà, cette image est une image au format PNG.
 
 On peut l'éditer avec The Gimp (commande gimp), la
 visualiser avec Eye of Gnome (commande eog), par
@@ -30,4 +31,4 @@ Goto Line décrite sur le Wiki, vous pourrez trouver
 l'endroit de chaque erreur de syntaxe en un clin
 d'oeil.
 
-" | txt2img etape-C3.png
+" | txt2img $(gettext etape)-C3.png

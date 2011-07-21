@@ -11,13 +11,13 @@ multi_generate () {
 multi_generate ./generate-step-A2.sh
 multi_generate ./generate-step-A5.sh
 
-./generate-step-B1.sh
+multi_generate ./generate-step-B1.sh
 
-./generate-step-C1.sh
-./generate-step-C3.sh
+multi_generate ./generate-step-C1.sh
+multi_generate ./generate-step-C3.sh
 
-./generate-step-D1.sh
-./generate-step-D2.sh
+multi_generate ./generate-step-D1.sh
+multi_generate ./generate-step-D2.sh
 
 ./generate-step-E10.sh
 ./generate-step-E11.sh

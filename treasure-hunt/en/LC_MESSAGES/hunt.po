@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 11:37+0200\n"
-"PO-Revision-Date: 2011-07-21 11:37+0200\n"
+"POT-Creation-Date: 2011-07-21 13:04+0200\n"
+"PO-Revision-Date: 2011-07-21 13:05+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -16,9 +16,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: generate-step-A2.sh:23 generate-step-base.sh:7
-msgid "etape-A2.txt"
-msgstr "step-A2.txt"
+#: generate-step-A2.sh:23 generate-step-B1.sh:6 generate-step-B1.sh:33
+#: generate-step-C1.sh:6 generate-step-C3.sh:34 generate-step-D1.sh:6
+#: generate-step-D1.sh:53 generate-step-D2.sh:6 generate-step-D2.sh:38
+#: generate-step-D2.sh:39 generate-step-D2.sh:41 generate-step-D2.sh:43
+#: upload-to-servers.sh:40 upload-to-servers.sh:42 upload-to-servers.sh:43
+#: upload-to-servers.sh:44 upload-to-servers.sh:46 upload-to-servers.sh:47
+#: upload-to-servers.sh:48
+msgid "etape"
+msgstr "step"
 
 #: generate-step-A2.sh:25
 msgid ""
@@ -67,7 +73,7 @@ msgstr ""
 "(http://ensiwiki.ensimag.fr/index.php/TP_Unix_-_Treasure_hunt). Open\n"
 "the tab 'discussion'. We'll meet there !\n"
 
-#: generate-step-A5.sh:22
+#: generate-step-A5.sh:22 upload-to-servers.sh:38 upload-to-servers.sh:39
 msgid "jeu-de-piste.sh"
 msgstr "treasure-hunt.sh"
 
@@ -150,11 +156,7 @@ msgstr ""
 "A message has been sent to %s.\n"
 "Check this mailbox to get the instructions for the next step."
 
-#: generate-step-B1.sh:6 generate-step-B1.sh:33 generate-step-base.sh:8
-msgid "etape_b1.adb"
-msgstr "step_b1.adb"
-
-#: generate-step-B1.sh:8
+#: generate-step-B1.sh:8 generate-step-D1.sh:8 generate-step-D2.sh:8
 msgid "--"
 msgstr ""
 
@@ -162,7 +164,7 @@ msgstr ""
 msgid "procedure Etape_B1 is"
 msgstr "procedure Step_B1 is"
 
-#: generate-step-B1.sh:20
+#: generate-step-B1.sh:20 generate-step-D1.sh:25
 msgid "Bonjour,"
 msgstr "Hello,"
 
@@ -172,7 +174,7 @@ msgstr "If you read this, this means you've solved step B1"
 
 #: generate-step-B1.sh:23
 msgid "du jeu de piste."
-msgstr "of the treasure hunt"
+msgstr "of the treasure hunt."
 
 #: generate-step-B1.sh:25
 msgid "L'etape suivante se trouve dans le fichier."
@@ -190,10 +192,182 @@ msgstr "This time, this is a LaTeX file. You can compile it"
 msgid "avec la commande pdflatex etape-C1.tex pour obtenir un fichier PDF."
 msgstr "with the command pdflatex step-C1.tex to get a PDF file"
 
-#: generate-step-base.sh:6
-msgid "treasure-hunt/"
+#: generate-step-C1.sh:17
+msgid ""
+"Bien, vous avez réussi à compiler le fichier.\n"
+"\n"
+"Il faut reconnaitre que le source n'était pas très lisible (mais\n"
+"rassurez-vous, il n'a pas été écrit à la main ...).\n"
+"\n"
+"L'etape suivante se trouve dans le fichier jeu-de-piste/etape-C2.odt\n"
+"sur le compte de l'utilisateur moy. Il vous reste à trouver avec\n"
+"quelle application ouvrir ce fichier ..."
 msgstr ""
+"Good, you've managed to compile the file.\n"
+"\n"
+"Admittedly, the source wasn't very readable (but don't worry, it\n"
+"hasn't been written by hand ...).\n"
+"\n"
+"The next step is in the file treasure-hunt/step-C2.odt on the account\n"
+"of user moy. You'll have to find out which application to use to open\n"
+"in."
+
+#: generate-step-C3.sh:6
+msgid ""
+"Voilà, cette image est une image au format PNG.\n"
+"\n"
+"On peut l'éditer avec The Gimp (commande gimp), la\n"
+"visualiser avec Eye of Gnome (commande eog), par\n"
+"exemple.\n"
+"\n"
+"Pour les curieux, vous remarquerez que l'image\n"
+"ressemble à ce que produit l'utilitaire a2ps. Ce n'est\n"
+"pas une coincidence, il a été généré avec a2ps et\n"
+"convert pour passer du format ps au format PNG.\n"
+"\n"
+"Nous pouvons maintenant passer à la partie sur les\n"
+"éditeurs de textes.\n"
+"\n"
+"Vous trouverez l'étape suivante dans le fichier\n"
+"\n"
+"http://www-verimag.imag.fr/~moy/jeu-de-piste/abc/etape_d1.adb\n"
+"\n"
+"Malheureusement, cette fois-ci, le fichier n'est pas\n"
+"directement compilable. Il faudra corriger quelques\n"
+"erreurs de syntaxes.\n"
+"\n"
+"Il est conseillé d'utiliser Emacs (ou un autre bon\n"
+"éditeur de texte) pour cette partie : avec la commande\n"
+"Goto Line décrite sur le Wiki, vous pourrez trouver\n"
+"l'endroit de chaque erreur de syntaxe en un clin\n"
+"d'oeil.\n"
+"\n"
+msgstr ""
+"Here it is, this is an image in PNG format.\n"
+"\n"
+"One can edit it with The Gimp (command gimp), view it with the Eye of\n"
+"Gnome (command eog), for example.\n"
+"\n"
+"If you're curious, you may have noticed that this image is similar to\n"
+"the one produced by a2ps. This is not a coincidence, it has been\n"
+"generated with a2ps, and convert to make it a PNG image.\n"
+"\n"
+"We can now start the part on text editting.\n"
+"\n"
+"You'll find the instructions in the file\n"
+"\n"
+"http://www-verimag.imag.fr/~moy/jeu-de-piste/abc/step_d1.adb\n"
+"\n"
+"Unfortunately, this file isn't compilable as-is. You'll have to fix a\n"
+"few syntax errors.\n"
+"\n"
+"It is recommanded to use Emacs (or whatever good text editor you\n"
+"prefer) for this part. With the command \"goto-line\" described on the\n"
+"Wiki (french), you'll be able to find the places of each syntax error\n"
+"in the twinkling of an eye.\n"
+"\n"
+
+#: generate-step-D1.sh:19
+msgid "procedure Etape_D1 is"
+msgstr "procedure Step_D1 is"
+
+#: generate-step-D1.sh:29
+msgid "Si vous lisez ceci, c'est probablement que vous avez reussi a"
+msgstr "If you read this, it's probably that you managed to"
+
+#: generate-step-D1.sh:30
+msgid "compiler le fichier etape_d1.adb."
+msgstr "compile the file step_d1.adb"
+
+#: generate-step-D1.sh:38
+msgid "L'etape suivante est aussi un programme Ada a compiler,"
+msgstr "The next step is also an Ada program to be compiled"
+
+#: generate-step-D1.sh:40
+msgid "mais il a ete decoupe en plusieurs morceaux. Le premier est"
+msgstr "but it has been split into several pieces. The first is"
+
+#: generate-step-D1.sh:42
+msgid "dans un fichier OpenOffice qui se trouve ici :"
+msgstr "in an OpenOffice file located here:"
+
+#: generate-step-D1.sh:43
+msgid "http://www-verimag.imag.fr/~moy/jeu-de-piste/etape_d2-1.odt"
+msgstr "http://www-verimag.imag.fr/~moy/jeu-de-piste/step_d2-1.odt"
+
+#: generate-step-D1.sh:45
+msgid "Le second est dans un fichier texte qui se trouve dans"
+msgstr "The second is in a text file, located in"
+
+#: generate-step-D1.sh:47
+msgid "~moy/jeu-de-piste/etape_d2-2.txt"
+msgstr "~moy/jeu-de-piste/step_d2-2.txt"
+
+#: generate-step-D1.sh:49
+msgid "Et le dernier est ici :"
+msgstr "And the last one is here:"
+
+#: generate-step-D1.sh:62
+msgid "A vous de faire les copier-coller pour remettre le tout ensemble"
+msgstr "Do the cut-and-paste to put them together."
+
+#: generate-step-D1.sh:65
+msgid "end Mauvais_Nom_Qui_Devrait_Etre_Etape_D1;\n"
+msgstr "end Bad_Name_Which_Should_Have_Been_Step_D1;\n"
+
+#: generate-step-D1.sh:68
+msgid "etape_d1.adb genere\n"
+msgstr "step_d1.adb generated\n"
+
+#: generate-step-D2.sh:15
+msgid "procedure Etape_D2 is"
+msgstr "procedure Step_D2 is"
+
+#: generate-step-D2.sh:20
+msgid "Visiblement, le copier-coller a marché !"
+msgstr "It seems the cut-and-past worked !"
+
+#: generate-step-D2.sh:22
+msgid "L'etape suivante se trouve dans le fichier"
+msgstr "The next step is located in the file"
+
+#: generate-step-D2.sh:24
+msgid "~moy/jeu-de-piste/oaue/etape-E1"
+msgstr "~moy/jeu-de-piste/oaue/step-E1"
+
+#: generate-step-D2.sh:26
+msgid "La personne qui a créé ce fichier l'a nommé étrangement :"
+msgstr "The person who created this file named it strangely"
+
+#: generate-step-D2.sh:27
+msgid "il n'a pas mis d'extension (i.e. le nom de fichier ne se "
+msgstr "He didn't set an filename extension (i.e. the file doesn't"
+
+#: generate-step-D2.sh:28
+msgid "termine pas par .quelquechose). Pour savoir de quel type"
+msgstr "end with .something). To know which type"
+
+#: generate-step-D2.sh:29
+msgid "de fichier il s'agit, utilisez la commande 'file', et"
+msgstr "of file it is, use the command 'file', and then"
+
+#: generate-step-D2.sh:30
+msgid "utilisez ensuite l'outil adapté pour l'ouvrir."
+msgstr "use the appropriate tool to open it."
+
+#: generate-step-D2.sh:32
+msgid "end Etape_D2;"
+msgstr "end Step_D2;"
+
+#: generate-step-D2.sh:35
+msgid "etape_d2.adb genere"
+msgstr "step_d2.adb generated"
 
 #: i18n-lib.sh:9
 msgid "Generating step using locale:"
-msgstr ""
+msgstr "Generating step using locale:"
+
+#: upload-to-servers.sh:33 upload-to-servers.sh:35 upload-to-servers.sh:36
+#: upload-to-servers.sh:37
+msgid "treasure-hunt/"
+msgstr "treasure-hunt"

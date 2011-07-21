@@ -3,7 +3,7 @@
 . adalib.sh
 . i18n-lib.sh
 
-exec > $(gettext etape_b1.adb)
+exec > $(gettext etape)_b1.adb
 
 gettext -- "-- Fichier source pour l'etape B1.
 -- Ce programme doit etre dans un fichier etape_b1.adb
@@ -30,4 +30,4 @@ Put_Line "$(gettext "avec la commande pdflatex etape-C1.tex pour obtenir un fich
 
 echo "end;"
 
-echo $(gettext etape_b1.adb) "generated" >&2
+echo $(gettext etape)_b1.adb "generated" >&2

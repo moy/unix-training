@@ -1,8 +1,9 @@
 #! /bin/bash
 
+. i18n-lib.sh
 . latexlib.sh
 
-exec > etape-C1.tex
+exec > $(gettext etape)-C1.tex
 
 echo '
 \documentclass[a4paper]{article}
@@ -13,7 +14,7 @@ latextable
 
 echo '\begin{document}'
 
-echo "Bien, vous avez réussi à compiler le fichier.
+gettext "Bien, vous avez réussi à compiler le fichier.
 
 Il faut reconnaitre que le source n'était pas très lisible (mais
 rassurez-vous, il n'a pas été écrit à la main ...).

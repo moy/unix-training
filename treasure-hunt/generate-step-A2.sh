@@ -20,7 +20,7 @@ rot () {
     echo "$1" | rotpipe
 }
 
-exec > $(gettext etape-A2.txt)
+exec > $(gettext etape)-A2.txt
 
 gettext "Voila, vous avez résolu l'etape A1.
 

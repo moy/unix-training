@@ -1,5 +1,5 @@
 # Makefile for i18n of the hunt with gettext.
-STEP_FILES=${wildcard generate-step-*.sh i18n-lib.sh}
+STEP_FILES=${wildcard generate-step-*.sh i18n-lib.sh upload-to-servers.sh}
 STEPS=${patsubst generate-step-%.sh, %, $(STEP_FILES)}
 LANGUAGES=fr en
 PO_FILES=${foreach l, $(LANGUAGES), $l/LC_MESSAGES/hunt.po}

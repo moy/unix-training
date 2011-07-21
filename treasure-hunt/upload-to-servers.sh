@@ -37,23 +37,21 @@ upload_lang () {
     todo 'find '$(gettext treasure-hunt/)' -type d -exec chmod ugo+x {} \;'
     rsync $(gettext jeu-de-piste.sh) "$mainmachine":/home/perms/moy/$(gettext jeu-de-piste.sh)
     todo chmod 755 $(gettext jeu-de-piste.sh)
-    rsync $(gettext etape-A2.txt) "$web"/
+    rsync $(gettext etape)-A2.txt "$web"/
 
-    rsync $(gettext etape_b1.adb) "$dir"
+    rsync $(gettext etape)_b1.adb "$dir"
+    rsync $(gettext etape)-C1.tex "$web"
+    rsync $(gettext etape)-C2.odt $(gettext etape)-C3.png "$dir"
+
+    rsync $(gettext etape)_d1.adb "$web"/abc/
+    rsync $(gettext etape)_d2-1.odt "$web"
+    rsync $(gettext etape)_d2-2.txt "$dir"
 }
 
 LANG=fr_FR.UTF-8 upload_lang
 LANG=en_US.UTF-8 upload_lang
 
 # code below this point still to be internationalized
-
-rsync etape-C1.tex "$web"
-rsync etape-C2.odt etape-C3.png "$dir"
-
-mkdir "$web"/oauebfstnd
-rsync etape_d1.adb "$web"/abc/
-rsync etape_d2-1.odt "$web"
-rsync etape_d2-2.txt "$dir"
 
 ssh "$mainmachine" "cd jeu-de-piste; mkdir ./oaue/ ./kmcv/ ./kmcvoaue/ ./123654/ ./979b5c3/"
 rsync etape-E1 "$dir"/oaue/

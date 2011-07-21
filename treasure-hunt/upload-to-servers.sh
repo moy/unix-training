@@ -27,14 +27,14 @@ echo '<html><head><title>Interdit</title></head><body>Listing de repertoire inte
 
 dir="$mainmachine":"$maindir"
 
-# listing interdit, acces autorisé.
+# Give read permission, but not directory listing
+# (right now, and make sur it's still the case after with "todo")
 ssh "$mainmachine" 'rm -fr jeu-de-piste/; mkdir -p jeu-de-piste/; chmod 711 jeu-de-piste/'
+todo chmod -R ugo+r jeu-de-piste/
+todo chmod 711 jeu-de-piste/
+todo 'find jeu-de-piste/ -type d -exec chmod ugo+x {} \;'
 
 upload_lang () {
-    # Give read permission, but not directory listing
-    todo chmod -R ugo+r $(gettext treasure-hunt/)
-    todo chmod 711 $(gettext treasure-hunt/)
-    todo 'find '$(gettext treasure-hunt/)' -type d -exec chmod ugo+x {} \;'
     rsync $(gettext jeu-de-piste.sh) "$mainmachine":/home/perms/moy/$(gettext jeu-de-piste.sh)
     todo chmod 755 $(gettext jeu-de-piste.sh)
     rsync $(gettext etape)-A2.txt "$web"/

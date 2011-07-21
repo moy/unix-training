@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 17:41+0200\n"
+"POT-Creation-Date: 2011-07-21 18:08+0200\n"
 "PO-Revision-Date: 2011-07-21 11:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,6 +188,10 @@ msgid ""
 "l'endroit de chaque erreur de syntaxe en un clin\n"
 "d'oeil.\n"
 "\n"
+msgstr ""
+
+#: generate-step-C3.sh:36
+msgid "etape-C3.png générée"
 msgstr ""
 
 #: generate-step-D1.sh:8
@@ -636,11 +640,10 @@ msgstr ""
 msgid "Generating step using locale:"
 msgstr "Génération de l'étape avec la locale :"
 
-#: upload-to-servers.sh:35 upload-to-servers.sh:36 upload-to-servers.sh:37
-msgid "treasure-hunt/"
-msgstr "jeu-de-piste/"
-
 #: upload-to-servers.sh:58 generate-all.sh:24 generate-all.sh:25
 #: generate-all.sh:26
-msgid "demo-ensimag2011"
+msgid "demo-exam-ensimag2011"
 msgstr ""
+
+#~ msgid "treasure-hunt/"
+#~ msgstr "jeu-de-piste/"

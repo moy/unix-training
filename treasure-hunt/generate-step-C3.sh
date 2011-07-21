@@ -32,3 +32,6 @@ l'endroit de chaque erreur de syntaxe en un clin
 d'oeil.
 
 " | txt2img $(gettext etape)-C3.png
+
+gettext "etape-C3.png générée"
+echo

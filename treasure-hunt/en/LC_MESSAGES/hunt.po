@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 17:41+0200\n"
-"PO-Revision-Date: 2011-07-21 17:41+0200\n"
+"POT-Creation-Date: 2011-07-21 18:08+0200\n"
+"PO-Revision-Date: 2011-07-21 18:08+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -133,7 +133,7 @@ msgstr ""
 "part of the Unix Treasure Hunt.\n"
 "\n"
 "The next step consists in compiling an Ada program. An Ada program is\n"
-"located in the file step_b1.adb in the directory treasure-hent on the\n"
+"located in the file step_b1.adb in the directory jeu-de-piste/ on the\n"
 "account of user moy.\n"
 "\n"
 "You don't have permission to execute the command 'ls' in this\n"
@@ -224,7 +224,7 @@ msgstr ""
 "Admittedly, the source wasn't very readable (but don't worry, it\n"
 "hasn't been written by hand ...).\n"
 "\n"
-"The next step is in the file treasure-hunt/step-C2.odt on the account\n"
+"The next step is in the file jeu-de-piste/step-C2.odt on the account\n"
 "of user moy. You'll have to find out which application to use to open\n"
 "in."
 
@@ -282,6 +282,10 @@ msgstr ""
 "Wiki (french), you'll be able to find the places of each syntax error\n"
 "in the twinkling of an eye.\n"
 "\n"
+
+#: generate-step-C3.sh:36
+msgid "etape-C3.png générée"
+msgstr "step-C3.png generated"
 
 #: generate-step-D1.sh:8
 msgid ""
@@ -1012,11 +1016,10 @@ msgstr ""
 msgid "Generating step using locale:"
 msgstr "Generating step using locale:"
 
-#: upload-to-servers.sh:35 upload-to-servers.sh:36 upload-to-servers.sh:37
-msgid "treasure-hunt/"
-msgstr "treasure-hunt/"
-
 #: upload-to-servers.sh:58 generate-all.sh:24 generate-all.sh:25
 #: generate-all.sh:26
 msgid "demo-exam-ensimag2011"
 msgstr "demo-exam-ensimag2011-en"
+
+#~ msgid "treasure-hunt/"
+#~ msgstr "treasure-hunt/"

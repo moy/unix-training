@@ -1,7 +1,8 @@
 #!/bin/bash
 
-src=etape-F2-to-be-obfuscated.sh
-dest=etape-F2.sh
+. ./i18n-lib.sh
+
+dest=$(gettext etape)-F2.sh
 
 # This may be too easy to "decode", but beeing able to do that may
 # also indicate that the current exercice is not useful..
@@ -9,9 +10,6 @@ dest=etape-F2.sh
 exec > "$dest"
 
 printf "%s\n" '#!/bin/bash
-
-# Within the script, $0 will be /bin/bash => save it now
-export PROG=$0
 
 exec 4<&1
 
@@ -21,7 +19,108 @@ exec 4<&1
 base64 -di <<EOF | exec /bin/bash -s'
 
 # Encode script (note we should take care that it does not generate any dollar sign).
-base64 < "$src"
+base64 <<EOF
+#!/bin/bash
+
+# execute 'exec 4<&1' before exec'ing this script!
+
+retry () {
+    if [ "\$1" != "" ]; then
+	hint=" (\$1)."
+    else
+	hint=""
+    fi
+    echo "$(gettext "Non ...")" "\${hint}"
+    echo "$(gettext 'Rejoue !')";
+}
+
+# cancel () {
+#     echo "Ok j'arrête. Mais il faudra recommencer !";
+#     exit 1;			# mouaif
+# }
+
+ok () {
+    echo "$(gettext "Bravo ! fin de l'étape...
+
+L'étape suivante se trouve sur le serveur ensilinux.imag.fr. Elle est
+dans le fichier
+
+  ~moy/etape-G1.txt
+
+Récupérez-la via sftp (cf.
+http://ensiwiki.ensimag.fr/index.php/Travailler_à_distance pour 1001
+façons de faire cela) pour continuer.
+")"
+    exit 0;
+}
+
+retry_eof () {
+    retry "$(gettext 'cette action envoie un caractere de fin de fichier au processus')"
+}
+
+retry_int () {
+    retry "$(gettext 'cette action aurait pu tuer le processus')"
+}
+
+wait_eof () {
+    oneof () { ok; }
+    onstp () { :; }
+    oncont () { :; }
+    onint () { retry_int; }
+    onquit () { retry; }
+    echo "$(gettext "Ok, je me suspends. Relance-moi en avant-plan pour continuer.
+A tout de suite ...")";
+}
+
+wait_stp () {
+    oneof () { retry_eof; }
+    onstp () {
+	wait_eof; kill -STOP \$\$; 
+	printf "$(gettext "Me revoila. J'attends maintenant un caractere de fin de fichier.
+Si la commande avait été lancée avec une entree redirigee
+(comme '%s < un-fichier' ou bien 'commande | %s',
+le caractere de fin de fichier aurait ete recu en arrivant
+a la fin du fichier ou de la commande d'entree. Ici, l'entree de
+%s est le clavier. On peut simuler une fin de fichier avec
+Control-d.")" "$0" "$0" "$0";}
+    oncont () { :; }
+    onint () { retry_int; }
+    onquit () { retry; }
+    echo "$(gettext 'Suspends moi...')";
+}
+
+# wait_quit () {
+#     oneof () { retry; }
+#     onstp () { :; }
+#     oncont () { :; }
+#     onint () { retry; }
+#     onquit () { wait_stp; }
+#     echo 'SIGQUIT ?';
+# }
+
+# wait_int () {
+#     oneof () { retry; }
+#     onstp () { retry; }
+#     oncont () { :; }
+#     onint () { wait_quit; }
+#     onquit () { retry; }
+#     echo 'SIGINT ?';
+# }
+
+wait_stp;
+
+trap 'onint' INT;
+trap 'onstp' TSTP;
+trap 'oncont' CONT;
+trap 'onquit' QUIT;
+
+wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=\$LOGNAME&step=F2" -O /dev/null 2>/dev/null
+
+while true; do
+    while read -u 4 -r var; do :; done;
+    oneof;
+done;
+EOF
 
 echo 'EOF'
 

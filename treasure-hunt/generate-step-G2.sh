@@ -1,8 +1,9 @@
 #! /bin/bash
 
 . ./rotlib.sh
+. ./i18n-lib.sh
 
-exec > etape-G2.sh
+exec > $(gettext etape)-G2.sh
 
 printf "%s\n\n" '#!/bin/bash'
 
@@ -11,7 +12,7 @@ cat ./rotlib-decode.sh
 printf "%s" '
 echo '\"
 
-echo "Cette étape termine la partie principale du jeu de piste.
+gettext "Cette étape termine la partie principale du jeu de piste.
 
 Les étapes qui suivent sont des étapes en plus, a priori plus
 difficiles. Si vous vous arretez-là et que vous avez lu le polycopié
@@ -31,6 +32,9 @@ Si vous souhaitez faire la deuxième partie du jeu de piste,
 rendez-vous sur la page
 http://ensiwiki.ensimag.fr/index.php/TP_Unix_-_Jeu_de_piste
 et lisez l'énoncé de l'étape H1.
+
+Sinon, vous pourrez bien sûr y revenir plus tard, par exemple pendant
+le cours d'Unix avancé si vous êtes en 1A Ensimag.
 " | rotpipe
 
 printf "%s" \"'| unrotpipe > /tmp/tmp-G2.$$

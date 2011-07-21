@@ -1,0 +1,8 @@
+Good.
+
+We're going to use SSH once more, but this time to execute a command
+on a remote machine. The command is the executable 'step-G2.sh'
+located in the same directory as the file you're reading.
+
+This command will use a graphical display, hence you'll probably need
+the -X option of ssh.

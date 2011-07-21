@@ -27,10 +27,10 @@ echo '<html><head><title>Interdit</title></head><body>Listing de repertoire inte
 
 dir="$mainmachine":"$maindir"
 
+# listing interdit, acces autorisé.
+ssh "$mainmachine" 'rm -fr jeu-de-piste/; mkdir -p jeu-de-piste/; chmod 711 jeu-de-piste/'
 
 upload_lang () {
-    # listing interdit, acces autorisé.
-    ssh "$mainmachine" 'rm -fr '$(gettext treasure-hunt/)'; mkdir -p '$(gettext treasure-hunt/)'; chmod 711 '$(gettext treasure-hunt/)''
     # Give read permission, but not directory listing
     todo chmod -R ugo+r $(gettext treasure-hunt/)
     todo chmod 711 $(gettext treasure-hunt/)
@@ -55,11 +55,18 @@ upload_lang () {
     rsync $(gettext etape)-E9.php $(gettext etape)-E10.txt $(gettext etape)-E11.txt $(gettext etape)-E11-bis.txt "$web"/yntsf/
     rsync $(gettext etape)-E13.tar.gz "$dir"/123654/
     rsync $(gettext etape)-F2.sh "$dir"/979b5c3/$(gettext etape)-F2.sh
-    rsync -r ./demo-exam-ensimag2011/ ~/WWW/demo-exam-ensimag2011/
+    rsync -r ./$(gettext demo-exam-ensimag2011)/ ~/WWW/$(gettext demo-exam-ensimag2011)/
 
     rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliarymachine":/home/perms/moy/
     ssh "$auxiliarymachine" 'chmod 755 $(gettext etape)-G2.sh'
 
+}
+
+multilingual_do upload_lang
+
+# Not yet translated.
+(
+    LANG=fr_FR@UTF-8
     ssh "$mainmachine" "cd jeu-de-piste; mkdir ./aeiouy/ ./dntsoaue/ ./qyxrd/"
     mkdir -p "$web"/dxz/ "$web"/aeiouy/ "$web"/lasuite/ "$web"/$(gettext etape)-H4/
     rsync -r $(gettext etape)-H1.txt "$web"/lasuite/
@@ -73,9 +80,7 @@ upload_lang () {
     todo chmod go-r jeu-de-piste/qyxrd/$(gettext etape)-H8/subdir/
     rsync -r $(gettext etape)-H9.sh "$dir"/$(gettext etape)-H9.sh
     todo chmod 700 jeu-de-piste/$(gettext etape)-H9.sh
-}
-
-multilingual_do upload_lang
+)
 
 # echo "$todo_var"
 

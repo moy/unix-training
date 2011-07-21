@@ -3,6 +3,8 @@
 # English translation of the demo shown to Ensimag students in 2010
 # (see demo-ensimag2010.sh for the French version).
 
+exam_footer_include=next-step.php
+
 exam_welcome () {
     echo "<p>Hello,</p>
 

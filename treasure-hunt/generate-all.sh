@@ -21,9 +21,9 @@ generate_all () {
     ./generate-step-E11.sh
     ./generate-step-E13.sh
 
-    rm -fr ./demo-$(gettext exam-ensimag2011)/
-    (cd ../exam-expl/ && ./demo-ensimag2011.sh)
-    mv ../exam-expl/exam_genere/php/ ./demo-exam-ensimag2011/
+    rm -fr ./$(gettext demo-exam-ensimag2011)/
+    (cd ../exam-expl/ && ls && ./$(gettext demo-exam-ensimag2011).sh)
+    mv ../exam-expl/exam_genere/php/ ./$(gettext demo-exam-ensimag2011)/
 
     ./generate-step-E1.sh
     ./generate-step-E4.sh
@@ -31,6 +31,7 @@ generate_all () {
 # Must come after E4 and E5.
     ./generate-step-E3.sh
     ./generate-step-E6.sh
+    ./generate-step-E9.sh
 
     ./generate-step-F2.sh
 

@@ -6,8 +6,8 @@
 txt2img () {
     mv -f "$1" "$1"~
     recode utf-8..latin1 | \
-	a2ps -1 --font-size="${2:-16}" --landscape -o - | \
-	convert -rotate 90 - "$1"
+	a2ps -1 --font-size="${2:-18}" --landscape -o - | \
+	convert -scale 1600 -rotate 90 -alpha off - "$1"
     if [ ! -f "$1" ]; then
 	echo "Conversion failed (more than 1 page?)"
 	exit 1

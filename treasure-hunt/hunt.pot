@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 16:10+0200\n"
+"POT-Creation-Date: 2011-07-21 16:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: generate-step-A2.sh:23 generate-step-B1.sh:6 generate-step-B1.sh:33
+#: generate-step-A2.sh:23 generate-step-B1.sh:6 generate-step-B1.sh:34
 #: generate-step-C1.sh:6 generate-step-C3.sh:34 generate-step-D1.sh:6
-#: generate-step-D1.sh:53 generate-step-D2.sh:7 generate-step-D2.sh:39
-#: generate-step-D2.sh:41 generate-step-D2.sh:43 generate-step-E10.sh:6
+#: generate-step-D1.sh:50 generate-step-D2.sh:7 generate-step-D2.sh:40
+#: generate-step-D2.sh:42 generate-step-D2.sh:44 generate-step-E10.sh:6
 #: generate-step-E11.sh:9 generate-step-E11.sh:10 generate-step-E11.sh:37
 #: generate-step-E11.sh:38 generate-step-E13.sh:6 generate-step-E13.sh:15
 #: generate-step-E13.sh:39 generate-step-E13.sh:40 generate-step-E1.sh:27
-#: generate-step-E1.sh:29 generate-step-E1.sh:30 generate-step-E3.sh:5
-#: generate-step-E3.sh:6 generate-step-E3.sh:7 generate-step-E3.sh:23
-#: generate-step-E3.sh:25 generate-step-E4.sh:21 generate-step-E5.sh:14
+#: generate-step-E1.sh:29 generate-step-E1.sh:30 generate-step-E3.sh:6
+#: generate-step-E3.sh:7 generate-step-E3.sh:23 generate-step-E3.sh:25
+#: generate-step-E4.sh:6 generate-step-E4.sh:23 generate-step-E5.sh:14
 #: generate-step-E6.sh:6 generate-step-E6.sh:7 generate-step-E6.sh:8
-#: upload-to-servers.sh:40 upload-to-servers.sh:42 upload-to-servers.sh:43
-#: upload-to-servers.sh:44 upload-to-servers.sh:46 upload-to-servers.sh:47
-#: upload-to-servers.sh:48 upload-to-servers.sh:51 upload-to-servers.sh:52
-#: upload-to-servers.sh:53 upload-to-servers.sh:54 upload-to-servers.sh:55
-#: upload-to-servers.sh:56 upload-to-servers.sh:57 upload-to-servers.sh:60
-#: upload-to-servers.sh:64 upload-to-servers.sh:65 upload-to-servers.sh:66
-#: upload-to-servers.sh:67 upload-to-servers.sh:68 upload-to-servers.sh:69
-#: upload-to-servers.sh:70 upload-to-servers.sh:71 upload-to-servers.sh:72
-#: upload-to-servers.sh:73 upload-to-servers.sh:74 upload-to-servers.sh:75
+#: generate-step-E9.sh:5 generate-step-E9.sh:9 upload-to-servers.sh:40
+#: upload-to-servers.sh:42 upload-to-servers.sh:43 upload-to-servers.sh:44
+#: upload-to-servers.sh:46 upload-to-servers.sh:47 upload-to-servers.sh:48
+#: upload-to-servers.sh:51 upload-to-servers.sh:52 upload-to-servers.sh:53
+#: upload-to-servers.sh:54 upload-to-servers.sh:55 upload-to-servers.sh:56
+#: upload-to-servers.sh:57 upload-to-servers.sh:60 upload-to-servers.sh:64
+#: upload-to-servers.sh:65 upload-to-servers.sh:66 upload-to-servers.sh:67
+#: upload-to-servers.sh:68 upload-to-servers.sh:69 upload-to-servers.sh:70
+#: upload-to-servers.sh:71 upload-to-servers.sh:72 upload-to-servers.sh:73
+#: upload-to-servers.sh:74 upload-to-servers.sh:75
 msgid "etape"
 msgstr ""
 
@@ -131,32 +132,18 @@ msgstr ""
 msgid "procedure Etape_B1 is"
 msgstr ""
 
-#: generate-step-B1.sh:20 generate-step-D1.sh:25
-msgid "Bonjour,"
-msgstr ""
-
-#: generate-step-B1.sh:22
-msgid "Si vous lisez ceci, c'est que vous avez reussi l'etape B1"
-msgstr ""
-
-#: generate-step-B1.sh:23
-msgid "du jeu de piste."
-msgstr ""
-
-#: generate-step-B1.sh:25
-msgid "L'etape suivante se trouve dans le fichier."
-msgstr ""
-
-#: generate-step-B1.sh:26
-msgid "http://www-verimag.imag.fr/~moy/jeu-de-piste/etape-C1.tex"
-msgstr ""
-
-#: generate-step-B1.sh:28
-msgid "Cette fois-ci, c'est une fichier LaTeX. Vous pouvez le compiler"
-msgstr ""
-
-#: generate-step-B1.sh:29
-msgid "avec la commande pdflatex etape-C1.tex pour obtenir un fichier PDF."
+#: generate-step-B1.sh:20
+msgid ""
+"Bonjour,\n"
+"\n"
+"Si vous lisez ceci, c'est que vous avez reussi l'etape B1\n"
+"du jeu de piste.\n"
+"\n"
+"L'etape suivante se trouve dans le fichier.\n"
+"http://www-verimag.imag.fr/~moy/jeu-de-piste/etape-C1.tex\n"
+"\n"
+"Cette fois-ci, c'est une fichier LaTeX. Vous pouvez le compiler\n"
+"avec la commande pdflatex etape-C1.tex pour obtenir un fichier PDF.\n"
 msgstr ""
 
 #: generate-step-C1.sh:17
@@ -218,51 +205,38 @@ msgstr ""
 msgid "procedure Etape_D1 is"
 msgstr ""
 
-#: generate-step-D1.sh:29
-msgid "Si vous lisez ceci, c'est probablement que vous avez reussi a"
+#: generate-step-D1.sh:23
+msgid ""
+"Bonjour,\n"
+"\n"
+"Si vous lisez ceci, c'est probablement que vous avez reussi a\n"
+"compiler le fichier etape_d1.adb.\n"
 msgstr ""
 
-#: generate-step-D1.sh:30
-msgid "compiler le fichier etape_d1.adb."
+#: generate-step-D1.sh:36
+msgid ""
+"L'etape suivante est aussi un programme Ada a compiler,\n"
+"mais il a ete decoupe en plusieurs morceaux. Le premier est\n"
+"dans un fichier OpenOffice qui se trouve ici :\n"
+"\n"
+"http://www-verimag.imag.fr/~moy/jeu-de-piste/etape_d2-1.odt\n"
+"\n"
+"Le second est dans un fichier texte qui se trouve dans\n"
+"\n"
+"~moy/jeu-de-piste/etape_d2-2.txt\n"
+"\n"
+"Et le dernier est ici :\n"
 msgstr ""
 
-#: generate-step-D1.sh:38
-msgid "L'etape suivante est aussi un programme Ada a compiler,"
-msgstr ""
-
-#: generate-step-D1.sh:40
-msgid "mais il a ete decoupe en plusieurs morceaux. Le premier est"
-msgstr ""
-
-#: generate-step-D1.sh:42
-msgid "dans un fichier OpenOffice qui se trouve ici :"
-msgstr ""
-
-#: generate-step-D1.sh:43
-msgid "http://www-verimag.imag.fr/~moy/jeu-de-piste/etape_d2-1.odt"
-msgstr ""
-
-#: generate-step-D1.sh:45
-msgid "Le second est dans un fichier texte qui se trouve dans"
-msgstr ""
-
-#: generate-step-D1.sh:47
-msgid "~moy/jeu-de-piste/etape_d2-2.txt"
-msgstr ""
-
-#: generate-step-D1.sh:49
-msgid "Et le dernier est ici :"
-msgstr ""
-
-#: generate-step-D1.sh:62
+#: generate-step-D1.sh:57
 msgid "A vous de faire les copier-coller pour remettre le tout ensemble"
 msgstr ""
 
-#: generate-step-D1.sh:65
+#: generate-step-D1.sh:60
 msgid "end Mauvais_Nom_Qui_Devrait_Etre_Etape_D1;\n"
 msgstr ""
 
-#: generate-step-D1.sh:68
+#: generate-step-D1.sh:63
 msgid "etape_d1.adb genere\n"
 msgstr ""
 
@@ -271,7 +245,6 @@ msgid ""
 "Fichier source pour l'etape D2.\n"
 "Le programme est coupé en 3 morceaux.\n"
 "Assemblez-les puis compilez le programme.\n"
-"\n"
 msgstr ""
 
 #: generate-step-D2.sh:16
@@ -279,42 +252,25 @@ msgid "procedure Etape_D2 is"
 msgstr ""
 
 #: generate-step-D2.sh:21
-msgid "Visiblement, le copier-coller a marché !"
+msgid ""
+"Visiblement, le copier-coller a marché !\n"
+"\n"
+"L'etape suivante se trouve dans le fichier\n"
+"\n"
+"~moy/jeu-de-piste/oaue/etape-E1\n"
+"\n"
+"La personne qui a créé ce fichier l'a nommé étrangement :\n"
+"il n'a pas mis d'extension (i.e. le nom de fichier ne se \n"
+"termine pas par .quelquechose). Pour savoir de quel type\n"
+"de fichier il s'agit, utilisez la commande 'file', et\n"
+"utilisez ensuite l'outil adapté pour l'ouvrir.\n"
 msgstr ""
 
-#: generate-step-D2.sh:23
-msgid "L'etape suivante se trouve dans le fichier"
-msgstr ""
-
-#: generate-step-D2.sh:25
-msgid "~moy/jeu-de-piste/oaue/etape-E1"
-msgstr ""
-
-#: generate-step-D2.sh:27
-msgid "La personne qui a créé ce fichier l'a nommé étrangement :"
-msgstr ""
-
-#: generate-step-D2.sh:28
-msgid "il n'a pas mis d'extension (i.e. le nom de fichier ne se "
-msgstr ""
-
-#: generate-step-D2.sh:29
-msgid "termine pas par .quelquechose). Pour savoir de quel type"
-msgstr ""
-
-#: generate-step-D2.sh:30
-msgid "de fichier il s'agit, utilisez la commande 'file', et"
-msgstr ""
-
-#: generate-step-D2.sh:31
-msgid "utilisez ensuite l'outil adapté pour l'ouvrir."
-msgstr ""
-
-#: generate-step-D2.sh:33
+#: generate-step-D2.sh:34
 msgid "end Etape_D2;"
 msgstr ""
 
-#: generate-step-D2.sh:36
+#: generate-step-D2.sh:37
 msgid "etape_d2.adb genere"
 msgstr ""
 
@@ -458,7 +414,7 @@ msgid ""
 "en utilisant decoder.\n"
 msgstr ""
 
-#: generate-step-E4.sh:6
+#: generate-step-E4.sh:8
 msgid ""
 "Bien, vous avez reussi a decoder le message.\n"
 "\n"

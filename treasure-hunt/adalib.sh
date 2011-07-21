@@ -41,6 +41,21 @@ Noise () {
     done
 }
 
+# turn stdin into Put_Line "..." and New_Line.
+# Add more noise if $1 = Noise.
+ada_obfuscate () {
+    while read -r line; do
+	if echo "$line" | grep -q "^[ \t]*$"; then
+	    New_Line
+	else
+	    Put_Line "$line"
+	fi
+	if [ "$1" = "Noise" ]; then
+	    Noise
+	fi
+    done
+}
+	    
 ada_comment_out () {
     sed 's/^/-- /'
 }

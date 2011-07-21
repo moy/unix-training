@@ -1,10 +1,11 @@
 #! /bin/bash
 
+. i18n-lib.sh
 . textlib.sh
 
-exec > etape-E10.txt
+exec > $(gettext etape)-E10.txt
 
-echo "Voila donc l'etape E10.
+gettext "Voila donc l'etape E10.
 
 Bon, les instructions sont bien dans ce fichier, mais elles sont
 melangees avec des tas d'autres lignes qui n'ont rien a voir.
@@ -13,7 +14,7 @@ Ne gardez que les lignes qui contiennent la chaine ETAPE-E10 pour
 avoir les bonnes instructions.
 "
 
-echo "Pour l'etape suivante
+gettext "Pour l'etape suivante
 les instructions
 se trouvent
 dans le fichier
@@ -51,8 +52,9 @@ La commande diff devrait vous aider.
 
 Les plus 'Geek' d'entre vous s'en sortiront
 avec seulement la commande grep, ceci dit.
+
 " | while read line; do
-    echo "$line                                              ETAPE-E10"
+    printf "%s                                       %s\n" "$line" "$(gettext ETAPE-E10)"
     make_noise
 done
 

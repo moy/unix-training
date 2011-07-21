@@ -1,10 +1,11 @@
 #! /bin/bash
 
-. dirlib.sh
+. ./i18n-lib.sh
+. ./dirlib.sh
 
-rm -fr etape-E6
-mkdir -p etape-E6/
-cd etape-E6 || (echo "echec"; exit 1) || exit 1
+rm -fr $(gettext etape)-E6
+mkdir -p $(gettext etape)-E6/
+cd $(gettext etape)-E6 || (echo "failed to cd to $(gettext etape)-E6"; exit 1) || exit 1
 
 top=$(pwd)
 
@@ -38,7 +39,7 @@ make_subdirs_back "$E8_dir"
 mkdir -p "$E9_dir"
 make_subdirs_back "$E9_dir"
 
-echo "Bravo,
+gettext "Bravo,
 
 Enfin, en esperant que vous n'ayez pas examine tous les fichiers un
 par un, mais que vous ayez utilise une commande comme
@@ -54,10 +55,11 @@ ses sous-repertoires.
 (les commandes find et sort peuvent vous aider. Regardez en
 particulier l'option -exec de find ou bien documentez-vous sur la
 commande xargs. Cette etape est tres difficile, n'hesitez pas a
-demander de l'aide a votre enseignant ou a vos collegues)" \
+demander de l'aide a votre enseignant ou a vos collegues).
+" \
     > "$E7_dir"/$(uuid | sed 's/....$//').txt
 
-echo "Bien vu !
+gettext "Bien vu !
 
 Vous avez fait comment ? Moi, je m'en suis sorti avec
 
@@ -109,9 +111,10 @@ en ascii-art :
  :::::::::::::::88:.__..:88888:::::::::::'
   \`'.:::::::::::88888888888.88:::::::::'
         \`':::_:' -- '' -'-' \`':_::::'\`
+
 " > "$E8_dir"/$(uuid)
 
-echo "Bravo, vous avez trouve l'etape E8.
+gettext "Bravo, vous avez trouve l'etape E8.
 
 Si vous avez utilisé une commande comme
 
@@ -138,5 +141,5 @@ argument en ajoutant des guillemets :
 Pour l'étape suivante, elle se trouve à l'adresse
 
 http://www-verimag.imag.fr/~moy/jeu-de-piste/yntsf/etape-E9.php
-" \
-    > "$E9_dir"/$(uuid)
+
+" > "$E9_dir"/$(uuid)

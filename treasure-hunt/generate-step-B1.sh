@@ -1,15 +1,15 @@
 #! /bin/bash
 
-. adalib.sh
-. i18n-lib.sh
+. ./adalib.sh
+. ./i18n-lib.sh
 
 exec > $(gettext etape)_b1.adb
 
-gettext -- "-- Fichier source pour l'etape B1.
--- Ce programme doit etre dans un fichier etape_b1.adb
--- Compilez-le et executez-le pour continuer.
+gettext "Fichier source pour l'etape B1.
+Ce programme doit etre dans un fichier etape_b1.adb
+Compilez-le et executez-le pour continuer.
 
-"
+" | ada_comment_out
 
 adawithuse
 

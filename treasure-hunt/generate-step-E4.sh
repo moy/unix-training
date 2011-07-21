@@ -1,8 +1,11 @@
 #! /bin/bash
 
-. rotlib.sh
+. ./i18n-lib.sh
+. ./rotlib.sh
 
-echo "Bien, vous avez reussi a decoder le message.
+mkdir -p $(gettext etape)-E3/
+
+gettext "Bien, vous avez reussi a decoder le message.
 
 Pour l'etape suivante, le message se trouve dans etape-E5.txt, mais
 il est doublement code : pour le decoder, il va falloir passer dans
@@ -16,5 +19,5 @@ cela :
 
 fichier ----> decoder -----> decoder_bis ----> affichage
 
-(en utilisant la notion de \"pipe\")." | \
-    decalepipe > etape-E3/etape-E4.txt
+(en utilisant la notion de \"pipe\").
+" | decalepipe > $(gettext etape)-E3/$(gettext etape)-E4.txt

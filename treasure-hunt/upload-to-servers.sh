@@ -46,39 +46,36 @@ upload_lang () {
     rsync $(gettext etape)_d1.adb "$web"/abc/
     rsync $(gettext etape)_d2-1.odt "$web"
     rsync $(gettext etape)_d2-2.txt "$dir"
+
+    ssh "$mainmachine" "cd jeu-de-piste; mkdir -p ./oaue/ ./kmcv/ ./kmcvoaue/ ./123654/ ./979b5c3/"
+    rsync $(gettext etape)-E1 "$dir"/oaue/
+    rsync dot-$(gettext etape)-E2.txt "$dir"/kmcv/.$(gettext etape)-E2.txt
+    rsync $(gettext etape)-E3.tar.gz "$web"
+    rsync -r $(gettext etape)-E6/ "$dir"/kmcvoaue/$(gettext etape)-E6/
+    rsync $(gettext etape)-E9.php $(gettext etape)-E10.txt $(gettext etape)-E11.txt $(gettext etape)-E11-bis.txt "$web"/yntsf/
+    rsync $(gettext etape)-E13.tar.gz "$dir"/123654/
+    rsync $(gettext etape)-F2.sh "$dir"/979b5c3/$(gettext etape)-F2.sh
+    rsync -r ./demo-exam-ensimag2011/ ~/WWW/demo-exam-ensimag2011/
+
+    rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliarymachine":/home/perms/moy/
+    ssh "$auxiliarymachine" 'chmod 755 $(gettext etape)-G2.sh'
+
+    ssh "$mainmachine" "cd jeu-de-piste; mkdir ./aeiouy/ ./dntsoaue/ ./qyxrd/"
+    mkdir -p "$web"/dxz/ "$web"/aeiouy/ "$web"/lasuite/ "$web"/$(gettext etape)-H4/
+    rsync -r $(gettext etape)-H1.txt "$web"/lasuite/
+    rsync -r $(gettext etape)-H2/ "$web"/dxz/$(gettext etape)-H2/
+    rsync -r $(gettext etape)-H3.txt "$web"/aeiouy/$(gettext etape)-H3.txt
+    rsync -r pas-$(gettext etape)-H4.txt "$web"/$(gettext etape)-H4/42.txt
+    rsync -r $(gettext etape)-H4/ "$dir"/$(gettext etape)-H4/
+    todo chmod go-r jeu-de-piste/$(gettext etape)-H4/
+    rsync -r $(gettext etape)-H5/ "$dir"/dntsoaue/$(gettext etape)-H5/
+    rsync -r $(gettext etape)-H8/ "$dir"/qyxrd/$(gettext etape)-H8/
+    todo chmod go-r jeu-de-piste/qyxrd/$(gettext etape)-H8/subdir/
+    rsync -r $(gettext etape)-H9.sh "$dir"/$(gettext etape)-H9.sh
+    todo chmod 700 jeu-de-piste/$(gettext etape)-H9.sh
 }
 
-LANG=fr_FR.UTF-8 upload_lang
-LANG=en_US.UTF-8 upload_lang
-
-# code below this point still to be internationalized
-
-ssh "$mainmachine" "cd jeu-de-piste; mkdir ./oaue/ ./kmcv/ ./kmcvoaue/ ./123654/ ./979b5c3/"
-rsync etape-E1 "$dir"/oaue/
-rsync dot-etape-E2.txt "$dir"/kmcv/.etape-E2.txt
-rsync etape-E3.tar.gz "$web"
-rsync -r etape-E6/ "$dir"/kmcvoaue/etape-E6/
-rsync etape-E9.php etape-E10.txt etape-E11.txt etape-E11-bis.txt "$web"/yntsf/
-rsync etape-E13.tar.gz "$dir"/123654/
-rsync etape-F2.sh "$dir"/979b5c3/etape-F2.sh
-rsync -r ./demo-exam-ensimag2011/ ~/WWW/demo-exam-ensimag2011/
-
-rsync etape-G1.txt etape-G2.sh "$auxiliarymachine":/home/perms/moy/
-ssh "$auxiliarymachine" 'chmod 755 etape-G2.sh'
-
-ssh "$mainmachine" "cd jeu-de-piste; mkdir ./aeiouy/ ./dntsoaue/ ./qyxrd/"
-mkdir -p "$web"/dxz/ "$web"/aeiouy/ "$web"/lasuite/ "$web"/etape-H4/
-rsync -r etape-H1.txt "$web"/lasuite/
-rsync -r etape-H2/ "$web"/dxz/etape-H2/
-rsync -r etape-H3.txt "$web"/aeiouy/etape-H3.txt
-rsync -r pas-etape-H4.txt "$web"/etape-H4/42.txt
-rsync -r etape-H4/ "$dir"/etape-H4/
-todo chmod go-r jeu-de-piste/etape-H4/
-rsync -r etape-H5/ "$dir"/dntsoaue/etape-H5/
-rsync -r etape-H8/ "$dir"/qyxrd/etape-H8/
-todo chmod go-r jeu-de-piste/qyxrd/etape-H8/subdir/
-rsync -r etape-H9.sh "$dir"/etape-H9.sh
-todo chmod 700 jeu-de-piste/etape-H9.sh
+multilingual_do upload_lang
 
 # echo "$todo_var"
 

@@ -10,3 +10,9 @@ if [ "$DEBUG" != "" ]; then
     echo
     locale
 fi
+
+multilingual_do () {
+    LANG=fr_FR.UTF-8 "$@"
+    LANG=en_US.UTF-8 "$@"
+}
+

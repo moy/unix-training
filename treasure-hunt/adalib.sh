@@ -40,3 +40,7 @@ Noise () {
 	echo ''
     done
 }
+
+ada_comment_out () {
+    sed 's/^/-- /'
+}

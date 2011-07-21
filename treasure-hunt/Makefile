@@ -29,3 +29,7 @@ $(PO_TEMPLATE): $(STEP_FILES)
 
 msgmerge:
 	$(foreach p, $(PO_FILES), echo Updating $p ; msgmerge -U $p $(PO_TEMPLATE) ; )
+
+install: mo
+	./generate-all.sh
+	./upload-to-servers.sh

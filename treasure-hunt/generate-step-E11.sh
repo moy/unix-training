@@ -3,12 +3,13 @@
 # solution Geek :
 # grep -vFf etape-E11-bis.txt etape-E11.txt
 
+. ./i18n-lib.sh
 . ./textlib.sh
 
-rm -f etape-E11.txt
-rm -f etape-E11-bis.txt
+rm -f $(gettext etape)-E11.txt
+rm -f $(gettext etape)-E11-bis.txt
 
-echo "Bien.
+gettext "Bien.
 
 En fait,
 ca n'etait pas si dur,
@@ -33,7 +34,7 @@ La réponse à la dernière question sera : b3147554
 " | while read line; do
     bruit=$(make_noise)
     echo "$bruit
-$line" >> etape-E11.txt
-    echo "$bruit" >> etape-E11-bis.txt
+$line" >> $(gettext etape)-E11.txt
+    echo "$bruit" >> $(gettext etape)-E11-bis.txt
 done
 

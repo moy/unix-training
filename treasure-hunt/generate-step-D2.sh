@@ -2,14 +2,15 @@
 
 . ./i18n-lib.sh
 . ./adalib.sh
+. ./odtlib.sh
 
 exec > $(gettext etape)_d2.adb
 
-gettext -- "-- Fichier source pour l'etape D2.
--- Le programme est coupé en 3 morceaux.
--- Assemblez-les puis compilez le programme.
+gettext "Fichier source pour l'etape D2.
+Le programme est coupé en 3 morceaux.
+Assemblez-les puis compilez le programme.
+" | ada_comment_out
 
-"
 adawithuse
 
 gettext "procedure Etape_D2 is"
@@ -35,8 +36,7 @@ echo
 gettext "etape_d2.adb genere" >&2
 echo >&2
 
-sed -ne '1,8p' $(gettext etape)_d2.adb > $(gettext etape)_d2-1.txt
-unoconv --format odt $(gettext etape)_d2-1.txt
+sed -ne '1,8p' $(gettext etape)_d2.adb | txt2odt $(gettext etape)_d2-1.odt
 
 sed -ne '9,16p' $(gettext etape)_d2.adb > $(gettext etape)_d2-2.txt
 

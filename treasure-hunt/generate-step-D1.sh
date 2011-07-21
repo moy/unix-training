@@ -5,13 +5,13 @@
 
 exec > $(gettext etape)_d1.adb
 
-gettext -- "-- Fichier source pour l'etape D1.
--- Ce programme doit etre dans un fichier etape_d1.adb
--- Corrigez les erreurs, puis
--- compilez-le et executez-le pour continuer.
+gettext "Fichier source pour l'etape D1.
+Ce programme doit etre dans un fichier etape_d1.adb
+Corrigez les erreurs, puis
+compilez-le et executez-le pour continuer.
 
--- Le fichier est volontairement illisible pour rendre l'exercice plus
--- \"amusant\".
+Le fichier est volontairement illisible pour rendre l'exercice plus
+\"amusant\".
 "
 
 adawithuse

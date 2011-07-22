@@ -83,7 +83,7 @@ le caractere de fin de fichier aurait ete recu en arrivant
 a la fin du fichier ou de la commande d'entree. Ici, l'entree de
 %s est le clavier. On peut simuler une fin de fichier avec
 Control-d.
-")" "$0" "$0" "$0";}
+")" "$0" "$0" "$0"; echo;}
     oncont () { :; }
     onint () { retry_int; }
     onquit () { retry; }

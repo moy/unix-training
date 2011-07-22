@@ -16,8 +16,7 @@ machine, and each exam session.
 For this version, you'll have to download and extract the following
 tar archive first: <a href=\"demo.tar.gz\">demo.tar.gz</a>. Any
 reference to a file in the questions below is a reference to a file in
-this archive. The question using the suspend executable will only work
-on Linux machines.</p>
+this archive.</p>
 
 <p>Some questions are taken directly from the final exam.</p>
 
@@ -37,7 +36,7 @@ all_questions () {
     # Actual questions (taken from the exam)
     smart_question text 2
     smart_question_dec size 2
-    smart_question suspend 2
+    smart_question gz 2
 
     # To check that we do come from the previous step of the hunt.
     basic_question 3 "The answer has been given to you by the previous step of the treasure hunt (E11)." b3147554
@@ -74,20 +73,14 @@ gen_question_size () {
     cat /dev/zero | head -c $1 > $(hash sizefile)
 }
 
-desc_question_suspend () {
-    echo "The answer is given by the executable <tt>suspend</tt> in
-the directory <tt>suspend/</tt>. Launch this executable, suspend it
-with the keyboard, and resume it in background to get the answer."
+desc_question_gz () {
+    echo "The answer is in the file <tt>answer.gz</tt>,
+a text file compressed with gzip."
 }
 
-gen_question_suspend () {
-    mkdir -p suspend
-    cd suspend
-    cp "$basedir"/suspend.c suspend.c
-    reponse=$(echo "The answer is $1 ." | perl -pe 's/./ord($&)." "/ge')
-    perl -pi -e "s/ANSWER/$reponse/" suspend.c
-    gcc -static suspend.c -o suspend
-    rm -f suspend.c
+gen_question_gz () {
+    echo "The answer is $1 ." > answer
+    gzip answer
 }
 
 EXAM_DIR=../gen-exam/

@@ -11,8 +11,7 @@ chaque session d'examen. Pour cette version de démonstration, vous
 devrez commencer par télécharger et extraire l'archive 
 <a href=\"demo.tar.gz\">demo.tar.gz</a>. Toute référence à un fichier dans
 les questions ci-dessous font référence aux fichiers de
-l'archive. La question utilisant l'exécutable suspend ne marchera que
-sur des machines Linux (ce qui inclut telesun).</p>
+l'archive.</p>
 
 <p>Certaines questions ont été extraites directement du sujet d'examen final.</p>
 
@@ -33,7 +32,7 @@ all_questions () {
     # Vraies questions (extraites de l'examen)
     smart_question text 2
     smart_question_dec size 2
-    smart_question suspend 2
+    smart_question gz 2
 
     # pour vérifier qu'on vient bien du jeu de piste ...
     basic_question 3 "La réponse à cette question vous a été donnée par l'étape précédente du jeu de piste (E11)" b3147554
@@ -73,20 +72,14 @@ gen_question_size () {
     cat /dev/zero | head -c $1 > $(hash sizefile)
 }
 
-desc_question_suspend () {
-    echo "La réponse est donnée par l'exécutable <tt>suspend</tt> dans le
-répertoire <tt>suspend/</tt>. Lancez cet exécutable, suspendez-le au clavier,
-puis relancez-le en tâche de fond pour avoir la réponse."
+desc_question_gz () {
+    echo "La réponse se trouve dans le fichier <tt>reponse.gz</tt>, un
+    fichier texte qui a été compressé via gzip."
 }
 
-gen_question_suspend () {
-    mkdir -p suspend
-    cd suspend
-    cp "$basedir"/suspend.c suspend.c
-    reponse=$(echo "La reponse est $1 ." | perl -pe 's/./ord($&)." "/ge')
-    perl -pi -e "s/ANSWER/$reponse/" suspend.c
-    gcc -static suspend.c -o suspend
-    rm -f suspend.c
+gen_question_gz () {
+    echo "La réponse est $1 ." > reponse
+    gzip reponse
 }
 
 EXAM_DIR=../gen-exam/

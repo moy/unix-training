@@ -79,6 +79,7 @@ desc_question_gz () {
 
 gen_question_gz () {
     echo "La réponse est $1 ." > reponse
+    rm -f reponse.gz
     gzip reponse
 }
 

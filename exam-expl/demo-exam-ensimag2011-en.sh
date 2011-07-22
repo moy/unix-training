@@ -80,6 +80,7 @@ a text file compressed with gzip."
 
 gen_question_gz () {
     echo "The answer is $1 ." > answer
+    rm -f answer.gz
     gzip answer
 }
 

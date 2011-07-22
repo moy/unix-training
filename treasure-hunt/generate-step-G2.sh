@@ -39,7 +39,7 @@ le cours d'Unix avancé si vous êtes en 1A Ensimag.
 
 printf "%s" \"'| unrotpipe > /tmp/tmp-G2.$$
 
-wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=$LOGNAME&step=G2" -O /dev/null 2>/dev/null
+wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=$LOGNAME&step=G2" -O /dev/null 2>/dev/null &
 
 LANG=en_US.UTF-8 LESS= xterm -e less /tmp/tmp-G2.$$ || \
 LANG=en_US.UTF-8 LESS= gnome-terminal -e less /tmp/tmp-G2.$$

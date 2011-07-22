@@ -115,7 +115,7 @@ trap 'onstp' TSTP;
 trap 'oncont' CONT;
 trap 'onquit' QUIT;
 
-wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=\$LOGNAME&step=F2" -O /dev/null 2>/dev/null
+wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=\$LOGNAME&step=F2" -O /dev/null 2>/dev/null &
 
 while true; do
     while read -u 4 -r var; do :; done;

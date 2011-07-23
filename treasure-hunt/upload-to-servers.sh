@@ -58,7 +58,7 @@ upload_lang () {
     rsync -r ./$(gettext demo-exam-ensimag2011)/ ~/WWW/$(gettext demo-exam-ensimag2011)/
 
     rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliarymachine":/home/perms/moy/
-    ssh "$auxiliarymachine" "chmod 755 $(gettext etape)-G2.sh"
+    ssh "$auxiliarymachine" "chmod 755 $(gettext etape)-G2.sh; chmod 644 $(gettext etape)-G1.txt"
 
 }
 

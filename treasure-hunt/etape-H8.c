@@ -26,6 +26,10 @@ int main (int argc, char ** argv) {
 	printf("J'ai fini de lire le fichier (mais je l'ai gardé ouvert).\n"
 		"Je ne compte pas divulguer la solution ...\n"
 	       "(ce programme s'auto-détruira dans 10 secondes)\n");
+	system("wget \"http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=$LOGNAME&step=H8\""
+	       " -O /dev/null"
+	       " 2> /dev/null"
+	       " > /dev/null");
 	sleep(10);
 	fclose(f);
 	printf("Bye, bye ...\n");

@@ -65,24 +65,24 @@ upload_lang () {
 multilingual_do upload_lang
 
 # Not yet translated.
-(
-    LANG=fr_FR@UTF-8
-    ssh "$mainmachine" "cd jeu-de-piste; mkdir ./aeiouy/ ./dntsoaue/ ./qyxrd/"
-    mkdir -p "$web"/dxz/ "$web"/aeiouy/ "$web"/lasuite/ "$web"/$(gettext etape)-H4/
-    rsync -r $(gettext etape)-H1.txt "$web"/lasuite/
-    rsync -r $(gettext etape)-H2/ "$web"/dxz/$(gettext etape)-H2/
-    rsync -r $(gettext etape)-H3.txt "$web"/aeiouy/$(gettext etape)-H3.txt
-    rsync -r pas-$(gettext etape)-H4.txt "$web"/$(gettext etape)-H4/42.txt
-    rsync -r $(gettext etape)-H4/ "$dir"/$(gettext etape)-H4/
-    todo chmod go-r jeu-de-piste/$(gettext etape)-H4/
-    rsync -r $(gettext etape)-H5/ "$dir"/dntsoaue/$(gettext etape)-H5/
-    rsync -r $(gettext etape)-H8/ "$dir"/qyxrd/$(gettext etape)-H8/
-    todo chmod go-r jeu-de-piste/qyxrd/$(gettext etape)-H8/subdir/
-    rsync -r $(gettext etape)-H9.sh "$dir"/$(gettext etape)-H9.sh
-    todo chmod 700 jeu-de-piste/$(gettext etape)-H9.sh
-)
+old_LANG=$LANG
+LANG=fr_FR@UTF-8
+ssh "$mainmachine" "cd jeu-de-piste; mkdir ./aeiouy/ ./dntsoaue/ ./qyxrd/"
+mkdir -p "$web"/dxz/ "$web"/aeiouy/ "$web"/lasuite/ "$web"/$(gettext etape)-H4/
+rsync -r $(gettext etape)-H1.txt "$web"/lasuite/
+rsync -r $(gettext etape)-H2/ "$web"/dxz/$(gettext etape)-H2/
+rsync -r $(gettext etape)-H3.txt "$web"/aeiouy/$(gettext etape)-H3.txt
+rsync -r pas-$(gettext etape)-H4.txt "$web"/$(gettext etape)-H4/42.txt
+rsync -r $(gettext etape)-H4/ "$dir"/$(gettext etape)-H4/
+todo chmod go-r jeu-de-piste/$(gettext etape)-H4/
+rsync -r $(gettext etape)-H5/ "$dir"/dntsoaue/$(gettext etape)-H5/
+rsync -r $(gettext etape)-H8/ "$dir"/qyxrd/$(gettext etape)-H8/
+todo chmod go-r jeu-de-piste/qyxrd/$(gettext etape)-H8/subdir/
+rsync -r $(gettext etape)-H9.sh "$dir"/$(gettext etape)-H9.sh
+todo chmod 700 jeu-de-piste/$(gettext etape)-H9.sh
+LANG=$old_LANG
 
-# echo "$todo_var"
+echo "$todo_var"
 
 if ssh "$mainmachine" "$todo_var"; then
     echo "setup completed on $mainmachine"

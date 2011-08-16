@@ -16,7 +16,7 @@ set -e
 echo "Don't forget to put step A1 on the wiki ..."
 echo "Don't forget to put step A4 on the wiki ..."
 echo "Don't forget to put step A5 on the wiki ..."
-echo "Don't forget to put step H5 on the wiki ..."
+echo "Don't forget to put step H1 on the wiki ..."
 
 rm -fr "$web"
 mkdir -p "$web"

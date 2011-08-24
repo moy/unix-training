@@ -41,6 +41,20 @@ smart_question_dec () {
     basic_question "$2" "$(desc_question_"$1")" $(dechash "$1")
 }
 
+# Decimal variant of smart_question (used when the answer has to be
+# decimal, and sufficiently small).
+smart_question_short () {
+    if [ "$verbose" = "yes" ]; then
+	echo "smart_question_short $@"
+	time=time
+    else
+	time=""
+    fi
+    cd "$studentdir"
+    eval $time gen_question_"$1" $(shorthash "$1")
+    basic_question "$2" "$(desc_question_"$1")" $(shorthash "$1")
+}
+
 # Constant variant of smart_question (used when the answer does not
 # depend on the student).
 smart_question_const () {
@@ -147,6 +161,18 @@ dechash () {
     # A non-nul number in decimal form.
     # xargs expr 1 + ensures non-zero, and remove leading zeros.
     hash "$1" | tr '[a-f]' '[1-6]' | head -c 4 | xargs expr 1 +
+}
+
+# dechash_bound string howmuch
+# generate a pseudo-random number between howmuch and 2*howmuch
+dechash_bound () {
+    hash_val=$(dechash $1)
+    hash_mod=$(($hash_val % $2))
+    echo $(($hash_mod + $2))
+}
+
+shorthash () {
+    hash "$@" | head -c 4
 }
 
 sql_escape_pipe () {

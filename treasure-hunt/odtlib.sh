@@ -1,5 +1,9 @@
 #! /bin/sh
 
+if [ "$HUNT_DIR" = "" ]; then
+    HUNT_DIR=.
+fi
+
 # unoconv does more or less the same, but I'm tired of seeing it
 # segfault :-(.
 txt2odt () {
@@ -8,12 +12,12 @@ txt2odt () {
 	-e 's@>@&gt;@g;' \
 	-e 's@\n@<text:line-break/>@;' \
 	-e 's@/@\\/@g;')
+    rm -fr template.$$
     mkdir -p template.$$
     cd template.$$
-    unzip -q ../template.odt
+    unzip -q "$HUNT_DIR"/template.odt
     perl -pi -e "s/TEXT_WILL_BE_INSERTED_HERE/$text/" content.xml
-    zip -q -r "$1" *
-    mv "$1" ../
     cd ..
+    (cd template.$$ && zip -q -r - * ) > "$1"
     rm -fr template.$$
 }

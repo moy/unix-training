@@ -154,7 +154,7 @@ sql_comment "Coefficients of questions"
 sum=0
 for (( i = 1 ; i <= ${#coefficients[@]} ; i++ )); do
     sql_coef $i ${coefficients[$i]}
-    sum=$((sum + ${coefficients[$i]}))
+    sum=$(($sum + ${coefficients[$i]}))
 done
 
 echo "Number of questions: ${#coefficients[@]}"

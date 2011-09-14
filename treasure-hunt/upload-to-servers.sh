@@ -78,6 +78,7 @@ todo chmod go-r jeu-de-piste/$(gettext etape)-H4/
 rsync -r $(gettext etape)-H5/ "$dir"/dntsoaue/$(gettext etape)-H5/
 rsync -r $(gettext etape)-H8/ "$dir"/qyxrd/$(gettext etape)-H8/
 todo chmod go-r jeu-de-piste/qyxrd/$(gettext etape)-H8/subdir/
+todo chmod ugo+rx jeu-de-piste/qyxrd/$(gettext etape)-H8/$(gettext etape)-H8
 rsync -r $(gettext etape)-H9.sh "$dir"/$(gettext etape)-H9.sh
 todo chmod 700 jeu-de-piste/$(gettext etape)-H9.sh
 LANG=$old_LANG

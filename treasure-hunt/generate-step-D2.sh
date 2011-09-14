@@ -4,6 +4,8 @@
 . ./adalib.sh
 . ./odtlib.sh
 
+HUNT_DIR=$(pwd)
+
 exec > $(gettext etape)_d2.adb
 
 gettext "Fichier source pour l'etape D2.

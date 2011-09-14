@@ -41,9 +41,9 @@ done
 . ./spy-lib.sh
 
 grep '[0-9].*;.*;.*;.*;.*;' | while read line; do
-    login=$(echo "$line" | cut -d \; -f 2)
-    first=$(echo "$line" | cut -d \; -f 4)
-    last=$( echo "$line" | cut -d \; -f 5)
+    login=$(echo "$line" | cut -d \; -f 2 | sed "s/'/\\\\'/g")
+    first=$(echo "$line" | cut -d \; -f 4 | sed "s/'/\\\\'/g")
+    last=$( echo "$line" | cut -d \; -f 5 | sed "s/'/\\\\'/g")
     echo 'INSERT INTO `hunt_student` (`login` , `group`, `first_name` , `familly_name`)'
     echo "                    VALUES ('$login', '$group', '$first',      '$last');"
 done | $db_cmd

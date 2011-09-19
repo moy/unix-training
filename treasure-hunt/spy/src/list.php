@@ -15,13 +15,14 @@ echo '<p>Click on table headers to sort.</p>';
 //    $format[$no_colonne] est une chaine de formattage :
 //    - %s est remplacé par le contenu de la case.
 //    - %b est remplacé par le contenu en remplacant les " " par &nbsp;
-function echo_result($result, $format=null) {
+function echo_result($result, $format=null, $count=False) {
 	?><table class="sortable"><tr><?
 	if(! $result) { ?><th>result not valid</th><? }
 	else {
 		$i = 0;
 		while ($i < mysql_num_fields($result)) {
 			$meta = mysql_fetch_field($result, $i);
+			$counts[$meta->name] = 0;
 			?><th style="white-space:nowrap"><?php echo($meta->name);?></th><?
 			$i++;
 		}
@@ -31,10 +32,13 @@ function echo_result($result, $format=null) {
 			?><tr><td colspan="<?php echo mysql_num_fields($result); ?>">
 			<strong><center>no result</center></strong>
 			</td></tr><?
-		} else
+		} else {
 			while($row=mysql_fetch_assoc($result)) {
 				?><tr style="white-space:nowrap"><?
-				foreach($row as $key=>$value) { 
+				foreach($row as $key=>$value) {
+					if ($value != "" && $value != "0") {
+						$counts[$key]++;
+					}
 					$value = htmlspecialchars($value);
 					if ($format[$key]) {
 						$snbsp = str_replace(" ", "&nbsp;", $value);
@@ -46,6 +50,18 @@ function echo_result($result, $format=null) {
 				}
 				?></tr><?
 			}
+			echo "\n";
+			if ($count) {
+				$i = 0;
+				?><tfoot><tr><?php
+				while ($i < mysql_num_fields($result)) {
+					$meta = mysql_fetch_field($result, $i);
+					?><td style="white-space:nowrap"><?php echo($counts[$meta->name]);?></td><?
+					$i++;
+				}
+				?></tr></tfoot><?php
+			}
+		}
 	}
 	?></table><?
 }
@@ -73,7 +89,7 @@ FROM hunt_student AS reference'. $step_join .'
 GROUP BY reference.login;';
 // echo '<pre>'. $query .'</pre>';
 $result = exam_query($query);
-echo_result($result, array('login' => '<a href="http://intranet.ensimag.fr/ZENITH/affiche-etu.php?ETU=%s">%s</a>'));
+echo_result($result, array('login' => '<a href="http://intranet.ensimag.fr/ZENITH/affiche-etu.php?ETU=%s">%s</a>'), True);
 
 echo '<h2>Unregistered students accesses</h2>';
 
@@ -84,7 +100,7 @@ FROM (SELECT DISTINCT login
 GROUP BY reference.login;';
 // echo '<pre>'. $query .'</pre>';
 $result = exam_query($query);
-echo_result($result, array('login' => '<a href="http://intranet.ensimag.fr/ZENITH/affiche-etu.php?ETU=%s">%s</a>'));
+echo_result($result, array('login' => '<a href="http://intranet.ensimag.fr/ZENITH/affiche-etu.php?ETU=%s">%s</a>'), True);
 
 exam_footer();
 ?>

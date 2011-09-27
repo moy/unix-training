@@ -51,15 +51,14 @@ E12: version de démo du jeu de piste
 E13: Une archive tar créée avec --mode 000, les étudiants doivent
       faire un chmod pour voir le contenu.
 
-Idées à faire :
-E13: regarder le contenu d'un fichier texte appelé *.txt (quote)
-E14: regarder le contenu d'un fichier texte appelé -n (less ./-n)
-
 Chapitre 8 : Bash
-F1: sur l'idée de 6:, une question style 'le seul fichier commençant
-      par un x, contenant un c, et terminant par autre chose qu'un z'
-      (x*c*[^z])
+F1: le seul fichier commençant par un x, contenant un c, et terminant
+    par autre chose qu'un z' (x*c*[^z])
 F2: Control-z, Control-d
+
+Idées à faire :
+F3: regarder le contenu d'un fichier texte appelé *.txt (quote)
+F4: regarder le contenu d'un fichier texte appelé -n (less ./-n)
 
 Chapitre 9 : accès distant
 G1: sftp sur ensilinux (Chap 9)
@@ -76,8 +75,4 @@ H5-H6: caché dans les logs Git (mal numérotée, tant pis)
 H7: caché dans l'historique Git (contenu de README.txt)
 H8: strace ou ls -l /proc/<...>/fd/
 H9: ssh et clé.
-
-
-17: fin.
-9: fin partie 1.
 

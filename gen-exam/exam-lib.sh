@@ -200,6 +200,20 @@ sql_comment () {
     echo "$@" | sed 's/^/-- /' >> "$outsql"
 }
 
+sql_echo () {
+    case "$dbtype" in
+	"mysql")
+	    echo "SELECT '$(sql_escape "$1")' as ' ';" >> "$outsql"
+	    ;;
+	"postgresql")
+	    echo "\\echo '$(sql_escape "$1")'" >> "$outsql"
+	    ;;
+	*)
+	    # Do nothing
+	    ;;
+    esac
+}
+
 sql_raw () {
     echo "$@" >> "$outsql"
 }

@@ -23,8 +23,8 @@ smart_question () {
 	time=""
     fi
     cd "$studentdir"
-    eval $time gen_question_"$1" $(hash "$1")
-    basic_question "$2" "$(desc_question_"$1")" $(hash "$1")
+    eval $time gen_question_"$1" $(hash "$1") || die "Please check your question definitions"
+    basic_question "$2" "$(desc_question_"$1")" $(hash "$1") || die "Please check your question definitions"
 }
 
 # Decimal variant of smart_question (used when the answer has to be

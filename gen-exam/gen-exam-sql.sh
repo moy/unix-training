@@ -30,6 +30,7 @@ subject=$exam_subject_number
 basedir=$(pwd)
 verbose=no
 dbtype=${exam_dbtype:-mysql}
+php_only=no
 
 while test $# -ne 0; do
     case "$1" in
@@ -70,6 +71,9 @@ while test $# -ne 0; do
 	    shift
 	    list_students="$1"
 	    ;;
+	"--php-only")
+	    php_only=yes
+	    ;;
         *)
             echo "ERROR: Unrecognized option $1"
             usage
@@ -97,14 +101,26 @@ list_students=$(absolute_path "$list_students")
 outsql=$(absolute_path "$outsql")
 EXAM_DIR=$(absolute_path "$EXAM_DIR")
 
+cd "$outdir" || die "Cannot enter directory $outdir"
+# make outdir absolute.
+outdir=$(pwd)
+
+exam_install_php
+exam_config_php sql > "$outdir"/php/inc/config.php
+
+if [ "$php_only" = "yes" ]; then
+    echo "PHP files generated in:"
+    echo
+    echo "  $outdir"/php/
+    echo
+    echo "Skipping SQL generation (--php-only in use)"
+    exit 0
+fi
+
 if [ -f "$outsql" ]; then
     die "$outsql already exists.
 Remove it manually or use --cleanup."
 fi
-
-cd "$outdir" || die "Cannot enter directory $outdir"
-# make outdir absolute.
-outdir=$(pwd)
 
 prepare_questions
 
@@ -176,10 +192,6 @@ if [ "$apply" = "yes" ]; then
 	    ;;
     esac
 fi
-
-exam_install_php
-exam_config_php sql > "$outdir"/php/inc/config.php
-
 
 echo
 echo "Generated files in $outdir"

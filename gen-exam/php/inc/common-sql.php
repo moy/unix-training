@@ -129,7 +129,7 @@ WHERE exam_unix_subject_questions.id_subject  = exam_unix_subject.id
 ORDER BY exam_unix_subject_questions.coeff, exam_unix_question.correct_answer
 ";
 	$result = exam_query($query);
-	while ($line = exam_fetch_array($result, null, PGSQL_ASSOC)) {
+	while ($line = exam_fetch_array($result)) {
 		$questions[] = $line;
 	}
 	return $questions;
@@ -190,6 +190,6 @@ WHERE exam_unix_subject_questions.id_subject  = exam_unix_subject.id
 	if (count($result) != 1)
 		echo("FATAL ERROR: Bad number of questions (". count($result) .")");
 
-	return exam_fetch_array($result, null, PGSQL_ASSOC);
+	return exam_fetch_array($result);
 }
 ?>

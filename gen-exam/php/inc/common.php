@@ -85,7 +85,10 @@ function all_answers_summary() {
 	return array('current' => $current_points, 'total' => $total_points);
 }
 
-$question = $_GET["question"];
+if (isset($_GET["question"])) {
+	$question = $_GET["question"];
+} // keep undef otherwise.
+
 //$machine = $_GET["machine"];
 if (isSet($_SERVER["HTTP_X_FORWARDED_FOR"])) {
 	$IP = $_SERVER["HTTP_X_FORWARDED_FOR"];

@@ -1,9 +1,0 @@
-Well done !
-
-Hidden files are simply those whose names start with a dot, they can
-be manipulated just like any others, but "ls" does not show them by
-default. On the other hand, "ls -a" does show them.
-
-The next steps are inside a compressed TAR archive, available here:
-
-http://www-verimag.imag.fr/~moy/jeu-de-piste/step-E3.tar.gz

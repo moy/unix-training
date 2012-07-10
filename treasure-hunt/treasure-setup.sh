@@ -18,8 +18,12 @@ web=$HOME/WWW/jeu-de-piste
 # Public URL of the website
 web_url=http://www-verimag.imag.fr/~moy/jeu-de-piste
 
+# Demo version of the exam, accessible to students (french and english versions)
+demo_url=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2011/
+demo_url_en=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2011-en/
+
 # URL of the monitoring system.
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp
 
 export mainmachine maindir auxiliarymachine web web_url
-export spy_url
+export demo_url demo_url_en spy_url

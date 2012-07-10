@@ -1,4 +1,11 @@
 # Makefile for i18n of the hunt with gettext.
+# Typical flow when touching i18n code:
+# 1) change translated strings in *.sh (i.e. gettext argument)
+# 2) "make pot" -> extract strings to rebuild the .po Template
+# 3) "make msgfmt" -> merge the .po template in .po files
+# 4) update {fr,en}/LC_MESSAGES/hunt.po manually, remove "fuzzy"
+# 5) "make" -> rebuild the binary database (*.mo)
+# 6) run the scripts (multilingual_do in i18n-lib.sh can help)
 STEP_FILES=${wildcard generate-step-*.sh i18n-lib.sh upload-to-servers.sh generate-all.sh}
 STEPS=${patsubst generate-step-%.sh, %, $(STEP_FILES)}
 LANGUAGES=fr en

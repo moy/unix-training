@@ -6,7 +6,7 @@
 cat > $(gettext etape)-E9.php <<EOF
 <?php
 if (preg_match('/^[a-z][a-zA-Z0-9]*\$/', \$_GET['login'])) {
-	file_get_contents('http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login='. \$_GET['login'] .'&step=E9');
+	file_get_contents('$spy_url/record.php?login='. \$_GET['login'] .'&step=E9');
 	header('location: $web_url/yntsf/$(gettext etape)-E10.txt');
 	exit();
 }

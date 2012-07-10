@@ -1,6 +1,7 @@
 #!/bin/bash
 
 . ./treasure-setup.sh
+. ./spy-lib.sh
 . ./i18n-lib.sh
 
 dest=$(gettext etape)-F2.sh
@@ -116,7 +117,7 @@ trap 'onstp' TSTP;
 trap 'oncont' CONT;
 trap 'onquit' QUIT;
 
-wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=\$LOGNAME&step=F2" -O /dev/null 2>/dev/null &
+$(monitor_step_cmd F2)
 
 while true; do
     while read -u 4 -r var; do :; done;

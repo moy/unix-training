@@ -1,6 +1,7 @@
 #! /bin/bash
 
 . ./treasure-setup.sh
+. ./spy-lib.sh
 . i18n-lib.sh
 
 alphabet="abcdefghijklmnopqrstuvwxyz"
@@ -66,6 +67,6 @@ suivante.
 
 echo '" | rotpipe | mail -s "'"$(gettext "Enonce etape B1")"'" "$LOGNAME@$(hostname --long)"'
 
-echo 'wget "http://www-verimag.imag.fr/~moy/monitoring-jdp/record.php?login=$LOGNAME&step=A5" -O /dev/null 2>/dev/null &'
+monitor_step_cmd A5
 printf 'printf "%s\n" $LOGNAME@$(hostname --long)\n' "$(eval_gettext "Un message a ete envoye a %s.
 Consultez cette boite mail pour avoir les instructions pour l'etape suivante.")"

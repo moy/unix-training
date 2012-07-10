@@ -16,7 +16,7 @@ auxiliarymachine=ensilinux.imag.fr
 web=$HOME/WWW/jeu-de-piste
 
 # Public URL of the website
-web_url=http://www-verimag.imag.fr/~moy/jeu-de-piste/
+web_url=http://www-verimag.imag.fr/~moy/jeu-de-piste
 
 # URL of the monitoring system.
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp

@@ -38,6 +38,7 @@ generate_all () {
 
     ./generate-step-G2.sh
 
+    ./generate-step-H2.sh
     ./generate-step-H5.sh
     ./generate-step-H8.sh
 }

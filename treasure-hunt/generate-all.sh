@@ -27,6 +27,7 @@ generate_all () {
     mv ../exam-expl/exam_genere/php/ ./$(gettext demo-exam-ensimag2011)/
 
     ./generate-step-E1.sh
+    ./generate-step-E2.sh
     ./generate-step-E4.sh
     ./generate-step-E5.sh
 # Must come after E4 and E5.

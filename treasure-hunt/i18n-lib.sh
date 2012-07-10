@@ -16,3 +16,5 @@ multilingual_do () {
     LANG=en_US.UTF-8 "$@"
 }
 
+step=$(gettext etape)
+export step

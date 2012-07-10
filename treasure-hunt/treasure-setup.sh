@@ -7,7 +7,7 @@ mainmachine=telesun.imag.fr
 # access to it, and students must have read access (but won't be able
 # to list the content of the directory).
 # Warning: the path is hardcoded in many steps.
-maindir=/home/perms/moy/jeu-de-piste/
+maindir=/home/perms/moy/jeu-de-piste
 
 # Other machine on which students have access. It will be used to
 # practice various basic networking tools (SSH, sftp, ...)
@@ -16,3 +16,5 @@ auxiliarymachine=ensilinux.imag.fr
 # The content of this directory should be uploaded to a website (whose
 # URL is currently hardcoded in the steps).
 web=$HOME/WWW/jeu-de-piste
+
+export mainmachine maindir auxiliarymachine web

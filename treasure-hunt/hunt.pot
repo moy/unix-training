@@ -438,12 +438,13 @@ msgid ""
 "(en utilisant la notion de \"pipe\").\n"
 msgstr ""
 
-#: generate-step-E5.sh:6
+#: generate-step-E5.sh:8
+#, sh-format
 msgid ""
 "Bravo !\n"
 "\n"
 "L'etape suivante se trouve sur telesun, dans le repertoire\n"
-"/home/perms/moy/jeu-de-piste/kmcvoaue/etape-E6/\n"
+"$maindir/kmcvoaue/${step}-E6/\n"
 "\n"
 "Les instructions sont dans le seul fichier de ce repertoire (et de ses\n"
 "sous-répertoires) dont le nom se termine par .txt.\n"

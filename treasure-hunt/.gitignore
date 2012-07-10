@@ -40,6 +40,7 @@ etape-E11-bis.txt
 etape-E11.txt
 etape-H5
 etape-H8/etape-H8
+etape-H8.c
 etape-F2.sh
 step-G2.sh
 step-E3/
@@ -55,6 +56,8 @@ step-F2.sh
 step-C3.png
 step-E1
 step-E1.tex
+dot-step-E2.txt
+dot-etape-E2.txt
 step-E13.txt
 step_d1.adb
 step_d2-1.odt

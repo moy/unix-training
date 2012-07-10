@@ -1,5 +1,6 @@
 #! /bin/bash
 
+. ./treasure-setup.sh
 . ./i18n-lib.sh
 . ./dirlib.sh
 
@@ -47,7 +48,7 @@ par un, mais que vous ayez utilise une commande comme
   find . -name '*.txt' ...
 
 L'etape suivante se trouve aussi dans
-/home/perms/moy/jeu-de-piste/kmcvoaue/etape-E6/.
+\$maindir/kmcvoaue/\${step}-E6/.
 
 C'est le plus gros fichier qui se trouve dans ce repertoire ou un de
 ses sous-repertoires.
@@ -56,7 +57,7 @@ ses sous-repertoires.
 particulier l'option -exec de find ou bien documentez-vous sur la
 commande xargs. Cette etape est tres difficile, n'hesitez pas a
 demander de l'aide a votre enseignant ou a vos collegues).
-" \
+" | envsubst \
     > "$E7_dir"/$(uuid | sed 's/....$//').txt
 
 gettext "Bien vu !
@@ -75,7 +76,7 @@ ou (sans doute plus propre) :
 
 Vous pouvez aller chercher l'etape E8, c'est le seul fichier (a part
 celui-ci) du repertoire
-/home/perms/moy/jeu-de-piste/kmcvoaue/etape-E6/ qui contienne la
+\$maindir/kmcvoaue/\${step}-E6/ qui contienne la
 chaine :
 
   Bravo, vous avez trouve l'etape E8.
@@ -112,7 +113,7 @@ en ascii-art :
   \`'.:::::::::::88888888888.88:::::::::'
         \`':::_:' -- '' -'-' \`':_::::'\`
 
-" > "$E8_dir"/$(uuid)
+" | envsubst > "$E8_dir"/$(uuid)
 
 gettext "Bravo, vous avez trouve l'etape E8.
 

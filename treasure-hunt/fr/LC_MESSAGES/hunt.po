@@ -450,6 +450,7 @@ msgid ""
 msgstr ""
 
 #: generate-step-E6.sh:42
+#, sh-format
 msgid ""
 "Bravo,\n"
 "\n"
@@ -459,7 +460,7 @@ msgid ""
 "  find . -name '*.txt' ...\n"
 "\n"
 "L'etape suivante se trouve aussi dans\n"
-"/home/perms/moy/jeu-de-piste/kmcvoaue/etape-E6/.\n"
+"$maindir/kmcvoaue/${step}-E6/.\n"
 "\n"
 "C'est le plus gros fichier qui se trouve dans ce repertoire ou un de\n"
 "ses sous-repertoires.\n"
@@ -471,6 +472,7 @@ msgid ""
 msgstr ""
 
 #: generate-step-E6.sh:62
+#, sh-format
 msgid ""
 "Bien vu !\n"
 "\n"
@@ -488,7 +490,7 @@ msgid ""
 "\n"
 "Vous pouvez aller chercher l'etape E8, c'est le seul fichier (a part\n"
 "celui-ci) du repertoire\n"
-"/home/perms/moy/jeu-de-piste/kmcvoaue/etape-E6/ qui contienne la\n"
+"$maindir/kmcvoaue/${step}-E6/ qui contienne la\n"
 "chaine :\n"
 "\n"
 "  Bravo, vous avez trouve l'etape E8.\n"

@@ -2,9 +2,8 @@ To install the hunt on your machine, you need to (in theory):
 
 1) edit treasure-setup.sh
 
-2) run ./generate-all.sh
-
-3) run ./upload-to-servers.sh
+2) run "make" (reading the Makefile may help understanding the
+generation process)
 
 In practice, installing the hunt outside Ensimag will most likely
 require tweaking the code. If you need help doing this, contact me:

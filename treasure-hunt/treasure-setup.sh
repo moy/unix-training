@@ -12,8 +12,10 @@ maindir=/home/perms/moy/jeu-de-piste
 # practice various basic networking tools (SSH, sftp, ...)
 auxiliarymachine=ensilinux.imag.fr
 
-# The content of this directory should be uploaded to a website (whose
-# URL is currently hardcoded in the steps).
+# The content of this directory should be uploaded to a website
 web=$HOME/WWW/jeu-de-piste
 
-export mainmachine maindir auxiliarymachine web
+# Public URL of the website
+web_url=http://www-verimag.imag.fr/~moy/jeu-de-piste/
+
+export mainmachine maindir auxiliarymachine web web_url

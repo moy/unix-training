@@ -38,14 +38,14 @@ gettext "L'etape suivante est aussi un programme Ada a compiler,
 mais il a ete decoupe en plusieurs morceaux. Le premier est
 dans un fichier OpenOffice qui se trouve ici :
 
-http://www-verimag.imag.fr/~moy/jeu-de-piste/etape_d2-1.odt
+\$web_url/etape_d2-1.odt
 
 Le second est dans un fichier texte qui se trouve dans
 
 ~moy/jeu-de-piste/etape_d2-2.txt
 
 Et le dernier est ici :
-" | ada_obfuscate Noise
+" | envsubst | ada_obfuscate Noise
 
 ./generate-step-D2.sh
 cat $(gettext etape)_d2-3.txt | sed 's/"/""/g' | ada_obfuscate

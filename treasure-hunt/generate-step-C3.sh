@@ -20,7 +20,7 @@ Nous pouvons maintenant passer à la partie sur les
 
 Vous trouverez l'étape suivante dans le fichier
 
-http://www-verimag.imag.fr/~moy/jeu-de-piste/abc/etape_d1.adb
+\$web_url/abc/etape_d1.adb
 
 Malheureusement, cette fois-ci, le fichier n'est pas
 directement compilable. Il faudra corriger quelques
@@ -32,7 +32,7 @@ Goto Line décrite sur le Wiki, vous pourrez trouver
 l'endroit de chaque erreur de syntaxe en un clin
 d'oeil.
 
-" | txt2img $(gettext etape)-C3.png
+" | envsubst | txt2img $(gettext etape)-C3.png
 
 gettext "etape-C3.png générée"
 echo

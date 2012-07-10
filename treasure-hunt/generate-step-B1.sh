@@ -24,11 +24,11 @@ Si vous lisez ceci, c'est que vous avez reussi l'etape B1
 du jeu de piste.
 
 L'etape suivante se trouve dans le fichier.
-http://www-verimag.imag.fr/~moy/jeu-de-piste/etape-C1.tex
+\$web_url/etape-C1.tex
 
 Cette fois-ci, c'est une fichier LaTeX. Vous pouvez le compiler
 avec la commande pdflatex etape-C1.tex pour obtenir un fichier PDF.
-" | ada_obfuscate
+" | envsubst | ada_obfuscate
 
 echo "end;"
 

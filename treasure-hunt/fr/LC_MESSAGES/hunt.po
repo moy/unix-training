@@ -131,7 +131,8 @@ msgstr ""
 msgid "procedure Etape_B1 is"
 msgstr ""
 
-#: generate-step-B1.sh:20
+#: generate-step-B1.sh:21
+#, sh-format
 msgid ""
 "Bonjour,\n"
 "\n"
@@ -139,7 +140,7 @@ msgid ""
 "du jeu de piste.\n"
 "\n"
 "L'etape suivante se trouve dans le fichier.\n"
-"http://www-verimag.imag.fr/~moy/jeu-de-piste/etape-C1.tex\n"
+"$web_url/etape-C1.tex\n"
 "\n"
 "Cette fois-ci, c'est une fichier LaTeX. Vous pouvez le compiler\n"
 "avec la commande pdflatex etape-C1.tex pour obtenir un fichier PDF.\n"
@@ -157,7 +158,8 @@ msgid ""
 "quelle application ouvrir ce fichier ..."
 msgstr ""
 
-#: generate-step-C3.sh:6
+#: generate-step-C3.sh:7
+#, sh-format
 msgid ""
 "Voilà, cette image est une image au format PNG.\n"
 "\n"
@@ -175,7 +177,7 @@ msgid ""
 "\n"
 "Vous trouverez l'étape suivante dans le fichier\n"
 "\n"
-"http://www-verimag.imag.fr/~moy/jeu-de-piste/abc/etape_d1.adb\n"
+"$web_url/abc/etape_d1.adb\n"
 "\n"
 "Malheureusement, cette fois-ci, le fichier n'est pas\n"
 "directement compilable. Il faudra corriger quelques\n"
@@ -216,13 +218,14 @@ msgid ""
 "compiler le fichier etape_d1.adb.\n"
 msgstr ""
 
-#: generate-step-D1.sh:36
+#: generate-step-D1.sh:37
+#, sh-format
 msgid ""
 "L'etape suivante est aussi un programme Ada a compiler,\n"
 "mais il a ete decoupe en plusieurs morceaux. Le premier est\n"
 "dans un fichier OpenOffice qui se trouve ici :\n"
 "\n"
-"http://www-verimag.imag.fr/~moy/jeu-de-piste/etape_d2-1.odt\n"
+"$web_url/etape_d2-1.odt\n"
 "\n"
 "Le second est dans un fichier texte qui se trouve dans\n"
 "\n"
@@ -529,7 +532,8 @@ msgid ""
 "\n"
 msgstr ""
 
-#: generate-step-E6.sh:117
+#: generate-step-E6.sh:118
+#, sh-format
 msgid ""
 "Bravo, vous avez trouve l'etape E8.\n"
 "\n"
@@ -557,7 +561,7 @@ msgid ""
 "\n"
 "Pour l'étape suivante, elle se trouve à l'adresse\n"
 "\n"
-"http://www-verimag.imag.fr/~moy/jeu-de-piste/yntsf/etape-E9.php\n"
+"$web_url/yntsf/etape-E9.php\n"
 "\n"
 msgstr ""
 

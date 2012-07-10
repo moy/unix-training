@@ -1,5 +1,6 @@
 #! /bin/bash
 
+. ./treasure-setup.sh
 . i18n-lib.sh
 . textlib.sh
 

@@ -3,6 +3,7 @@
 set -x
 set -e
 
+. ./treasure-setup.sh
 . ./i18n-lib.sh
 
 generate_all () {

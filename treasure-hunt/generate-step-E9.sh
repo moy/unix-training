@@ -1,5 +1,6 @@
 #! /bin/sh
 
+. ./treasure-setup.sh
 . ./i18n-lib.sh
 
 cat > $(gettext etape)-E9.php <<EOF

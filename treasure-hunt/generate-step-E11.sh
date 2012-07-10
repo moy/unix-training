@@ -3,6 +3,7 @@
 # solution Geek :
 # grep -vFf etape-E11-bis.txt etape-E11.txt
 
+. ./treasure-setup.sh
 . ./i18n-lib.sh
 . ./textlib.sh
 

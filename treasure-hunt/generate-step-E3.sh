@@ -1,5 +1,6 @@
 #! /bin/bash
 
+. ./treasure-setup.sh
 . ./i18n-lib.sh
 
 # don't delete the directory, it may already have been filled-in by another step.

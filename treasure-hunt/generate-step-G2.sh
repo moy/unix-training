@@ -1,5 +1,6 @@
 #! /bin/bash
 
+. ./treasure-setup.sh
 . ./rotlib.sh
 . ./i18n-lib.sh
 

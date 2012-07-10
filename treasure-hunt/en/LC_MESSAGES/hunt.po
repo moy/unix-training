@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-21 19:20+0200\n"
+"POT-Creation-Date: 2012-07-10 20:56+0200\n"
 "PO-Revision-Date: 2011-07-21 19:21+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,31 +16,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: generate-step-A2.sh:23 generate-step-B1.sh:6 generate-step-B1.sh:34
-#: generate-step-C1.sh:6 generate-step-C3.sh:34 generate-step-D1.sh:6
-#: generate-step-D1.sh:50 generate-step-D2.sh:7 generate-step-D2.sh:40
-#: generate-step-D2.sh:42 generate-step-D2.sh:44 generate-step-E10.sh:6
-#: generate-step-E11.sh:9 generate-step-E11.sh:10 generate-step-E11.sh:37
-#: generate-step-E11.sh:38 generate-step-E13.sh:6 generate-step-E13.sh:15
-#: generate-step-E13.sh:39 generate-step-E13.sh:40 generate-step-E1.sh:27
-#: generate-step-E1.sh:29 generate-step-E1.sh:30 generate-step-E3.sh:6
-#: generate-step-E3.sh:7 generate-step-E3.sh:23 generate-step-E3.sh:25
-#: generate-step-E4.sh:6 generate-step-E4.sh:23 generate-step-E5.sh:14
-#: generate-step-E6.sh:6 generate-step-E6.sh:7 generate-step-E6.sh:8
-#: generate-step-E9.sh:5 generate-step-F2.sh:5 generate-step-G2.sh:6
-#: upload-to-servers.sh:40 upload-to-servers.sh:42 upload-to-servers.sh:43
-#: upload-to-servers.sh:44 upload-to-servers.sh:46 upload-to-servers.sh:47
-#: upload-to-servers.sh:48 upload-to-servers.sh:51 upload-to-servers.sh:52
-#: upload-to-servers.sh:53 upload-to-servers.sh:54 upload-to-servers.sh:55
-#: upload-to-servers.sh:56 upload-to-servers.sh:57 upload-to-servers.sh:60
+#: generate-step-A2.sh:24 generate-step-B1.sh:7 generate-step-B1.sh:35
+#: generate-step-C1.sh:7 generate-step-C3.sh:35 generate-step-D1.sh:7
+#: generate-step-D1.sh:51 generate-step-D2.sh:10 generate-step-D2.sh:43
+#: generate-step-D2.sh:45 generate-step-D2.sh:47 generate-step-E10.sh:7
+#: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:38
+#: generate-step-E11.sh:39 generate-step-E13.sh:7 generate-step-E13.sh:16
+#: generate-step-E13.sh:40 generate-step-E13.sh:41 generate-step-E1.sh:28
+#: generate-step-E1.sh:30 generate-step-E1.sh:31 generate-step-E3.sh:7
+#: generate-step-E3.sh:8 generate-step-E3.sh:24 generate-step-E3.sh:26
+#: generate-step-E4.sh:7 generate-step-E4.sh:24 generate-step-E5.sh:15
+#: generate-step-E6.sh:7 generate-step-E6.sh:8 generate-step-E6.sh:9
+#: generate-step-E9.sh:6 generate-step-F2.sh:6 generate-step-G2.sh:7
+#: i18n-lib.sh:19 upload-to-servers.sh:40 upload-to-servers.sh:42
+#: upload-to-servers.sh:43 upload-to-servers.sh:44 upload-to-servers.sh:46
+#: upload-to-servers.sh:47 upload-to-servers.sh:48 upload-to-servers.sh:51
+#: upload-to-servers.sh:52 upload-to-servers.sh:53 upload-to-servers.sh:54
+#: upload-to-servers.sh:55 upload-to-servers.sh:56 upload-to-servers.sh:57
 #: upload-to-servers.sh:71 upload-to-servers.sh:72 upload-to-servers.sh:73
 #: upload-to-servers.sh:74 upload-to-servers.sh:75 upload-to-servers.sh:76
 #: upload-to-servers.sh:77 upload-to-servers.sh:78 upload-to-servers.sh:79
 #: upload-to-servers.sh:80 upload-to-servers.sh:81 upload-to-servers.sh:82
+#: upload-to-servers.sh:83
 msgid "etape"
 msgstr "step"
 
-#: generate-step-A2.sh:25
+#: generate-step-A2.sh:26
 msgid ""
 "Voila, vous avez résolu l'etape A1.\n"
 "\n"
@@ -59,7 +60,7 @@ msgstr ""
 "out what rot13 is, and an easy way to decode it.\n"
 "\n"
 
-#: generate-step-A2.sh:35
+#: generate-step-A2.sh:36
 msgid ""
 "Voila, le rot13 est decode.\n"
 "\n"
@@ -87,11 +88,11 @@ msgstr ""
 "(http://ensiwiki.ensimag.fr/index.php/TP_Unix_-_Treasure_hunt). Open\n"
 "the tab 'discussion'. We'll meet there !\n"
 
-#: generate-step-A5.sh:22 upload-to-servers.sh:38 upload-to-servers.sh:39
+#: generate-step-A5.sh:23 upload-to-servers.sh:38 upload-to-servers.sh:39
 msgid "jeu-de-piste.sh"
 msgstr "treasure-hunt.sh"
 
-#: generate-step-A5.sh:32
+#: generate-step-A5.sh:33
 msgid ""
 "Bonjour,\n"
 "\n"
@@ -157,11 +158,11 @@ msgstr ""
 "The generated program will give you instructions to go to the next\n"
 "step.\n"
 
-#: generate-step-A5.sh:66
+#: generate-step-A5.sh:67
 msgid "Enonce etape B1"
 msgstr "Instructions for step B1"
 
-#: generate-step-A5.sh:69
+#: generate-step-A5.sh:70
 #, sh-format
 msgid ""
 "Un message a ete envoye a %s.\n"
@@ -170,7 +171,7 @@ msgstr ""
 "A message has been sent to %s.\n"
 "Check this mailbox to get the instructions for the next step."
 
-#: generate-step-B1.sh:8
+#: generate-step-B1.sh:9
 msgid ""
 "Fichier source pour l'etape B1.\n"
 "Ce programme doit etre dans un fichier etape_b1.adb\n"
@@ -181,7 +182,7 @@ msgstr ""
 "This program must be in a file etape_b1.adb\n"
 "Compile and execute it to continue.\n"
 
-#: generate-step-B1.sh:16
+#: generate-step-B1.sh:17
 msgid "procedure Etape_B1 is"
 msgstr "procedure Step_B1 is"
 
@@ -208,7 +209,7 @@ msgstr ""
 "This time, this is a LaTeX file. You can compile it\n"
 "with the command pdflatex step-C1.tex to get a PDF file\n"
 
-#: generate-step-C1.sh:17
+#: generate-step-C1.sh:18
 msgid ""
 "Bien, vous avez réussi à compiler le fichier.\n"
 "\n"
@@ -284,11 +285,11 @@ msgstr ""
 "in the twinkling of an eye.\n"
 "\n"
 
-#: generate-step-C3.sh:36
+#: generate-step-C3.sh:37
 msgid "etape-C3.png générée"
 msgstr "step-C3.png generated"
 
-#: generate-step-D1.sh:8
+#: generate-step-D1.sh:9
 msgid ""
 "Fichier source pour l'etape D1.\n"
 "Ce programme doit etre dans un fichier etape_d1.adb\n"
@@ -304,11 +305,11 @@ msgstr ""
 "\n"
 "The file is purposely unreadable to make the exercice more 'funny'.\n"
 
-#: generate-step-D1.sh:19
+#: generate-step-D1.sh:20
 msgid "procedure Etape_D1 is"
 msgstr "procedure Step_D1 is"
 
-#: generate-step-D1.sh:23
+#: generate-step-D1.sh:24
 msgid ""
 "Bonjour,\n"
 "\n"
@@ -346,19 +347,19 @@ msgstr ""
 "And the last one is here:\n"
 "\n"
 
-#: generate-step-D1.sh:57
+#: generate-step-D1.sh:58
 msgid "A vous de faire les copier-coller pour remettre le tout ensemble"
 msgstr "Do the cut-and-paste to put them together."
 
-#: generate-step-D1.sh:60
+#: generate-step-D1.sh:61
 msgid "end Mauvais_Nom_Qui_Devrait_Etre_Etape_D1;\n"
 msgstr "end Bad_Name_Which_Should_Have_Been_Step_D1;\n"
 
-#: generate-step-D1.sh:63
+#: generate-step-D1.sh:64
 msgid "etape_d1.adb genere\n"
 msgstr "step_d1.adb generated\n"
 
-#: generate-step-D2.sh:9
+#: generate-step-D2.sh:12
 msgid ""
 "Fichier source pour l'etape D2.\n"
 "Le programme est coupé en 3 morceaux.\n"
@@ -368,11 +369,11 @@ msgstr ""
 "This program has been cut into 3 pieces.\n"
 "Assemble-them and compile the program.\n"
 
-#: generate-step-D2.sh:16
+#: generate-step-D2.sh:19
 msgid "procedure Etape_D2 is"
 msgstr "procedure Step_D2 is"
 
-#: generate-step-D2.sh:21
+#: generate-step-D2.sh:24
 msgid ""
 "Visiblement, le copier-coller a marché !\n"
 "\n"
@@ -397,15 +398,15 @@ msgstr ""
 "know which type of file it is, use the command 'file', and then use\n"
 "the appropriate tool to open it.\n"
 
-#: generate-step-D2.sh:34
+#: generate-step-D2.sh:37
 msgid "end Etape_D2;"
 msgstr "end Step_D2;"
 
-#: generate-step-D2.sh:37
+#: generate-step-D2.sh:40
 msgid "etape_d2.adb genere"
 msgstr "step_d2.adb generated"
 
-#: generate-step-E10.sh:8
+#: generate-step-E10.sh:9
 msgid ""
 "Voila donc l'etape E10.\n"
 "\n"
@@ -422,7 +423,7 @@ msgstr ""
 "\n"
 "Keep only lines containing STEP-E10 to get the right instructions.\n"
 
-#: generate-step-E10.sh:17
+#: generate-step-E10.sh:18
 msgid ""
 "Pour l'etape suivante\n"
 "les instructions\n"
@@ -493,11 +494,11 @@ msgstr ""
 "The geekest students will find a solution with a single 'grep'\n"
 "command, that said...\n"
 
-#: generate-step-E10.sh:57
+#: generate-step-E10.sh:58
 msgid "ETAPE-E10"
 msgstr "STEP-E10"
 
-#: generate-step-E11.sh:12
+#: generate-step-E11.sh:13
 msgid ""
 "Bien.\n"
 "\n"
@@ -547,7 +548,7 @@ msgstr ""
 "The answer for the last question will be: b3147554\n"
 "\n"
 
-#: generate-step-E13.sh:8
+#: generate-step-E13.sh:9
 msgid ""
 "Voila, vous terminez ainsi la partie E du jeu de piste.\n"
 "\n"
@@ -565,7 +566,7 @@ msgstr ""
 "This is the only file whose name starts with an 'x', and ends with a\n"
 "character different from 'z'.\n"
 
-#: generate-step-E13.sh:28
+#: generate-step-E13.sh:29
 msgid ""
 "Oui, c'est bien celui là.\n"
 "\n"
@@ -585,7 +586,7 @@ msgstr ""
 "and let the script guide you. Chapter 8 of the booklet should help\n"
 "you."
 
-#: generate-step-E1.sh:14
+#: generate-step-E1.sh:15
 msgid ""
 "Et oui, c'est bien un fichier PDF (si vous lisez ceci, je suppose\n"
 "que vous l'avez ouvert avec un outil comme kpdf, evince ou acroread).\n"
@@ -609,7 +610,7 @@ msgstr ""
 "hidden, hence you won't see them immediately ...\n"
 "\n"
 
-#: generate-step-E3.sh:8
+#: generate-step-E3.sh:9
 msgid ""
 "Jouons maintenant un peu avec les redirections.\n"
 "\n"
@@ -639,7 +640,7 @@ msgstr ""
 "An encoded message can be found in file step-E4.txt. Decode it using\n"
 "the program 'decoder'.\n"
 
-#: generate-step-E4.sh:8
+#: generate-step-E4.sh:9
 msgid ""
 "Bien, vous avez reussi a decoder le message.\n"
 "\n"
@@ -671,7 +672,7 @@ msgstr ""
 "\n"
 "(using the notion of 'pipe')\n"
 
-#: generate-step-E5.sh:8
+#: generate-step-E5.sh:7
 #, sh-format
 msgid ""
 "Bravo !\n"
@@ -690,7 +691,7 @@ msgstr ""
 "Instructions are in the only file of this directory (and it's\n"
 "subdirectories) whose name ends with .txt.\n"
 
-#: generate-step-E6.sh:42
+#: generate-step-E6.sh:43
 #, sh-format
 msgid ""
 "Bravo,\n"
@@ -730,7 +731,7 @@ msgstr ""
 "command. This step is very hard, don't hesitate asking help to your\n"
 "teacher or to one of your classmates).\n"
 
-#: generate-step-E6.sh:62
+#: generate-step-E6.sh:63
 #, sh-format
 msgid ""
 "Bien vu !\n"
@@ -902,23 +903,23 @@ msgstr ""
 "  $web_url\n"
 "\n"
 
-#: generate-step-E9.sh:20
+#: generate-step-E9.sh:21
 msgid "Etape"
 msgstr "Step"
 
-#: generate-step-E9.sh:27
+#: generate-step-E9.sh:28
 msgid "Quel est votre login a l'Ensimag? :"
 msgstr "What is your login at Ensimag:"
 
-#: generate-step-F2.sh:33
+#: generate-step-F2.sh:34
 msgid "Non ..."
 msgstr "No ..."
 
-#: generate-step-F2.sh:34
+#: generate-step-F2.sh:35
 msgid "Rejoue !"
 msgstr "Same player, soot again"
 
-#: generate-step-F2.sh:43
+#: generate-step-F2.sh:44
 msgid ""
 "Bravo ! fin de l'étape...\n"
 "\n"
@@ -942,15 +943,15 @@ msgstr ""
 "http://ensiwiki.ensimag.fr/index.php/Travailler_à_distance for 1001\n"
 "ways to do this) to continue.\n"
 
-#: generate-step-F2.sh:58
+#: generate-step-F2.sh:59
 msgid "cette action envoie un caractere de fin de fichier au processus"
 msgstr "this action sends an end-of-file character to the process"
 
-#: generate-step-F2.sh:62
+#: generate-step-F2.sh:63
 msgid "cette action aurait pu tuer le processus"
 msgstr "this action could have killed the process"
 
-#: generate-step-F2.sh:71
+#: generate-step-F2.sh:72
 msgid ""
 "Ok, je me suspends. Relance-moi en avant-plan pour continuer.\n"
 "A tout de suite ..."
@@ -958,7 +959,7 @@ msgstr ""
 "OK, I'm suspending myself. Bring me back in foreground to continue.\n"
 "See you soon..."
 
-#: generate-step-F2.sh:79
+#: generate-step-F2.sh:80
 msgid ""
 "Me revoila. J'attends maintenant un caractere de fin de fichier.\n"
 "Si la commande avait été lancée avec une entree redirigee\n"
@@ -976,11 +977,11 @@ msgstr ""
 "input for %s is the keyboard. We can simulate an end of file by typing\n"
 "Control-d.\n"
 
-#: generate-step-F2.sh:90
+#: generate-step-F2.sh:91
 msgid "Suspends moi..."
 msgstr "Suspend me..."
 
-#: generate-step-G2.sh:15
+#: generate-step-G2.sh:16
 msgid ""
 "Cette étape termine la partie principale du jeu de piste.\n"
 "\n"
@@ -1032,8 +1033,8 @@ msgstr ""
 msgid "Generating step using locale:"
 msgstr "Generating step using locale:"
 
-#: upload-to-servers.sh:58 generate-all.sh:24 generate-all.sh:25
-#: generate-all.sh:26
+#: upload-to-servers.sh:58 generate-all.sh:25 generate-all.sh:26
+#: generate-all.sh:27
 msgid "demo-exam-ensimag2011"
 msgstr "demo-exam-ensimag2011-en"
 

@@ -1,7 +1,6 @@
-Correspondance entre les numéros d'étapes et le contenu, pour le jeu
-de piste 2008. Notation :
+Correspondance entre les numéros d'étapes et le contenu. Notation :
 
-numéro-d'etape: contenu (Chapitre où la notion est vue)
+  numéro-d'etape: contenu (Chapitre où la notion est vue)
 
 Le numéro correspond au point de départ (i.e. 3: blablabla signifie
 que pour aller de l'étape 3 au sujet de l'étape 4, il faut faire
@@ -9,9 +8,6 @@ blablabla).
 
 Les nouveaux noms sont du type A1/B2/... pour permettre d'insérer plus
 facilement des étapes sans tout renuméroter.
-
-Si le numéro est « TODO: » que l'étape ne faisait pas partie du jeu de
-piste 2008.
 
 Chapitre 3 : internet
 A1: web (site de Matthieu Moy) (Chap 3)

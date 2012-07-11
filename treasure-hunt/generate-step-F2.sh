@@ -44,7 +44,7 @@ retry () {
 ok () {
     echo "$(gettext "Bravo ! fin de l'étape...
 
-L'étape suivante se trouve sur le serveur ensilinux.imag.fr. Elle est
+L'étape suivante se trouve sur le serveur \${auxiliarymachine}. Elle est
 dans le fichier
 
   ~\${auxiliary_user}/etape-G1.txt

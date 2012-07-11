@@ -1,9 +1,13 @@
 To install the hunt on your machine, you need to (in theory):
 
-1) edit treasure-setup.sh
+1) Read and edit treasure-setup.sh
 
 2) run "make install" (reading the Makefile may help understanding the
-generation process, in particular how multi-lingual hunt is managed)
+   generation process, in particular how multi-lingual hunt is
+   managed)
+
+3) Set up the database for monitoring steps (see spy/db-setup.sh and
+   other scripts in the spy/ directory).
 
 In practice, installing the hunt outside Ensimag will most likely
 require tweaking the code. If you need help doing this, contact me:

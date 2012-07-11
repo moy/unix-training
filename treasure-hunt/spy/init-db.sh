@@ -7,16 +7,20 @@ Options:
 	--help		This help message.
 	--postgresql	Use PostgreSQL syntax.
 	--drop-tables	Generate "DROP TABLE" statements to cleanup the database.
+	--apply		Apply SQL directly to the database
 
 Typical usage:
 
-./init-db.sh --drop-tables | mysql -h arpont.imag.fr -p --database=moy
+./init-db.sh --drop-tables | mysql -h <host> -p --database=<dbname>
+
+./init-db.sh --apply
 
 EOF
 }
 
 drop=no
 apply=no
+exam_dbtype=
 
 while test $# -ne 0; do
     case "$1" in

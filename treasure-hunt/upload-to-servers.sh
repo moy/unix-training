@@ -35,7 +35,7 @@ todo chmod 711 jeu-de-piste/
 todo 'find jeu-de-piste/ -type d -exec chmod ugo+x {} \;'
 
 upload_lang () {
-    rsync $(gettext jeu-de-piste.sh) "$mainmachine":/home/perms/moy/$(gettext jeu-de-piste.sh)
+    rsync $(gettext jeu-de-piste.sh) "$mainmachine":"$main_user_home"/$(gettext jeu-de-piste.sh)
     todo chmod 755 $(gettext jeu-de-piste.sh)
     rsync $(gettext etape)-A2.txt "$web"/
 
@@ -57,7 +57,7 @@ upload_lang () {
     rsync $(gettext etape)-F2.sh "$dir"/979b5c3/$(gettext etape)-F2.sh
     rsync -r ./$(gettext demo-exam-ensimag2011)/ ~/WWW/$(gettext demo-exam-ensimag2011)/
 
-#    rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliarymachine":/home/perms/moy/
+#    rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliarymachine":"$main_user_home"
 #    ssh "$auxiliarymachine" "chmod 755 $(gettext etape)-G2.sh; chmod 644 $(gettext etape)-G1.txt"
 
 }

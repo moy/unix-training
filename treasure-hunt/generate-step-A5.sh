@@ -38,7 +38,7 @@ partie du TP 'Jeu de piste'.
 
 L'etape suivante est une compilation de programme Ada. Un programme
 Ada se trouve dans le fichier etape_b1.adb dans le repertoire
-jeu-de-piste sur le compte de l'utilisateur moy.
+jeu-de-piste sur le compte de l'utilisateur \${main_user}.
 
 Vous n'avez pas le droit d'utiliser la commande 'ls' dans ce
 repertoire (vous pouvez essayer, mais ca ne marchera pas), mais vous
@@ -63,7 +63,7 @@ puis executez-le avec
 
 Le programme genere vous donnera les indications pour aller a l'etape
 suivante.
-" | rotpipe
+" | envsubst | rotpipe
 
 echo '" | rotpipe | mail -s "'"$(gettext "Enonce etape B1")"'" "$LOGNAME@$(hostname --long)"'
 

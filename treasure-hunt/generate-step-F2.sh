@@ -78,14 +78,14 @@ wait_stp () {
     oneof () { retry_eof; }
     onstp () {
 	wait_eof; kill -STOP \$\$; 
-	printf "$(gettext "Me revoila. J'attends maintenant un caractere de fin de fichier.
+	echo "$(gettext "Me revoila. J'attends maintenant un caractere de fin de fichier.
 Si la commande avait été lancée avec une entree redirigee
-(comme '%s < un-fichier' ou bien 'commande | %s',
+(comme './etape-F2.sh < un-fichier' ou bien 'commande | ./etape-F2.sh'),
 le caractere de fin de fichier aurait ete recu en arrivant
 a la fin du fichier ou de la commande d'entree. Ici, l'entree de
-%s est le clavier. On peut simuler une fin de fichier avec
+etape-F2.sh est le clavier. On peut simuler une fin de fichier avec
 Control-d.
-")" "$0" "$0" "$0"; echo;}
+")" ; }
     oncont () { :; }
     onint () { retry_int; }
     onquit () { retry; }

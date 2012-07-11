@@ -39,7 +39,7 @@ git commit -a -m "Encore une petite modification"
 echo "Voici la solution de l'étape H7.
 
 L'étape suivante est un programme, il se trouve dans
-~moy/jeu-de-piste/qyxrd/etape-H8.
+\$maindir_tilde/qyxrd/etape-H8.
 
 Ce programme lit la réponse à l'étape suivante, mais ... il ne dit
 rien de ce qu'il a lu. Il va falloir examiner un peu l'exécution du
@@ -59,7 +59,7 @@ http://linux.die.net/man/5/proc .
 
 La commande strace, quant à elle, permet de voir tous les appels
 systèmes que fait un processus. En particulier, on verra donc quels
-fichiers ont été ouverts avec l'appel 'open'." > README.txt
+fichiers ont été ouverts avec l'appel 'open'." | envsubst > README.txt
 
 git commit -a -m "Réécriture de README.txt"
 

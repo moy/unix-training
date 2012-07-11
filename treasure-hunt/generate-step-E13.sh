@@ -30,10 +30,10 @@ gettext "Oui, c'est bien celui là.
 
 Pour l'étape suivante, exécutez (sur telesun) le script
 
-  ~moy/jeu-de-piste/979b5c3/etape-F2.sh
+  \$maindir_tilde/979b5c3/etape-F2.sh
 
 et laissez-vous guider par les instructions. Le chapitre 8 du
-polycopié devrait vous aider." > xabcdefg1
+polycopié devrait vous aider." | envsubst > xabcdefg1
 
 cd ..
 

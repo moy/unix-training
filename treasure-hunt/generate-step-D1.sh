@@ -42,7 +42,7 @@ dans un fichier OpenOffice qui se trouve ici :
 
 Le second est dans un fichier texte qui se trouve dans
 
-~moy/jeu-de-piste/etape_d2-2.txt
+\$maindir_tilde/etape_d2-2.txt
 
 Et le dernier est ici :
 " | envsubst | ada_obfuscate Noise

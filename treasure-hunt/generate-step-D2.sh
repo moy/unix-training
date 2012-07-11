@@ -25,14 +25,14 @@ gettext "Visiblement, le copier-coller a marché !
 
 L'etape suivante se trouve dans le fichier
 
-~moy/jeu-de-piste/oaue/etape-E1
+\$maindir_tilde/oaue/etape-E1
 
 La personne qui a créé ce fichier l'a nommé étrangement :
 il n'a pas mis d'extension (i.e. le nom de fichier ne se 
 termine pas par .quelquechose). Pour savoir de quel type
 de fichier il s'agit, utilisez la commande 'file', et
 utilisez ensuite l'outil adapté pour l'ouvrir.
-" | ada_obfuscate
+" | envsubst | ada_obfuscate
 
 gettext "end Etape_D2;"
 echo

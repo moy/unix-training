@@ -17,12 +17,12 @@ que vous l'avez ouvert avec un outil comme kpdf, evince ou acroread).
 
 Pour l'étape suivante, elle se trouve dans le répertoire suivant :
 
-\\verb|~moy/jeu-de-piste/kmcv/|
+\\verb|\${maindir_tilde}/kmcv/|
 
 Il y a un fichier par langue (français, anglais), mais ces fichiers
 sont cachés, donc, vous ne les verrez pas forcément immédiatement ...
 
-"
+" | envsubst
 
 echo '\end{document}'
 ) > $(gettext etape)-E1.tex

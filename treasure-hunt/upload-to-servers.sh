@@ -55,7 +55,7 @@ todo "find \"$maindir_upload\"/ -type d -exec chmod ugo+x {} \;"
 
 upload_lang () {
     rsync $(gettext jeu-de-piste.sh) "$mainmachine":"$main_user_home_upload"/$(gettext jeu-de-piste.sh)
-    todo chmod 755 $(gettext jeu-de-piste.sh)
+    todo "chmod 755 \"$main_user_home_upload\"/$(gettext jeu-de-piste.sh)"
     rsync $(gettext etape)-A2.txt "$web"/
     rsync version.txt "$web"/
 
@@ -75,7 +75,7 @@ upload_lang () {
     rsync $(gettext etape)-E9.php $(gettext etape)-E10.txt $(gettext etape)-E11.txt $(gettext etape)-E11-bis.txt "$web"/yntsf/
     rsync $(gettext etape)-E13.tar.gz "$dir"/123654/
     rsync $(gettext etape)-F2.sh "$dir"/979b5c3/$(gettext etape)-F2.sh
-    rsync -r ./$(gettext demo-exam-ensimag2012)/ ~/WWW/$(gettext demo-exam-ensimag2011)/
+    rsync -r ./$(gettext demo-exam-ensimag2012)/ ~/WWW/$(gettext demo-exam-ensimag2012)/
 
     rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliarymachine":"$main_user_home_tilde"
     ssh "$auxiliarymachine" "chmod 755 $(gettext etape)-G2.sh; chmod 644 $(gettext etape)-G1.txt"

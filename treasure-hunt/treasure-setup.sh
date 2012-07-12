@@ -56,7 +56,9 @@ case "$mainmachine" in
 	;;
     *)
 	main_user_home=/home/perms/$main_user
+	maindir=$main_user_home/jeu-de-piste
 	main_user_home_upload=$main_user_home
+	maindir_upload=$main_user_home_upload/jeu-de-piste
 	;;
 esac
 

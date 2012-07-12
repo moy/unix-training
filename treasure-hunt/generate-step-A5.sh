@@ -27,6 +27,10 @@ printf "%s\n\n" '#! /bin/bash'
 
 cat rotlib-decode.sh
 cat rotlib-encode.sh
+. ./mail-lib.sh
+mail_config
+
+echo 'email=$(get_email "$LOGNAME")'
 
 printf "%s" '
 echo "'
@@ -65,8 +69,8 @@ Le programme genere vous donnera les indications pour aller a l'etape
 suivante.
 " | envsubst | rotpipe
 
-echo '" | rotpipe | mail -s "'"$(gettext "Enonce etape B1")"'" "$LOGNAME@$(hostname --long)"'
+echo '" | rotpipe | send_mail "'"$(gettext "Enonce etape B1")"'" "$email"'
 
 monitor_step_cmd A5
-printf 'printf "%s\n" $LOGNAME@$(hostname --long)\n' "$(eval_gettext "Un message a ete envoye a %s.
+printf 'printf "%s\n" "$email"\n' "$(eval_gettext "Un message a ete envoye a %s.
 Consultez cette boite mail pour avoir les instructions pour l'etape suivante.")"

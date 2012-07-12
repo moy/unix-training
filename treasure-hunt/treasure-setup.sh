@@ -49,6 +49,17 @@ demo_url_en=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2012-en/
 # URL of the monitoring system.
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp
 
+# I upload the game on multiple machines, with slightly different rules
+case "$mainmachine" in
+    ensiens|ensiens.imag.fr)
+	: nothing
+	;;
+    *)
+	main_user_home=/home/perms/$main_user
+	main_user_home_upload=$main_user_home
+	;;
+esac
+
 export mainmachine maindir auxiliarymachine web web_url
 export auxiliary_user
 export demo_url demo_url_en spy_url

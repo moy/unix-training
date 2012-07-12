@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-12 11:48+0200\n"
-"PO-Revision-Date: 2011-07-21 11:49+0200\n"
+"PO-Revision-Date: 2012-07-21 11:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -702,7 +702,7 @@ msgstr "Génération de l'étape avec la locale :"
 
 #: upload-to-servers.sh:58 generate-all.sh:25 generate-all.sh:26
 #: generate-all.sh:27
-msgid "demo-exam-ensimag2011"
+msgid "demo-exam-ensimag2012"
 msgstr ""
 
 #~ msgid "treasure-hunt/"

@@ -43,8 +43,8 @@ web=$HOME/WWW/jeu-de-piste
 web_url=http://www-verimag.imag.fr/~moy/jeu-de-piste
 
 # Demo version of the exam, accessible to students (french and english versions)
-demo_url=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2011/
-demo_url_en=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2011-en/
+demo_url=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2012/
+demo_url_en=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2012-en/
 
 # URL of the monitoring system.
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp

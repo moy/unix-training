@@ -65,8 +65,10 @@ step_d2.adb
 etape-E9.php
 step-E9.php
 
-demo-exam-ensimag2011/
-demo-exam-ensimag2011-en/
+demo-exam-ensimag2012/
+demo-exam-ensimag2012-en/
 
 # Who produces that Berkeley DB file?
 __db.
+
+version.txt

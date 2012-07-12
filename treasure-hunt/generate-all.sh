@@ -22,9 +22,9 @@ generate_all () {
     ./generate-step-E11.sh
     ./generate-step-E13.sh
 
-    rm -fr ./$(gettext demo-exam-ensimag2011)/
-    (cd ../exam-expl/ && ls && ./$(gettext demo-exam-ensimag2011).sh)
-    mv ../exam-expl/exam_genere/php/ ./$(gettext demo-exam-ensimag2011)/
+    rm -fr ./$(gettext demo-exam-ensimag2012)/
+    (cd ../exam-expl/ && ls && ./$(gettext demo-exam-ensimag2012).sh)
+    mv ../exam-expl/exam_genere/php/ ./$(gettext demo-exam-ensimag2012)/
 
     ./generate-step-E1.sh
     ./generate-step-E2.sh

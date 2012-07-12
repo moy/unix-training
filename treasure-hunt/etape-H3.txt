@@ -1,5 +1,5 @@
 L'étape suivante est un fichier dans le répertoire
-~moy/jeu-de-piste/etape-H4/ sur telesun (pas sur le site web), mais
+~moy/jeu-de-piste/etape-H4/ sur votre machine de travail, mais
 j'ai deux mauvaises nouvelles :
 
 1) Vous n'avez pas la permission de lister le contenu de ce

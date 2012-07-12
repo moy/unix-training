@@ -1,7 +1,7 @@
 #! /bin/bash
 
-telehome=$(ssh telesun pwd)
-telekeys=$(ssh telesun cat .ssh/authorized_keys)
+telehome=$(ssh "$mainmachine" pwd)
+telekeys=$(ssh "$mainmachine" cat .ssh/authorized_keys)
 
 (printf '%s' "command=\"$telehome/jeu-de-piste/etape-H9.sh\",no-port-forwarding,no-X11-forwarding,no-agent-forwarding ";
     cat id_rsa_etape_H9.pub) > authorized_keys_H9
@@ -12,5 +12,5 @@ else
     (echo "$telekeys"; cat authorized_keys_H9) > authorized_keys
 fi
 chmod 600 authorized_keys
-rsync -av authorized_keys telesun:.ssh/authorized_keys
+rsync -av authorized_keys "$mainmachine":.ssh/authorized_keys
 rm -f authorized_keys_H9 authorized_keys

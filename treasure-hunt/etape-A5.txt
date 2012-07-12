@@ -9,7 +9,10 @@ du jeu de piste)
 
 Voilà pour cette étape. Si vous êtes identifiés correctement, vous vous trouvez dans l'interface d'édition du Wiki (sinon, regardez en haut de la page).
 
-Nous quittons maintenant EnsiWiki. Le fichier <code>~moy/jeu-de-piste.sh</code> sur <code>telesun</code> est un fichier exécutable. Exécutez-le, et il vous enverra un email qui contiendra les instructions pour l'étape suivante.
+Nous quittons maintenant EnsiWiki. Le fichier
+<code>~moy/jeu-de-piste.sh</code> accessible depuis les PCs de l'école
+est un fichier exécutable. Exécutez-le, et il vous enverra un email
+qui contiendra les instructions pour l'étape suivante.
 
 Pour exécuter ce programme, il suffit de taper dans un shell la commande : ~moy/jeu-de-piste.sh
 -->

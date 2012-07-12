@@ -28,7 +28,7 @@ done
 
 gettext "Oui, c'est bien celui là.
 
-Pour l'étape suivante, exécutez (sur telesun) le script
+Pour l'étape suivante, exécutez (sur votre machine de travail) le script
 
   \$maindir_tilde/979b5c3/etape-F2.sh
 

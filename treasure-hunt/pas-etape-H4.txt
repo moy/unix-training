@@ -1,2 +1,2 @@
-Non, l'étape H4 n'est pas sur le site web, mais sur telesun, dans un
-répertoire en local.
+Non, l'étape H4 n'est pas sur le site web, mais sur votre machine de
+travail, dans un répertoire en local.

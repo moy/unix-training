@@ -1,7 +1,7 @@
 # The main machine is the one on which students usually work.
 # Students must have access to a shared directory, to which
 # we'll upload files corresponding to the steps of the hunt.
-mainmachine=telesun.imag.fr
+mainmachine=ensiens.imag.fr
 
 # Some of the steps are on the account of a particular user on
 # $mainmachine, but not inside $maindir. This variable is the user's
@@ -21,10 +21,19 @@ maindir=$main_user_home/jeu-de-piste
 # notations
 maindir_tilde=$main_user_home_tilde/jeu-de-piste
 
-# Other machine on which students have access. It will be used to
-# practice various basic networking tools (SSH, sftp, ...). Below are
-# the machine name and the user on which this part will be installed:
-auxiliarymachine=ensilinux.imag.fr
+# In my setup, the students access $main_user_home with a path
+# different from the one I'm using to upload. If this is not your
+# case, uncomment the line to set
+# main_user_home_upload=$main_user_home.
+main_user_home_upload=/export/ensiens.imag.fr/moy/
+# main_user_home_upload=$main_user_home
+maindir_upload=$main_user_home_upload/jeu-de-piste
+
+# Other machine (server) on which students have access. It will be
+# used to practice various basic networking tools (SSH, sftp, ...).
+# Below are the machine name and the user on which this part will be
+# installed:
+auxiliarymachine=telesun.imag.fr
 auxiliary_user=$main_user
 
 # The content of this directory should be uploaded to a website

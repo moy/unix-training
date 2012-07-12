@@ -45,3 +45,10 @@ generate_all () {
 }
 
 multilingual_do generate_all
+
+(
+    echo 'Hunt generated on:'
+    date
+    echo 'From Git version:'
+    git log -1 --oneline
+) > version.txt

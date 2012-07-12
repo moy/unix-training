@@ -11,6 +11,24 @@ printf "%s\n\n" '#!/bin/bash'
 
 cat ./rotlib-decode.sh
 
+cat <<EOF
+die_rotpipe () { echo "\$@" | unrotpipe; exit 1; }
+[ -z "\$SSH_CLIENT" ] && die_rotpipe "$(gettext "Il semble que vous ne soyez pas connectes à la machine via SSH.
+
+Je refuse de m'exécuter dans ces conditions, désolé.
+Merci de vous connecter à cette machine via SSH, et je
+vous donnerai la solution.
+
+Si cette étape se trouve sur la même machine que votre machine de
+travail habituel, vous pouvez utiliser un PC individuel ou votre
+machine personnelle pour réaliser cette étape.
+" | rotpipe)"
+[ -z "\$DISPLAY" ] && die_rotpipe "$(gettext "Vous n'avez pas activé l'affichage graphique avec SSH.
+
+Réessayez en utilisant l'option -X de SSH pour activer le 'X11 forwarding'." \
+	| rotpipe)"
+EOF
+
 printf "%s" '
 echo '\"
 
@@ -47,3 +65,5 @@ LANG=en_US.UTF-8 LESS= xterm -e less /tmp/tmp-G2.$$ || \
 LANG=en_US.UTF-8 LESS= gnome-terminal -e less /tmp/tmp-G2.$$
 rm -f /tmp/tmp-G2.$$
 '
+
+chmod +x $(gettext etape)-G2.sh

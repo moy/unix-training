@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-12 11:24+0200\n"
+"POT-Creation-Date: 2012-07-12 11:48+0200\n"
 "PO-Revision-Date: 2011-07-21 11:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,16 +28,16 @@ msgstr ""
 #: generate-step-E3.sh:26 generate-step-E4.sh:7 generate-step-E4.sh:24
 #: generate-step-E5.sh:17 generate-step-E6.sh:7 generate-step-E6.sh:8
 #: generate-step-E6.sh:9 generate-step-E9.sh:6 generate-step-F2.sh:7
-#: generate-step-G2.sh:8 i18n-lib.sh:19 upload-to-servers.sh:40
-#: upload-to-servers.sh:42 upload-to-servers.sh:43 upload-to-servers.sh:44
-#: upload-to-servers.sh:46 upload-to-servers.sh:47 upload-to-servers.sh:48
-#: upload-to-servers.sh:51 upload-to-servers.sh:52 upload-to-servers.sh:53
-#: upload-to-servers.sh:54 upload-to-servers.sh:55 upload-to-servers.sh:56
-#: upload-to-servers.sh:57 upload-to-servers.sh:71 upload-to-servers.sh:72
-#: upload-to-servers.sh:73 upload-to-servers.sh:74 upload-to-servers.sh:75
-#: upload-to-servers.sh:76 upload-to-servers.sh:77 upload-to-servers.sh:78
-#: upload-to-servers.sh:79 upload-to-servers.sh:80 upload-to-servers.sh:81
-#: upload-to-servers.sh:82 upload-to-servers.sh:83
+#: generate-step-G2.sh:8 generate-step-G2.sh:68 i18n-lib.sh:19
+#: upload-to-servers.sh:40 upload-to-servers.sh:42 upload-to-servers.sh:43
+#: upload-to-servers.sh:44 upload-to-servers.sh:46 upload-to-servers.sh:47
+#: upload-to-servers.sh:48 upload-to-servers.sh:51 upload-to-servers.sh:52
+#: upload-to-servers.sh:53 upload-to-servers.sh:54 upload-to-servers.sh:55
+#: upload-to-servers.sh:56 upload-to-servers.sh:57 upload-to-servers.sh:71
+#: upload-to-servers.sh:72 upload-to-servers.sh:73 upload-to-servers.sh:74
+#: upload-to-servers.sh:75 upload-to-servers.sh:76 upload-to-servers.sh:77
+#: upload-to-servers.sh:78 upload-to-servers.sh:79 upload-to-servers.sh:80
+#: upload-to-servers.sh:81 upload-to-servers.sh:82 upload-to-servers.sh:83
 msgid "etape"
 msgstr ""
 
@@ -649,7 +649,27 @@ msgstr ""
 msgid "Suspends moi..."
 msgstr ""
 
-#: generate-step-G2.sh:17
+#: generate-step-G2.sh:16
+msgid ""
+"Il semble que vous ne soyez pas connectes à la machine via SSH.\n"
+"\n"
+"Je refuse de m'exécuter dans ces conditions, désolé.\n"
+"Merci de vous connecter à cette machine via SSH, et je\n"
+"vous donnerai la solution.\n"
+"\n"
+"Si cette étape se trouve sur la même machine que votre machine de\n"
+"travail habituel, vous pouvez utiliser un PC individuel ou votre\n"
+"machine personnelle pour réaliser cette étape.\n"
+msgstr ""
+
+#: generate-step-G2.sh:26
+msgid ""
+"Vous n'avez pas activé l'affichage graphique avec SSH.\n"
+"\n"
+"Réessayez en utilisant l'option -X de SSH pour activer le 'X11 forwarding'."
+msgstr ""
+
+#: generate-step-G2.sh:34
 msgid ""
 "Cette étape termine la partie principale du jeu de piste.\n"
 "\n"

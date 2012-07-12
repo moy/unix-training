@@ -33,6 +33,7 @@ check maindir_upload
 check main_user_home
 check auxiliarymachine
 check main_user_home_tilde
+check main_user_home_upload
 
 set -x
 
@@ -53,7 +54,7 @@ todo "chmod 711 \"$maindir_upload\"/"
 todo "find \"$maindir_upload\"/ -type d -exec chmod ugo+x {} \;"
 
 upload_lang () {
-    rsync $(gettext jeu-de-piste.sh) "$mainmachine":"$main_user_home"/$(gettext jeu-de-piste.sh)
+    rsync $(gettext jeu-de-piste.sh) "$mainmachine":"$main_user_home_upload"/$(gettext jeu-de-piste.sh)
     todo chmod 755 $(gettext jeu-de-piste.sh)
     rsync $(gettext etape)-A2.txt "$web"/
     rsync version.txt "$web"/

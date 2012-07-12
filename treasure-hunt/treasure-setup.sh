@@ -8,7 +8,7 @@ mainmachine=ensiens.imag.fr
 # login ...
 main_user=moy
 # ... and this one points to his $HOME directory.
-main_user_home=/home/perms/$main_user
+main_user_home=/home/ensiens.imag.fr/$main_user
 # A variant of $main_user_home, to let the player get used to both
 # notations
 main_user_home_tilde="~${main_user}"

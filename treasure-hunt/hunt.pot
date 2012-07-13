@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-13 11:03+0200\n"
+"POT-Creation-Date: 2012-07-13 11:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,8 +23,8 @@ msgstr ""
 #: generate-step-D2.sh:45 generate-step-D2.sh:47 generate-step-E10.sh:7
 #: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:38
 #: generate-step-E11.sh:39 generate-step-E13.sh:7 generate-step-E13.sh:16
-#: generate-step-E13.sh:40 generate-step-E13.sh:41 generate-step-E1.sh:28
-#: generate-step-E1.sh:30 generate-step-E1.sh:31 generate-step-E2.sh:17
+#: generate-step-E13.sh:41 generate-step-E13.sh:42 generate-step-E1.sh:29
+#: generate-step-E1.sh:31 generate-step-E1.sh:32 generate-step-E2.sh:17
 #: generate-step-E3.sh:7 generate-step-E3.sh:8 generate-step-E3.sh:24
 #: generate-step-E3.sh:26 generate-step-E4.sh:7 generate-step-E4.sh:24
 #: generate-step-E5.sh:17 generate-step-E6.sh:7 generate-step-E6.sh:8
@@ -151,7 +151,7 @@ msgid ""
 "avec la commande pdflatex etape-C1.tex pour obtenir un fichier PDF.\n"
 msgstr ""
 
-#: generate-step-C1.sh:18
+#: generate-step-C1.sh:19
 #, sh-format
 msgid ""
 "Bien, vous avez réussi à compiler le fichier.\n"
@@ -395,10 +395,10 @@ msgid ""
 "  $maindir_tilde/979b5c3/etape-F2.sh\n"
 "\n"
 "et laissez-vous guider par les instructions. Le chapitre 8 du\n"
-"polycopié devrait vous aider."
+"polycopié devrait vous aider.\n"
 msgstr ""
 
-#: generate-step-E1.sh:15
+#: generate-step-E1.sh:16
 #, sh-format
 msgid ""
 "Et oui, c'est bien un fichier PDF (si vous lisez ceci, je suppose\n"

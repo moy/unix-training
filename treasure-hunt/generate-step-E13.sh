@@ -33,7 +33,8 @@ Pour l'étape suivante, exécutez (sur votre machine de travail) le script
   \$maindir_tilde/979b5c3/etape-F2.sh
 
 et laissez-vous guider par les instructions. Le chapitre 8 du
-polycopié devrait vous aider." | envsubst > xabcdefg1
+polycopié devrait vous aider.
+" | envsubst > xabcdefg1
 
 cd ..
 

@@ -1,6 +1,11 @@
 # The main machine is the one on which students usually work.
 # Students must have access to a shared directory, to which
 # we'll upload files corresponding to the steps of the hunt.
+# One option is to have a big server with everybody logged-in on the
+# same machine, and another is to have individual workstations with
+# NFS-mounted directories (in this case, $mainmachine is the machine
+# used for uploading files, and $main_user_home must be accessible
+# through NFS by students)
 mainmachine=ensiens.imag.fr
 
 # Some of the steps are on the account of a particular user on

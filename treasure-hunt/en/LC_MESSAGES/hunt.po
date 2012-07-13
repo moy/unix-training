@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-12 22:23+0200\n"
-"PO-Revision-Date: 2012-07-12 22:24+0200\n"
+"POT-Creation-Date: 2012-07-13 09:10+0200\n"
+"PO-Revision-Date: 2012-07-13 09:11+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: generate-step-A2.sh:24 generate-step-B1.sh:7 generate-step-B1.sh:35
 #: generate-step-C1.sh:7 generate-step-C3.sh:35 generate-step-D1.sh:7
-#: generate-step-D1.sh:51 generate-step-D2.sh:10 generate-step-D2.sh:43
+#: generate-step-D1.sh:52 generate-step-D2.sh:10 generate-step-D2.sh:43
 #: generate-step-D2.sh:45 generate-step-D2.sh:47 generate-step-E10.sh:7
 #: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:38
 #: generate-step-E11.sh:39 generate-step-E13.sh:7 generate-step-E13.sh:16
@@ -328,13 +328,14 @@ msgstr ""
 msgid ""
 "L'etape suivante est aussi un programme Ada a compiler,\n"
 "mais il a ete decoupe en plusieurs morceaux. Le premier est\n"
-"dans un fichier OpenOffice qui se trouve ici :\n"
+"dans un fichier OpenDocument (LibreOffice, OpenOffice.org, ...) qui se\n"
+"trouve ici :\n"
 "\n"
-"$web_url/etape_d2-1.odt\n"
+"  $web_url/etape_d2-1.odt\n"
 "\n"
 "Le second est dans un fichier texte qui se trouve dans\n"
 "\n"
-"$maindir_tilde/etape_d2-2.txt\n"
+"  $maindir_tilde/etape_d2-2.txt\n"
 "\n"
 "Et le dernier est ici :\n"
 msgstr ""
@@ -342,24 +343,27 @@ msgstr ""
 "\n"
 "The next step is also an Ada program to be compiled\n"
 "but it has been split into several pieces. The first is\n"
-"in an OpenOffice file located here:\n"
+"in an OpenDocument (LibreOffice, OpenOffice.org, ...) file located\n"
+"here:\n"
 "\n"
-"$web_url/step_d2-1.odt\n"
+"  $web_url/step_d2-1.odt\n"
 "\n"
 "The second is in a text file, located in\n"
-"$maindir_tilde/step_d2-2.txt\n"
+"\n"
+"  $maindir_tilde/step_d2-2.txt\n"
+"\n"
 "And the last one is here:\n"
 "\n"
 
-#: generate-step-D1.sh:58
+#: generate-step-D1.sh:59
 msgid "A vous de faire les copier-coller pour remettre le tout ensemble"
 msgstr "Do the cut-and-paste to put them together."
 
-#: generate-step-D1.sh:61
+#: generate-step-D1.sh:62
 msgid "end Mauvais_Nom_Qui_Devrait_Etre_Etape_D1;\n"
 msgstr "end Bad_Name_Which_Should_Have_Been_Step_D1;\n"
 
-#: generate-step-D1.sh:64
+#: generate-step-D1.sh:65
 msgid "etape_d1.adb genere\n"
 msgstr "step_d1.adb generated\n"
 

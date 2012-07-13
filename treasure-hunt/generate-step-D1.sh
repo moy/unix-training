@@ -36,13 +36,14 @@ Noise
 
 gettext "L'etape suivante est aussi un programme Ada a compiler,
 mais il a ete decoupe en plusieurs morceaux. Le premier est
-dans un fichier OpenOffice qui se trouve ici :
+dans un fichier OpenDocument (LibreOffice, OpenOffice.org, ...) qui se
+trouve ici :
 
-\$web_url/etape_d2-1.odt
+  \$web_url/etape_d2-1.odt
 
 Le second est dans un fichier texte qui se trouve dans
 
-\$maindir_tilde/etape_d2-2.txt
+  \$maindir_tilde/etape_d2-2.txt
 
 Et le dernier est ici :
 " | envsubst | ada_obfuscate Noise

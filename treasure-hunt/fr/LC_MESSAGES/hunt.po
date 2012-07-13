@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-13 09:10+0200\n"
+"POT-Creation-Date: 2012-07-13 09:18+0200\n"
 "PO-Revision-Date: 2012-07-21 11:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -494,13 +494,18 @@ msgid ""
 "C'est le plus gros fichier qui se trouve dans ce repertoire ou un de\n"
 "ses sous-repertoires.\n"
 "\n"
-"(les commandes find et sort peuvent vous aider. Regardez en\n"
+"Les commandes find et sort peuvent vous aider. Regardez en\n"
 "particulier l'option -exec de find ou bien documentez-vous sur la\n"
-"commande xargs. Cette etape est tres difficile, n'hesitez pas a\n"
-"demander de l'aide a votre enseignant ou a vos collegues).\n"
+"commande xargs.\n"
+"\n"
+"Cette etape est tres difficile, n'hesitez pas a demander de l'aide a\n"
+"votre enseignant ou a vos collegues. Certains exercices de la fin du\n"
+"chapitre 7 du polycopié ont été fait pour vous guider sur cette étape,\n"
+"si vous ne les avez pas encore fait, il est temps d'avancer sur la\n"
+"lecture du polycopié.\n"
 msgstr ""
 
-#: generate-step-E6.sh:63
+#: generate-step-E6.sh:68
 #, sh-format
 msgid ""
 "Bien vu !\n"
@@ -558,7 +563,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: generate-step-E6.sh:118
+#: generate-step-E6.sh:123
 #, sh-format
 msgid ""
 "Bravo, vous avez trouve l'etape E8.\n"

@@ -53,10 +53,15 @@ L'etape suivante se trouve aussi dans
 C'est le plus gros fichier qui se trouve dans ce repertoire ou un de
 ses sous-repertoires.
 
-(les commandes find et sort peuvent vous aider. Regardez en
+Les commandes find et sort peuvent vous aider. Regardez en
 particulier l'option -exec de find ou bien documentez-vous sur la
-commande xargs. Cette etape est tres difficile, n'hesitez pas a
-demander de l'aide a votre enseignant ou a vos collegues).
+commande xargs.
+
+Cette etape est tres difficile, n'hesitez pas a demander de l'aide a
+votre enseignant ou a vos collegues. Certains exercices de la fin du
+chapitre 7 du polycopié ont été fait pour vous guider sur cette étape,
+si vous ne les avez pas encore fait, il est temps d'avancer sur la
+lecture du polycopié.
 " | envsubst \
     > "$E7_dir"/$(uuid | sed 's/....$//').txt
 

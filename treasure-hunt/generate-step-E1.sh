@@ -7,6 +7,7 @@
 printf "%s" "
 \documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \begin{document}
 \large

@@ -9,6 +9,7 @@ exec > $(gettext etape)-C1.tex
 echo '
 \documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 '
 
 latextable

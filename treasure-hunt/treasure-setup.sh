@@ -46,6 +46,15 @@ web_url=http://www-verimag.imag.fr/~moy/jeu-de-piste
 demo_url=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2012/
 demo_url_en=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2012-en/
 
+# One step sends an email to the user. The following variables
+# configure how the email will be sent:
+from_addr=Matthieu.Moy@imag.fr
+smtp_server=telesun.imag.fr
+# and these two configure how the email will be prompted obtained from
+# $LOGNAME and possibly by prompting the user.
+get_email_function=get_email_ensimag
+check_email_function=check_email_ensimag
+
 # URL of the monitoring system.
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp
 
@@ -66,3 +75,4 @@ export mainmachine maindir auxiliarymachine web web_url
 export auxiliary_user
 export demo_url demo_url_en spy_url
 export main_user_home main_user main_user_home_tilde maindir_tilde
+export from_addr smtp_server get_email_function check_email_function

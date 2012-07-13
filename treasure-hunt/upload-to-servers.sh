@@ -75,6 +75,7 @@ upload_lang () {
     rsync $(gettext etape)-E9.php $(gettext etape)-E10.txt $(gettext etape)-E11.txt $(gettext etape)-E11-bis.txt "$web"/yntsf/
     rsync $(gettext etape)-E13.tar.gz "$dir"/123654/
     rsync $(gettext etape)-F2.sh "$dir"/979b5c3/$(gettext etape)-F2.sh
+    todo "chmod 755 \"$maindir_upload\"/979b5c3/$(gettext etape)-F2.sh"
     rsync -r ./$(gettext demo-exam-ensimag2012)/ ~/WWW/$(gettext demo-exam-ensimag2012)/
 
     rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliarymachine":"$main_user_home_tilde"

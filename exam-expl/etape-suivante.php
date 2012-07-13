@@ -6,7 +6,7 @@ echo '<p>Score : ' . $summary['current'] .'/'. $summary['total'];
 $n = intval($_GET['n'])+1;
 echo ' (<a href="?n='. $n . '#next-step">Cliquez ici</a> ou rechargez la page pour mettre à jour le score)</p>';
 if ($summary['current'] == $summary['total']) {
-	echo "<p><strong>Bravo !</strong> Pour l'etape suivante, elle se trouve dans l'archive tar disponible sur telesun, dans le fichier :<br>
+	echo "<p><strong>Bravo !</strong> Pour l'etape suivante, elle se trouve dans l'archive tar disponible sur votre machine habituelle, dans le fichier :<br>
 <pre>
 ~moy/jeu-de-piste/123654/etape-E13.tar.gz
 </pre>

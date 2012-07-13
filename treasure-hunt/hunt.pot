@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-13 09:38+0200\n"
+"POT-Creation-Date: 2012-07-13 11:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -710,9 +710,10 @@ msgid "Generating step using locale:"
 msgstr ""
 
 #: mail-lib.sh:3
+#, sh-format
 msgid ""
-"Entrez votre adresse email Ensimag\n"
-"Elle s'écrit Prenom.Nom@ensimag.imag.fr\n"
+"Entrez votre adresse email $school\n"
+"Elle s'écrit $example_email\n"
 msgstr ""
 
 #: mail-lib.sh:6

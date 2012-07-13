@@ -54,6 +54,10 @@ smtp_server=telesun.imag.fr
 # $LOGNAME and possibly by prompting the user.
 get_email_function=get_email_ensimag
 check_email_function=check_email_ensimag
+# When prompting the user for an email address, mention the school and
+# the kind of email expected with these variables:
+example_email=Prenom.Nom@ensimag.imag.fr
+school=Ensimag
 
 # URL of the monitoring system.
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp
@@ -76,3 +80,4 @@ export auxiliary_user
 export demo_url demo_url_en spy_url
 export main_user_home main_user main_user_home_tilde maindir_tilde
 export from_addr smtp_server get_email_function check_email_function
+export example_email school

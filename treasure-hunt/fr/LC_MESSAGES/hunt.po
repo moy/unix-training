@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-13 09:18+0200\n"
+"POT-Creation-Date: 2012-07-13 09:38+0200\n"
 "PO-Revision-Date: 2012-07-21 11:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,11 +70,12 @@ msgid ""
 "et ouvrez l'onglet 'discussion'. On se retrouve la bas !\n"
 msgstr ""
 
-#: generate-step-A5.sh:24 upload-to-servers.sh:57 upload-to-servers.sh:58
+#: generate-step-A5.sh:24 generate-step-A5.sh:27 upload-to-servers.sh:57
+#: upload-to-servers.sh:58
 msgid "jeu-de-piste.sh"
 msgstr ""
 
-#: generate-step-A5.sh:38
+#: generate-step-A5.sh:39
 #, sh-format
 msgid ""
 "Bonjour,\n"
@@ -111,11 +112,11 @@ msgid ""
 "suivante.\n"
 msgstr ""
 
-#: generate-step-A5.sh:72
+#: generate-step-A5.sh:73
 msgid "Enonce etape B1"
 msgstr ""
 
-#: generate-step-A5.sh:75
+#: generate-step-A5.sh:76
 #, sh-format
 msgid ""
 "Un message a ete envoye a %s.\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-13 09:18+0200\n"
+"POT-Creation-Date: 2012-07-13 09:38+0200\n"
 "PO-Revision-Date: 2012-07-13 09:21+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,11 +89,12 @@ msgstr ""
 "(http://ensiwiki.ensimag.fr/index.php/TP_Unix_-_Treasure_hunt). Open\n"
 "the tab 'discussion'. We'll meet there !\n"
 
-#: generate-step-A5.sh:24 upload-to-servers.sh:57 upload-to-servers.sh:58
+#: generate-step-A5.sh:24 generate-step-A5.sh:27 upload-to-servers.sh:57
+#: upload-to-servers.sh:58
 msgid "jeu-de-piste.sh"
 msgstr "treasure-hunt.sh"
 
-#: generate-step-A5.sh:38
+#: generate-step-A5.sh:39
 #, sh-format
 msgid ""
 "Bonjour,\n"
@@ -160,11 +161,11 @@ msgstr ""
 "The generated program will give you instructions to go to the next\n"
 "step.\n"
 
-#: generate-step-A5.sh:72
+#: generate-step-A5.sh:73
 msgid "Enonce etape B1"
 msgstr "Instructions for step B1"
 
-#: generate-step-A5.sh:75
+#: generate-step-A5.sh:76
 #, sh-format
 msgid ""
 "Un message a ete envoye a %s.\n"

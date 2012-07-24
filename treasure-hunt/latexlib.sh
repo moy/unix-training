@@ -9,5 +9,5 @@ latextable () {
 }
 
 latexencode () {
-    tr "$alphabetdecale" "$alphabet" | sed "s/[$alphabet]/"'\\A\0{}/g'
+    tr "$alphabetdecale" "$alphabet" | sed "s/[$alphabet]/"'\\A&{}/g'
 }

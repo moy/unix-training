@@ -1,5 +1,5 @@
 get_email_ensimag () {
-    if command -v ldapsearch 2>/dev/null; then
+    if command -v ldapsearch >/dev/null; then
 	ldapsearch -H ldap://ensildap.imag.fr \
 	    -x -b dc=ensimag,dc=imag,dc=fr uid="$1" \
             | grep "^mail:" | sed "s/^mail: *//"

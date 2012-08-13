@@ -56,7 +56,8 @@ demo_url_en=http://www-verimag.imag.fr/~moy/jeu-de-piste/demo-exam-ensimag2012-e
 from_addr=Matthieu.Moy@imag.fr
 smtp_server=telesun.imag.fr
 # and these two configure how the email will be prompted obtained from
-# $LOGNAME and possibly by prompting the user.
+# $LOGNAME and possibly by prompting the user. They are defined in
+# mail-lib-runtime.sh
 get_email_function=get_email_ensimag
 check_email_function=check_email_ensimag
 # When prompting the user for an email address, mention the school and

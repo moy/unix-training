@@ -11,9 +11,15 @@ if [ "$DEBUG" != "" ]; then
     locale
 fi
 
+lang_do() {
+    lang=$1
+    shift
+    LANG="$lang" LC_ALL="$lang" "$@"
+}
+
 multilingual_do () {
-    LANG=fr_FR.UTF-8 "$@"
-    LANG=en_US.UTF-8 "$@"
+    lang_do fr_FR.UTF-8 "$@"
+    lang_do en_US.UTF-8 "$@"
 }
 
 step=$(gettext etape)

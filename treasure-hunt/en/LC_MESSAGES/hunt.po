@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-13 16:19+0200\n"
+"POT-Creation-Date: 2012-08-13 17:23+0200\n"
 "PO-Revision-Date: 2012-08-13 16:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,7 +166,6 @@ msgid "Enonce etape B1"
 msgstr "Instructions for step B1"
 
 #: generate-step-A5.sh:76
-#, sh-format
 msgid ""
 "Un message a ete envoye a %s.\n"
 "Consultez cette boite mail pour avoir les instructions pour l'etape suivante."
@@ -560,7 +559,7 @@ msgstr ""
 "\n"
 
 #: generate-step-E11.sh:35 upload-to-servers.sh:79 upload-to-servers.sh:80
-#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27 generate-all.sh:29
+#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
 msgid "fr"
 msgstr "en"
 
@@ -1138,7 +1137,7 @@ msgstr ""
 "Sorry, cannot find any command to send an email.\n"
 "Here is the content of the message:\n"
 
-#: generate-all.sh:29
+#: generate-all.sh:30
 msgid "etape-suivante"
 msgstr "next-step"
 

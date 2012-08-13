@@ -72,7 +72,7 @@ case "$mainmachine" in
     ensiens|ensiens.imag.fr)
 	: nothing
 	;;
-    *)
+    *.imag.fr)
 	main_user_home=/home/perms/$main_user
 	maindir=$main_user_home/jeu-de-piste
 	main_user_home_upload=$main_user_home

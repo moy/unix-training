@@ -48,8 +48,8 @@ web=$HOME/WWW/jeu-de-piste
 web_url=http://www-verimag.imag.fr/~moy/jeu-de-piste
 
 # Demo version of the exam, accessible to students (french and english versions)
-demo_url=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2012/
-demo_url_en=http://www-verimag.imag.fr/~moy/demo-exam-ensimag2012-en/
+demo_url=http://www-verimag.imag.fr/~moy/jeu-de-piste/demo-exam-ensimag2012/
+demo_url_en=http://www-verimag.imag.fr/~moy/jeu-de-piste/demo-exam-ensimag2012-en/
 
 # One step sends an email to the user. The following variables
 # configure how the email will be sent:

@@ -25,6 +25,9 @@ generate_all () {
     rm -fr ./"$demo_exam_name"-$(gettext fr)/
     (cd ../exam-expl/ && ls && ./"$demo_exam_name"-$(gettext fr).sh)
     mv ../exam-expl/exam_genere/php/ ./"$demo_exam_name"-$(gettext fr)/
+    maindir_tilde_sq=$(echo "$maindir_tilde" | sed 's@/@\\\/@g')
+    perl -pi -e "s/\\@MAINDIR_TILDE\\@/$maindir_tilde_sq/" \
+	./"$demo_exam_name"-$(gettext fr)/inc/$(gettext etape-suivante).php
 
     ./generate-step-E1.sh
     ./generate-step-E2.sh

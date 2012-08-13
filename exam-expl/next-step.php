@@ -8,7 +8,7 @@ echo ' (<a href="?n='. $n . '#next-step">Click here</a> or reload the page to up
 if ($summary['current'] == $summary['total']) {
 	echo "<p><strong>Congratulation !</strong> The next step is located in the TAR archive available on your usual machine, in the file:<br>
 <pre>
-~moy/jeu-de-piste/123654/step-E13.tar.gz
+@MAINDIR_TILDE@/123654/step-E13.tar.gz
 </pre>
 
 It's the file etape-E13.txt of the archive.

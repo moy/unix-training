@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-13 14:21+0200\n"
-"PO-Revision-Date: 2012-08-13 15:43+0200\n"
+"POT-Creation-Date: 2012-08-13 16:19+0200\n"
+"PO-Revision-Date: 2012-08-13 16:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,15 +20,15 @@ msgstr ""
 #: generate-step-C1.sh:7 generate-step-C3.sh:35 generate-step-D1.sh:7
 #: generate-step-D1.sh:52 generate-step-D2.sh:10 generate-step-D2.sh:43
 #: generate-step-D2.sh:45 generate-step-D2.sh:47 generate-step-E10.sh:7
-#: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:38
-#: generate-step-E11.sh:39 generate-step-E13.sh:7 generate-step-E13.sh:16
+#: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:39
+#: generate-step-E11.sh:40 generate-step-E13.sh:7 generate-step-E13.sh:16
 #: generate-step-E13.sh:41 generate-step-E13.sh:42 generate-step-E1.sh:29
 #: generate-step-E1.sh:31 generate-step-E1.sh:32 generate-step-E2.sh:17
 #: generate-step-E3.sh:7 generate-step-E3.sh:8 generate-step-E3.sh:24
 #: generate-step-E3.sh:26 generate-step-E4.sh:7 generate-step-E4.sh:24
 #: generate-step-E5.sh:17 generate-step-E6.sh:7 generate-step-E6.sh:8
 #: generate-step-E6.sh:9 generate-step-E9.sh:6 generate-step-F2.sh:7
-#: generate-step-G2.sh:8 generate-step-G2.sh:69 i18n-lib.sh:19
+#: generate-step-G2.sh:8 generate-step-G2.sh:69 i18n-lib.sh:25
 #: upload-to-servers.sh:59 upload-to-servers.sh:62 upload-to-servers.sh:63
 #: upload-to-servers.sh:64 upload-to-servers.sh:66 upload-to-servers.sh:67
 #: upload-to-servers.sh:68 upload-to-servers.sh:71 upload-to-servers.sh:72
@@ -558,6 +558,11 @@ msgstr ""
 "\n"
 "The answer for the last question will be: b3147554\n"
 "\n"
+
+#: generate-step-E11.sh:35 upload-to-servers.sh:79 upload-to-servers.sh:80
+#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27 generate-all.sh:29
+msgid "fr"
+msgstr "en"
 
 #: generate-step-E13.sh:9
 msgid ""
@@ -1133,10 +1138,9 @@ msgstr ""
 "Sorry, cannot find any command to send an email.\n"
 "Here is the content of the message:\n"
 
-#: upload-to-servers.sh:79 upload-to-servers.sh:80
-msgid "demo-exam-ensimag2012"
-msgstr "demo-exam-ensimag2012-en"
+#: generate-all.sh:29
+msgid "etape-suivante"
+msgstr "next-step"
 
-#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27
-msgid "fr"
-msgstr "en"
+#~ msgid "demo-exam-ensimag2012"
+#~ msgstr "demo-exam-ensimag2012-en"

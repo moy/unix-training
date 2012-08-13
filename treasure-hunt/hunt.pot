@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-13 14:21+0200\n"
+"POT-Creation-Date: 2012-08-13 15:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,8 +21,8 @@ msgstr ""
 #: generate-step-C1.sh:7 generate-step-C3.sh:35 generate-step-D1.sh:7
 #: generate-step-D1.sh:52 generate-step-D2.sh:10 generate-step-D2.sh:43
 #: generate-step-D2.sh:45 generate-step-D2.sh:47 generate-step-E10.sh:7
-#: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:38
-#: generate-step-E11.sh:39 generate-step-E13.sh:7 generate-step-E13.sh:16
+#: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:39
+#: generate-step-E11.sh:40 generate-step-E13.sh:7 generate-step-E13.sh:16
 #: generate-step-E13.sh:41 generate-step-E13.sh:42 generate-step-E1.sh:29
 #: generate-step-E1.sh:31 generate-step-E1.sh:32 generate-step-E2.sh:17
 #: generate-step-E3.sh:7 generate-step-E3.sh:8 generate-step-E3.sh:24
@@ -374,6 +374,11 @@ msgid ""
 "\n"
 msgstr ""
 
+#: generate-step-E11.sh:35 upload-to-servers.sh:79 upload-to-servers.sh:80
+#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27
+msgid "fr"
+msgstr ""
+
 #: generate-step-E13.sh:9
 msgid ""
 "Voila, vous terminez ainsi la partie E du jeu de piste.\n"
@@ -720,12 +725,4 @@ msgstr ""
 msgid ""
 "Désolé, je n'ai pas trouvé de command pour envoyer d'email.\n"
 "Voici le contenu du message qui devait être envoyé:\n"
-msgstr ""
-
-#: upload-to-servers.sh:79 upload-to-servers.sh:80
-msgid "demo-exam-ensimag2012"
-msgstr ""
-
-#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27
-msgid "fr"
 msgstr ""

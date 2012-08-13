@@ -12,3 +12,10 @@ To install the hunt on your machine, you need to (in theory):
 In practice, installing the hunt outside Ensimag will most likely
 require tweaking the code. If you need help doing this, contact me:
 Matthieu Moy <Matthieu.Moy@imag.fr>
+
+To understand how the code works, good starting points are:
+
+- treasure-setup.sh
+- generate-all.sh and upload-to-servers.sh
+- Makefile (especially about internationalization)
+- The expl/ directory.

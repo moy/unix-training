@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-13 11:39+0200\n"
-"PO-Revision-Date: 2012-07-13 11:40+0200\n"
+"POT-Creation-Date: 2012-08-13 14:21+0200\n"
+"PO-Revision-Date: 2012-08-13 14:21+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -33,12 +33,12 @@ msgstr ""
 #: upload-to-servers.sh:64 upload-to-servers.sh:66 upload-to-servers.sh:67
 #: upload-to-servers.sh:68 upload-to-servers.sh:71 upload-to-servers.sh:72
 #: upload-to-servers.sh:73 upload-to-servers.sh:74 upload-to-servers.sh:75
-#: upload-to-servers.sh:76 upload-to-servers.sh:77 upload-to-servers.sh:80
-#: upload-to-servers.sh:81 upload-to-servers.sh:90 upload-to-servers.sh:91
-#: upload-to-servers.sh:92 upload-to-servers.sh:93 upload-to-servers.sh:94
-#: upload-to-servers.sh:95 upload-to-servers.sh:96 upload-to-servers.sh:97
-#: upload-to-servers.sh:98 upload-to-servers.sh:99 upload-to-servers.sh:100
-#: upload-to-servers.sh:101 upload-to-servers.sh:102
+#: upload-to-servers.sh:76 upload-to-servers.sh:77 upload-to-servers.sh:78
+#: upload-to-servers.sh:82 upload-to-servers.sh:83 upload-to-servers.sh:92
+#: upload-to-servers.sh:93 upload-to-servers.sh:94 upload-to-servers.sh:95
+#: upload-to-servers.sh:96 upload-to-servers.sh:97 upload-to-servers.sh:98
+#: upload-to-servers.sh:99 upload-to-servers.sh:100 upload-to-servers.sh:101
+#: upload-to-servers.sh:102 upload-to-servers.sh:103 upload-to-servers.sh:104
 msgid "etape"
 msgstr "step"
 
@@ -550,7 +550,7 @@ msgstr ""
 "exam (1st year Ensimag students). A demo\n"
 "version is available here:\n"
 "\n"
-"$demo_url_en\n"
+"$demo_url\n"
 "\n"
 "Answer all questions correctly,\n"
 "and follow the instructions at the\n"
@@ -1133,7 +1133,10 @@ msgstr ""
 "Sorry, cannot find any command to send an email.\n"
 "Here is the content of the message:\n"
 
-#: upload-to-servers.sh:78 generate-all.sh:25 generate-all.sh:26
-#: generate-all.sh:27
+#: upload-to-servers.sh:79 upload-to-servers.sh:80
 msgid "demo-exam-ensimag2012"
 msgstr "demo-exam-ensimag2012-en"
+
+#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27
+msgid "fr"
+msgstr "en"

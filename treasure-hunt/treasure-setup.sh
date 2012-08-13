@@ -47,9 +47,21 @@ web=$HOME/WWW/jeu-de-piste
 # Public URL of the website
 web_url=http://www-verimag.imag.fr/~moy/jeu-de-piste
 
-# Demo version of the exam, accessible to students (french and english versions)
-demo_url=http://www-verimag.imag.fr/~moy/jeu-de-piste/demo-exam-ensimag2012/
-demo_url_en=http://www-verimag.imag.fr/~moy/jeu-de-piste/demo-exam-ensimag2012-en/
+# Demo version of the exam, accessible to students (french and english
+# versions).
+
+# This is the name of the demo, used both in the URL of the generated
+# demo, and as the name of the script to generate it. The generation
+# script will be ../exam-expl/$demo_exam_name-$(gettext fr).sh.
+
+# Version in use at Ensimag
+demo_exam_name=demo-exam-ensimag2012
+# Another Ensimag-free version
+# demo_exam_name=simple-demo
+
+# URL where the demo will be hosted (actually, they will be in
+# "$demo_url/$demo_exam_name-$(gettext fr)/")
+demo_url=$web_url
 
 # One step sends an email to the user. The following variables
 # configure how the email will be sent:

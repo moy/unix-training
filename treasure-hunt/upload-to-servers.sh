@@ -76,8 +76,8 @@ upload_lang () {
     rsync $(gettext etape)-E13.tar.gz "$dir"/123654/
     rsync $(gettext etape)-F2.sh "$dir"/979b5c3/$(gettext etape)-F2.sh
     todo "chmod 755 \"$maindir_upload\"/979b5c3/$(gettext etape)-F2.sh"
-    mkdir -p "$web"/$(gettext demo-exam-ensimag2012)/
-    rsync -r ./$(gettext demo-exam-ensimag2012)/ "$web"/$(gettext demo-exam-ensimag2012)/
+    mkdir -p "$web"/"$demo_exam_name"-"$(gettext fr)"/
+    rsync -r ./"$demo_exam_name"-"$(gettext fr)"/ "$web"/"$demo_exam_name"-"$(gettext fr)"/
 
     rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$main_user@$auxiliarymachine":"$main_user_home_tilde"
     ssh "$main_user@$auxiliarymachine" "chmod 755 $(gettext etape)-G2.sh; chmod 644 $(gettext etape)-G1.txt"

@@ -32,7 +32,8 @@ instructions en bas de page.
 
 La réponse à la dernière question sera : b3147554
 
-" | envsubst | while read line; do
+" | sed "s@\\\$demo_url@\\\$demo_url/$demo_exam_name-$(gettext fr)/@" | \
+    envsubst | while read line; do
     bruit=$(make_noise)
     echo "$bruit
 $line" >> $(gettext etape)-E11.txt

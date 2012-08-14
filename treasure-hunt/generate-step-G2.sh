@@ -61,8 +61,8 @@ printf "%s" \"'| unrotpipe > /tmp/tmp-G2.$$
 
 '"$(monitor_step_cmd G2)"'
 
-LANG=en_US.UTF-8 LESS= xterm -e less /tmp/tmp-G2.$$ || \
-LANG=en_US.UTF-8 LESS= gnome-terminal -e less /tmp/tmp-G2.$$
+LC_ALL=en_US.UTF-8 LESS= xterm -e less /tmp/tmp-G2.$$ || \
+LC_ALL=en_US.UTF-8 LESS= gnome-terminal -e less /tmp/tmp-G2.$$
 rm -f /tmp/tmp-G2.$$
 '
 

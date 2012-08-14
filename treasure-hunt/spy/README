@@ -10,10 +10,17 @@ steps where students execute a script on a school machine can
 basically use $LOGNAME).
 
 The monitoring system is implemented as a web interface: monitored
-steps access $spy_url/record.php?login=<student's login>, and teachers
-can view the list at $spy_url/list.php (password protected). To
-install it, you need a webspace with PHP and MySQL. Several steps are
-needed:
+steps access
+
+  $spy_url/record.php?login=<student's login>&step=<step name>
+
+and teachers can view the list at
+
+  $spy_url/list.php
+
+(password protected. Do not use a sensitive password, it is stored
+cleartext on the server). To install it, you need a webspace with PHP
+and MySQL. Several steps are needed:
 
 * Set your database parameters in db-setup.sh
 

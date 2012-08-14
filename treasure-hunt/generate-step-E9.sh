@@ -6,6 +6,8 @@
 cat > $(gettext etape)-E9.php <<EOF
 <?php
 if (preg_match('/^[a-z][a-zA-Z0-9]*\$/', \$_GET['login'])) {
+	// the monitoring system may be down, we still want the step to work
+	error_reporting(0);
 	file_get_contents('$spy_url/record.php?login='. \$_GET['login'] .'&step=E9');
 	header('location: $web_url/yntsf/$(gettext etape)-E10.txt');
 	exit();

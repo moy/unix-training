@@ -77,7 +77,7 @@ check_email_function=check_email_ensimag
 example_email=Prenom.Nom@ensimag.imag.fr
 school=Ensimag
 
-# URL of the monitoring system.
+# URL of the monitoring system (see spy/README)
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp
 
 # I upload the game on multiple machines, with slightly different rules

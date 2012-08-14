@@ -1,0 +1,29 @@
+This is the monitoring system for the treasure hunt.
+
+The idea is to record the fact that a student reached a step in a
+database, to allow the teachers to get an idea of how many students
+reached which step of the hunt. This is done silently on the students
+side (even failures of the monitoring system should be unnoticed). To
+be able to monitor a step, we need to be able to identify the student,
+and execute a piece of code, hence not all steps are monitorable (but
+steps where students execute a script on a school machine can
+basically use $LOGNAME).
+
+The monitoring system is implemented as a web interface: monitored
+steps access $spy_url/record.php?login=<student's login>, and teachers
+can view the list at $spy_url/list.php (password protected). To
+install it, you need a webspace with PHP and MySQL. Several steps are
+needed:
+
+* Set your database parameters in db-setup.sh
+
+* Initialize the database (create tables & cie) : init-db.sh
+
+* Optionally, import a list of students login from a CSV in the
+  database : import-students.sh
+  This will allow list.php to display informations like which
+  group/year the student belongs to.
+
+* Setup the webserver (i.e. install PHP files) : setup-webserver.sh
+
+If you want to write new monitored steps, look at spy-lib.sh

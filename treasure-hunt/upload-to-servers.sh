@@ -42,7 +42,10 @@ mkdir -p "$web"
 
 echo 'AddCharset UTF-8 .txt' > "$web"/.htaccess
 
-echo '<html><head><title>Interdit</title></head><body>Listing de repertoire interdit</body></html>' > "$web"/index.html
+nolisting='<html><head><title>Interdit</title></head><body>Directory listing denied, sorry.</body></html>'
+mkdir -p "$web"/yntsf/
+echo "$nolisting" > "$web"/index.html
+echo "$nolisting" > "$web"/yntsf/index.html
 
 dir="$mainmachine":"$maindir_upload"
 

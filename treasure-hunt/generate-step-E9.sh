@@ -27,7 +27,7 @@ if (preg_match('/^[a-z][a-zA-Z0-9]*\$/', \$_GET['login'])) {
 </head>
 <body>
 <form name="input" action="etape-E9.php" method="get">
-$(gettext "Quel est votre login a l'Ensimag? :") <input type="text" name="login" />
+$(gettext "Quel est votre login $school? :" | envsubst) <input type="text" name="login" />
 <input type="submit" value="OK" />
 </form>
 </body>

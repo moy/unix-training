@@ -9,7 +9,7 @@ gettext "Bravo !
 L'etape suivante est accessible depuis votre machine de travail, dans
 le repertoire
 
-  \$maindir/kmcvoaue/\${step}-E6/
+  \$maindir_tilde/kmcvoaue/\${step}-E6/
 
 Les instructions sont dans le seul fichier de ce repertoire (et de ses
 sous-répertoires) dont le nom se termine par .txt.

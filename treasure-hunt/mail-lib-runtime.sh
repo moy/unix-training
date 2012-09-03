@@ -38,6 +38,7 @@ send_mail () {
     elif command -v mutt >/dev/null; then
 	mutt -e "set smtp_url=\"smtp://$smtp_server\"" \
 	    -e "set from=\"$from_addr\"" \
+	    -e "set record=\"\"" \
 	    -s "$subject" "$email"
     else
 	echo "$noemailcommand"

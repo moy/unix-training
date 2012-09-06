@@ -13,8 +13,7 @@ $users = array($exam_webuser => $exam_webpass);
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	header('WWW-Authenticate: Basic realm="'. $realm .'"');
 	header('HTTP/1.0 401 Unauthorized');
-	echo 'Text to send if user hits Cancel button';
-	exit;
+	die("Sorry, you did not authenticate, I refuse to process the query.\n");
 } else {
 	if (!isset($users[$_SERVER['PHP_AUTH_USER']]))
 		die('Invalid user '. $_SERVER['PHP_AUTH_USER']

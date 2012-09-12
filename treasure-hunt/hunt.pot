@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-13 17:23+0200\n"
+"POT-Creation-Date: 2012-09-12 11:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,8 @@ msgstr ""
 
 #: generate-step-A2.sh:24 generate-step-B1.sh:7 generate-step-B1.sh:35
 #: generate-step-C1.sh:7 generate-step-C3.sh:35 generate-step-D1.sh:7
-#: generate-step-D1.sh:52 generate-step-D2.sh:10 generate-step-D2.sh:43
-#: generate-step-D2.sh:45 generate-step-D2.sh:47 generate-step-E10.sh:7
+#: generate-step-D1.sh:52 generate-step-D2.sh:10 generate-step-D2.sh:47
+#: generate-step-D2.sh:49 generate-step-D2.sh:51 generate-step-E10.sh:7
 #: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:39
 #: generate-step-E11.sh:40 generate-step-E13.sh:7 generate-step-E13.sh:16
 #: generate-step-E13.sh:41 generate-step-E13.sh:42 generate-step-E1.sh:29
@@ -30,16 +30,16 @@ msgstr ""
 #: generate-step-E5.sh:17 generate-step-E6.sh:7 generate-step-E6.sh:8
 #: generate-step-E6.sh:9 generate-step-E9.sh:6 generate-step-F2.sh:7
 #: generate-step-G2.sh:8 generate-step-G2.sh:69 i18n-lib.sh:25
-#: upload-to-servers.sh:59 upload-to-servers.sh:62 upload-to-servers.sh:63
-#: upload-to-servers.sh:64 upload-to-servers.sh:66 upload-to-servers.sh:67
-#: upload-to-servers.sh:68 upload-to-servers.sh:71 upload-to-servers.sh:72
-#: upload-to-servers.sh:73 upload-to-servers.sh:74 upload-to-servers.sh:75
+#: upload-to-servers.sh:62 upload-to-servers.sh:65 upload-to-servers.sh:66
+#: upload-to-servers.sh:67 upload-to-servers.sh:69 upload-to-servers.sh:70
+#: upload-to-servers.sh:71 upload-to-servers.sh:74 upload-to-servers.sh:75
 #: upload-to-servers.sh:76 upload-to-servers.sh:77 upload-to-servers.sh:78
-#: upload-to-servers.sh:82 upload-to-servers.sh:83 upload-to-servers.sh:92
-#: upload-to-servers.sh:93 upload-to-servers.sh:94 upload-to-servers.sh:95
+#: upload-to-servers.sh:79 upload-to-servers.sh:80 upload-to-servers.sh:81
+#: upload-to-servers.sh:85 upload-to-servers.sh:86 upload-to-servers.sh:95
 #: upload-to-servers.sh:96 upload-to-servers.sh:97 upload-to-servers.sh:98
 #: upload-to-servers.sh:99 upload-to-servers.sh:100 upload-to-servers.sh:101
 #: upload-to-servers.sh:102 upload-to-servers.sh:103 upload-to-servers.sh:104
+#: upload-to-servers.sh:105 upload-to-servers.sh:106 upload-to-servers.sh:107
 msgid "etape"
 msgstr ""
 
@@ -71,8 +71,8 @@ msgid ""
 "et ouvrez l'onglet 'discussion'. On se retrouve la bas !\n"
 msgstr ""
 
-#: generate-step-A5.sh:24 generate-step-A5.sh:27 upload-to-servers.sh:57
-#: upload-to-servers.sh:58
+#: generate-step-A5.sh:24 generate-step-A5.sh:27 upload-to-servers.sh:60
+#: upload-to-servers.sh:61
 msgid "jeu-de-piste.sh"
 msgstr ""
 
@@ -277,13 +277,17 @@ msgid ""
 "termine pas par .quelquechose). Pour savoir de quel type\n"
 "de fichier il s'agit, utilisez la commande 'file', et\n"
 "utilisez ensuite l'outil adapté pour l'ouvrir.\n"
+"\n"
+"Selon votre configuration, vous aurez peut-être besoin de renommer (ou\n"
+"copier) le fichier pour lui donner l'extension habituelle pour ce type\n"
+"de fichier.\n"
 msgstr ""
 
-#: generate-step-D2.sh:37
+#: generate-step-D2.sh:41
 msgid "end Etape_D2;"
 msgstr ""
 
-#: generate-step-D2.sh:40
+#: generate-step-D2.sh:44
 msgid "etape_d2.adb genere"
 msgstr ""
 
@@ -373,7 +377,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: generate-step-E11.sh:35 upload-to-servers.sh:79 upload-to-servers.sh:80
+#: generate-step-E11.sh:35 upload-to-servers.sh:82 upload-to-servers.sh:83
 #: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
 msgid "fr"
 msgstr ""
@@ -478,7 +482,7 @@ msgid ""
 "L'etape suivante est accessible depuis votre machine de travail, dans\n"
 "le repertoire\n"
 "\n"
-"  $maindir/kmcvoaue/${step}-E6/\n"
+"  $maindir_tilde/kmcvoaue/${step}-E6/\n"
 "\n"
 "Les instructions sont dans le seul fichier de ce repertoire (et de ses\n"
 "sous-répertoires) dont le nom se termine par .txt.\n"
@@ -602,12 +606,8 @@ msgid ""
 "\n"
 msgstr ""
 
-#: generate-step-E9.sh:21
+#: generate-step-E9.sh:23
 msgid "Etape"
-msgstr ""
-
-#: generate-step-E9.sh:28
-msgid "Quel est votre login a l'Ensimag? :"
 msgstr ""
 
 #: generate-step-F2.sh:35

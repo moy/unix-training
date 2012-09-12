@@ -32,6 +32,10 @@ il n'a pas mis d'extension (i.e. le nom de fichier ne se
 termine pas par .quelquechose). Pour savoir de quel type
 de fichier il s'agit, utilisez la commande 'file', et
 utilisez ensuite l'outil adapté pour l'ouvrir.
+
+Selon votre configuration, vous aurez peut-être besoin de renommer (ou
+copier) le fichier pour lui donner l'extension habituelle pour ce type
+de fichier.
 " | envsubst | ada_obfuscate
 
 gettext "end Etape_D2;"

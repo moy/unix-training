@@ -968,6 +968,11 @@ msgstr ""
 msgid "Etape"
 msgstr "Step"
 
+#: generate-step-E9.sh:30
+#, sh-format
+msgid "Quel est votre login ${school}? :"
+msgstr "What is your ${school} login? :"
+
 #: generate-step-F2.sh:35
 msgid "Non ..."
 msgstr "No ..."
@@ -1143,9 +1148,3 @@ msgstr ""
 #: generate-all.sh:30
 msgid "etape-suivante"
 msgstr "next-step"
-
-#~ msgid "Quel est votre login a l'Ensimag? :"
-#~ msgstr "What is your login at Ensimag:"
-
-#~ msgid "demo-exam-ensimag2012"
-#~ msgstr "demo-exam-ensimag2012-en"

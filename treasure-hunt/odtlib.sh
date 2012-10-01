@@ -10,6 +10,7 @@ txt2odt () {
     text=$(perl -p  \
 	-e 's@<@&lt;@g;' \
 	-e 's@>@&gt;@g;' \
+	-e 's@&@&amp;@g;' \
 	-e 's@\n@<text:line-break/>@;' \
 	-e 's@/@\\/@g;')
     rm -fr template.$$

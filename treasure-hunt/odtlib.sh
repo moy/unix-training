@@ -1,7 +1,7 @@
 #! /bin/sh
 
 if [ "$HUNT_DIR" = "" ]; then
-    HUNT_DIR=.
+    HUNT_DIR=$(pwd)
 fi
 
 # unoconv does more or less the same, but I'm tired of seeing it

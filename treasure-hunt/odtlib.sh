@@ -8,11 +8,13 @@ fi
 # segfault :-(.
 txt2odt () {
     text=$(perl -p  \
+	-e 's@&@&amp;@g;' \
 	-e 's@<@&lt;@g;' \
 	-e 's@>@&gt;@g;' \
-	-e 's@&@&amp;@g;' \
 	-e 's@\n@<text:line-break/>@;' \
-	-e 's@/@\\/@g;')
+	-e 's@\\@\\\\@g;' \
+	-e 's@/@\\/@g;' \
+    )
     rm -fr template.$$
     mkdir -p template.$$
     cd template.$$

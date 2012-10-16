@@ -41,7 +41,7 @@ make_subdirs_back () {
     (
 	orig=$(pwd -P)
 	cd "$1"
-	while [ $(pwd -P) != "$orig" ]; do
+	while [ "$(pwd -P)" != "$orig" ]; do
 	    make_subdirs
 	    cd ..
 	done

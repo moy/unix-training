@@ -21,7 +21,7 @@ case "postgresql":
 				." dbname=". $dbname
 				." user=". $dbuser
 				." password='". $dbpass ."'";
-			$dbconn = pg_connect($dbconn_string) or die("Connexion impossible");;
+			$dbconn = pg_connect($dbconn_string) or die("Cannot connect to the database, sorry.");;
 			pg_set_client_encoding("UTF8");
 		}
 	}
@@ -64,7 +64,7 @@ case "mysql":
 	function exam_connect_maybe() {
 		global $dbconn, $dbhost, $dbname, $dbuser, $dbpass;
 		if ($dbconn == NULL) {
-			$dbconn = mysql_connect($dbhost, $dbuser, $dbpass) or die("Connexion impossible");;
+			$dbconn = mysql_connect($dbhost, $dbuser, $dbpass) or die("Cannot connect to the database, sorry.");;
 			mysql_select_db($dbname, $dbconn) or die("Unable to select database");
 			mysql_set_charset("UTF8");
 		}

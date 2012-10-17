@@ -18,6 +18,9 @@ include ("./inc/common.php");
 
 header("Content-type: text/plain;charset=utf-8");
 
+if ($mode == 'demo')
+   die("Dump is not available in demo mode");
+
 echo "-- start dump in PHP using system() command\n";
 exam_dump();
 echo "-- end dump from PHP\n";

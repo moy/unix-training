@@ -15,7 +15,7 @@ $points=$line["points"];
 isset($subject) or die("FATAL ERROR: Subject not specified");
 
 
-exam_header("Stats for ". htmlspecialchars($line["desc"]));
+exam_header("Stats for ". htmlspecialchars($line["desc"]), '..');
 
 
 function display_request_question($name, $query) {

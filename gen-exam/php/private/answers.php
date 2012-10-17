@@ -4,6 +4,9 @@ define('_VALID_INCLUDE', TRUE);
 include_once './inc/common.php';
 include_once './inc/authentication.php';
 
+if ($mode == 'demo')
+   die("No answer available in demo mode");
+
 if ($mode == "sql") {
 	isset($subject) or die("FATAL ERROR: Subject not specified, please check config.php.");
 	isset($session) or die("FATAL ERROR: Session not specified, please check config.php.");
@@ -11,7 +14,7 @@ if ($mode == "sql") {
 
 $line = get_exam_info($subject);
 
-exam_header(htmlspecialchars($line["desc"]));
+exam_header(htmlspecialchars($line["desc"]), '..');
 
 ?>
 <form action="answers.php" method="get">
@@ -39,6 +42,10 @@ $points=$line["points"];
 
 $login = $_GET['login'];
 
+if ($login == "") {
+	exam_footer();
+	exit;
+}
 $line = get_login_info($login, $subject);
 
 $machine = $line['machine'];

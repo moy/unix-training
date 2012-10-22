@@ -53,7 +53,7 @@ function display_and_flush() {
 	$accumulated_grade = 0;
 }
 
-while ($line = exam_fetch_array($result, null, PGSQL_ASSOC)) {
+while ($line = exam_fetch_array($result)) {
 	if (isset($previous_login)) {
 		if ($line["login"] != $previous_login) {
 			display_and_flush();

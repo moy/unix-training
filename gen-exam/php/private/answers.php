@@ -16,10 +16,16 @@ $line = get_exam_info($subject);
 
 exam_header(htmlspecialchars($line["desc"]), '..');
 
+if (isset($_GET['login'])) {
+	$login = $_GET['login'];
+} else {
+	$login = '';
+}
+
 ?>
 <form action="answers.php" method="get">
 	<fieldset class="invisiblefieldset">
-	Login : <input type="text" name="login" value="<?php echo htmlspecialchars($_GET['login']) ?>" />
+	Login : <input type="text" name="login" value="<?php echo htmlspecialchars($login) ?>" />
 	<input type="submit" value="Get Answers" />
 	</fieldset>
 </form>
@@ -39,8 +45,6 @@ echo '</pre>';
 
 $count=$line["count"];
 $points=$line["points"];
-
-$login = $_GET['login'];
 
 if ($login == "") {
 	exam_footer();

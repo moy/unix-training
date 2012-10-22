@@ -79,7 +79,7 @@ echo "<li><strong>Per-question correct answers</strong>: <ul>\n";
 $total = 0;
 while ($line=exam_fetch_array($result)) {
 	$session = 'Question '. $line['id_question'];
-	if ($_GET['verbose'] === 'yes') {
+	if (isset($_GET['verbose']) && $_GET['verbose'] === 'yes') {
 		$details = ' ('. $line['question'] .')';
 	} else {
 		$details = '';
@@ -95,7 +95,7 @@ echo "</ul></li>\n";
 
 <p><a href="grades.php">See grades</a></p>
 <p><a href="answers.php">See student's answers</a></p>
-<?php if ($_GET['verbose'] === 'yes') { ?>
+<?php if (isset($_GET['verbose']) && $_GET['verbose'] === 'yes') { ?>
     <p><a href="?verbose=no">See non-verbose stats</a></p>
 <?php } else { ?>
     <p><a href="?verbose=yes">See verbose stats</a></p>

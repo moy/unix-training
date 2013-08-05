@@ -14,7 +14,12 @@ fi
 lang_do() {
     lang=$1
     shift
-    LANG="$lang" LC_ALL="$lang" "$@"
+    (
+	LANG="$lang"
+	LC_ALL="$lang"
+	export LANG LC_ALL
+	"$@"
+    )
 }
 
 multilingual_do () {
@@ -24,3 +29,4 @@ multilingual_do () {
 
 step=$(gettext etape)
 export step
+

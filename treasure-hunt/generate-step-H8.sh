@@ -12,6 +12,7 @@ cat > etape-H8.c <<EOF
 int main (int argc, char ** argv) {
 	int c;
 	FILE *f;
+	int err;
 	char * lastslash;
 	char * filename = malloc(strlen(argv[0]) +
 				 strlen("subdir/gkgk/etape-H9.txt") + 1);
@@ -33,7 +34,8 @@ int main (int argc, char ** argv) {
 	printf("J'ai fini de lire le fichier (mais je l'ai gardé ouvert).\n"
 		"Je ne compte pas divulguer la solution ...\n"
 	       "(ce programme s'auto-détruira dans 10 secondes)\n");
-	system("$(monitor_step_cmd H8 | escape_c_string)");
+	err = system("$(monitor_step_cmd H8 | escape_c_string)");
+	/* Ignoring err purposely, it is only the monitoring system */
 	sleep(10);
 	fclose(f);
 	printf("Bye, bye ...\n");

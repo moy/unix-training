@@ -47,7 +47,7 @@ mkdir -p "$web"/yntsf/
 echo "$nolisting" > "$web"/index.html
 echo "$nolisting" > "$web"/yntsf/index.html
 
-dir="$mainmachine":"$maindir_upload"
+dir="$main_user"@"$mainmachine":"$maindir_upload"
 
 # Give read permission, but not directory listing
 # (right now, and make sur it's still the case after with "todo")

@@ -2,16 +2,22 @@ To install the hunt on your machine, you need to (in theory):
 
 1) Read and edit treasure-setup.sh
 
-2) run "make install" (reading the Makefile may help understanding the
+2) Check your system:
+
+   - Run ./test-i18n.sh and check the output.
+   - Run ./test-cmds.sh and check the output.
+
+3) run "make install" (reading the Makefile may help understanding the
    generation process, in particular how multi-lingual hunt is
    managed)
 
-3) Set up the database for monitoring steps (see spy/db-setup.sh and
+4) Set up the database for monitoring steps (see spy/db-setup.sh and
    other scripts in the spy/ directory).
 
-In practice, installing the hunt outside Ensimag will most likely
-require tweaking the code. If you need help doing this, contact me:
-Matthieu Moy <Matthieu.Moy@imag.fr>
+In practice, installing the hunt outside Ensimag may require tweaking
+the code (but at least the main part of the game has already been
+adapted twice outside Ensimag). If you need help doing this, contact
+me: Matthieu Moy <Matthieu.Moy@imag.fr>
 
 To understand how the code works, good starting points are:
 

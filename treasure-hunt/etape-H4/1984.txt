@@ -1,4 +1,4 @@
-16108, c'est bien ça. En bon informaticien, j'aurais bien choisi 42,
+1984, c'est bien ça. En bon informaticien, j'aurais bien choisi 42,
 mais honnetement, c'était trop petit, alors j'ai pris une autre source
 d'inspiration.
 

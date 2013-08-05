@@ -57,7 +57,7 @@ web_url=http://www-verimag.imag.fr/~moy/$web_base
 # script will be ../exam-expl/$demo_exam_name-$(gettext fr).sh.
 
 # Version in use at Ensimag
-demo_exam_name=demo-exam-ensimag2012
+demo_exam_name=demo-exam-ensimag2013
 # Another Ensimag-free version
 # demo_exam_name=simple-demo
 

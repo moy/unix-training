@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-14 09:32+0200\n"
+"POT-Creation-Date: 2013-08-05 18:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -733,4 +733,8 @@ msgstr ""
 
 #: generate-all.sh:30
 msgid "etape-suivante"
+msgstr ""
+
+#: test-i18n.sh:6
+msgid "message-id\n"
 msgstr ""

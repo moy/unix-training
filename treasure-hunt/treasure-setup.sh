@@ -87,6 +87,16 @@ case "$mainmachine" in
     ensiens|ensiens.imag.fr)
 	: nothing
 	;;
+    129.88.240.211)
+	# Not directly accessible, hence requires this in ~/.ssh/config:
+	# Host 129.88.240.211
+	# ProxyCommand ssh -q telesun.imag.fr nc %h 22
+	main_user=test1a
+	main_user_home=/home/$main_user
+	auxiliary_user=moy
+	main_user_home_upload=$main_user_home
+	maindir_upload=$main_user_home_upload/$maindir_base
+	;;
     *.imag.fr)
 	main_user_home=/home/perms/$main_user
 	maindir=$main_user_home/$maindir_base

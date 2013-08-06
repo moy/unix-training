@@ -46,6 +46,7 @@ generate_all () {
     ./generate-step-H5.sh
     ./generate-step-H8.sh
     ./generate-step-H9.sh
+    ./generate-step-H10.sh
 }
 
 multilingual_do generate_all

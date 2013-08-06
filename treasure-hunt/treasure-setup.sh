@@ -6,7 +6,7 @@
 # NFS-mounted directories (in this case, $mainmachine is the machine
 # used for uploading files, and $main_user_home must be accessible
 # through NFS by students)
-mainmachine=ensiens.imag.fr
+mainmachine=${HUNT_MAINMACHINE:-ensiens.imag.fr}
 
 # Some of the steps are on the account of a particular user on
 # $mainmachine, but not inside $maindir. This variable is the user's

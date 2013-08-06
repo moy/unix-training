@@ -17,6 +17,7 @@ lang_do() {
     (
 	LANG="$lang"
 	LC_ALL="$lang"
+	unset LANGUAGE
 	export LANG LC_ALL
 	"$@"
     )

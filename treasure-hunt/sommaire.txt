@@ -70,5 +70,6 @@ H4: juste ouvrir un fichier README.txt
 H5-H6: caché dans les logs Git (mal numérotée, tant pis)
 H7: caché dans l'historique Git (contenu de README.txt)
 H8: strace ou ls -l /proc/<...>/fd/
-H9: ssh et clé.
+H9: noms de fichiers bizares (-n, espaces)
+H10: ssh et clé.
 

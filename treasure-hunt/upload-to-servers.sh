@@ -104,8 +104,8 @@ rsync -r $(gettext etape)-H5/ "$dir"/dntsoaue/$(gettext etape)-H5/
 rsync -r $(gettext etape)-H8/ "$dir"/qyxrd/$(gettext etape)-H8/
 todo chmod go-r "$maindir_upload"/qyxrd/$(gettext etape)-H8/subdir/
 todo chmod ugo+rx "$maindir_upload"/qyxrd/$(gettext etape)-H8/$(gettext etape)-H8
-rsync -r $(gettext etape)-H9.sh "$dir"/$(gettext etape)-H9.sh
-todo chmod 700 "$maindir_upload"/$(gettext etape)-H9.sh
+rsync -r $(gettext etape)-H10.sh "$dir"/$(gettext etape)-H10.sh
+todo chmod 700 "$maindir_upload"/$(gettext etape)-H10.sh
 LANG=$old_LANG
 
 rsync version.txt "$dir"/version.txt

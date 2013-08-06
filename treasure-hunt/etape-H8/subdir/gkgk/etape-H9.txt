@@ -2,53 +2,49 @@ Bravo.
 
 Moi, j'ai fait simplement un Ctrl-z pour suspendre le processus, et
 
-ls -l /proc/<pid>/fd/
+  ls -l /proc/<pid>/fd/
 
 mais on peut aussi faire
 
-strace -e open ./etape-H8
+  strace -e open ./etape-H8
 
 qui n'est pas loin de faire pareil que
 
-strace ./etape-H8 2>&1 | grep ^open
+  strace ./etape-H8 2>&1 | grep ^open
 
-Bon, mais il faut maintenant passer à la suite. Pour l'étape suivante,
-encore un peu de réseau, nous allons faire du SSH, et manipuler des
-clés. Une fois n'est pas coutume, nous vous donnons à la fois la clé
-publique et la clé privée, au format OpenSSH :
+On aurait aussi pu utiliser lsof.
 
-ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwiR8CdjPNSo3PVIvSNJs3Il+SkkPM1rhzBCk0WkOqyI9m/JJ8KBaNBls35dAP6J9U2QbbufaFWgFXpaCv4JE2okKJD6+ZX8yghtc+6sUxmeVG2eQpIdSyQLIc
-ecDBzFwpEI2dYJT4dS8voAmoZ88Fh6u56PSBntnIZWf//O52CpK76iqPTOPZj6I8O65easGl4CWgVYQ/VHP+sfvlv9ZeRsPe8K3tsVQK8SjMNEmP7pXRLdfqXRxM0p61Yw1tmjX410l8NeZBnRoY+3QA0s3Kr
-Z1DUDbod+8jGh76BW5z7Q7Z8zTH/p1OKqsvLJOaYpPNz9joxu3JasVLvaNjNF1Iw== jeu-de-piste@ensimag                                                                     
+Bon, mais il faut maintenant passer à la suite. L'étape suivante se
+trouve dans le même répertoire que cette question. Il est réparti en
+deux fichiers, nommés bizarement :
 
------BEGIN RSA PRIVATE KEY-----
-MIIEoQIBAAKCAQEAwiR8CdjPNSo3PVIvSNJs3Il+SkkPM1rhzBCk0WkOqyI9m/JJ
-8KBaNBls35dAP6J9U2QbbufaFWgFXpaCv4JE2okKJD6+ZX8yghtc+6sUxmeVG2eQ
-pIdSyQLIcecDBzFwpEI2dYJT4dS8voAmoZ88Fh6u56PSBntnIZWf//O52CpK76iq
-PTOPZj6I8O65easGl4CWgVYQ/VHP+sfvlv9ZeRsPe8K3tsVQK8SjMNEmP7pXRLdf
-qXRxM0p61Yw1tmjX410l8NeZBnRoY+3QA0s3KrZ1DUDbod+8jGh76BW5z7Q7Z8zT
-H/p1OKqsvLJOaYpPNz9joxu3JasVLvaNjNF1IwIBIwKCAQAsYBxaBau0YWu2Pqu4
-36PaoxWNUochrl9/Gb9Fzt7IB9ORW/OktvAL6I3p9q+ZhDnnLNMSCRvnor9mE8Yd
-JRcNYSbjtpHrUEYPHDKCqsLrhWPpAbqpQ4Ci+VJjLX0I9VuTQlWXM7tm0Yo6K+uS
-qA276cGUCDABe0rF2Q6g50Br7AKpuTsGLrIRgJkZmzlDrBloNUaXkFhWt9zIIomm
-CWV+D+jjuf78aCYGGVMExZsRtPVfIFWmUZESFHtazY8O50ZmxELOnh6t5KXtoMC1
-VWA/ftj2MRtv4Ky4Ae3nlcgHpbDfMwgWeKDmllR6UEqhtrwfCO4pWdNDK+wxUbRe
-C8oLAoGBAPFolsGVf7LMP9En6oxyWfQ8nDuZERkzeTaqxSY3Nx3rUM+IIKJf/Mv9
-QRAK2FqVb716y/GU3QoegBoK00hAsI8u3Q2wqHbUnypLxEhWmh8s9jfkB8kC9Rhn
-VRdCoKYT4RHeJdB0kozlu3poBIlwkk90q7ysYUG4lSB0m9Ke8CTZAoGBAM3gh4Zs
-p5GNbBn4/RJ/QCMy+0YRLXVOdDNka68pXx+GRKUPVFnGgN3T1MfxGEU80uhJvfdc
-8oxlsMUddZuUhHSy5XP4O1v5DOgoijyTW5Ln9Uf0IjqVc7CACvPQRciaXkO5J79J
-GChiHYC9jn51eIi6zJUB0XknNctilUXSbbxbAoGAfCco9dfbRgKkejHJFQeb+fNJ
-CLUevIDfQK+Yl0+YsE0iPthLTDFdcDkaJYHrnEzaYXJaQbpFyrCZpv5AxhKj8d2W
-QY4NfvEBZjWYJTPaO+s8zEljFuuT/ev/4BOjE5Ux6+6XGr+b027VcibdwwaxpTSw
-F+Ofu2Y+ELD/riXalpsCgYBvwwe+AHg5EkH/eIlh0Azf6HnG82HR92Om3r4dQlg1
-r0nV8mD9iQQgpjGuXk8BA8LzILeU6VB4GfI/Hp7uDsuPztRU5dcUq8Utklmr2vcy
-feuNdeayFp3jeLV9CqmKJ+oHgcUesqa21i1F4z65rXvydAioqTczI+oAsdwBVPm+
-BQKBgQDGP48mThGnAIJ2W3Ron5WzK8lXHA2hRS3wCTy0JpjrYM5wKit/VUC0vn6u
-pA/xwbMZIcrofTkgM9cw5+HwNjvP0ajcUU9HJSad9KRvATa/3PoDErtgYBfgBQbs
-HyGf+1KeliIPxWpJuf5k3KWO1ez4JRmEl6bk1cxBRh13IgAh6g==
------END RSA PRIVATE KEY-----
+* -n (oui, c'est un nom bizare pour un fichier, mais on a le droit)
+* etape H10.txt (avec un espace entre "etape" et "H9")
 
-Utilisez cette clé pour vous connecter au compte « moy » sur la
-machine « telesun ». Ne vous réjouissez pas trop vite, vous n'aurez
-pas accès à _tout_ le contenu de ce compte ...
+Concaténez ces deux fichiers pour avoir les instructions pour l'étape
+suivante.
+
+Une solution naive serait de se positionner dans ce répertoire, puis
+d'exécuter la commande
+
+  cat -n etape H10.txt
+
+mais elle ne marche pas : le shell va découper la commande selon les
+espaces, et va exécuter la commande "cat" avec 3 arguments "-n",
+"etape" et "H10.txt". "cat" va croire que "-n" est une option, et va
+chercher les deux fichiers "etape" et "H10.txt", qui n'existent pas.
+
+Il faut donc faire deux choses :
+
+* dire à "cat" que "-n" n'est pas une option. On peut le faire soit en
+  utilisant
+
+    cat -- <nom-de-fichier>
+
+  (comme beaucoup de commandes Unix, cat considère que ce qui suit --
+  ne peut pas être une option), ou bien en appelant le fichier par le
+  nom "./-n" au lieu de "-n".
+
+* dire au shell de ne pas couper en deux "etape H10.txt". On peut le
+  faire en ajoutant des guillemets doubles ou simples autour, ou en
+  utilisant un backslash devant l'espace (comem ceci : \ ).

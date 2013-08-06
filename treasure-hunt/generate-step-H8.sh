@@ -41,5 +41,5 @@ int main (int argc, char ** argv) {
 	printf("Bye, bye ...\n");
 }
 EOF
-gcc -O3 etape-H8.c -static -o etape-H8/etape-H8
+gcc -O3 etape-H8.c -o etape-H8/etape-H8
 strip etape-H8/etape-H8

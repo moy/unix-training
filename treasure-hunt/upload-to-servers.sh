@@ -31,6 +31,7 @@ check web
 check mainmachine
 check maindir_upload
 check main_user_home
+check auxiliary_user
 check auxiliarymachine
 check main_user_home_tilde
 check main_user_home_upload
@@ -82,8 +83,8 @@ upload_lang () {
     mkdir -p "$web"/"$demo_exam_name"-"$(gettext fr)"/
     rsync -r ./"$demo_exam_name"-"$(gettext fr)"/ "$web"/"$demo_exam_name"-"$(gettext fr)"/
 
-    rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$main_user@$auxiliarymachine":"$main_user_home_tilde"
-    ssh "$main_user@$auxiliarymachine" "chmod 755 $(gettext etape)-G2.sh; chmod 644 $(gettext etape)-G1.txt"
+    rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliary_user@$auxiliarymachine":"$main_user_home_tilde"
+    ssh "$auxiliary_user@$auxiliarymachine" "chmod 755 $(gettext etape)-G2.sh; chmod 644 $(gettext etape)-G1.txt"
 }
 
 multilingual_do upload_lang

@@ -79,7 +79,8 @@ upload_lang () {
     rsync $(gettext etape)-E9.php $(gettext etape)-E10.txt $(gettext etape)-E11.txt $(gettext etape)-E11-bis.txt "$web"/yntsf/
     rsync $(gettext etape)-E13.tar.gz "$dir"/123654/
     rsync $(gettext etape)-F2.sh "$dir"/979b5c3/$(gettext etape)-F2.sh
-    todo "chmod 755 \"$maindir_upload\"/979b5c3/$(gettext etape)-F2.sh"
+    # todo does not work here, we're in a subshell
+    ssh "$main_user@$mainmachine" "chmod 755 \"$maindir_upload\"/979b5c3/$(gettext etape)-F2.sh"
     mkdir -p "$web"/"$demo_exam_name"-"$(gettext fr)"/
     rsync -r ./"$demo_exam_name"-"$(gettext fr)"/ "$web"/"$demo_exam_name"-"$(gettext fr)"/
 

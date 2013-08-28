@@ -21,6 +21,7 @@ EOF
 drop=no
 apply=no
 exam_dbtype=
+php=no
 
 while test $# -ne 0; do
     case "$1" in
@@ -36,6 +37,9 @@ while test $# -ne 0; do
 	    ;;
 	"--apply")
 	    apply=yes
+	    ;;
+	"--php")
+	    php=yes
 	    ;;
         *)
             echo "unrecognized option $1"
@@ -54,19 +58,38 @@ else
     engine=""
 fi
 
+start_query=
+end_query=""
+
+if [ "$php" = yes ]; then
+    cat <<\EOF
+<?php
+define('_VALID_INCLUDE', TRUE);
+include_once './inc/common.php';
+include_once './inc/authentication.php';
+exam_connect_maybe();
+EOF
+    start_query="exam_query('";
+    end_query="');"
+fi
+
 drops=""
 creates=""
 
 create_table() {
     # drop tables in reverse order, otherwise it breaks foreign key.
     if [ "$drop" = "yes" ]; then
-	drops="DROP TABLE IF EXISTS $1;
+	drops="$start_query
+DROP TABLE IF EXISTS $1;
+$end_query
 $drops"
     fi
     creates="$creates
+$start_query
 CREATE TABLE $1 (
 $(cat)
 )${engine};
+$end_query
 "
 }
 
@@ -91,3 +114,10 @@ fi
 
 printf "%s%s" "$drops" "$creates"
 ) | $db_cmd
+
+if [ "$php" = yes ]; then
+    cat <<\EOF
+?>
+done.
+EOF
+fi

@@ -33,13 +33,17 @@ get_email () {
 send_mail () {
     subject="$1"
     email="$2"
-    if command -v mail >/dev/null; then
-	mail -s "$subject" "$email"
+    if [ "$HUNT_FORCE" != "" ]; then
+	echo 'Force display, not sending email'
+	echo "$noemailcommand"
+	cat
     elif command -v mutt >/dev/null; then
 	mutt -e "set smtp_url=\"smtp://$smtp_server\"" \
 	    -e "set from=\"$from_addr\"" \
 	    -e "set record=\"\"" \
 	    -s "$subject" "$email"
+    elif command -v mail >/dev/null; then
+	mail -s "$subject" "$email"
     else
 	echo "$noemailcommand"
 	cat

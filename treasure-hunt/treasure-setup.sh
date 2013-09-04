@@ -13,7 +13,7 @@ mainmachine=${HUNT_MAINMACHINE:-ensiens.imag.fr}
 # login ...
 main_user=moy
 # ... and this one points to his $HOME directory.
-main_user_home=/home/ensiens.imag.fr/$main_user
+main_user_home=/user/1/$main_user
 # A variant of $main_user_home, to let the player get used to both
 # notations
 main_user_home_tilde="~${main_user}"
@@ -29,10 +29,8 @@ maindir_tilde=$main_user_home_tilde/$maindir_base
 
 # In my setup, the students access $main_user_home with a path
 # different from the one I'm using to upload. If this is not your
-# case, uncomment the line to set
-# main_user_home_upload=$main_user_home.
-main_user_home_upload=/export/ensiens.imag.fr/$main_user/
-# main_user_home_upload=$main_user_home
+# case, leave the default.
+main_user_home_upload=$main_user_home
 maindir_upload=$main_user_home_upload/$maindir_base
 
 # Other machine (server) on which students have access. It will be
@@ -94,14 +92,9 @@ case "$mainmachine" in
 #	main_user=test1a
 	main_user_home=/user/1/$main_user
 	auxiliary_user=moy
-	main_user_home_upload=$main_user_home
-	maindir_upload=$main_user_home_upload/$maindir_base
 	;;
     *.imag.fr)
-	main_user_home=/home/perms/$main_user
 	maindir=$main_user_home/$maindir_base
-	main_user_home_upload=$main_user_home
-	maindir_upload=$main_user_home_upload/$maindir_base
 	auxiliarymachine=$mainmachine
 	;;
 esac

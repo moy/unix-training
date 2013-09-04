@@ -2,7 +2,7 @@
 
 year=1a
 course=1a
-absyear=2012
+absyear=2013
 groups="G1 G2 G3 G4 G5 G6"
 
 get_group () {

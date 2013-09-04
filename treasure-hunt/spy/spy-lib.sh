@@ -18,3 +18,5 @@ if [ "$apply" = "yes" ]; then
 	    ;;
     esac
 fi
+
+echo "$db_cmd"

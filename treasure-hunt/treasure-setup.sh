@@ -99,9 +99,17 @@ case "$mainmachine" in
 	;;
 esac
 
-export mainmachine maindir auxiliarymachine web web_url
-export auxiliary_user
-export demo_url demo_url_en spy_url
-export main_user_home main_user main_user_home_tilde maindir_tilde
-export from_addr smtp_server get_email_function check_email_function
-export example_email school
+variables="
+mainmachine maindir auxiliarymachine web web_url
+auxiliary_user
+demo_url demo_url_en spy_url
+main_user_home main_user main_user_home_tilde maindir_tilde
+from_addr smtp_server get_email_function check_email_function
+example_email school
+"
+
+# Useless Use Of Echo, in case the script is sourced from ZSH
+for v in $(echo $variables)
+do
+    eval "export $v"
+done

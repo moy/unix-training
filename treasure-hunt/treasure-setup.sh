@@ -93,6 +93,20 @@ case "$mainmachine" in
 	main_user_home=/user/1/$main_user
 	auxiliary_user=moy
 	;;
+    anie.imag.fr)
+	main_user_home=/home/moy/
+	main_user_home_upload=$main_user_home
+	maindir=$main_user_home/$maindir_base
+	maindir_upload=$main_user_home_upload/$maindir_base
+	example_email=First.Last@imag.fr
+	school=Verimag
+	smtp_server=""
+	web_base=jeu-de-piste-verimag
+	web=$HOME/WWW/$web_base
+	web_url=http://www-verimag.imag.fr/~moy/$web_base
+	demo_url=$web_url
+	auxiliarymachine=anie.imag.fr
+	;;
     *.imag.fr)
 	maindir=$main_user_home/$maindir_base
 	auxiliarymachine=$mainmachine

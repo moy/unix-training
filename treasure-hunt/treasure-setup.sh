@@ -106,6 +106,7 @@ case "$mainmachine" in
 	web_url=http://www-verimag.imag.fr/~moy/$web_base
 	demo_url=$web_url
 	auxiliarymachine=anie.imag.fr
+	get_email_function=get_email_verimag
 	;;
     *.imag.fr)
 	maindir=$main_user_home/$maindir_base

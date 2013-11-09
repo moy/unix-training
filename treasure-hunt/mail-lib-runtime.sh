@@ -8,6 +8,11 @@ get_email_ensimag () {
     fi
 }
 
+get_email_verimag () {
+    grep "^alias $1 " /usr/local/common/etc/mailrc | \
+	sed 's/.* //' || echo "$1"
+}
+
 check_email_ensimag () {
     echo "$1" | grep -q \
 	-e '@.*imag\.fr$' \

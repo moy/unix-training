@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-05 18:16+0200\n"
+"POT-Creation-Date: 2013-11-09 18:24+0100\n"
 "PO-Revision-Date: 2013-08-05 18:17+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,29 +16,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: generate-step-A2.sh:24 generate-step-B1.sh:7 generate-step-B1.sh:35
-#: generate-step-C1.sh:7 generate-step-C3.sh:35 generate-step-D1.sh:7
-#: generate-step-D1.sh:52 generate-step-D2.sh:10 generate-step-D2.sh:47
-#: generate-step-D2.sh:49 generate-step-D2.sh:51 generate-step-E10.sh:7
-#: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:39
-#: generate-step-E11.sh:40 generate-step-E13.sh:7 generate-step-E13.sh:16
-#: generate-step-E13.sh:41 generate-step-E13.sh:42 generate-step-E1.sh:29
-#: generate-step-E1.sh:31 generate-step-E1.sh:32 generate-step-E2.sh:17
-#: generate-step-E3.sh:7 generate-step-E3.sh:8 generate-step-E3.sh:24
-#: generate-step-E3.sh:26 generate-step-E4.sh:7 generate-step-E4.sh:24
-#: generate-step-E5.sh:17 generate-step-E6.sh:7 generate-step-E6.sh:8
-#: generate-step-E6.sh:9 generate-step-E9.sh:6 generate-step-F2.sh:7
-#: generate-step-G2.sh:8 generate-step-G2.sh:69 i18n-lib.sh:25
-#: upload-to-servers.sh:62 upload-to-servers.sh:65 upload-to-servers.sh:66
-#: upload-to-servers.sh:67 upload-to-servers.sh:69 upload-to-servers.sh:70
-#: upload-to-servers.sh:71 upload-to-servers.sh:74 upload-to-servers.sh:75
-#: upload-to-servers.sh:76 upload-to-servers.sh:77 upload-to-servers.sh:78
-#: upload-to-servers.sh:79 upload-to-servers.sh:80 upload-to-servers.sh:81
-#: upload-to-servers.sh:85 upload-to-servers.sh:86 upload-to-servers.sh:95
-#: upload-to-servers.sh:96 upload-to-servers.sh:97 upload-to-servers.sh:98
-#: upload-to-servers.sh:99 upload-to-servers.sh:100 upload-to-servers.sh:101
-#: upload-to-servers.sh:102 upload-to-servers.sh:103 upload-to-servers.sh:104
-#: upload-to-servers.sh:105 upload-to-servers.sh:106 upload-to-servers.sh:107
+#: generate-step-A2.sh:24 generate-step-B1.sh:36 generate-step-B1.sh:38
+#: generate-step-B1.sh:53 generate-step-B1.sh:55 generate-step-C1.sh:7
+#: generate-step-C3.sh:35 generate-step-D1.sh:7 generate-step-D1.sh:52
+#: generate-step-D2.sh:10 generate-step-D2.sh:47 generate-step-D2.sh:49
+#: generate-step-D2.sh:51 generate-step-E10.sh:7 generate-step-E11.sh:10
+#: generate-step-E11.sh:11 generate-step-E11.sh:39 generate-step-E11.sh:40
+#: generate-step-E13.sh:7 generate-step-E13.sh:16 generate-step-E13.sh:41
+#: generate-step-E13.sh:42 generate-step-E1.sh:29 generate-step-E1.sh:31
+#: generate-step-E1.sh:32 generate-step-E2.sh:17 generate-step-E3.sh:7
+#: generate-step-E3.sh:8 generate-step-E3.sh:24 generate-step-E3.sh:26
+#: generate-step-E4.sh:7 generate-step-E4.sh:24 generate-step-E5.sh:17
+#: generate-step-E6.sh:7 generate-step-E6.sh:8 generate-step-E6.sh:9
+#: generate-step-E9.sh:6 generate-step-E9.sh:29 generate-step-F2.sh:7
+#: generate-step-G2.sh:8 generate-step-G2.sh:69 i18n-lib.sh:31
+#: upload-to-servers.sh:63 upload-to-servers.sh:66 upload-to-servers.sh:67
+#: upload-to-servers.sh:68 upload-to-servers.sh:70 upload-to-servers.sh:71
+#: upload-to-servers.sh:72 upload-to-servers.sh:75 upload-to-servers.sh:76
+#: upload-to-servers.sh:77 upload-to-servers.sh:78 upload-to-servers.sh:79
+#: upload-to-servers.sh:80 upload-to-servers.sh:81 upload-to-servers.sh:83
+#: upload-to-servers.sh:87 upload-to-servers.sh:88 upload-to-servers.sh:97
+#: upload-to-servers.sh:98 upload-to-servers.sh:99 upload-to-servers.sh:100
+#: upload-to-servers.sh:101 upload-to-servers.sh:102 upload-to-servers.sh:103
+#: upload-to-servers.sh:104 upload-to-servers.sh:105 upload-to-servers.sh:106
+#: upload-to-servers.sh:107 upload-to-servers.sh:108 upload-to-servers.sh:109
 msgid "etape"
 msgstr ""
 
@@ -70,8 +71,8 @@ msgid ""
 "et ouvrez l'onglet 'discussion'. On se retrouve la bas !\n"
 msgstr ""
 
-#: generate-step-A5.sh:24 generate-step-A5.sh:27 upload-to-servers.sh:60
-#: upload-to-servers.sh:61
+#: generate-step-A5.sh:24 generate-step-A5.sh:27 upload-to-servers.sh:61
+#: upload-to-servers.sh:62
 msgid "jeu-de-piste.sh"
 msgstr ""
 
@@ -86,6 +87,10 @@ msgid ""
 "L'etape suivante est une compilation de programme Ada. Un programme\n"
 "Ada se trouve dans le fichier etape_b1.adb dans le repertoire\n"
 "jeu-de-piste sur le compte de l'utilisateur ${main_user}.\n"
+"\n"
+"Si vous préférez le langage C, une version C se trouve dans le même\n"
+"répertoire, dans le fichier etape_b1.c (à compiler avec la commande\n"
+"gcc).\n"
 "\n"
 "Vous n'avez pas le droit d'utiliser la commande 'ls' dans ce\n"
 "repertoire (vous pouvez essayer, mais ca ne marchera pas), mais vous\n"
@@ -112,29 +117,17 @@ msgid ""
 "suivante.\n"
 msgstr ""
 
-#: generate-step-A5.sh:73
+#: generate-step-A5.sh:77
 msgid "Enonce etape B1"
 msgstr ""
 
-#: generate-step-A5.sh:76
+#: generate-step-A5.sh:80
 msgid ""
 "Un message a ete envoye a %s.\n"
 "Consultez cette boite mail pour avoir les instructions pour l'etape suivante."
 msgstr ""
 
 #: generate-step-B1.sh:9
-msgid ""
-"Fichier source pour l'etape B1.\n"
-"Ce programme doit etre dans un fichier etape_b1.adb\n"
-"Compilez-le et executez-le pour continuer.\n"
-"\n"
-msgstr ""
-
-#: generate-step-B1.sh:17
-msgid "procedure Etape_B1 is"
-msgstr ""
-
-#: generate-step-B1.sh:21
 #, sh-format
 msgid ""
 "Bonjour,\n"
@@ -145,8 +138,33 @@ msgid ""
 "L'etape suivante se trouve dans le fichier.\n"
 "$web_url/etape-C1.tex\n"
 "\n"
-"Cette fois-ci, c'est une fichier LaTeX. Vous pouvez le compiler\n"
-"avec la commande pdflatex etape-C1.tex pour obtenir un fichier PDF.\n"
+"Cette fois-ci, c'est un fichier LaTeX. LaTeX est un format de fichier\n"
+"qui permet de faire de jolis documents avec une mise en page\n"
+"automatique. Vous pouvez compiler ce fichier avec la commande\n"
+"\n"
+"  pdflatex etape-C1.tex\n"
+"\n"
+"pour obtenir un fichier PDF, que vous ouvrirez ensuite avec le\n"
+"logiciel aproprie.\n"
+msgstr ""
+
+#: generate-step-B1.sh:28
+msgid ""
+"Fichier source pour l'etape B1.\n"
+"Compilez-le et executez-le pour continuer.\n"
+"\n"
+msgstr ""
+
+#: generate-step-B1.sh:42
+msgid ""
+"Fichier source pour l'etape B1.\n"
+"Ce programme doit etre dans un fichier etape_b1.adb\n"
+"Compilez-le et executez-le pour continuer.\n"
+"\n"
+msgstr ""
+
+#: generate-step-B1.sh:48
+msgid "procedure Etape_B1 is"
 msgstr ""
 
 #: generate-step-C1.sh:19
@@ -376,7 +394,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: generate-step-E11.sh:35 upload-to-servers.sh:82 upload-to-servers.sh:83
+#: generate-step-E11.sh:35 upload-to-servers.sh:84 upload-to-servers.sh:85
 #: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
 msgid "fr"
 msgstr ""
@@ -734,7 +752,7 @@ msgstr ""
 msgid "etape-suivante"
 msgstr ""
 
-#: test-i18n.sh:6
+#: test-i18n.sh:7
 msgid "message-id\n"
 msgstr "Message en français\n"
 

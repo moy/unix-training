@@ -63,7 +63,7 @@ upload_lang () {
     rsync $(gettext etape)-A2.txt "$web"/
     rsync version.txt "$web"/
 
-    rsync $(gettext etape)_b1.adb "$dir"
+    rsync $(gettext etape)_b1.{adb,c} "$dir"
     rsync $(gettext etape)-C1.tex "$web"
     rsync $(gettext etape)-C2.odt $(gettext etape)-C3.png "$dir"
 

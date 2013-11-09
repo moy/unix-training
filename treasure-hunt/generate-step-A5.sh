@@ -45,6 +45,10 @@ L'etape suivante est une compilation de programme Ada. Un programme
 Ada se trouve dans le fichier etape_b1.adb dans le repertoire
 jeu-de-piste sur le compte de l'utilisateur \${main_user}.
 
+Si vous préférez le langage C, une version C se trouve dans le même
+répertoire, dans le fichier etape_b1.c (à compiler avec la commande
+gcc).
+
 Vous n'avez pas le droit d'utiliser la commande 'ls' dans ce
 repertoire (vous pouvez essayer, mais ca ne marchera pas), mais vous
 pouvez tout de meme recuperer le fichier en question (vous verrez plus

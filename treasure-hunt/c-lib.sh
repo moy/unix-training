@@ -13,7 +13,9 @@ cat <<EOF
 void dprint(char *str) {
 	while (str) {
 		unsigned val;
-		sscanf(str, "%u", &val);
+		if (sscanf(str, "%u", &val) == EOF) {
+			break;
+		}
 		str = strchr(str, ' ');
 		if (str != NULL)
 			str++;
@@ -28,12 +30,14 @@ EOF
 
 c_obfuscate () {
     while read line; do
-	encoded=$(echo "$line" | perl -pe 's/./ord($&)." "/ge')
-	printf "	dprint(\"%s\");\n" "$encoded"
+	encoded=$(echo "$line" | perl -pe 's/./ord($&)." "/ge' | \
+	    fmt --width=55 | sed 's/.*/"\0 "/' | sed '2,$s/^/	       /')
+	printf "	dprint(%s);\n" "$encoded"
     done
 }
 
 c_obfuscate_full() {
+    echo
     echo "int main(void) {"
     c_obfuscate
     echo "	return 0;"

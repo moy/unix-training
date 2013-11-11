@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-11 15:56+0100\n"
-"PO-Revision-Date: 2013-11-11 15:57+0100\n"
+"POT-Creation-Date: 2013-11-11 16:43+0100\n"
+"PO-Revision-Date: 2013-11-11 16:44+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,28 +18,31 @@ msgstr ""
 
 #: generate-step-A2.sh:24 generate-step-B1.sh:36 generate-step-B1.sh:38
 #: generate-step-B1.sh:53 generate-step-B1.sh:55 generate-step-C1.sh:7
-#: generate-step-C3.sh:35 generate-step-D1.sh:7 generate-step-D1.sh:52
-#: generate-step-D2.sh:10 generate-step-D2.sh:47 generate-step-D2.sh:49
-#: generate-step-D2.sh:51 generate-step-E10.sh:7 generate-step-E11.sh:10
-#: generate-step-E11.sh:11 generate-step-E11.sh:39 generate-step-E11.sh:40
-#: generate-step-E13.sh:7 generate-step-E13.sh:16 generate-step-E13.sh:41
-#: generate-step-E13.sh:42 generate-step-E1.sh:29 generate-step-E1.sh:31
-#: generate-step-E1.sh:32 generate-step-E2.sh:17 generate-step-E3.sh:7
-#: generate-step-E3.sh:10 generate-step-E3.sh:27 generate-step-E3.sh:29
-#: generate-step-E4.sh:7 generate-step-E4.sh:24 generate-step-E5.sh:17
-#: generate-step-E6.sh:7 generate-step-E6.sh:8 generate-step-E6.sh:9
-#: generate-step-E9.sh:6 generate-step-E9.sh:29 generate-step-F2.sh:7
-#: generate-step-G2.sh:8 generate-step-G2.sh:69 i18n-lib.sh:31
-#: upload-to-servers.sh:63 upload-to-servers.sh:66 upload-to-servers.sh:67
-#: upload-to-servers.sh:68 upload-to-servers.sh:70 upload-to-servers.sh:71
-#: upload-to-servers.sh:72 upload-to-servers.sh:75 upload-to-servers.sh:76
-#: upload-to-servers.sh:77 upload-to-servers.sh:78 upload-to-servers.sh:79
-#: upload-to-servers.sh:80 upload-to-servers.sh:81 upload-to-servers.sh:83
-#: upload-to-servers.sh:87 upload-to-servers.sh:88 upload-to-servers.sh:97
-#: upload-to-servers.sh:98 upload-to-servers.sh:99 upload-to-servers.sh:100
-#: upload-to-servers.sh:101 upload-to-servers.sh:102 upload-to-servers.sh:103
-#: upload-to-servers.sh:104 upload-to-servers.sh:105 upload-to-servers.sh:106
-#: upload-to-servers.sh:107 upload-to-servers.sh:108 upload-to-servers.sh:109
+#: generate-step-C3.sh:35 generate-step-D1.sh:39 generate-step-D1.sh:40
+#: generate-step-D1.sh:78 generate-step-D1.sh:111 generate-step-D1.sh:113
+#: generate-step-D2.sh:49 generate-step-D2.sh:54 generate-step-D2.sh:56
+#: generate-step-D2.sh:58 generate-step-D2.sh:67 generate-step-D2.sh:69
+#: generate-step-D2.sh:71 generate-step-D2.sh:73 generate-step-E10.sh:7
+#: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:39
+#: generate-step-E11.sh:40 generate-step-E13.sh:7 generate-step-E13.sh:16
+#: generate-step-E13.sh:41 generate-step-E13.sh:42 generate-step-E1.sh:29
+#: generate-step-E1.sh:31 generate-step-E1.sh:32 generate-step-E2.sh:17
+#: generate-step-E3.sh:7 generate-step-E3.sh:10 generate-step-E3.sh:27
+#: generate-step-E3.sh:29 generate-step-E4.sh:7 generate-step-E4.sh:24
+#: generate-step-E5.sh:17 generate-step-E6.sh:7 generate-step-E6.sh:8
+#: generate-step-E6.sh:9 generate-step-E9.sh:6 generate-step-E9.sh:29
+#: generate-step-F2.sh:7 generate-step-G2.sh:8 generate-step-G2.sh:69
+#: i18n-lib.sh:31 upload-to-servers.sh:63 upload-to-servers.sh:66
+#: upload-to-servers.sh:67 upload-to-servers.sh:68 upload-to-servers.sh:70
+#: upload-to-servers.sh:71 upload-to-servers.sh:72 upload-to-servers.sh:75
+#: upload-to-servers.sh:76 upload-to-servers.sh:77 upload-to-servers.sh:78
+#: upload-to-servers.sh:79 upload-to-servers.sh:80 upload-to-servers.sh:81
+#: upload-to-servers.sh:83 upload-to-servers.sh:87 upload-to-servers.sh:88
+#: upload-to-servers.sh:97 upload-to-servers.sh:98 upload-to-servers.sh:99
+#: upload-to-servers.sh:100 upload-to-servers.sh:101 upload-to-servers.sh:102
+#: upload-to-servers.sh:103 upload-to-servers.sh:104 upload-to-servers.sh:105
+#: upload-to-servers.sh:106 upload-to-servers.sh:107 upload-to-servers.sh:108
+#: upload-to-servers.sh:109
 msgid "etape"
 msgstr "step"
 
@@ -321,7 +324,7 @@ msgstr ""
 msgid "etape-C3.png générée"
 msgstr "step-C3.png generated"
 
-#: generate-step-D1.sh:9
+#: generate-step-D1.sh:8
 msgid ""
 "Fichier source pour l'etape D1.\n"
 "Ce programme doit etre dans un fichier etape_d1.adb\n"
@@ -337,11 +340,7 @@ msgstr ""
 "\n"
 "The file is purposely unreadable to make the exercice more 'funny'.\n"
 
-#: generate-step-D1.sh:20
-msgid "procedure Etape_D1 is"
-msgstr "procedure Step_D1 is"
-
-#: generate-step-D1.sh:24
+#: generate-step-D1.sh:17
 msgid ""
 "Bonjour,\n"
 "\n"
@@ -351,7 +350,7 @@ msgstr ""
 "If you read this, it's probably that you managed to\n"
 "compile the file step_d1.adb\n"
 
-#: generate-step-D1.sh:37
+#: generate-step-D1.sh:23
 #, sh-format
 msgid ""
 "L'etape suivante est aussi un programme Ada a compiler,\n"
@@ -359,13 +358,14 @@ msgid ""
 "dans un fichier OpenDocument (LibreOffice, OpenOffice.org, ...) qui se\n"
 "trouve ici :\n"
 "\n"
-"  $web_url/etape_d2-1.odt\n"
+"  $web_url/etape_d2-1%s.odt\n"
 "\n"
 "Le second est dans un fichier texte qui se trouve dans\n"
 "\n"
-"  $maindir_tilde/etape_d2-2.txt\n"
+"  $maindir_tilde/etape_d2-2%s.txt\n"
 "\n"
 "Et le dernier est ici :\n"
+"\\n\\n\n"
 msgstr ""
 "Hello,\n"
 "\n"
@@ -374,28 +374,36 @@ msgstr ""
 "in an OpenDocument (LibreOffice, OpenOffice.org, ...) file located\n"
 "here:\n"
 "\n"
-"  $web_url/step_d2-1.odt\n"
+"  $web_url/step_d2-1%s.odt\n"
 "\n"
 "The second is in a text file, located in\n"
 "\n"
-"  $maindir_tilde/step_d2-2.txt\n"
+"  $maindir_tilde/step_d2-2%s.txt\n"
 "\n"
 "And the last one is here:\n"
-"\n"
+"\\n\\n\n"
 
-#: generate-step-D1.sh:59
+#: generate-step-D1.sh:42
 msgid "A vous de faire les copier-coller pour remettre le tout ensemble"
 msgstr "Do the cut-and-paste to put them together."
 
-#: generate-step-D1.sh:62
+#: generate-step-D1.sh:49
+msgid "procedure Etape_D1 is"
+msgstr "procedure Step_D1 is"
+
+#: generate-step-D1.sh:76
 msgid "end Mauvais_Nom_Qui_Devrait_Etre_Etape_D1;\n"
 msgstr "end Bad_Name_Which_Should_Have_Been_Step_D1;\n"
 
-#: generate-step-D1.sh:65
+#: generate-step-D1.sh:80
 msgid "etape_d1.adb genere\n"
 msgstr "step_d1.adb generated\n"
 
-#: generate-step-D2.sh:12
+#: generate-step-D1.sh:109
+msgid "] /* Ce crochet devrait être une accolade */\n"
+msgstr ""
+
+#: generate-step-D2.sh:11
 msgid ""
 "Fichier source pour l'etape D2.\n"
 "Le programme est coupé en 3 morceaux.\n"
@@ -405,11 +413,7 @@ msgstr ""
 "This program has been cut into 3 pieces.\n"
 "Assemble-them and compile the program.\n"
 
-#: generate-step-D2.sh:19
-msgid "procedure Etape_D2 is"
-msgstr "procedure Step_D2 is"
-
-#: generate-step-D2.sh:24
+#: generate-step-D2.sh:16
 #, sh-format
 msgid ""
 "Visiblement, le copier-coller a marché !\n"
@@ -442,11 +446,15 @@ msgstr ""
 "Depending on your configuration, you may need to rename (or copy) the\n"
 "file to give it the usual extension for this type of file.\n"
 
-#: generate-step-D2.sh:41
+#: generate-step-D2.sh:39
+msgid "procedure Etape_D2 is"
+msgstr "procedure Step_D2 is"
+
+#: generate-step-D2.sh:46
 msgid "end Etape_D2;"
 msgstr "end Step_D2;"
 
-#: generate-step-D2.sh:44
+#: generate-step-D2.sh:51
 msgid "etape_d2.adb genere"
 msgstr "step_d2.adb generated"
 

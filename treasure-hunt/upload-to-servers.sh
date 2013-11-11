@@ -67,9 +67,9 @@ upload_lang () {
     rsync $(gettext etape)-C1.tex "$web"
     rsync $(gettext etape)-C2.odt $(gettext etape)-C3.png "$dir"
 
-    rsync $(gettext etape)_d1.adb "$web"/abc/
-    rsync $(gettext etape)_d2-1.odt "$web"
-    rsync $(gettext etape)_d2-2.txt "$dir"
+    rsync $(gettext etape)_d1.adb $(gettext etape)_d1.c "$web"/abc/
+    rsync $(gettext etape)_d2-1-{c,ada}.odt "$web"
+    rsync $(gettext etape)_d2-2-{c,ada}.txt "$dir"
 
     ssh "$main_user@$mainmachine" "cd \"$maindir_upload/\" && mkdir -p ./oaue/ ./kmcv/ ./kmcvoaue/ ./123654/ ./979b5c3/"
     rsync $(gettext etape)-E1 "$dir"/oaue/

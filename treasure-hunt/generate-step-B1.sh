@@ -50,6 +50,6 @@ adadecode
 echo "begin"
 echo "$body" | ada_obfuscate
 echo "end;"
-) > $(gettext etape)_b1.adb␏
+) > $(gettext etape)_b1.adb
 
 echo $(gettext etape)_b1.adb "generated" >&2

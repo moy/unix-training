@@ -19,10 +19,11 @@ step_b1
 step_b1.adb
 etape_d1
 etape_d1.adb
+etape_d1.c
 etape_d2
-etape_d2-1.odt
-etape_d2-[1-3].txt
-step_d2-[1-3].txt
+etape_d2-1-*.odt
+etape_d2-[1-3]-*.txt
+step_d2-[1-3]-*.txt
 etape_d2.adb
 jeu-de-piste.sh
 treasure-hunt.sh
@@ -60,8 +61,10 @@ dot-step-E2.txt
 dot-etape-E2.txt
 step-E13.txt
 step_d1.adb
-step_d2-1.odt
+step_d1.c
+step_d2-1-*.odt
 step_d2.adb
+step_d2.c
 etape-E9.php
 step-E9.php
 

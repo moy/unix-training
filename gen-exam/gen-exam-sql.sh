@@ -182,10 +182,10 @@ if [ "$apply" = "yes" ]; then
     # needs a password.
     case "$dbtype" in
 	"postgresql")
-	    psql -h olan.imag.fr -d moy -U moywww -f "$outsql"
+	    psql -h "$exam_dbhost" -d "$exam_dbname" -U "$exam_dbuser" -f "$outsql"
 	    ;;
 	"mysql")
-	    mysql -h arpont.imag.fr -p --database=moy < "$outsql"
+	    mysql -h "$exam_dbhost" -p --user="$exam_dbuser" --database="$exam_dbname" < "$outsql"
 	    ;;
 	*)
 	    echo "Unknown database type $dbtype"

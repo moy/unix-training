@@ -6,3 +6,34 @@ generating the set of questions for your exam. For example,
 ../exam-expl/demo-exam-ensimag2011-en.sh is an "exam subject". For
 explanations on how to write an exam subject, see
 ../exam-expl/exam-test.sh and the comments it contains.
+
+Run your exam subject script with --help to see the available options.
+
+It is advised to test the exam in "demo mode", i.e. using the --demo
+option first. In demo mode, no database is used:
+
+* Questions and expected answers are encoded directly in PHP,
+
+* Actual answers are memorized in cookies.
+
+In SQL mode, the global picture is:
+
+* ./init-db.sh generates an SQL script to initialize a database. Run
+  the SQL script with e.g. mysql (or a web interface like phpMyAdmin to initialize the database on the
+  server.
+
+* The exam subject is a script (which uses the generation library),
+  which generates:
+
+  - questions.sql, to be executed with e.g. mysql, to fill-in the
+    database with questions and expected answers.
+
+  - 1/ and 2/, containing the content of accounts for students. At
+    Ensimag, we have a system to deploy it automatically on students
+    machines. You may distribute this to students with any system (at
+    worse, tar them and drop them on your webserver, and ask students
+    to download them).
+
+  - php/ containing PHP code to put on the web server.
+
+  (the script will remind you this at the end of execution)

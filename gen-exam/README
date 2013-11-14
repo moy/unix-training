@@ -1,2 +1,8 @@
 Exam generation library. See ../exam-expl/ for examples of usage of
 this library.
+
+As a user, you have to define an "exam subject", that is a script,
+generating the set of questions for your exam. For example,
+../exam-expl/demo-exam-ensimag2011-en.sh is an "exam subject". For
+explanations on how to write an exam subject, see
+../exam-expl/exam-test.sh and the comments it contains.

@@ -27,7 +27,7 @@ function exam_header($title = '', $basedir = '.') {
 $exam_i18n = array(
 	'fr' => array(
 		'submit' => 'Soumettre',
-		'demo_warning' => 'Attention! Vous utilisez le mode « demo », rien ne sera enregistré dans la base de données',
+		'demo_warning' => 'Attention ! Vous utilisez le mode « demo », rien ne sera enregistré dans la base de données',
 		'reset_answers' => "Réinitialiser les réponses",
 		'correct_answer' => "Réponse correcte validée",
 		'retry' => "Réessayer",

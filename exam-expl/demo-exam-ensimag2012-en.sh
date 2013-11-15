@@ -20,7 +20,7 @@ this archive.</p>
 
 <p>Some questions are taken directly from the final exam.</p>
 
-<p>Enjoy it !</p>"
+<p>Enjoy it!</p>"
 }
 
 exam_mode=demo

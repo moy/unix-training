@@ -34,8 +34,19 @@ function get_exam_info($subject) {
 	return $demo_info;
 }
 
-function get_questions ($machine, $session, $subject) {
-	return $_SESSION['demo_questions'];
+function get_questions ($machine, $session, $subject, $hide_correct = False) {
+	if ($hide_correct) {
+		$questions = array();
+		foreach ($_SESSION['demo_questions'] as $q) {
+			if (!(isset($q['student_answer'])) ||
+			    $q['student_answer'] != $q['correct_answer']) {
+				$questions[] = $q;
+			}
+		}
+		return $questions;
+	} else {
+		return $_SESSION['demo_questions'];
+	}
 }
 
 function get_login ($machine, $session, $subject) {

@@ -46,8 +46,12 @@ if ($login == "")
 </ul></div>
 <?php
 
+$hideok = isset($_GET['hideok']);
+$question_displayed = 0;
+
 // List questions.
-foreach (get_questions($machine, $session, $subject) as $line) {
+foreach (get_questions($machine, $session, $subject, $hideok) as $line) {
+	$question_displayed++;
 	echo '<div class="question">';
 	echo "<p><strong>(". $line["coeff"] ." points)</strong>&nbsp;\n";
 	echo $line["question_text"] ."</p>\n";
@@ -61,11 +65,15 @@ foreach (get_questions($machine, $session, $subject) as $line) {
 	echo "</div>\n";
 }
 
+if ($question_displayed === 0) {
+	echo '<p><strong>' . exam_get_string('all_ok') . '</strong></p>'; 
+}
+
 // If $exam_footer_include is set in config.php, include it.
 
 if (isset($exam_footer_include) && $exam_footer_include) {
 	// allow only simple filenames, to make sure
-				// /etc/passwd, ../../etc/passwd or http://whatever
+	// /etc/passwd, ../../etc/passwd or http://whatever
 	// are not allowed.
 	if (! preg_match('/^[a-zA-Z0-9\.-]*$/', $exam_footer_include)) {
 		die("\$exam_footer_include should only contain letters, digits, dots and dashes");
@@ -77,5 +85,12 @@ if (isset($exam_footer_include) && $exam_footer_include) {
 	}
 	include('inc/' . $exam_footer_include);
 }
-exam_footer();
-?>
+
+$n = intval($_GET['n']) + 1;
+echo '  <div class="info">';
+echo '    <a href="?n='. $n .'&amp;hideok">'. exam_get_string('hide_correct') .'</a>';
+if ($hideok) {
+	echo ' | <a href="?n='. $n .'">'. exam_get_string('display_correct') .'</a>';
+}
+echo '  </div>';
+exam_footer(); ?>

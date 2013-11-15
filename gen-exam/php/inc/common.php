@@ -36,7 +36,10 @@ $exam_i18n = array(
 		'machine' => "Machine",
 		'session' => "Session",
 		'questions' => "questions",
-		'points' => "points"
+		'points' => "points",
+		'display_correct' => "Afficher les réponses correctes",
+		'hide_correct' => "Masquer les réponses correctes",
+		'all_ok' => "Toutes les réponses ont été validées, félicitations !"
 		),
 	
 	'en' => array(
@@ -50,7 +53,10 @@ $exam_i18n = array(
 		'machine' => "Machine",
 		'session' => "Session",
 		'questions' => "questions",
-		'points' => "points"
+		'points' => "points",
+		'display_correct' => "Display correct answers",
+		'hide_correct' => "Hide correct answers",
+		'all_ok' => "All answers validated, congratulation!"
 		)
 	);
 

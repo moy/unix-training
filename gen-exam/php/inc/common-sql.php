@@ -112,23 +112,27 @@ GROUP BY exam_unix_subject.descriptif";
 	return exam_fetch_array($result);
 }
 
-function get_questions ($machine, $session, $subject) {
+function get_questions ($machine, $session, $subject, $hide_correct = False) {
 	exam_connect_maybe();
 	$query = "SELECT exam_unix_subject_questions.id_question AS question,
                  exam_unix_question.question_text AS question_text,
                  exam_unix_subject_questions.coeff AS coeff,
 		 exam_unix_question.student_answer AS student_answer,
 		 exam_unix_question.correct_answer AS correct_answer
-FROM exam_unix_subject, exam_unix_subject_questions, exam_unix_question
-WHERE exam_unix_subject_questions.id_subject  = exam_unix_subject.id
-  AND exam_unix_subject_questions.id_question = exam_unix_question.id
-  AND exam_unix_subject.id       = exam_unix_question.id_subject
+FROM exam_unix_subject_questions, exam_unix_question
+WHERE exam_unix_subject_questions.id_question = exam_unix_question.id
   AND exam_unix_question.machine = '". exam_escape_string($machine) ."'
   AND exam_unix_question.session = '". exam_escape_string($session) ."'
-  AND exam_unix_subject.id       = '". exam_escape_string($subject) ."'
-ORDER BY exam_unix_subject_questions.coeff, exam_unix_question.correct_answer
+  AND exam_unix_question.id_subject = '". exam_escape_string($subject) ."'
 ";
+	if ($hide_correct) {
+		$query .= "  AND (exam_unix_question.student_answer IS NULL
+    OR exam_unix_question.student_answer <> exam_unix_question.correct_answer)
+";
+	}
+	$query .= " ORDER BY exam_unix_subject_questions.coeff, exam_unix_question.correct_answer";
 	$result = exam_query($query);
+	$questions = array();
 	while ($line = exam_fetch_array($result)) {
 		$questions[] = $line;
 	}

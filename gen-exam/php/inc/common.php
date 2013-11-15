@@ -87,7 +87,9 @@ function all_answers_summary() {
 
 if (isset($_GET["question"])) {
 	$question = $_GET["question"];
-} // keep undef otherwise.
+} else {
+	unset($question);
+}
 
 //$machine = $_GET["machine"];
 if (isSet($_SERVER["HTTP_X_FORWARDED_FOR"])) {
@@ -101,6 +103,8 @@ include_once('./inc/config.php');
 
 if (isset($_GET["answer"])) {
 	$answer = trim($_GET["answer"]);
+} else {
+	unset($answer);
 }
 
 if (!isset($mode)) {

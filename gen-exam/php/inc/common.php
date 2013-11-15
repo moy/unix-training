@@ -91,6 +91,10 @@ if (isset($_GET["question"])) {
 	unset($question);
 }
 
+if (!is_numeric($question)) {
+	unset($question);
+}
+
 //$machine = $_GET["machine"];
 if (isSet($_SERVER["HTTP_X_FORWARDED_FOR"])) {
 	$IP = $_SERVER["HTTP_X_FORWARDED_FOR"];

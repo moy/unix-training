@@ -64,6 +64,15 @@ all_questions () {
     basic_question 1 "This is a <em>simple</em> question, whose anser is basically 42." 42
 }
 
+# Expansive things are prepared once and for all. This avoids re-doing
+# the same for each students. Benchmarks show that this saves a
+# few seconds per student, i.e. a few tens of minutes total.
+# This may help in case we have to re-generate it live ...
+#
+# prepare_questions () {
+#     : do something once (not once for each student)
+# }
+
 # Functions called by smart_question simple above.
 desc_question_simple () {
     echo "The answer for $login, on machine $machine, in session $session for the exam $subject is $(hash simple)"

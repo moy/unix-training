@@ -29,6 +29,8 @@ smart_question () {
 
 # Decimal variant of smart_question (used when the answer has to be
 # decimal, and sufficiently small).
+#
+# $1, $2 = same as smart_question
 smart_question_dec () {
     if [ "$verbose" = "yes" ]; then
 	echo "smart_question_dec $@"
@@ -42,7 +44,10 @@ smart_question_dec () {
 }
 
 # Decimal variant of smart_question (used when the answer has to be
-# decimal, and sufficiently small).
+# sufficiently small, e.g. when the answer cannot be copy-pasted and
+# has to be re-typed by the student).
+#
+# $1, $2 = same as smart_question
 smart_question_short () {
     if [ "$verbose" = "yes" ]; then
 	echo "smart_question_short $@"
@@ -56,7 +61,14 @@ smart_question_short () {
 }
 
 # Constant variant of smart_question (used when the answer does not
-# depend on the student).
+# depend on the student). The expected answer is $(consthash "$1").
+# Like smart_question, this will call gen_question_$1 and
+# desc_question_$1. It is recommended that you do nothing in
+# gen_question_$1, but instead use prepare_question to generate the
+# material for the question only once (otherwise, the code will be
+# executed for each question).
+#
+# $1, $2 = same as smart_question
 smart_question_const () {
     if [ "$verbose" = "yes" ]; then
 	echo "smart_question_const $@"

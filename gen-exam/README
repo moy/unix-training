@@ -37,3 +37,5 @@ In SQL mode, the global picture is:
   - php/ containing PHP code to put on the web server.
 
   (the script will remind you this at the end of execution)
+
+The user API is implemented and documented in ./exam-lib.sh.

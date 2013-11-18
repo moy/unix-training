@@ -86,3 +86,6 @@ gen_question_simple () {
 # exam-main.sh in this directory.
 EXAM_DIR=../gen-exam/
 . "$EXAM_DIR"/exam-main.sh
+
+# Read ../gen-exam/exam-lib.sh and the comments it contains for more
+# details about the user API.

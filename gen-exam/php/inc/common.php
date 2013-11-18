@@ -96,7 +96,7 @@ if (isset($_GET["question"])) {
 	unset($question);
 }
 
-if (!is_numeric($question)) {
+if (isset($question) && !is_numeric($question)) {
 	unset($question);
 }
 
@@ -128,9 +128,24 @@ function echo_incorrect($path) {
 	echo '<span><img class="invisible" src="'. $path .'/ko.png" width="15px" height="15px" alt="ko" />&nbsp;</span>';
 }
 
+function check_numeric($var) {
+	if (!isset($_GLOBALS[$var]) || !is_numeric($_GLOBALS[$var])) {
+		die('$'. $var .' is not set or not numeric.');
+	}
+}
+
+function check_empty($var) {
+	if (!isset($_GLOBALS[$var]) || $_GLOBALS[$var] === '') {
+		die('$'. $var .' is not set or empty.');
+	}
+}
+
 if ($mode == "demo") {
 	include_once './inc/common-demo.php';
 } else {
+	check_numeric('subject');
+	check_numeric('session');
+	check_nonempty('machine');
 	include_once './inc/common-sql.php';
 }
 

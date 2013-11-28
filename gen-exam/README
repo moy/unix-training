@@ -1,6 +1,9 @@
 Exam generation library. See ../exam-expl/ for examples of usage of
 this library.
 
+Writing a new exam
+==================
+
 As a user, you have to define an "exam subject", that is a script,
 generating the set of questions for your exam. For example,
 ../exam-expl/demo-exam-ensimag2011-en.sh is an "exam subject". For
@@ -10,7 +13,12 @@ explanations on how to write an exam subject, see
 Run your exam subject script with --help to see the available options.
 
 It is advised to test the exam in "demo mode", i.e. using the --demo
-option first. In demo mode, no database is used:
+option first.
+
+Demo and SQL modes: big picture
+===============================
+
+In demo mode, no database is used:
 
 * Questions and expected answers are encoded directly in PHP,
 
@@ -39,3 +47,53 @@ In SQL mode, the global picture is:
   (the script will remind you this at the end of execution)
 
 The user API is implemented and documented in ./exam-lib.sh.
+
+During the exam
+===============
+
+Monitoring
+----------
+
+It is advised to monitor the server during the exam using:
+
+* tail -f /var/log/apache2/access.log => shows whether students are
+  working.
+
+* tail -f /var/log/apache2/error.log => should ideally remain empty.
+
+* Open the URL of php/private/stats.php in a web browser, and refresh
+  periodically.
+
+In case anything goes wrong, it's better to have backups ... See
+utils/gradesdump.sh and utils/examdump.sh. Launch them before the exam
+starts, they will back up the grades listing and the database every 10
+minutes.
+
+Changing session
+----------------
+
+The exam starts in session 1. If you need two sessions (e.g. have N
+students, but a room with only N/2 computers), you have to change the
+session number manually in config.php ($session) between sessions. It
+is not possible to have session overlap (i.e. you are either in
+session 1 or session 2, but can't have a room in session 1 and another
+already starting session 2).
+
+If a computer is down ...
+-------------------------
+
+There's no easy way to change the association students <-> machine
+during the exam. The recommended solution is to allocate a few
+machines as "spare machines" by adding a few lines in the students CSV
+list, like:
+
+spare1;Spare Machine room XYZ;No 1;1;host42.school.com
+spare2;Spare Machine room XYZ;No 2;1;host43.school.com
+spare3;Spare Machine room XYZ;No 3;2;host42.school.com
+spare4;Spare Machine room XYZ;No 4;2;host43.school.com
+
+(two spare machines for room XYZ, for sessions 1 and 2)
+
+If a student need to move to one of these machines, note who uses
+which machine, and adapt the grades listing after the fact (in a
+spreadsheet program).

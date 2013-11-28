@@ -64,6 +64,10 @@ It is advised to monitor the server during the exam using:
 * Open the URL of php/private/stats.php in a web browser, and refresh
   periodically.
 
+* Any other monitoring utility can help if you're a bit paranoid
+  ("vmstat 1", "top", ...), to check that your server isn't
+  overloaded (mine is a small virtual machine).
+
 In case anything goes wrong, it's better to have backups ... See
 utils/gradesdump.sh and utils/examdump.sh. Launch them before the exam
 starts, they will back up the grades listing and the database every 10

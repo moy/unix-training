@@ -1,0 +1,4 @@
+# No one should access files directly from here. Use
+# ../download-subject.php to stream the file content after
+# authentication.
+Deny from all

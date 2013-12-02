@@ -16,6 +16,11 @@ if ($mode == "demo") {
 	echo '<p><a href="?reset=yes&amp;mode=demo">'. exam_get_string('reset_answers') .'</a></p>';
 }
 
+if (subject_file_exists()) {
+	echo '<p>'. exam_get_string('download_subject_here') .'<a href="download-subject.php">'.
+		htmlentities($subject_basename) .'</a>.</p>';
+}
+
 /*
 echo '<pre>';
 var_dump($_SESSION['demo_questions']);

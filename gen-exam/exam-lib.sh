@@ -273,7 +273,7 @@ exam_config_php () {
     fi
 echo "
 \$exam_auth    = 'http'; // change to 'https' or 'none' if needed.
-\$exam_webuser = '${exam_webuser:-user}';
+\$exam_webuser = '${exam_webuser:-user}'; // used to access /private/
 \$exam_webpass = '${exam_webpass:-$(uuid)}';
 \$mode = '$1'; // 'sql' or 'demo'
 \$lang = '$exam_lang'; // 'en' or 'fr'

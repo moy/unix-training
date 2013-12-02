@@ -38,7 +38,8 @@ $exam_i18n = array(
 		'points' => "points",
 		'display_correct' => "Afficher les réponses correctes",
 		'hide_correct' => "Masquer les réponses correctes",
-		'all_ok' => "Toutes les réponses ont été validées, félicitations !"
+		'all_ok' => "Toutes les réponses ont été validées, félicitations !",
+		'download_subject_here' => 'Vous pouvez télécharger ou re-télécharger le sujet ici : '
 		),
 	
 	'en' => array(
@@ -55,7 +56,8 @@ $exam_i18n = array(
 		'points' => "points",
 		'display_correct' => "Display correct answers",
 		'hide_correct' => "Hide correct answers",
-		'all_ok' => "All answers validated, congratulation!"
+		'all_ok' => "All answers validated, congratulation!",
+		'download_subject_here' => 'You may download or re-download the subject file here: '
 		)
 	);
 
@@ -144,6 +146,14 @@ function check_nonempty($var) {
 	if ($GLOBALS[$var] === '') {
 		die('$'. $var .' is empty.');
 	}
+}
+
+$subject_basename = 'sujet.tar.gz';
+$subject_filename = 'subjects/'. $session .'/'. $machine .'/' . $subject_basename;
+$subject_mimetype = 'application/x-gzip';
+function subject_file_exists() {
+	global $subject_filename;
+	return file_exists($subject_filename);
 }
 
 if ($mode == "demo") {

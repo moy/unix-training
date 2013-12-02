@@ -129,14 +129,20 @@ function echo_incorrect($path) {
 }
 
 function check_numeric($var) {
-	if (!isset($_GLOBALS[$var]) || !is_numeric($_GLOBALS[$var])) {
-		die('$'. $var .' is not set or not numeric.');
+	if (!isset($GLOBALS[$var])) {
+		die('$'. $var .' is not set.');
+	}
+	if (!is_numeric($GLOBALS[$var])) {
+		die('$'. $var .' is not numeric.');
 	}
 }
 
-function check_empty($var) {
-	if (!isset($_GLOBALS[$var]) || $_GLOBALS[$var] === '') {
-		die('$'. $var .' is not set or empty.');
+function check_nonempty($var) {
+	if (!isset($GLOBALS[$var])) {
+		die('$'. $var .' is not set.');
+	}
+	if ($GLOBALS[$var] === '') {
+		die('$'. $var .' is empty.');
 	}
 }
 

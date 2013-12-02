@@ -107,3 +107,7 @@ spare4;Spare Machine room XYZ;No 4;2;host43.school.com
 If a student need to move to one of these machines, note who uses
 which machine, and adapt the grades listing after the fact (in a
 spreadsheet program).
+
+Alternatively, install phpmyadmin on the server, and change the
+login/first name/last name associated to the spare machine (for the
+corresponding session and subject) in the table exam_unix_logins.

@@ -16,9 +16,11 @@ Options:
 	--postgresql	Use PostgreSQL syntax
 	--mysql		Use MySQL syntax
 	--list list.csv	Use list.csv as student list file
+	--tar		Compress (.tar.gz) generated files
 EOF
 }
 
+tar=no
 list_students=list_students.csv
 outdir=exam_genere
 outsql=
@@ -73,6 +75,9 @@ while test $# -ne 0; do
 	    ;;
 	"--php-only")
 	    php_only=yes
+	    ;;
+	"--tar")
+	    tar=yes
 	    ;;
         *)
             echo "ERROR: Unrecognized option $1"
@@ -177,6 +182,21 @@ done
 echo "Number of questions: ${#coefficients[@]}"
 echo "Total coefficients: $sum"
 
+if [ "$tar" = "yes" ]; then
+    echo "Packing subject directory to sujet.tar.gz ..."
+    for login in $(get_logins); do
+	session=$(get_session "$login")
+	machine=$(get_machine "$login")
+	(
+	    cd "$outdir/$session/$machine" &&
+	    tar czf ../"$machine"-sujet.tar.gz . &&
+	    cd .. &&
+	    rm -fr "$machine" &&
+	    mkdir "$machine" &&
+	    mv "$machine"-sujet.tar.gz "$machine"/sujet.tar.gz
+	)
+    done
+fi
 
 if [ "$apply" = "yes" ]; then
     # needs a password.

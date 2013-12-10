@@ -1,6 +1,6 @@
 <?php
-chdir('..');
 define('_VALID_INCLUDE', TRUE);
+chdir('..');
 include_once './inc/common.php';
 include_once './inc/authentication.php';
 

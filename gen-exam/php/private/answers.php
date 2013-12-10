@@ -52,10 +52,10 @@ if ($machine == "")
 <?php echo $welcome_msg ?>
 
 <div class="info"><ul>
-<li><strong>Machine: <?php echo $machine ?></strong></li>
-<li><strong>Session: <?php echo $session ?></strong></li>
-<li><strong>Login: <?php echo $login ?></strong></li>
-<li><strong>Name: <?php echo $first_name ." ". $familly_name ?></strong></li>
+<li><strong>Machine: <?php echo htmlspecialchars($machine) ?></strong></li>
+<li><strong>Session: <?php echo htmlspecialchars($session) ?></strong></li>
+<li><strong>Login: <?php echo htmlspecialchars($login) ?></strong></li>
+<li><strong>Name: <?php echo htmlspecialchars($first_name ." ". $familly_name) ?></strong></li>
 <li><strong><?php echo $count ?> questions</strong></li>
 <li><strong><?php echo $points ?> points</strong></li>
 </ul></div>

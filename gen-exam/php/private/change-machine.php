@@ -43,9 +43,18 @@ if ($machine_to_edit == "" || $session_to_edit == "") {
 	exit;
 }
 
-$new_login = $_GET['new_login'];
-$new_first_name = $_GET['new_first_name'];
-$new_familly_name = $_GET['new_familly_name'];
+$new_login = "";
+$new_first_name = "";
+$new_familly_name = "";
+if (isset($_GET['new_login'])) {
+	$new_login = $_GET['new_login'];
+}
+if (isset($_GET['new_first_name'])) {
+	$new_first_name = $_GET['new_first_name'];
+}
+if (isset($_GET['new_familly_name'])) {
+	$new_familly_name = $_GET['new_familly_name'];
+}
 
 if ($new_login != "" &&
     $new_first_name != "" &&
@@ -73,26 +82,32 @@ $initial_familly_name = $line['initial_familly_name'];
 
 if ($login == "")
 	die("FATAL ERROR: Can not find login $login for subject $subject in database");
-?>
 
-<?php echo $welcome_msg ?>
+function display_was($old, $new) {
+	if ($old == $new) {
+		echo '(unchanged)';
+	} else {
+		echo '(was <strong>'. htmlspecialchars($old) .'</strong>)';
+	}
+}
+?>
 
 <form action="change-machine.php" method="get">
 	<fieldset class="invisiblefieldset">
 	<input type="hidden" name="machine_to_edit" value="<?php echo htmlspecialchars($machine_to_edit) ?>" />
 	<input type="hidden" name="session_to_edit" value="<?php echo htmlspecialchars($session_to_edit) ?>" />
 	<div class="info"><ul>
-	<li><strong>Machine: <?php echo $machine_to_edit ?></strong></li>
-	<li><strong>Session: <?php echo $session_to_edit ?></strong></li>
-	<li><strong>Login:
+	<li><strong>Machine: <?php echo htmlspecialchars($machine_to_edit) ?></strong></li>
+	<li><strong>Session: <?php echo htmlspecialchars($session_to_edit) ?></strong></li>
+	<li><strong>Login</strong>:
 	    <input type="text" name="new_login" value="<?php echo htmlspecialchars($login) ?>" />
-	    (was <?php echo $initial_login ?>)</strong></li>
-	<li><strong>First Name:
+	    <?php display_was($initial_login, $login); ?></li>
+	<li><strong>First Name</strong>:
 	    <input type="text" name="new_first_name" value="<?php echo htmlspecialchars($first_name) ?>" />
-	    (was <?php echo $initial_first_name ?>)</strong></li>
-	<li><strong>Familly Name:
+	    <?php display_was($initial_first_name, $first_name); ?></li>
+	<li><strong>Familly Name</strong>:
 	    <input type="text" name="new_familly_name" value="<?php echo htmlspecialchars($familly_name) ?>" />
-	    (was <?php echo $initial_familly_name ?>)</strong></li>
+	    <?php display_was($initial_familly_name, $familly_name); ?></li>
 	</ul></div>
 	<input type="submit" value="Change information" />
 	</fieldset>

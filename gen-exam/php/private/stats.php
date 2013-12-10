@@ -46,7 +46,7 @@ function display_request($name, $query) {
 <li><strong><?php echo $points ?> points</strong></li>
 <li><strong>Current subject:</strong> <?php echo $subject ?></li>
 <li><strong>Current session:</strong> <?php echo $session ?></li>
-<li><strong>Database:</strong> <?php echo $dbuser .'@'. $dbhost .':'. $dbname; ?></li>
+<li><strong>Database:</strong> <?php echo htmlspecialchars($dbuser .'@'. $dbhost .':'. $dbname); ?></li>
 <?php
 display_request("Number of students", "SELECT session, COUNT(DISTINCT machine) as ". exam_field('count') ."
 FROM exam_unix_question
@@ -77,7 +77,7 @@ AND exam_unix_question.id_subject = '". $subject ."'"
 $result = exam_query($query);
 
 echo "<li><strong>Machine changes</strong>:";
-	$query = "SELECT machine, session, login, first_name, familly_name, initial_login, initial_first_name, initial_familly_name
+	$query = "SELECT machine, session, login, first_name as 'First name', familly_name as 'Familly name', initial_login as 'Initial login', initial_first_name as 'Initial first name', initial_familly_name as 'Initial familly name'
 FROM exam_unix_logins
 WHERE id_subject = '". exam_escape_string($subject) ."'
   AND session    = '". exam_escape_string($session) ."'

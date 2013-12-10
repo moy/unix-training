@@ -42,12 +42,12 @@ if ($login == "")
 <?php echo $welcome_msg ?>
 
 <div class="info"><ul>
-<li><strong><?php echo exam_get_string('machine') .': '. $machine ?></strong></li>
-<li><strong><?php echo exam_get_string('session') .': '. $session ?></strong></li>
-<li><strong><?php echo exam_get_string('login') .': '. $login ?></strong></li>
-<li><strong><?php echo exam_get_string('name') .': '. $first_name ." ". $familly_name ?></strong></li>
-<li><strong><?php echo $count ." ". exam_get_string('questions') ?></strong></li>
-<li><strong><?php echo $points ." ". exam_get_string('points') ?></strong></li>
+	<li><strong><?php echo exam_get_string('machine') .': '. htmlspecialchars($machine) ?></strong></li>
+	<li><strong><?php echo exam_get_string('session') .': '. htmlspecialchars($session) ?></strong></li>
+	<li><strong><?php echo exam_get_string('login') .': '. htmlspecialchars($login) ?></strong></li>
+	<li><strong><?php echo exam_get_string('name') .': '. htmlspecialchars($first_name ." ". $familly_name) ?></strong></li>
+	<li><strong><?php echo $count ." ". exam_get_string('questions') ?></strong></li>
+	<li><strong><?php echo $points ." ". exam_get_string('points') ?></strong></li>
 </ul></div>
 <?php
 

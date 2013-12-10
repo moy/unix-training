@@ -5,7 +5,7 @@ include_once './inc/common.php';
 include_once './inc/authentication.php';
 
 if ($mode == 'demo')
-   die("No answer available in demo mode");
+	die("No answer available in demo mode");
 
 if ($mode == "sql") {
 	isset($subject) or die("FATAL ERROR: Subject not specified, please check config.php.");
@@ -30,18 +30,6 @@ if (isset($_GET['login'])) {
 	</fieldset>
 </form>
 <?php
-
-
-if ($mode == "demo") {
-	echo "<p><strong>Warning: You're running in demo mode. Nothing will be recorded in the database</strong></p>";
-	echo '<p><a href="?reset=yes&amp;mode=demo">Reset answers</a></p>';
-}
-
-/*
-echo '<pre>';
-var_dump($_SESSION['demo_questions']);
-echo '</pre>';
-*/
 
 $count=$line["count"];
 $points=$line["points"];

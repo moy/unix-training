@@ -229,7 +229,7 @@ function exam_display_result ($result) {
 			echo "</tr>\n";
 		} while ($array = exam_fetch_array($result));
 		echo "</table>";
-		echo "<p>Total : " . $n_res . " Record.</p>";
+		echo "<p>Total: " . $n_res . " Record(s).</p>";
 	} else {
 		echo "No record found.";
 	}

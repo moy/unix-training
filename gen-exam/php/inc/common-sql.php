@@ -142,7 +142,7 @@ WHERE exam_unix_subject_questions.id_question = exam_unix_question.id
 
 function get_login ($machine, $session, $subject) {
 	exam_connect_maybe();
-	$query = "SELECT login, first_name, familly_name
+	$query = "SELECT login, initial_login, first_name, initial_first_name, familly_name, initial_familly_name
 FROM exam_unix_logins
 WHERE id_subject = '". exam_escape_string($subject) ."'
   AND session    = '". exam_escape_string($session) ."'
@@ -196,5 +196,42 @@ WHERE exam_unix_subject_questions.id_subject  = exam_unix_subject.id
 		echo("FATAL ERROR: Bad number of questions (". count($result) .")");
 
 	return exam_fetch_array($result);
+}
+
+/* Utility functions */
+
+// Display the result of an SQL query as an HTML table.
+function exam_display_result ($result) {
+	$array = exam_fetch_array($result);
+	if ($array) {
+		$n_res = 0;
+		echo '<table>';
+		echo "<tr>";
+		foreach ($array as $key => $value) {
+			if (!is_numeric($key)) {
+				// we're executing *_fetch_array in
+				// default mode, we're getting both
+				// the associative array and the
+				// numeric indices. Ignore numeric
+				// indices.
+				echo '<th>'. htmlspecialchars($key) .'</th>';
+			}
+		}
+		echo "</tr>\n";
+		do {
+			echo "<tr>";
+			foreach ($array as $key => $value) {
+				if (!is_numeric($key)) {
+					echo '<td>'. htmlspecialchars($value) .'</td>';
+				}
+			}
+			$n_res++;
+			echo "</tr>\n";
+		} while ($array = exam_fetch_array($result));
+		echo "</table>";
+		echo "<p>Total : " . $n_res . " Record.</p>";
+	} else {
+		echo "No record found.";
+	}
 }
 ?>

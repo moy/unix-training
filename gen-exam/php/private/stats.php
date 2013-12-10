@@ -75,6 +75,20 @@ AND exam_unix_question.id_subject = '". $subject ."'"
 	." GROUP BY exam_unix_subject_questions.id_question
            ORDER BY score;";
 $result = exam_query($query);
+
+echo "<li><strong>Machine changes</strong>:";
+	$query = "SELECT machine, session, login, first_name, familly_name, initial_login, initial_first_name, initial_familly_name
+FROM exam_unix_logins
+WHERE id_subject = '". exam_escape_string($subject) ."'
+  AND session    = '". exam_escape_string($session) ."'
+  AND (login <> initial_login OR
+       first_name <> initial_first_name OR
+       familly_name <> initial_familly_name)
+";
+$result = exam_query($query);
+exam_display_result($result);
+echo "</li>";
+
 echo "<li><strong>Per-question correct answers</strong>: <ul>\n";
 $total = 0;
 while ($line=exam_fetch_array($result)) {
@@ -94,6 +108,7 @@ echo "</ul></li>\n";
 </ul></div>
 
 <p><a href="grades.php">See grades</a></p>
+<p><a href="change-machine.php">Change student associated to a machine</a></p>
 <p><a href="answers.php">See student's answers</a></p>
 <?php if (isset($_GET['verbose']) && $_GET['verbose'] === 'yes') { ?>
     <p><a href="?verbose=no">See non-verbose stats</a></p>

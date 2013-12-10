@@ -21,7 +21,7 @@ EOF
 }
 
 tar=no
-list_students=list_students.csv
+list_students=${exam_list_students:-list_students.csv}
 outdir=exam_genere
 outsql=
 cleanup=no

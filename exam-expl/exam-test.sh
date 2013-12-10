@@ -38,6 +38,12 @@ exam_subject_title="Example exam"
 # guess the answers.
 exam_hash_key="xbCZ;9101"
 
+# Name of the file holding the students list. It must be a CSV file
+# (comma-separated value) containing the following columns:
+# login;first_name;last_name;session_number;machine
+# (not needed in demo mode)
+exam_list_students=list_test.csv
+
 # Welcome message, displayed below the title in the web page. You can
 # use HTML formatting if you want (but it is your responsibility
 # to write valid HTML here).

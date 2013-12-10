@@ -80,7 +80,6 @@ echo "<li><strong>Machine changes</strong>:";
 	$query = "SELECT machine, session, login, first_name as 'First name', familly_name as 'Familly name', initial_login as 'Initial login', initial_first_name as 'Initial first name', initial_familly_name as 'Initial familly name'
 FROM exam_unix_logins
 WHERE id_subject = '". exam_escape_string($subject) ."'
-  AND session    = '". exam_escape_string($session) ."'
   AND (login <> initial_login OR
        first_name <> initial_first_name OR
        familly_name <> initial_familly_name)

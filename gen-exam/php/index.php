@@ -91,7 +91,11 @@ if (isset($exam_footer_include) && $exam_footer_include) {
 	include('inc/' . $exam_footer_include);
 }
 
-$n = intval($_GET['n']) + 1;
+if (isset($_GET['n'])) {
+	$n = intval($_GET['n']) + 1;
+} else {
+	$n = 0;
+}
 echo '  <div class="info">';
 echo '    <a href="?n='. $n .'&amp;hideok">'. exam_get_string('hide_correct') .'</a>';
 if ($hideok) {

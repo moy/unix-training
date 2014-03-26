@@ -57,6 +57,30 @@ smart_question_const () {
     basic_question "$2" "$(desc_question_"$1")" $(consthash "$1")
 }
 
+# Question whose answer must be computed by a piece of code.
+#
+# For smart_question and its variants, the answer is known for each
+# student, and the shell functions associated to the question set up
+# an environment that allow the student to find it.
+#
+# Here, the answer itself is computed by a shell function: in addition
+# to gen_question_$1 and desc_question_$1, a new function
+# answer_question_$1 is called to do this. The function takes no
+# argument, but can use $(hash ...) and its variants. It must produce
+# the answer on its standard output.
+#
+# $1, $2 = same as smart_question
+smart_question_comp () {
+    debug smart_question_const "$@"
+    gen_question_maybe "$1" ''
+    answer=$(answer_question_"$1") || die "Failed to compute answer for question $1"
+    if [ "$answer" = "" ]; then
+	die "Answer for question $1 is empty"
+    fi
+    basic_question "$2" "$(desc_question_"$1")" "$answer"
+}
+
+
 # Inserts a question in the database. This is a low-level function,
 # you probably want to use smart_question and smart_question_* above
 # instead.

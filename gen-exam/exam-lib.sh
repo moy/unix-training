@@ -16,14 +16,8 @@ source_dir=$(pwd)
 #   passed as first argument of gen_question_$1 (it is computed as
 #   $(hash "$1")).
 smart_question () {
-    if [ "$verbose" = "yes" ]; then
-	echo "smart_question $@"
-	time=time
-    else
-	time=""
-    fi
-    cd "$studentdir"
-    eval $time gen_question_"$1" $(hash "$1") || die "Please check your question definitions"
+    debug smart_question "$@"
+    gen_question_maybe "$1" $(hash "$1")
     basic_question "$2" "$(desc_question_"$1")" $(hash "$1") || die "Please check your question definitions"
 }
 
@@ -32,14 +26,8 @@ smart_question () {
 #
 # $1, $2 = same as smart_question
 smart_question_dec () {
-    if [ "$verbose" = "yes" ]; then
-	echo "smart_question_dec $@"
-	time=time
-    else
-	time=""
-    fi
-    cd "$studentdir"
-    eval $time gen_question_"$1" $(dechash "$1")
+    debug smart_question_dec "$@"
+    gen_question_maybe "$1" $(dechash "$1")
     basic_question "$2" "$(desc_question_"$1")" $(dechash "$1")
 }
 
@@ -49,14 +37,8 @@ smart_question_dec () {
 #
 # $1, $2 = same as smart_question
 smart_question_short () {
-    if [ "$verbose" = "yes" ]; then
-	echo "smart_question_short $@"
-	time=time
-    else
-	time=""
-    fi
-    cd "$studentdir"
-    eval $time gen_question_"$1" $(shorthash "$1")
+    debug smart_question_short "$@"
+    gen_question_maybe "$1" $(shorthash "$1")
     basic_question "$2" "$(desc_question_"$1")" $(shorthash "$1")
 }
 
@@ -70,14 +52,8 @@ smart_question_short () {
 #
 # $1, $2 = same as smart_question
 smart_question_const () {
-    if [ "$verbose" = "yes" ]; then
-	echo "smart_question_const $@"
-	time=time
-    else
-	time=""
-    fi
-    cd "$studentdir"
-    eval $time gen_question_"$1" $(consthash "$1")
+    debug smart_question_const "$@"
+    gen_question_maybe "$1" $(consthash "$1")
     basic_question "$2" "$(desc_question_"$1")" $(consthash "$1")
 }
 
@@ -98,6 +74,22 @@ VALUES ('%s',     '%s',    '%s',    '%s',          '%s',           '%s',        
 }
 
 # End of user API.
+
+# Calls gen_question_$1 $2 if the function exists.
+gen_question_maybe () {
+    if [ "$verbose" = "yes" ]; then
+	echo "smart_question_const $@"
+	time=time
+    else
+	time=""
+    fi
+    if [ "$(command -v gen_question_"$1")" = gen_question_"$1" ]; then
+	cd "$studentdir"
+	eval $time gen_question_"$1" "$2" || die "Failed to call gen_question_$1."
+    else
+	debug "No gen_question_$1 function => not calling it"
+    fi
+}
 
 if [ "$(command -v all_questions)" != all_questions ]; then
     echo "ERROR: function all_questions is not defined."
@@ -122,6 +114,12 @@ if [ "$(command -v exam_welcome)" != exam_welcome ]; then
 	echo 'Welcome to the exam'
     }
 fi
+
+debug () {
+    if [ "$verbose" = "yes" ]; then
+	printf "%s\n" "$*"
+    fi
+}
 
 die () {
     echo "FATAL ERROR: $@"

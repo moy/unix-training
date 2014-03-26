@@ -185,17 +185,19 @@ consthash () {
     echo "$1 $exam_hash_key" | sha1sum | head -c 8
 }
 
-# array of arbitrary hashes. It's quicker to access an array than to
-# actually compute the hash each time.
-for i in $(seq 100); do
-    hashes[$i]=$(hash $i)
-done
-
 dechash () {
     # A non-nul number in decimal form.
     # xargs expr 1 + ensures non-zero, and remove leading zeros.
     hash "$1" | tr '[a-f]' '[1-6]' | head -c 4 | xargs expr 1 +
 }
+# array of arbitrary hashes. It's quicker to access an array than to
+# actually compute the hash each time.
+for i in $(seq 100); do
+    hashes[$i]=$(hash $i)
+done
+for i in $(seq 100); do
+    dechashes[$i]=$(dechash $i)
+done
 
 # dechash_bound string howmuch
 # generate a pseudo-random number between howmuch and 2*howmuch

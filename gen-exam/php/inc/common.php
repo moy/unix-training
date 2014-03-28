@@ -1,6 +1,18 @@
 <?php
 defined('_VALID_INCLUDE') or die('Direct access not allowed.');
 
+// Disable magic quotes
+if (get_magic_quotes_gpc()) {
+	function stripslashes_gpc(&$value)
+	{
+		$value = stripslashes($value);
+	}
+	array_walk_recursive($_GET, 'stripslashes_gpc');
+	array_walk_recursive($_POST, 'stripslashes_gpc');
+	array_walk_recursive($_COOKIE, 'stripslashes_gpc');
+	array_walk_recursive($_REQUEST, 'stripslashes_gpc');
+}
+
 function exam_header($title = '', $basedir = '.') {
 	echo '<'.'?xml version="1.0" encoding="UTF-8" ?'.'>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"

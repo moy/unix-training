@@ -140,6 +140,7 @@ esac
 
 if [ "$cleanup_db" = "yes" ]; then
     sql_raw "DELETE FROM exam_unix_subject_questions WHERE id_subject = '$subject';"
+    sql_raw "DELETE FROM exam_unix_forms    WHERE id_subject = '$subject';"
     sql_raw "DELETE FROM exam_unix_question WHERE id_subject = '$subject';"
     sql_raw "DELETE FROM exam_unix_logins   WHERE id_subject = '$subject';"
     sql_raw "DELETE FROM exam_unix_subject  WHERE id         = '$subject';"

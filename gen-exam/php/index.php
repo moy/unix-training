@@ -60,7 +60,7 @@ foreach (get_questions($machine, $session, $subject, $hideok) as $line) {
 	echo '<div class="question">';
 	echo "<p><strong>(". $line["coeff"] ." points)</strong>&nbsp;\n";
 	echo $line["question_text"] ."</p>\n";
-	if (get_form_array($line['question']) != null) {
+	if (get_form_array($line['question'], $machine, $session, $subject) != null) {
 		$height = 'height:10em; ';
 	} else {
 		$height = '';

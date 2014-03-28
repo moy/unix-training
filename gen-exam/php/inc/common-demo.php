@@ -39,7 +39,7 @@ function get_questions ($machine, $session, $subject, $hide_correct = False) {
 		foreach ($_SESSION['demo_questions'] as $n => $q) {
 			if (!(isset($q['student_answer'])) ||
 			    $q['student_answer'] != $q['correct_answer'] ||
-			    get_form_array($n) != null) {
+			    get_form_array($n, $machine, $session, $subject) != null) {
 				$questions[] = $q;
 			}
 		}
@@ -49,7 +49,7 @@ function get_questions ($machine, $session, $subject, $hide_correct = False) {
 	}
 }
 
-function get_form_array($question) {
+function get_form_array($question, $machine, $session, $subject) {
 	global $demo_forms;
 	if (isset($demo_forms[$question]) ||
 	    $demo_forms[$question] != "") {

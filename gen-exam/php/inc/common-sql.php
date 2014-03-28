@@ -140,6 +140,26 @@ WHERE exam_unix_subject_questions.id_question = exam_unix_question.id
 	return $questions;
 }
 
+function get_form_array($question, $machine, $session, $subject) {
+	$query = "SELECT name, value
+FROM exam_unix_forms
+WHERE exam_unix_forms.id = '". exam_escape_string($question) ."'
+  AND exam_unix_forms.machine = '". exam_escape_string($machine) ."'
+  AND exam_unix_forms.session = '". exam_escape_string($session) ."'
+  AND exam_unix_forms.id_subject = '". exam_escape_string($subject) ."'
+";
+	$result = exam_query($query) or die("Failed to get form");
+	if ($result) {
+		$result_array = array();
+		while ($line = exam_fetch_array($result)) {
+			$result_array[$line['name']] = $line['value'];
+		}
+		return $result_array;
+	} else {
+		return null;
+	}
+}
+
 function get_login ($machine, $session, $subject) {
 	exam_connect_maybe();
 	$query = "SELECT login, initial_login, first_name, initial_first_name, familly_name, initial_familly_name

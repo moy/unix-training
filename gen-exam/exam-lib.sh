@@ -95,13 +95,34 @@ basic_question () {
        (id, id_subject, machine, session, question_text, correct_answer, student_answer)
 VALUES ('%s',     '%s',    '%s',    '%s',          '%s',           '%s',           NULL);\n" \
        "$question" "$subject" "$machine" "$session" "$(sql_escape "$2")" "$(sql_escape "$3")" >> "$outsql"
+    if [ "$(command -v form_question_"$4")" = form_question_"$4" ]; then
+	form_init
+	form_question_"$4"
+	form_finalize
+    else
+	form_text=""
+    fi
+    printf '%s\n' "$form_text" >> "$outsql"
     question=$((question + 1))
-    # if [ "$(command -v form_question_"$4")" = form_question_"$4" ]; then
-    # 	form_question_"$4"
-    # fi
 }
 
 # End of user API.
+
+form_init () {
+    form_text=''
+}
+
+form_option () {
+    form_text="$form_text
+  INSERT INTO exam_unix_forms
+         (id, id_subject, machine, session, name, value)
+  VALUES ('$question', '$subject', '$machine', '$session', '$(sql_escape "$1")', '$(sql_escape "$2")');" >> "$outsql"
+}
+
+form_finalize () {
+    form_text="${form_text}"
+}
+
 
 # Calls gen_question_$1 $2 if the function exists.
 gen_question_maybe () {

@@ -85,15 +85,25 @@ create_table exam_unix_logins <<\EOF
     FOREIGN KEY (id_subject) REFERENCES exam_unix_subject(id)
 EOF
 
+create_table exam_unix_forms <<\EOF
+    id integer NOT NULL, -- Question number, not unique (one instance per student)
+    id_subject integer,
+    FOREIGN KEY (id_subject) REFERENCES exam_unix_subject(id),
+    machine varchar(256) NOT NULL,
+    session integer,
+    name text,
+    value text
+EOF
+
 create_table exam_unix_question <<\EOF
     id integer NOT NULL, -- Question number, not unique (one instance per student)
+    id_subject integer,
+    FOREIGN KEY (id_subject) REFERENCES exam_unix_subject(id),
     machine varchar(256) NOT NULL,
+    session integer,
     question_text text NOT NULL,
     correct_answer text NOT NULL,
-    student_answer text,
-    session integer,
-    id_subject integer,
-    FOREIGN KEY (id_subject) REFERENCES exam_unix_subject(id)
+    student_answer text
 EOF
 
 create_table exam_unix_subject_questions <<\EOF

@@ -14,7 +14,7 @@ $line = get_answer($question, $machine, $session, $subject);
 		<fieldset class="invisiblefieldset">
 		<input type="hidden" name="question" value="<?php echo $question ?>" />
 		<?php 
-$form_array = get_form_array($question);
+$form_array = get_form_array($question, $machine, $session, $subject);
 if ($form_array != null) {
 	$form = '';
 	$selected = false;

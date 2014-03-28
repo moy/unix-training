@@ -75,7 +75,7 @@ create_table exam_unix_logins <<\EOF
     id_subject integer NOT NULL,
     session integer NOT NULL,
     machine varchar(256) NOT NULL,
-    login varchar(8) NOT NULL,
+    login varchar(256) NOT NULL,
     initial_login varchar(8) NOT NULL,
     first_name text NOT NULL,
     initial_first_name text NOT NULL,

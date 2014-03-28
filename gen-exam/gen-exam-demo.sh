@@ -71,7 +71,11 @@ outdir=$(pwd)
 prepare_questions
 
 echo '<?php' > "$outphp"
-echo "defined('_VALID_INCLUDE') or die('Direct access not allowed.');" >> "$outphp"
+echo "defined('_VALID_INCLUDE') or die('Direct access not allowed.');
+
+\$demo_questions = array();
+\$demo_forms = array();
+" >> "$outphp"
 
 login=guest
 question=1
@@ -81,15 +85,38 @@ studentdir="$outdir/$session/$machine"
 mkdir -p "$studentdir"
 cd "$studentdir"
 
+form_init () {
+    form_text='array('
+    form_sep=''
+}
+
+form_option () {
+    form_text="${form_text}${form_sep}'$(php_escape "$1")' => '$(php_escape "$2")'"
+    form_sep=', '
+}
+
+form_finalize () {
+    form_text="${form_text})"
+}
+
 # Redefine basic_question not to do SQL ...
 basic_question () {
     printf '$demo_questions[] = array("question_text" => "%s",
-   "correct_answer" => "%s",
-   "coeff" => %s);\n' \
+    "correct_answer" => "%s",
+    "coeff" => %s);\n' \
 	"$(php_escape "$2")" \
 	"$(php_escape "$3")" \
 	"$(php_escape "$1")" \
 	>> "$outphp"
+    if [ "$(command -v form_question_"$4")" = form_question_"$4" ]; then
+	form_init
+	form_question_"$4"
+	form_finalize
+    else
+	form_text="null"
+    fi
+    
+    printf '$demo_forms[] = %s;\n\n' "$form_text" >> "$outphp"
 }
 
 all_questions

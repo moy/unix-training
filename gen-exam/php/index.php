@@ -60,9 +60,14 @@ foreach (get_questions($machine, $session, $subject, $hideok) as $line) {
 	echo '<div class="question">';
 	echo "<p><strong>(". $line["coeff"] ." points)</strong>&nbsp;\n";
 	echo $line["question_text"] ."</p>\n";
+	if (get_form_array($line['question']) != null) {
+		$height = 'height:10em; ';
+	} else {
+		$height = '';
+	}
 // iframe is deprecated in XHTML Strict, but works in old Konqueror
 // versions, while forms inside <object> do not seem to.
-	echo '<iframe class="submitbox" style="border: 0;" src="question.php?question='. $line["question"]
+	echo '<iframe class="submitbox" style="border: 0; ' . $height . '" src="question.php?question='. $line["question"]
 //	echo '<object class="submitbox" type="text/html"  data="question.php?question='. $line["question"]
 		.'">\n';
 //	echo "</object><br />\n";

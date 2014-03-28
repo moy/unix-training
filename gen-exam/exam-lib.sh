@@ -18,7 +18,7 @@ source_dir=$(pwd)
 smart_question () {
     debug smart_question "$@"
     gen_question_maybe "$1" $(hash "$1")
-    basic_question "$2" "$(desc_question_"$1")" $(hash "$1") || die "Please check your question definitions"
+    basic_question "$2" "$(desc_question_"$1")" $(hash "$1") "$1" || die "Please check your question definitions"
 }
 
 # Decimal variant of smart_question (used when the answer has to be
@@ -28,7 +28,7 @@ smart_question () {
 smart_question_dec () {
     debug smart_question_dec "$@"
     gen_question_maybe "$1" $(dechash "$1")
-    basic_question "$2" "$(desc_question_"$1")" $(dechash "$1")
+    basic_question "$2" "$(desc_question_"$1")" $(dechash "$1") "$1"
 }
 
 # Decimal variant of smart_question (used when the answer has to be
@@ -39,7 +39,7 @@ smart_question_dec () {
 smart_question_short () {
     debug smart_question_short "$@"
     gen_question_maybe "$1" $(shorthash "$1")
-    basic_question "$2" "$(desc_question_"$1")" $(shorthash "$1")
+    basic_question "$2" "$(desc_question_"$1")" $(shorthash "$1") "$1"
 }
 
 # Constant variant of smart_question (used when the answer does not
@@ -54,7 +54,7 @@ smart_question_short () {
 smart_question_const () {
     debug smart_question_const "$@"
     gen_question_maybe "$1" $(consthash "$1")
-    basic_question "$2" "$(desc_question_"$1")" $(consthash "$1")
+    basic_question "$2" "$(desc_question_"$1")" $(consthash "$1") "$1"
 }
 
 # Question whose answer must be computed by a piece of code.
@@ -77,7 +77,7 @@ smart_question_comp () {
     if [ "$answer" = "" ]; then
 	die "Answer for question $1 is empty"
     fi
-    basic_question "$2" "$(desc_question_"$1")" "$answer"
+    basic_question "$2" "$(desc_question_"$1")" "$answer" "$1"
 }
 
 
@@ -88,6 +88,7 @@ smart_question_comp () {
 # $1 = coefficient
 # $2 = question
 # $3 = expected answer
+# $4 = question short name
 basic_question () {
     coefficients["$question"]="$1"
     printf "INSERT INTO exam_unix_question
@@ -95,6 +96,9 @@ basic_question () {
 VALUES ('%s',     '%s',    '%s',    '%s',          '%s',           '%s',           NULL);\n" \
        "$question" "$subject" "$machine" "$session" "$(sql_escape "$2")" "$(sql_escape "$3")" >> "$outsql"
     question=$((question + 1))
+    # if [ "$(command -v form_question_"$4")" = form_question_"$4" ]; then
+    # 	form_question_"$4"
+    # fi
 }
 
 # End of user API.

@@ -10,10 +10,9 @@ if (isset($_GET['reset'])) {
 	die("Redirecting");
 }
 
+include_once './inc/demo-questions.php';
 if (!isset($_SESSION['demo_questions'])) {
 	$i = 0;
-	$demo_questions = array();
-	include_once './inc/demo-questions.php';
 	foreach($demo_questions as $key => $value) {
 		$demo_questions[$key]['question'] = $key;
 		$demo_questions[$key]['student_answer'] = NULL;
@@ -37,15 +36,26 @@ function get_exam_info($subject) {
 function get_questions ($machine, $session, $subject, $hide_correct = False) {
 	if ($hide_correct) {
 		$questions = array();
-		foreach ($_SESSION['demo_questions'] as $q) {
+		foreach ($_SESSION['demo_questions'] as $n => $q) {
 			if (!(isset($q['student_answer'])) ||
-			    $q['student_answer'] != $q['correct_answer']) {
+			    $q['student_answer'] != $q['correct_answer'] ||
+			    get_form_array($n) != null) {
 				$questions[] = $q;
 			}
 		}
 		return $questions;
 	} else {
 		return $_SESSION['demo_questions'];
+	}
+}
+
+function get_form_array($question) {
+	global $demo_forms;
+	if (isset($demo_forms[$question]) ||
+	    $demo_forms[$question] != "") {
+		return $demo_forms[$question];
+	} else {
+		return null;
 	}
 }
 

@@ -68,6 +68,8 @@ all_questions () {
 
     # You don't have to make the answer different for everybody, it's just a possibility.
     basic_question 1 "This is a <em>simple</em> question, whose anser is basically 42." 42
+
+    smart_question_comp mcq 1
 }
 
 # Expansive things are prepared once and for all. This avoids re-doing
@@ -87,6 +89,23 @@ desc_question_simple () {
 gen_question_simple () {
     true # nothing to prepare here.
 }
+
+
+desc_question_mcq () {
+    echo "Pick the right answer."
+}
+
+answer_question_mcq () {
+    echo "42"
+}
+
+form_question_mcq () {
+    form_option '41' 'Not this one'
+    form_option '42' 'This one'
+    form_option '43' 'Not this one either'
+}
+
+
 
 # Exam files must finish like this: defining EXAM_DIR, and sourcing
 # exam-main.sh in this directory.

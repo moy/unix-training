@@ -5,7 +5,10 @@ usage () {
             cat << EOF
 Usage: $(basename $0) [options]
 Options:
-	--help	This help message.
+	--help		This help message.
+	--output, -o	Specify output file
+	--cleanup	Clean existing directories before running
+	--verbose	Show more output
 EOF
 }
 

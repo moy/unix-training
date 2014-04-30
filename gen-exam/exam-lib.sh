@@ -232,6 +232,35 @@ dechash_bound () {
     echo $(($hash_mod + $2))
 }
 
+# Decimal to binary conversion.
+# Example: dec_to_bin 9 -> 1001
+dec_to_bin() {
+    python -c "from __future__ import print_function
+print('{0:#b}'.format($1).replace('0b', ''))"
+}
+
+# Binary to decimal conversion.
+# Example: dec_to_bin 1001 -> 9
+bin_to_dec() {
+    python -c "from __future__ import print_function
+print(int('$1', 2))"
+}
+
+# Hexadecimal to binary conversion.
+# Example: hex_to_bin A -> 1010
+hex_to_bin() {
+    python -c "from __future__ import print_function
+print('{0:#b}'.format(0x$1).replace('0b', ''))"
+}
+
+# Binary pseudo-random hash on N bits.
+# $1 = string to hash (same as hash's $1)
+# $2 = max number of bits in the output (real output may be shorter,
+#      since leading 0 are removed after counting bits)
+binhash_numbits () {
+    hex_to_bin $(hash "$1") | head -c "$2" | sed 's/^0*//'
+}
+
 shorthash () {
     hash "$@" | head -c 4
 }

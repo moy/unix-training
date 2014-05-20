@@ -161,7 +161,7 @@ for login in $(get_logins); do
     first_name=$(get_first_name "$login" | sql_escape_pipe)
     familly_name=$(get_familly_name "$login" | sql_escape_pipe)
     echo "login = $login; session = $session; machine = $machine; first_name = $first_name; familly_name = $familly_name"
-    studentdir="$outdir/$session/$machine"
+    studentdir="$outdir/php/subjects/$session/$machine"
     mkdir -p "$studentdir"
     cd "$studentdir"
 
@@ -255,10 +255,16 @@ if [ "$apply" = "yes" ]; then
     esac
 fi
 
+for d in "$outdir/php/subjects/"*/
+do
+    ln -s "$d" session-"$(basename "$d")"
+done
+
 echo
 echo "Generated files in $outdir"
 echo "- ${outsql#$outdir/}"
 echo "- init-db.sql and init-db-drop-tables.sql to initialize and"
 echo "  reset the DB (use with care)".
-echo "- 1/ and 2/ : files to put on students account for sessions 1 and 2"
+echo "- php/subjects/{1,2}/ : files to put on students account for sessions 1 and 2"
+echo "  (there are symlinks at the toplevel to help you find these)"
 echo "- php/ : PHP files to put on the server. php/inc/config.php is the configuration file."

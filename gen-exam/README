@@ -29,15 +29,15 @@ In SQL mode, the global picture is:
 * The exam subject is a script (which uses the generation library),
   which generates:
 
-  - 1/ and 2/, containing the content of accounts for students. At
-    Ensimag, we have a system to deploy it automatically on students
-    machines. You may distribute this to students with any system.
+  - php/subjects/1/ and php/subjects/2/, containing the content of
+    accounts for students. At Ensimag, we have a system to deploy it
+    automatically on students machines. You may distribute this to
+    students with any system.
 
-    Optionally, these directories can be copied on the webserver, in
-    the subjects/ subdirectory of the exam. If so, a link to the
-    tarballs will be included at the top of the index.php page, and
-    students will be able to download or re-download the tarball
-    during the exam. The download is only possible from the machine
+    In addition, the subject archives are also available through the
+    web interface (so, regardless of the initial distribution
+    mechanism, the student may re-download the archive during the
+    exam). The download is only possible from the machine
     associated to the tarball (i.e. students can't download the
     tarball of their friends).
 

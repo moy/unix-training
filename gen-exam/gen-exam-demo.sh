@@ -85,18 +85,10 @@ studentdir="$outdir/$session/$machine"
 mkdir -p "$studentdir"
 cd "$studentdir"
 
-form_init () {
-    form_text='array('
-    form_sep=''
-}
-
+# Redefine multiple-choice questions function not to do SQL
 form_option () {
     form_text="${form_text}${form_sep}'$(php_escape "$1")' => '$(php_escape "$2")'"
     form_sep=', '
-}
-
-form_finalize () {
-    form_text="${form_text})"
 }
 
 # Redefine basic_question not to do SQL ...
@@ -109,9 +101,10 @@ basic_question () {
 	"$(php_escape "$1")" \
 	>> "$outphp"
     if [ "$(command -v form_question_"$4")" = form_question_"$4" ]; then
-	form_init
+	form_text='array('
+	form_sep=''
 	form_question_"$4"
-	form_finalize
+	form_text="${form_text})"
     else
 	form_text="null"
     fi

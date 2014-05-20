@@ -52,7 +52,15 @@ In SQL mode, the global picture is:
 
   (the script will remind you this at the end of execution)
 
-The user API is implemented and documented in ./exam-lib.sh.
+The user API is implemented and documented in ./exam-api.sh. Reading
+./exam-lib.sh may help too.
+
+Some domain-specific helper functions are provided:
+
+* python-lib.sh to generate Python pieces of code.
+
+* ../treasure-hunt/*lib.sh for obfuscation libraries used in the
+  treasure hunt, usable in the exam too.
 
 During the exam
 ===============

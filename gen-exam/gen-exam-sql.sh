@@ -173,6 +173,10 @@ for login in $(get_logins); do
     sql_newline
 done
 
+# Don't stay inside a student's directory (it will be tar-ed and
+# deleted).
+cd "$outdir"
+
 sql_comment "Coefficients of questions"
 
 sum=0
@@ -202,6 +206,37 @@ if [ "$tar" = "yes" ]; then
     done
 fi
 
+# A few useful SQL and shell scripts generated in the target dir.
+"$EXAM_DIR"/init-db.sh > "$outdir"/init-db.sql
+"$EXAM_DIR"/init-db.sh --drop-tables > "$outdir"/init-db-drop-tables.sql
+
+case "$dbtype" in
+    "postgresql")
+	cat > "$outdir"/hard-reset-db.sh <<EOF
+#! /bin/sh
+
+# WARNING: untested code!
+
+cat ./init-db-drop-tables.sql ./questions.sql | \\
+    psql -h "$exam_dbhost" -d "$exam_dbname" -U "$exam_dbuser"
+EOF
+	chmod +x "$outdir"/hard-reset-db.sh
+	;;
+    "mysql")
+	cat > "$outdir"/hard-reset-db.sh <<EOF
+#! /bin/sh
+
+cat ./init-db-drop-tables.sql ./questions.sql | \\
+    mysql --user="$exam_dbuser" -h "$exam_dbhost" -p --database="$exam_dbname"
+EOF
+	chmod +x "$outdir"/hard-reset-db.sh
+	;;
+    *)
+	echo "Unknown database type $dbtype"
+	;;
+esac
+
+
 if [ "$apply" = "yes" ]; then
     # needs a password.
     case "$dbtype" in
@@ -219,6 +254,8 @@ fi
 
 echo
 echo "Generated files in $outdir"
-echo "- $outsql"
+echo "- ${outsql#$outdir/}"
+echo "- init-db.sql and init-db-drop-tables.sql to initialize and"
+echo "  reset the DB (use with care)".
 echo "- 1/ and 2/ : files to put on students account for sessions 1 and 2"
 echo "- php/ : PHP files to put on the server. php/inc/config.php is the configuration file."

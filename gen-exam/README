@@ -26,15 +26,8 @@ In demo mode, no database is used:
 
 In SQL mode, the global picture is:
 
-* ./init-db.sh generates an SQL script to initialize a database. Run
-  the SQL script with e.g. mysql (or a web interface like phpMyAdmin to initialize the database on the
-  server.
-
 * The exam subject is a script (which uses the generation library),
   which generates:
-
-  - questions.sql, to be executed with e.g. mysql, to fill-in the
-    database with questions and expected answers.
 
   - 1/ and 2/, containing the content of accounts for students. At
     Ensimag, we have a system to deploy it automatically on students
@@ -50,12 +43,28 @@ In SQL mode, the global picture is:
 
   - php/ containing PHP code to put on the web server.
 
+  - init-db.sql and init-db-drop-tables.sql, SQL scripts that
+    initializes the database (as the names suggest, the second drops
+    possibly existing tables to restart with fresh and empty ones).
+
+  - questions.sql, to be executed with e.g. mysql, to fill-in the
+    database with questions and expected answers.
+
+  - hard-reset-db.sh, a trivial shell script that runs
+    init-db-drop-tables.sql and questions.sql (brutal way to create a
+    database with questions.sql imported, and only this).
+
   (the script will remind you this at the end of execution)
+
+* If needed, you may run ./init-db.sh manually to generate an SQL
+  script to initialize a database. Run the SQL script with e.g. mysql
+  (or a web interface like phpMyAdmin) to initialize the database on
+  the server.
 
 The user API is implemented and documented in ./exam-api.sh. Reading
 ./exam-lib.sh may help too.
 
-Some domain-specific helper functions are provided:
+Some domain-specific helper functions are provided in:
 
 * python-lib.sh to generate Python pieces of code.
 

@@ -162,7 +162,7 @@ exam_config_php () {
 	echo "\$session = 'demo';"
         echo "\$exam_php_session = '$(uuid)';"
     fi
-echo "
+    echo "
 \$exam_auth    = 'http'; // change to 'https' or 'none' if needed.
 \$exam_webuser = '${exam_webuser:-user}'; // used to access /private/
 \$exam_webpass = '${exam_webpass:-$(uuid)}';

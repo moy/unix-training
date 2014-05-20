@@ -185,17 +185,19 @@ echo "Number of questions: ${#coefficients[@]}"
 echo "Total coefficients: $sum"
 
 if [ "$tar" = "yes" ]; then
-    echo "Packing subject directory to sujet.tar.gz ..."
+    echo "Packing subject directory to sujet.tar.gz and sujet.zip ..."
     for login in $(get_logins); do
 	session=$(get_session "$login")
 	machine=$(get_machine "$login")
 	(
 	    cd "$outdir/$session/$machine" &&
 	    tar czf ../"$machine"-sujet.tar.gz . &&
+	    zip -r ../"$machine"-sujet.zip . &&
 	    cd .. &&
 	    rm -fr "$machine" &&
 	    mkdir "$machine" &&
-	    mv "$machine"-sujet.tar.gz "$machine"/sujet.tar.gz
+	    mv "$machine"-sujet.tar.gz "$machine"/sujet.tar.gz &&
+	    mv "$machine"-sujet.zip "$machine"/sujet.zip
 	)
     done
 fi

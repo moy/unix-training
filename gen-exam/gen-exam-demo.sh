@@ -128,7 +128,8 @@ exam_config_php demo > "$outdir"/php/inc/config.php
 
 cd "$outdir"/1
 tar czf demo.tar.gz demo/
-mv demo.tar.gz ../php
+zip -r demo.zip demo/
+mv demo.tar.gz demo.zip ../php
 
 echo "
 Generated files:

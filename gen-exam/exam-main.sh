@@ -1,6 +1,17 @@
-if [ "$1" = "--demo" ]; then
-    shift
-    exam_mode=demo
+# First loop through arguments for options common to both modes.
+for arg in "$@"; do
+    case "$arg" in
+	"--demo")
+	    exam_mode=demo
+	    ;;
+	"--zip")
+	    preferred_archive=zip
+	    ;;
+    esac
+done
+
+if [ "$preferred_archive" = "" ]; then
+    preferred_archive=tar.gz
 fi
 
 case "$exam_lang" in

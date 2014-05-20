@@ -126,7 +126,17 @@ if (isSet($_SERVER["HTTP_X_FORWARDED_FOR"])) {
 }
 $machine = gethostbyaddr($IP);
 
+$subject_basename = 'sujet.tar.gz';
+$subject_mimetype = 'application/x-gzip';
+
 include_once('./inc/config.php');
+
+// Must come after config.php ($subject_basename may have changed)
+$subject_filename = 'subjects/'. $session .'/'. $machine .'/' . $subject_basename;
+function subject_file_exists() {
+	global $subject_filename;
+	return file_exists($subject_filename);
+}
 
 if (isset($_GET["answer"])) {
 	$answer = trim($_GET["answer"]);
@@ -162,14 +172,6 @@ function check_nonempty($var) {
 	if ($GLOBALS[$var] === '') {
 		die('$'. $var .' is empty.');
 	}
-}
-
-$subject_basename = 'sujet.tar.gz';
-$subject_filename = 'subjects/'. $session .'/'. $machine .'/' . $subject_basename;
-$subject_mimetype = 'application/x-gzip';
-function subject_file_exists() {
-	global $subject_filename;
-	return file_exists($subject_filename);
 }
 
 if ($mode == "demo") {

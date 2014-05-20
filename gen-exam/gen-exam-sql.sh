@@ -76,8 +76,11 @@ while test $# -ne 0; do
 	"--php-only")
 	    php_only=yes
 	    ;;
-	"--tar")
-	    tar=yes
+	"--tar"|"--archive") # --tar is deprecated
+	    archive=yes
+	    ;;
+	"--zip")
+	    # Already dealt with in exam-main.sh
 	    ;;
         *)
             echo "ERROR: Unrecognized option $1"
@@ -188,7 +191,7 @@ done
 echo "Number of questions: ${#coefficients[@]}"
 echo "Total coefficients: $sum"
 
-if [ "$tar" = "yes" ]; then
+if [ "$archive" = "yes" ]; then
     echo "Packing subject directory to sujet.tar.gz and sujet.zip ..."
     for login in $(get_logins); do
 	session=$(get_session "$login")

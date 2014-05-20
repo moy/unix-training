@@ -171,14 +171,21 @@ exam_config_php () {
 
 \$welcome_msg = \"$(exam_welcome | php_escape_pipe)\";
 "
-if [ "$exam_footer_include" != "" ]; then
-    echo "\$exam_footer_include = \"$exam_footer_include\";"
-else
-    # make sure the variable is defined anyway, to prevent users from
-    # setting it with GET parameters.
-    echo "\$exam_footer_include = NULL;"
-fi
-echo "?>"
+    if [ "$preferred_archive" = zip ]; then
+	echo "
+\$subject_basename = 'sujet.zip';
+\$subject_mimetype = 'application/zip';
+"
+    fi
+
+    if [ "$exam_footer_include" != "" ]; then
+	echo "\$exam_footer_include = \"$exam_footer_include\";"
+    else
+	# make sure the variable is defined anyway, to prevent users from
+	# setting it with GET parameters.
+	echo "\$exam_footer_include = NULL;"
+    fi
+    echo "?>"
 }
 
 exam_install_php () {

@@ -34,6 +34,9 @@ while test $# -ne 0; do
 	"--verbose")
 	    verbose=yes
 	    ;;
+	"--demo")
+	    # Already dealt with
+	    ;;
         *)
             echo "unrecognized option $1"
             usage

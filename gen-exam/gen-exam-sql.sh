@@ -197,7 +197,7 @@ if [ "$archive" = "yes" ]; then
 	session=$(get_session "$login")
 	machine=$(get_machine "$login")
 	(
-	    cd "$outdir/$session/$machine" &&
+	    cd "$outdir/php/subjects/$session/$machine" &&
 	    tar czf ../"$machine"-sujet.tar.gz . &&
 	    zip -r ../"$machine"-sujet.zip . &&
 	    cd .. &&

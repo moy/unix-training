@@ -126,16 +126,14 @@ WHERE exam_unix_subject_questions.id_question = exam_unix_question.id
   AND exam_unix_question.id_subject = '". exam_escape_string($subject) ."'
   AND exam_unix_subject_questions.id_subject = exam_unix_question.id_subject
 ";
-	if ($hide_correct) {
-		$query .= "  AND (exam_unix_question.student_answer IS NULL
-    OR exam_unix_question.student_answer <> exam_unix_question.correct_answer)
-";
-	}
 	$query .= " ORDER BY exam_unix_subject_questions.coeff, exam_unix_question.correct_answer";
 	$result = exam_query($query);
 	$questions = array();
 	while ($line = exam_fetch_array($result)) {
-		$questions[] = $line;
+		if (!$hide_correct ||
+		    must_be_shown($line, $machine, $session, $subject)) {
+			$questions[] = $line;
+		}
 	}
 	return $questions;
 }

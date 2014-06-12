@@ -34,19 +34,15 @@ function get_exam_info($subject) {
 }
 
 function get_questions ($machine, $session, $subject, $hide_correct = False) {
-	if ($hide_correct) {
-		$questions = array();
-		foreach ($_SESSION['demo_questions'] as $n => $q) {
-			if (!(isset($q['student_answer'])) ||
-			    $q['student_answer'] != $q['correct_answer'] ||
-			    get_form_array($n, $machine, $session, $subject) != null) {
-				$questions[] = $q;
-			}
+	$questions = array();
+	foreach ($_SESSION['demo_questions'] as $n => $line) {
+		$line['question'] = $n;
+		if (!$hide_correct ||
+		    must_be_shown($line, $machine, $session, $subject)) {
+			$questions[] = $line;
 		}
-		return $questions;
-	} else {
-		return $_SESSION['demo_questions'];
 	}
+	return $questions;
 }
 
 function get_form_array($question, $machine, $session, $subject) {

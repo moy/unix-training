@@ -174,6 +174,16 @@ function check_nonempty($var) {
 	}
 }
 
+// Do NOT hide correct MCQ entries, that would be too easy!
+// Questions must be shown if either they haven't been answered
+// properly or they are MCQ.
+function must_be_shown($line, $machine, $session, $subject) {
+	return !(isset($line['student_answer'])) ||
+		$line['student_answer'] != $line['correct_answer'] ||
+		get_form_array($line['question'], $machine, $session, $subject) != null;
+}
+	
+
 if ($mode == "demo") {
 	include_once './inc/common-demo.php';
 } else {

@@ -51,7 +51,7 @@ $exam_i18n = array(
 		'display_correct' => "Afficher les réponses correctes",
 		'hide_correct' => "Masquer les réponses correctes",
 		'all_ok' => "Toutes les réponses ont été validées, félicitations !",
-		'download_subject_here' => 'Vous pouvez télécharger ou re-télécharger le sujet ici : ',
+		'download_subject_here' => 'Vous pouvez télécharger ou re-télécharger les fichiers nécessaires pour répondre ici : ',
 		'answer_validated' => 'Reponse validée. Cliquez à nouveau sur un bouton pour changer votre réponse.',
 		'click_to_answer' => 'Cliquez sur un bouton pour valider la réponse'
 		),
@@ -71,7 +71,7 @@ $exam_i18n = array(
 		'display_correct' => "Display correct answers",
 		'hide_correct' => "Hide correct answers",
 		'all_ok' => "All answers validated, congratulation!",
-		'download_subject_here' => 'You may download or re-download the subject file here: ',
+		'download_subject_here' => 'You may download or re-download the files needed to answer here: ',
 		'answer_validated' => 'Answer validated. Click again on one of the buttons to change your answer.',
 		'click_to_answer' => 'Click on any button to answer'
 		)

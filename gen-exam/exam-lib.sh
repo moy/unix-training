@@ -42,6 +42,13 @@ if [ "$(command -v exam_welcome)" != exam_welcome ]; then
     }
 fi
 
+if [ "$(command -v exam_extra_config)" != exam_extra_config ]; then
+    exam_extra_config () {
+	echo "// define exam_extra_config() in your subject script to add"
+	echo "// configuration directives here."
+    }
+fi
+
 debug () {
     if [ "$verbose" = "yes" ]; then
 	printf "%s\n" "$*"
@@ -185,6 +192,11 @@ exam_config_php () {
 	# setting it with GET parameters.
 	echo "\$exam_footer_include = NULL;"
     fi
+    
+    echo
+    exam_extra_config
+    echo
+    
     echo "?>"
 }
 

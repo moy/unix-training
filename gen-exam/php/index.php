@@ -16,11 +16,6 @@ if ($mode == "demo") {
 	echo '<p><a href="?reset=yes&amp;mode=demo">'. exam_get_string('reset_answers') .'</a></p>';
 }
 
-if (subject_file_exists()) {
-	echo '<p>'. exam_get_string('download_subject_here') .'<a href="download-subject.php">'.
-		htmlentities($subject_basename) .'</a>.</p>';
-}
-
 /*
 echo '<pre>';
 var_dump($_SESSION['demo_questions']);
@@ -37,10 +32,15 @@ $familly_name = $line['familly_name'];
 
 if ($login == "")
 	die("FATAL ERROR: Can not find login in database (subject=$subject, session=$session, machine=$machine).");
+
+echo $welcome_msg;
+
+if (subject_file_exists()) {
+	echo '<p>'. exam_get_string('download_subject_here') .'<a href="download-subject.php">'.
+		htmlentities($subject_basename) .'</a>.</p>';
+}
+
 ?>
-
-<?php echo $welcome_msg ?>
-
 <div class="info"><ul>
 	<li><strong><?php echo exam_get_string('machine') .': '. htmlspecialchars($machine) ?></strong></li>
 	<li><strong><?php echo exam_get_string('session') .': '. htmlspecialchars($session) ?></strong></li>

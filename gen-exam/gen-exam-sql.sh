@@ -218,6 +218,8 @@ case "$dbtype" in
 	cat > "$outdir"/hard-reset-db.sh <<EOF
 #! /bin/sh
 
+cd "\$(dirname "\$0")"
+
 # WARNING: untested code!
 
 cat ./init-db-drop-tables.sql ./questions.sql | \\
@@ -228,6 +230,8 @@ EOF
     "mysql")
 	cat > "$outdir"/hard-reset-db.sh <<EOF
 #! /bin/sh
+
+cd "\$(dirname "\$0")"
 
 cat ./init-db-drop-tables.sql ./questions.sql | \\
     mysql --user="$exam_dbuser" -h "$exam_dbhost" -p --database="$exam_dbname"

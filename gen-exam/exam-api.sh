@@ -157,7 +157,7 @@ shorthash () {
 for i in $(seq 100); do
     hashes[$i]=$(hash $i)
 done
-for i in $(seq 100); do
+for i in $(seq 1000); do
     dechashes[$i]=$(dechash $i)
 done
 

@@ -84,7 +84,7 @@ login=guest
 question=1
 session=1
 machine=demo
-studentdir="$outdir/$session/$machine"
+studentdir="$outdir/php/subjects/$session/$machine"
 mkdir -p "$studentdir"
 cd "$studentdir"
 
@@ -122,10 +122,10 @@ echo '?>' >> "$outphp"
 exam_install_php
 exam_config_php demo > "$outdir"/php/inc/config.php
 
-cd "$outdir"/1
+cd "$studentdir"/..
 tar czf demo.tar.gz demo/
 zip -r demo.zip demo/
-mv demo.tar.gz demo.zip ../php
+mv demo.tar.gz demo.zip "$outdir"/php
 
 echo "
 Generated files:

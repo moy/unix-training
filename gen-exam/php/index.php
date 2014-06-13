@@ -47,7 +47,9 @@ if (subject_file_exists()) {
 	<li><strong><?php echo exam_get_string('login') .': '. htmlspecialchars($login) ?></strong></li>
 	<li><strong><?php echo exam_get_string('name') .': '. htmlspecialchars($first_name ." ". $familly_name) ?></strong></li>
 	<li><strong><?php echo $count ." ". exam_get_string('questions') ?></strong></li>
+<?php if (!$exam_hide_points) { ?>
 	<li><strong><?php echo $points ." ". exam_get_string('points') ?></strong></li>
+<?php } ?>
 </ul></div>
 <?php
 
@@ -58,7 +60,9 @@ $question_displayed = 0;
 foreach (get_questions($machine, $session, $subject, $hideok) as $line) {
 	$question_displayed++;
 	echo '<div class="question">';
-	echo "<p><strong>(". $line["coeff"] ." points)</strong>&nbsp;\n";
+	if (!$exam_hide_points) {
+		echo "<p><strong>(". $line["coeff"] ." points)</strong>&nbsp;\n";
+	}
 	echo $line["question_text"] ."</p>\n";
 	if (get_form_array($line['question'], $machine, $session, $subject) != null) {
 		$height = 'height:10em; ';

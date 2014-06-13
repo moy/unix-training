@@ -185,6 +185,12 @@ exam_config_php () {
 "
     fi
 
+    if [ "$exam_hide_points" != "" ]; then
+	echo "\$exam_hide_points = true;"
+    else
+	echo "\$exam_hide_points = false;"
+    fi
+
     if [ "$exam_footer_include" != "" ]; then
 	echo "\$exam_footer_include = \"$exam_footer_include\";"
     else

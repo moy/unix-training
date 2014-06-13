@@ -44,6 +44,9 @@ exam_hash_key="xbCZ;9101"
 # (not needed in demo mode)
 exam_list_students=list_test.csv
 
+# Set to some non-empty value to hide points in the web interface.
+exam_hide_points=
+
 # Welcome message, displayed below the title in the web page. You can
 # use HTML formatting if you want (but it is your responsibility
 # to write valid HTML here).

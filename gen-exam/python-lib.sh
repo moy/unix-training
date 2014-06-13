@@ -15,7 +15,7 @@ python_big_array() {
     printf '['
     for i in $(seq 9); do
 	printf '\n    '
-	for j in $(seq 0 9); do
+	for j in $(seq 0 $(dechash_bound "$1$i" 40)); do
 	    printf '%s, ' "${dechashes[$i$j]}"
 	done
 	if [ $i = 6 ]

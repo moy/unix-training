@@ -1,0 +1,11 @@
+* Per question score broken.
+
+* Add a boolean "spare" to the DB, compute session average based on
+  number of non-spare.
+
+* Remember first and last connection in the DB (to differenciate "no
+  answer" and "no connection").
+
+* Improve "change student associated to a machine" so that the old
+  machine is removed (currently we get two machines with the same
+  login associated).

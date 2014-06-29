@@ -62,6 +62,18 @@ AND exam_unix_question.id_subject = exam_unix_subject_questions.id_subject
 AND exam_unix_question.id_subject = '". $subject ."'"
 		." GROUP BY session;");
 
+echo "<li><strong>Machine changes</strong>:";
+	$query = "SELECT machine, session, login, first_name as 'First name', familly_name as 'Familly name', initial_login as 'Initial login', initial_first_name as 'Initial first name', initial_familly_name as 'Initial familly name'
+FROM exam_unix_logins
+WHERE id_subject = '". exam_escape_string($subject) ."'
+  AND (login <> initial_login OR
+       first_name <> initial_first_name OR
+       familly_name <> initial_familly_name)
+";
+$result = exam_query($query);
+exam_display_result($result);
+echo "</li>";
+
 // TODO: it would be nice to have a notion of "question id" (first
 // argument of smart_question), but it's not stored in the database.
 $query="SELECT exam_unix_subject_questions.id_question AS ". exam_field('id_question') .",
@@ -75,18 +87,6 @@ AND exam_unix_question.id_subject = '". $subject ."'"
 	." GROUP BY exam_unix_subject_questions.id_question
            ORDER BY score;";
 $result = exam_query($query);
-
-echo "<li><strong>Machine changes</strong>:";
-	$query = "SELECT machine, session, login, first_name as 'First name', familly_name as 'Familly name', initial_login as 'Initial login', initial_first_name as 'Initial first name', initial_familly_name as 'Initial familly name'
-FROM exam_unix_logins
-WHERE id_subject = '". exam_escape_string($subject) ."'
-  AND (login <> initial_login OR
-       first_name <> initial_first_name OR
-       familly_name <> initial_familly_name)
-";
-$result = exam_query($query);
-exam_display_result($result);
-echo "</li>";
 
 echo "<li><strong>Per-question correct answers</strong>: <ul>\n";
 $total = 0;

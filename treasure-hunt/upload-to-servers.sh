@@ -48,17 +48,17 @@ mkdir -p "$web"/yntsf/
 echo "$nolisting" > "$web"/index.html
 echo "$nolisting" > "$web"/yntsf/index.html
 
-dir="$main_user"@"$mainmachine":"$maindir_upload"
+dir="$upload_user"@"$mainmachine":"$maindir_upload"
 
 # Give read permission, but not directory listing
 # (right now, and make sur it's still the case after with "todo")
-ssh "$main_user@$mainmachine" "rm -fr \"$maindir_upload\"; mkdir -p \"$maindir_upload\"/; chmod 711 \"$maindir_upload\"/"
+ssh "$upload_user@$mainmachine" "rm -fr \"$maindir_upload\"; mkdir -p \"$maindir_upload\"/; chmod 711 \"$maindir_upload\"/"
 todo "chmod -R ugo+r \"$maindir_upload\"/"
 todo "chmod 711 \"$maindir_upload\"/"
 todo "find \"$maindir_upload\"/ -type d -exec chmod ugo+x {} \;"
 
 upload_lang () {
-    rsync $(gettext jeu-de-piste.sh) "$main_user@$mainmachine":"$main_user_home_upload"/$(gettext jeu-de-piste.sh)
+    rsync $(gettext jeu-de-piste.sh) "$upload_user@$mainmachine":"$main_user_home_upload"/$(gettext jeu-de-piste.sh)
     todo "chmod 755 \"$main_user_home_upload\"/$(gettext jeu-de-piste.sh)"
     rsync $(gettext etape)-A2.txt "$web"/
     rsync version.txt "$web"/
@@ -71,7 +71,7 @@ upload_lang () {
     rsync $(gettext etape)_d2-1-{c,ada}.odt "$web"
     rsync $(gettext etape)_d2-2-{c,ada}.txt "$dir"
 
-    ssh "$main_user@$mainmachine" "cd \"$maindir_upload/\" && mkdir -p ./oaue/ ./kmcv/ ./kmcvoaue/ ./123654/ ./979b5c3/"
+    ssh "$upload_user@$mainmachine" "cd \"$maindir_upload/\" && mkdir -p ./oaue/ ./kmcv/ ./kmcvoaue/ ./123654/ ./979b5c3/"
     rsync $(gettext etape)-E1 "$dir"/oaue/
     rsync dot-$(gettext etape)-E2.txt "$dir"/kmcv/.$(gettext etape)-E2.txt
     rsync $(gettext etape)-E3.tar.gz "$web"
@@ -80,12 +80,12 @@ upload_lang () {
     rsync $(gettext etape)-E13.tar.gz "$dir"/123654/
     rsync $(gettext etape)-F2.sh "$dir"/979b5c3/$(gettext etape)-F2.sh
     # todo does not work here, we're in a subshell
-    ssh "$main_user@$mainmachine" "chmod 755 \"$maindir_upload\"/979b5c3/$(gettext etape)-F2.sh"
+    ssh "$upload_user@$mainmachine" "chmod 755 \"$maindir_upload\"/979b5c3/$(gettext etape)-F2.sh"
     mkdir -p "$web"/"$demo_exam_name"-"$(gettext fr)"/
     rsync -r ./"$demo_exam_name"-"$(gettext fr)"/ "$web"/"$demo_exam_name"-"$(gettext fr)"/
 
-    rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliary_user@$auxiliarymachine":"$main_user_home_tilde"
-    ssh "$auxiliary_user@$auxiliarymachine" "chmod 755 $(gettext etape)-G2.sh; chmod 644 $(gettext etape)-G1.txt"
+    rsync $(gettext etape)-G1.txt $(gettext etape)-G2.sh "$auxiliary_user_upload@$auxiliarymachine":"$main_user_home_tilde"
+    ssh "$auxiliary_user_upload@$auxiliarymachine" "chmod 755 $main_user_home_tilde/$(gettext etape)-G2.sh; chmod 644 $main_user_home_tilde/$(gettext etape)-G1.txt"
 }
 
 multilingual_do upload_lang
@@ -93,7 +93,7 @@ multilingual_do upload_lang
 # Not yet translated.
 old_LANG=$LANG
 LANG=fr_FR@UTF-8
-ssh "$main_user@$mainmachine" "cd \"$maindir_upload/\" && mkdir ./aeiouy/ ./dntsoaue/ ./qyxrd/"
+ssh "$upload_user@$mainmachine" "cd \"$maindir_upload/\" && mkdir ./aeiouy/ ./dntsoaue/ ./qyxrd/"
 mkdir -p "$web"/dxz/ "$web"/aeiouy/ "$web"/lasuite/ "$web"/$(gettext etape)-H4/
 rsync -r $(gettext etape)-H1.txt "$web"/lasuite/
 rsync -r $(gettext etape)-H2/ "$web"/dxz/$(gettext etape)-H2/
@@ -113,7 +113,7 @@ rsync version.txt "$dir"/version.txt
 
 echo "$todo_var"
 
-if ssh "$main_user@$mainmachine" "$todo_var"; then
+if ssh "$upload_user@$mainmachine" "$todo_var"; then
     echo "setup completed on $mainmachine"
 else
     echo "Setup on $mainmachine failed"

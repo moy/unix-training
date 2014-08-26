@@ -6,14 +6,14 @@
 # NFS-mounted directories (in this case, $mainmachine is the machine
 # used for uploading files, and $main_user_home must be accessible
 # through NFS by students)
-mainmachine=${HUNT_MAINMACHINE:-telesun.imag.fr}
+mainmachine=${HUNT_MAINMACHINE:-ensipc00.imag.fr}
 
 # Some of the steps are on the account of a particular user on
 # $mainmachine, but not inside $maindir. This variable is the user's
 # login ...
-main_user=moy
+main_user=jdpunix
 # ... and this one points to his $HOME directory.
-main_user_home=/user/1/$main_user
+main_user_home=/home/$main_user
 # A variant of $main_user_home, to let the player get used to both
 # notations
 main_user_home_tilde="~${main_user}"
@@ -33,12 +33,19 @@ maindir_tilde=$main_user_home_tilde/$maindir_base
 main_user_home_upload=$main_user_home
 maindir_upload=$main_user_home_upload/$maindir_base
 
+# Unix username used for uploading to servers (in my case, it's
+# different from $main_user: I upload as myself, and the students
+# access the files using ~jdpunix which is a dumb account, not allowed
+# to log)
+upload_user=$main_user
+
 # Other machine (server) on which students have access. It will be
 # used to practice various basic networking tools (SSH, sftp, ...).
 # Below are the machine name and the user on which this part will be
 # installed:
-auxiliarymachine=telesun.imag.fr
+auxiliarymachine=ensipc00.imag.fr
 auxiliary_user=$main_user
+auxiliary_user_upload=$auxiliary_user
 
 # The content of this directory should be uploaded to a website
 web_base=jeu-de-piste
@@ -55,7 +62,7 @@ web_url=http://www-verimag.imag.fr/~moy/$web_base
 # script will be ../exam-expl/$demo_exam_name-$(gettext fr).sh.
 
 # Version in use at Ensimag
-demo_exam_name=demo-exam-ensimag2013
+demo_exam_name=demo-exam-ensimag2014
 # Another Ensimag-free version
 # demo_exam_name=simple-demo
 
@@ -66,7 +73,7 @@ demo_url=$web_url
 # One step sends an email to the user. The following variables
 # configure how the email will be sent:
 from_addr=Matthieu.Moy@imag.fr
-smtp_server=telesun.imag.fr
+smtp_server=ensiens.imag.fr
 # and these two configure how the email will be prompted obtained from
 # $LOGNAME and possibly by prompting the user. They are defined in
 # mail-lib-runtime.sh
@@ -80,6 +87,13 @@ school=Ensimag
 # URL of the monitoring system (see spy/README)
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp
 
+recompute () {
+    main_user_home_upload=$main_user_home
+    maindir=$main_user_home/$maindir_base
+    maindir_upload=$main_user_home_upload/$maindir_base
+    auxiliary_user=$main_user
+}
+
 # I upload the game on multiple machines, with slightly different rules
 case "$mainmachine" in
     ensiens|ensiens.imag.fr)
@@ -87,17 +101,17 @@ case "$mainmachine" in
 	;;
     129.88.240.211|ensipc*|ensipc*.imag.fr)
 	# Not directly accessible, hence requires this in ~/.ssh/config:
-	# Host 129.88.240.211
-	# ProxyCommand ssh -q telesun.imag.fr nc %h 22
-#	main_user=test1a
-	main_user_home=/user/1/$main_user
-	auxiliary_user=moy
+	# Host ensipc*
+	# ProxyCommand ssh -q ensiens.imag.fr nc %h 22
+	main_user=jdpunix
+	main_user_home=/matieres/3MMUNIX/
+	upload_user=moy
+	auxiliary_user_upload=moy
+	recompute
 	;;
     anie.imag.fr)
+	main_user=moy
 	main_user_home=/home/moy/
-	main_user_home_upload=$main_user_home
-	maindir=$main_user_home/$maindir_base
-	maindir_upload=$main_user_home_upload/$maindir_base
 	example_email=First.Last@imag.fr
 	school=Verimag
 	smtp_server=""
@@ -107,6 +121,7 @@ case "$mainmachine" in
 	demo_url=$web_url
 	auxiliarymachine=anie.imag.fr
 	get_email_function=get_email_verimag
+	recompute
 	;;
     *.imag.fr)
 	maindir=$main_user_home/$maindir_base
@@ -119,6 +134,7 @@ mainmachine maindir auxiliarymachine web web_url
 auxiliary_user
 demo_url demo_url_en spy_url
 main_user_home main_user main_user_home_tilde maindir_tilde
+upload_user
 from_addr smtp_server get_email_function check_email_function
 example_email school
 "

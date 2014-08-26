@@ -21,6 +21,7 @@ EOF
 drop=no
 apply=no
 exam_dbtype=
+exam_suffix=
 php=no
 
 while test $# -ne 0; do
@@ -93,14 +94,14 @@ $end_query
 "
 }
 
-create_table hunt_student <<\EOF
+create_table hunt_student$exam_suffix <<\EOF
     login varchar(8) NOT NULL PRIMARY KEY,
     `group` varchar(10) NOT NULL,
     first_name text NOT NULL,
     familly_name text NOT NULL
 EOF
 
-create_table hunt_access <<\EOF
+create_table hunt_access$exam_suffix <<\EOF
     login varchar(8) NOT NULL,
     step varchar(10) NOT NULL,
     date DATETIME NOT NULL

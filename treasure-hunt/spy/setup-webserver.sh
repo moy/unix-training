@@ -10,6 +10,8 @@ Options:
 EOF
 }
 
+exam_suffix=
+
 while test $# -ne 0; do
     case "$1" in
         "--help"|"-h")
@@ -44,6 +46,7 @@ EXAM_DIR=../../gen-exam/
 outdir=.
 exam_install_php
 exam_config_php sql > php/inc/config.php
+perl -pi -e 's/\$exam_webuser/\$exam_suffix = '"'$exam_suffix'"';\n\$exam_webuser/' php/inc/config.php
 
 rm -fr php/*.png php/*.php php/private/
 

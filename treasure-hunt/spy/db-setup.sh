@@ -12,3 +12,6 @@ exam_dbpass=
 
 # Database to use (mysql/postgresql)
 exam_dbtype=mysql
+
+# Suffix for hunt_* table names
+exam_suffix=_2014

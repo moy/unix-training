@@ -66,7 +66,7 @@ function echo_result($result, $format=null, $count=False) {
 	?></table><?
 }
 
-$query = 'SELECT DISTINCT hunt_access.step FROM hunt_access ORDER BY hunt_access.step;';
+$query = 'SELECT DISTINCT access.step FROM hunt_access'. $exam_suffix .' as access ORDER BY access.step;';
 $result = exam_query($query);
 $step_fields = '';
 $step_join = '';
@@ -77,7 +77,7 @@ while($row=mysql_fetch_assoc($result)) {
 		$step_fields .= ',
   MIN('. $step .'.date) as '. $step .'_date, COUNT(DISTINCT '. $step .'.date) as '. $step .'_nb';
 		$step_join .= '
-LEFT JOIN hunt_access as '. $step .'
+LEFT JOIN hunt_access'. $exam_suffix .' as '. $step .'
   ON (reference.login = '. $step .'.login AND '. $step .".step = '". $step ."')";
 	}
 }
@@ -85,7 +85,7 @@ LEFT JOIN hunt_access as '. $step .'
 echo '<h2>Registered students accesses</h2>';
 
 $query = 'SELECT reference.*'. $step_fields .'
-FROM hunt_student AS reference'. $step_join .'
+FROM hunt_student'. $exam_suffix .' AS reference'. $step_join .'
 GROUP BY reference.login;';
 // echo '<pre>'. $query .'</pre>';
 $result = exam_query($query);
@@ -93,9 +93,11 @@ echo_result($result, array('login' => '<a href="http://intranet.ensimag.fr/ZENIT
 
 echo '<h2>Unregistered students accesses</h2>';
 
+flush();
+
 $query = 'SELECT reference.login'. $step_fields .'
 FROM (SELECT DISTINCT login
-      FROM hunt_access
+      FROM hunt_access'. $exam_suffix .'
       WHERE login NOT IN (SELECT login FROM hunt_student)) AS reference'. $step_join .'
 GROUP BY reference.login;';
 // echo '<pre>'. $query .'</pre>';

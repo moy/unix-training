@@ -3,7 +3,7 @@ mail_config () {
 emailprompt="$(gettext "Entrez votre adresse email \$school
 Elle s'écrit \$example_email
 " | envsubst)"
-noemailcommand="$(gettext "Désolé, je n'ai pas trouvé de command pour envoyer d'email.
+noemailcommand="$(gettext "Désolé, je n'ai pas trouvé de commande pour envoyer d'email.
 Voici le contenu du message qui devait être envoyé:
 ")"
 from_addr=$from_addr

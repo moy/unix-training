@@ -754,7 +754,7 @@ msgstr ""
 
 #: mail-lib.sh:6
 msgid ""
-"Désolé, je n'ai pas trouvé de command pour envoyer d'email.\n"
+"Désolé, je n'ai pas trouvé de commande pour envoyer d'email.\n"
 "Voici le contenu du message qui devait être envoyé:\n"
 msgstr ""
 

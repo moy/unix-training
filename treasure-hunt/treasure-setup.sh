@@ -6,7 +6,7 @@
 # NFS-mounted directories (in this case, $mainmachine is the machine
 # used for uploading files, and $main_user_home must be accessible
 # through NFS by students)
-mainmachine=${HUNT_MAINMACHINE:-ensipc00.imag.fr}
+mainmachine=${HUNT_MAINMACHINE:-pcserveur.ensimag.fr}
 
 # Some of the steps are on the account of a particular user on
 # $mainmachine, but not inside $maindir. This variable is the user's
@@ -43,7 +43,7 @@ upload_user=$main_user
 # used to practice various basic networking tools (SSH, sftp, ...).
 # Below are the machine name and the user on which this part will be
 # installed:
-auxiliarymachine=ensipc00.imag.fr
+auxiliarymachine=pcserveur.ensimag.fr
 auxiliary_user=$main_user
 auxiliary_user_upload=$auxiliary_user
 
@@ -99,7 +99,7 @@ case "$mainmachine" in
     ensiens|ensiens.imag.fr)
 	: nothing
 	;;
-    129.88.240.211|ensipc*|ensipc*.imag.fr)
+    129.88.240.211|ensipc*|ensipc*.imag.fr|pcserveur|pcserveur.ensimag.fr)
 	# Not directly accessible, hence requires this in ~/.ssh/config:
 	# Host ensipc*
 	# ProxyCommand ssh -q ensiens.imag.fr nc %h 22

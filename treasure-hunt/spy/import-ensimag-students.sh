@@ -2,15 +2,12 @@
 
 year=1a
 course=1a
-absyear=2013
-groups="G1 G2 G3 G4 G5 G6"
+absyear=2014
+groups="ori_ast2a 1a_g1 1a_g2 1a_g3 1a_g4 1a_g5 1a_g6 1a_g7 1a_g8 phelma ri_ech"
 
 get_group () {
     togrep='.*href="\([^"]*\.csv\)".*'
-    wget 'http://intranet.ensimag.fr/ZENITH/affiche-groupe.php?GROUPE='${course}_$1_${absyear}'&ANNEE='${year} -O - | \
-	grep "$togrep" | \
-	sed -e "s/$togrep/\\1/" -e 's@\.\./@http://intranet.ensimag.fr/@' | \
-	xargs -iX wget X -O - | \
+    wget 'https://intranet.ensimag.fr/Zenith2/getGroupsCoursCsv?name='$1'_'$absyear -O - | \
 	grep '^[0-9]'
 }
 

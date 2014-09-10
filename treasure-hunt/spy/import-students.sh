@@ -47,15 +47,15 @@ done
 
 grep '[0-9].*;.*;.*;.*;.*;' | while read line; do
     login=$(echo "$line" | cut -d \; -f 2 | sed "s/'/\\\\'/g")
-    first=$(echo "$line" | cut -d \; -f 4 | sed "s/'/\\\\'/g")
-    last=$( echo "$line" | cut -d \; -f 5 | sed "s/'/\\\\'/g")
+    first=$(echo "$line" | cut -d \; -f 3 | sed "s/'/\\\\'/g")
+    last=$( echo "$line" | cut -d \; -f 4 | sed "s/'/\\\\'/g")
     case $mode in
 	"insert")
-	    echo 'INSERT INTO `hunt_student` (`login` , `group`, `first_name` , `familly_name`)'
+	    echo 'INSERT INTO `hunt_student'"$exam_suffix"'` (`login` , `group`, `first_name` , `familly_name`)'
 	    echo "                    VALUES ('$login', '$group', '$first',      '$last');"
 	    ;;
 	"update")
-	    echo "UPDATE \`hunt_student\` SET \`group\`='$group', \`first_name\`='$first' , \`familly_name\`='$last'"
+	    echo "UPDATE \`hunt_student$exam_suffix\` SET \`group\`='$group', \`first_name\`='$first' , \`familly_name\`='$last'"
 	    echo "WHERE \`login\`='$login';"
 	    ;;
 	*)

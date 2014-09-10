@@ -98,7 +98,7 @@ flush();
 $query = 'SELECT reference.login'. $step_fields .'
 FROM (SELECT DISTINCT login
       FROM hunt_access'. $exam_suffix .'
-      WHERE login NOT IN (SELECT login FROM hunt_student)) AS reference'. $step_join .'
+      WHERE login NOT IN (SELECT login FROM hunt_student'. $exam_suffix .')) AS reference'. $step_join .'
 GROUP BY reference.login;';
 // echo '<pre>'. $query .'</pre>';
 $result = exam_query($query);

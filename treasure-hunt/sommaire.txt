@@ -37,7 +37,7 @@ E2: Un fichier caché (.etape-XXX.txt) dans un répertoire. (Chap 7)
 E3: extraction d'archive .tar
 E4: compilation de pgme Ada, et redirection < (Chap 7)
 E5: pipe (Chap 7)
-E6: accès à un répertoire local sur telesun, find . -name \*.txt (Chap 7)
+E6: accès à un répertoire local dans /matieres/, find . -name \*.txt (Chap 7)
 E7: plus gros fichier dans un répertoire (find, sort, ...) DIFFICILE. (Chap 7)
 E8: grep -r (Chap 7)
 E9: facile, juste du web.

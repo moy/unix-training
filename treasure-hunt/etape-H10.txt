@@ -40,5 +40,5 @@ HyGf+1KeliIPxWpJuf5k3KWO1ez4JRmEl6bk1cxBRh13IgAh6g==
 -----END RSA PRIVATE KEY-----
 
 Utilisez cette clé pour vous connecter au compte « moy » sur la
-machine « telesun ». Ne vous réjouissez pas trop vite, vous n'aurez
+machine « pcserveur ». Ne vous réjouissez pas trop vite, vous n'aurez
 pas accès à _tout_ le contenu de ce compte ...

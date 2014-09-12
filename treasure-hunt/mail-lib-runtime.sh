@@ -36,8 +36,10 @@ get_email () {
 }
 
 send_mail () {
+    content=$(cat)
     subject="$1"
     email="$2"
+    error=''
     if [ "$smtp_server" != "" ]; then
 	smtp_mutt_cmd="set smtp_url=\"smtp://$smtp_server\""
     else
@@ -48,15 +50,21 @@ send_mail () {
 	echo "$noemailcommand"
 	cat
     elif command -v mutt >/dev/null; then
-	mutt -e "$smtp_mutt_cmd" \
+	printf '%s' "$content" | \
+	    mutt -e "$smtp_mutt_cmd" \
 	    -e "set from=\"$from_addr\"" \
 	    -e "set record=\"\"" \
-	    -s "$subject" "$email"
+	    -s "$subject" "$email" || { error=t; echo "$email_failed_msg"; }
     elif command -v mail >/dev/null; then
-	mail -s "$subject" "$email"
+	printf '%s' "$content" | \
+	    mail -s "$subject" "$email" || { error=t; echo "$email_failed_msg"; }
     else
 	echo "$noemailcommand"
-	cat
+	error=t
+    fi
+    if [ "$error" = t ]; then
+	echo
+	printf '%s' "$content"
 	exit 1
     fi
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-11 17:10+0100\n"
+"POT-Creation-Date: 2014-09-12 09:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -755,6 +755,12 @@ msgstr ""
 #: mail-lib.sh:6
 msgid ""
 "Désolé, je n'ai pas trouvé de commande pour envoyer d'email.\n"
+"Voici le contenu du message qui devait être envoyé:\n"
+msgstr ""
+
+#: mail-lib.sh:9
+msgid ""
+"Désolé, l'envoi de mail a échoué.\n"
 "Voici le contenu du message qui devait être envoyé:\n"
 msgstr ""
 

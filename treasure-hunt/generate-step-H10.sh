@@ -1,6 +1,8 @@
 #! /bin/bash
 
-telehome=$(ssh "$mainmachine" pwd)
+. ./treasure-setup.sh
+
+telehome=$(ssh "$mainmachine" readlink -f ~"$main_user")
 telekeys=$(ssh "$mainmachine" cat .ssh/authorized_keys)
 
 (printf '%s' "command=\"$telehome/jeu-de-piste/etape-H10.sh\",no-port-forwarding,no-X11-forwarding,no-agent-forwarding ";

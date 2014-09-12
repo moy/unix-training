@@ -81,7 +81,7 @@ get_email_function=get_email_ensimag
 check_email_function=check_email_ensimag
 # When prompting the user for an email address, mention the school and
 # the kind of email expected with these variables:
-example_email=Prenom.Nom@ensimag.imag.fr
+example_email=Prenom.Nom@ensimag.grenoble-inp.fr
 school=Ensimag
 
 # URL of the monitoring system (see spy/README)

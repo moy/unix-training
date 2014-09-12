@@ -9,4 +9,4 @@ jargon). Moi, j'ai fait simplement :
   x=1; while [ ! -f "etape-H4/${x}.txt" ]; do x=$((x + 1)) ; done; cat etape-H4/$x.txt
 
 L'étape suivante se trouve dans le répertoire
-~moy/jeu-de-piste/dntsoaue/etape-H5/, dans le fichier README.txt.
+~jdpunix/jeu-de-piste/dntsoaue/etape-H5/, dans le fichier README.txt.

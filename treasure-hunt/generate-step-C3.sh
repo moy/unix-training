@@ -22,6 +22,10 @@ Vous trouverez l'étape suivante dans le fichier
 
 \$web_url/abc/etape_d1.adb
 
+Si vous préférez le C à l'Ada, vous pouvez aussi utiliser
+
+\$web_url/abc/etape_d1.c
+
 Malheureusement, cette fois-ci, le fichier n'est pas
 directement compilable. Il faudra corriger quelques
 erreurs de syntaxes.

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-12 09:22+0200\n"
+"POT-Creation-Date: 2014-09-18 19:13+0200\n"
 "PO-Revision-Date: 2013-08-05 18:17+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: generate-step-A2.sh:24 generate-step-B1.sh:36 generate-step-B1.sh:38
 #: generate-step-B1.sh:53 generate-step-B1.sh:55 generate-step-C1.sh:7
-#: generate-step-C3.sh:35 generate-step-D1.sh:39 generate-step-D1.sh:40
+#: generate-step-C3.sh:39 generate-step-D1.sh:39 generate-step-D1.sh:40
 #: generate-step-D1.sh:78 generate-step-D1.sh:111 generate-step-D1.sh:113
 #: generate-step-D2.sh:49 generate-step-D2.sh:54 generate-step-D2.sh:56
 #: generate-step-D2.sh:58 generate-step-D2.sh:67 generate-step-D2.sh:69
@@ -204,6 +204,10 @@ msgid ""
 "\n"
 "$web_url/abc/etape_d1.adb\n"
 "\n"
+"Si vous préférez le C à l'Ada, vous pouvez aussi utiliser\n"
+"\n"
+"$web_url/abc/etape_d1.c\n"
+"\n"
 "Malheureusement, cette fois-ci, le fichier n'est pas\n"
 "directement compilable. Il faudra corriger quelques\n"
 "erreurs de syntaxes.\n"
@@ -216,7 +220,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: generate-step-C3.sh:37
+#: generate-step-C3.sh:41
 msgid "etape-C3.png générée"
 msgstr ""
 

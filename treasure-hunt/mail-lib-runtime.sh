@@ -47,22 +47,32 @@ send_mail () {
 	echo "$noemailcommand"
 	cat
     elif [ "$send_email_with_php" = "yes" ] && [ "$send_email_with_php_url" != "" ]; then
+	if [ "$HUNT_DEBUG" != "" ]; then
+	    echo "Sending message with PHP"
+	fi
 	out=$(wget "$send_email_with_php_url?code=$token&to=$email" -q -O -)
 	case $out in
 	    OK*)
 		:
 		;;
 	    *)
+		echo "$out"
 		error=t; echo "$email_failed_msg"
 		;;
 	esac
     elif command -v mutt >/dev/null; then
+	if [ "$HUNT_DEBUG" != "" ]; then
+	    echo "Sending message with mutt"
+	fi
 	printf '%s' "$content" | \
 	    mutt -e "$smtp_mutt_cmd" \
 	    -e "set from=\"$from_addr\"" \
 	    -e "set record=\"\"" \
 	    -s "$subject" "$email" || { error=t; echo "$email_failed_msg"; }
     elif command -v mail >/dev/null; then
+	if [ "$HUNT_DEBUG" != "" ]; then
+	    echo "Sending message with mail"
+	fi
 	printf '%s' "$content" | \
 	    mail -s "$subject" "$email" || { error=t; echo "$email_failed_msg"; }
     else
@@ -74,7 +84,6 @@ send_mail () {
 	printf '%s' "$content"
 	exit 1
     else
-	echo
 	printf "$email_ok_msg\n" "$email"
     fi
 }

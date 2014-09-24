@@ -105,8 +105,15 @@ if (\$_GET['HUNT_FORCE'] == 'yes') {
 	exit(0);
 }
 
-if (!preg_match('/@(imag.fr|.*\.grenoble-inp\.(fr|org)|inria.*\.fr)\$/', \$to)) {
-	die(sprintf("Sorry, email '%s' is not in the allowed list\n", \$to));
+function check_email_regex_php(\$email) {
+	return preg_match('/$valid_email_regex/', \$email);
+}
+
+// If needed, write other check_email_* function here and let
+// $check_email_function_php point to it in treasure-setup.sh.
+
+if (!$check_email_function_php(\$to)) {
+	die(sprintf("Sorry, email '%s' is not in the allowed list.\n", \$to));
 }
 
 \$headers = 'From: $from_addr';

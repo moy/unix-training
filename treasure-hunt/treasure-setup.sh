@@ -76,9 +76,11 @@ from_addr=Matthieu.Moy@imag.fr
 smtp_server=ensiens.imag.fr
 # and these two configure how the email will be prompted obtained from
 # $LOGNAME and possibly by prompting the user. They are defined in
-# mail-lib-runtime.sh
+# mail-lib-runtime.sh (and generate-step-A5.sh for check_email_function_php).
 get_email_function=get_email_ensimag
-check_email_function=check_email_ensimag
+check_email_function=check_email_regex
+check_email_function_php=check_email_regex_php
+valid_email_regex='@(imag.fr|.*grenoble-inp\.(fr|org)|inria.*\.fr)$'
 # When prompting the user for an email address, mention the school and
 # the kind of email expected with these variables:
 example_email=Prenom.Nom@ensimag.grenoble-inp.fr
@@ -141,7 +143,8 @@ demo_url demo_url_en spy_url
 main_user_home main_user main_user_home_tilde maindir_tilde
 upload_user
 from_addr smtp_server get_email_function check_email_function
-send_email_with_php send_email_with_php_baseurl
+valid_email_regex check_email_function_php
+send_email_with_php send_email_with_php_baseurl 
 example_email school
 "
 

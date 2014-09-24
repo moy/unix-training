@@ -1,4 +1,5 @@
 get_email_ensimag () {
+    # Ensimag-specific, sorry.
     if command -v ldapsearch >/dev/null; then
 	ldapsearch -H ldap://ensildap.imag.fr \
 	    -x -b dc=ensimag,dc=imag,dc=fr uid="$1" \
@@ -13,16 +14,11 @@ get_email_verimag () {
 	sed 's/.* //' || echo "$1"
 }
 
-check_email_ensimag () {
-    echo "$1" | grep -q \
-	-e '@.*imag\.fr$' \
-	-e '@.*grenoble-inp\.fr$' \
-	-e '@.*grenoble-inp\.org$' \
-	-e '@inria.*\.fr$'
+check_email_regex () {
+    printf '%s\n' "$1" | grep -q -E "$valid_email_regex"
 }
 
 get_email () {
-    # Ensimag-specific, sorry.
     login="$1"
     email=$("$get_email_function" "$login")
     if ! echo "$email" | grep -q @; then

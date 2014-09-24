@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-18 19:13+0200\n"
+"POT-Creation-Date: 2014-09-24 20:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,23 @@ msgstr ""
 msgid "jeu-de-piste.sh"
 msgstr ""
 
+#: generate-step-A5.sh:35 generate-step-A5.sh:91 generate-step-E11.sh:35
+#: upload-to-servers.sh:84 upload-to-servers.sh:85 generate-all.sh:25
+#: generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
+msgid "fr"
+msgstr ""
+
+#: generate-step-A5.sh:37
+msgid ""
+"Un message a ete envoye a %s.\n"
+"Consultez cette boite mail pour avoir les instructions pour l'etape suivante."
+msgstr ""
+
 #: generate-step-A5.sh:39
+msgid "Enonce etape B1"
+msgstr ""
+
+#: generate-step-A5.sh:40
 #, sh-format
 msgid ""
 "Bonjour,\n"
@@ -119,16 +135,6 @@ msgid ""
 "\n"
 "Le programme genere vous donnera les indications pour aller a l'etape\n"
 "suivante.\n"
-msgstr ""
-
-#: generate-step-A5.sh:77
-msgid "Enonce etape B1"
-msgstr ""
-
-#: generate-step-A5.sh:80
-msgid ""
-"Un message a ete envoye a %s.\n"
-"Consultez cette boite mail pour avoir les instructions pour l'etape suivante."
 msgstr ""
 
 #: generate-step-B1.sh:9
@@ -405,11 +411,6 @@ msgid ""
 "\n"
 "La réponse à la dernière question sera : b3147554\n"
 "\n"
-msgstr ""
-
-#: generate-step-E11.sh:35 upload-to-servers.sh:84 upload-to-servers.sh:85
-#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
-msgid "fr"
 msgstr ""
 
 #: generate-step-E13.sh:9

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-18 19:13+0200\n"
-"PO-Revision-Date: 2014-09-18 19:14+0200\n"
+"POT-Creation-Date: 2014-09-24 20:26+0200\n"
+"PO-Revision-Date: 2014-09-24 20:27+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -98,7 +98,25 @@ msgstr ""
 msgid "jeu-de-piste.sh"
 msgstr "treasure-hunt.sh"
 
+#: generate-step-A5.sh:35 generate-step-A5.sh:91 generate-step-E11.sh:35
+#: upload-to-servers.sh:84 upload-to-servers.sh:85 generate-all.sh:25
+#: generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
+msgid "fr"
+msgstr "en"
+
+#: generate-step-A5.sh:37
+msgid ""
+"Un message a ete envoye a %s.\n"
+"Consultez cette boite mail pour avoir les instructions pour l'etape suivante."
+msgstr ""
+"A message has been sent to %s.\n"
+"Check this mailbox to get the instructions for the next step."
+
 #: generate-step-A5.sh:39
+msgid "Enonce etape B1"
+msgstr "Instructions for step B1"
+
+#: generate-step-A5.sh:40
 #, sh-format
 msgid ""
 "Bonjour,\n"
@@ -171,18 +189,6 @@ msgstr ""
 "\n"
 "The generated program will give you instructions to go to the next\n"
 "step.\n"
-
-#: generate-step-A5.sh:77
-msgid "Enonce etape B1"
-msgstr "Instructions for step B1"
-
-#: generate-step-A5.sh:80
-msgid ""
-"Un message a ete envoye a %s.\n"
-"Consultez cette boite mail pour avoir les instructions pour l'etape suivante."
-msgstr ""
-"A message has been sent to %s.\n"
-"Check this mailbox to get the instructions for the next step."
 
 #: generate-step-B1.sh:9
 #, sh-format
@@ -409,7 +415,7 @@ msgstr "step_d1.adb generated\n"
 
 #: generate-step-D1.sh:109
 msgid "] /* Ce crochet devrait être une accolade */\n"
-msgstr ""
+msgstr "] /* This closing bracket should be a brace */\n"
 
 #: generate-step-D2.sh:11
 msgid ""
@@ -608,11 +614,6 @@ msgstr ""
 "\n"
 "The answer for the last question will be: b3147554\n"
 "\n"
-
-#: generate-step-E11.sh:35 upload-to-servers.sh:84 upload-to-servers.sh:85
-#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
-msgid "fr"
-msgstr "en"
 
 #: generate-step-E13.sh:9
 msgid ""

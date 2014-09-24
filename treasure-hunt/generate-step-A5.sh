@@ -29,14 +29,15 @@ chmod +x $(gettext jeu-de-piste.sh)
 cat rotlib-decode.sh
 cat rotlib-encode.sh
 . ./mail-lib.sh
-mail_config
 
-echo 'email=$(get_email "$LOGNAME")'
+monitor_step_cmd A5
 
-printf "%s" '
-echo "'
+echo "send_email_with_php_url=$send_email_with_php_baseurl/email-$(gettext fr).php"
 
-gettext "Bonjour,
+email_ok_msg=$(gettext "Un message a ete envoye a %s.
+Consultez cette boite mail pour avoir les instructions pour l'etape suivante.")
+subject=$(gettext "Enonce etape B1")
+body=$(gettext "Bonjour,
 
 Cet email vous est envoye par le script jeu-de-piste.sh. Il fait
 partie du TP 'Jeu de piste'.
@@ -72,10 +73,47 @@ puis executez-le avec
 
 Le programme genere vous donnera les indications pour aller a l'etape
 suivante.
-" | envsubst | rotpipe
+")
+token=92d62c27-2971-412e-9cc2-2741e406891a
 
-echo '" | rotpipe | send_mail "'"$(gettext "Enonce etape B1")"'" "$email"'
+# Has to come after assignments to $token and $email_ok_msg
+mail_config
 
-monitor_step_cmd A5
-printf 'printf "%s\n" "$email"\n' "$(gettext "Un message a ete envoye a %s.
-Consultez cette boite mail pour avoir les instructions pour l'etape suivante.")"
+echo 'email=$(get_email "$LOGNAME")'
+
+printf "%s" '
+echo "'
+
+printf '%s' "$body" | envsubst | rotpipe
+
+echo '" | rotpipe | send_mail "'"$subject"'" "$email"'
+
+cat >email-$(gettext fr).php <<EOF
+<?php
+
+if (\$_GET['code'] != '$token') {
+	die("Sorry, access denied\n");
+}
+
+\$to   = \$_GET['to'];
+
+\$subject = "$subject";
+\$body = "$body";
+
+if (\$_GET['HUNT_FORCE'] == 'yes') {
+	echo(\$body);
+	exit(0);
+}
+
+if (!preg_match('/@(imag.fr|.*\.grenoble-inp\.(fr|org)|inria.*\.fr)\$/', \$to)) {
+	die(sprintf("Sorry, email '%s' is not in the allowed list\n", \$to));
+}
+
+\$headers = 'From: $from_addr';
+
+mail(\$to, \$subject, \$body, \$headers);
+
+printf("OK");
+printf("$email_ok_msg", \$to);
+?>
+EOF

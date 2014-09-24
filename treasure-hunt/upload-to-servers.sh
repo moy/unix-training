@@ -60,8 +60,10 @@ todo "find \"$maindir_upload\"/ -type d -exec chmod ugo+x {} \;"
 upload_lang () {
     rsync $(gettext jeu-de-piste.sh) "$upload_user@$mainmachine":"$main_user_home_upload"/$(gettext jeu-de-piste.sh)
     todo "chmod 755 \"$main_user_home_upload\"/$(gettext jeu-de-piste.sh)"
-    rsync $(gettext etape)-A2.txt "$web"/
     rsync version.txt "$web"/
+
+    rsync $(gettext etape)-A2.txt "$web"/
+    rsync email-$(gettext fr).php "$web"/
 
     rsync $(gettext etape)_b1.{adb,c} "$dir"
     rsync $(gettext etape)-C1.tex "$web"

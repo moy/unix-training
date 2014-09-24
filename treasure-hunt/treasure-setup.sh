@@ -83,6 +83,11 @@ check_email_function=check_email_ensimag
 # the kind of email expected with these variables:
 example_email=Prenom.Nom@ensimag.grenoble-inp.fr
 school=Ensimag
+# If machines have no way to send email themselves, you can use a PHP
+# script to send emails. Set send_email_with_php to 'yes' if you want
+# to enable this behavior.
+send_email_with_php=yes
+send_email_with_php_baseurl=$web_url
 
 # URL of the monitoring system (see spy/README)
 spy_url=http://www-verimag.imag.fr/~moy/monitoring-jdp
@@ -136,6 +141,7 @@ demo_url demo_url_en spy_url
 main_user_home main_user main_user_home_tilde maindir_tilde
 upload_user
 from_addr smtp_server get_email_function check_email_function
+send_email_with_php send_email_with_php_baseurl
 example_email school
 "
 

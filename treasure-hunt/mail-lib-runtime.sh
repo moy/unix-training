@@ -17,6 +17,7 @@ check_email_ensimag () {
     echo "$1" | grep -q \
 	-e '@.*imag\.fr$' \
 	-e '@.*grenoble-inp\.fr$' \
+	-e '@.*grenoble-inp\.org$' \
 	-e '@inria.*\.fr$'
 }
 
@@ -49,6 +50,16 @@ send_mail () {
 	echo 'Force display, not sending email'
 	echo "$noemailcommand"
 	cat
+    elif [ "$send_email_with_php" = "yes" ] && [ "$send_email_with_php_url" != "" ]; then
+	out=$(wget "$send_email_with_php_url?code=$token&to=$email" -q -O -)
+	case $out in
+	    OK*)
+		:
+		;;
+	    *)
+		error=t; echo "$email_failed_msg"
+		;;
+	esac
     elif command -v mutt >/dev/null; then
 	printf '%s' "$content" | \
 	    mutt -e "$smtp_mutt_cmd" \
@@ -66,5 +77,8 @@ send_mail () {
 	echo
 	printf '%s' "$content"
 	exit 1
+    else
+	echo
+	printf "$email_ok_msg\n" "$email"
     fi
 }

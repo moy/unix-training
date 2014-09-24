@@ -13,6 +13,10 @@ from_addr=$from_addr
 smtp_server=$smtp_server
 get_email_function=$get_email_function
 check_email_function=$check_email_function
+send_email_with_php=$send_email_with_php
+send_email_with_php_baseurl=$send_email_with_php_baseurl
+token=$token
+email_ok_msg="$email_ok_msg"
 EOF
     cat mail-lib-runtime.sh
 }

@@ -43,9 +43,10 @@ send_mail () {
 	smtp_mutt_cmd=""
     fi
     if [ "$HUNT_FORCE" != "" ]; then
-	echo 'Force display, not sending email'
-	echo "$noemailcommand"
-	cat
+	echo 'Force display, not sending email. Here is what would have been sent:'
+	echo
+	echo "$content"
+	return
     elif [ "$send_email_with_php" = "yes" ] && [ "$send_email_with_php_url" != "" ]; then
 	if [ "$HUNT_DEBUG" != "" ]; then
 	    echo "Sending message with PHP"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-25 09:25+0200\n"
+"POT-Creation-Date: 2014-09-25 09:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,8 +25,8 @@ msgstr ""
 #: generate-step-D2.sh:58 generate-step-D2.sh:67 generate-step-D2.sh:69
 #: generate-step-D2.sh:71 generate-step-D2.sh:73 generate-step-E10.sh:7
 #: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:39
-#: generate-step-E11.sh:40 generate-step-E13.sh:7 generate-step-E13.sh:16
-#: generate-step-E13.sh:41 generate-step-E13.sh:42 generate-step-E1.sh:29
+#: generate-step-E11.sh:40 generate-step-E13.sh:7 generate-step-E13.sh:19
+#: generate-step-E13.sh:73 generate-step-E13.sh:74 generate-step-E1.sh:29
 #: generate-step-E1.sh:31 generate-step-E1.sh:32 generate-step-E2.sh:17
 #: generate-step-E3.sh:7 generate-step-E3.sh:10 generate-step-E3.sh:27
 #: generate-step-E3.sh:29 generate-step-E4.sh:7 generate-step-E4.sh:24
@@ -421,12 +421,43 @@ msgid ""
 "\n"
 "C'est le seul fichier dont le nom commence par x, et terminant par\n"
 "autre chose qu'un z.\n"
+"\n"
+"La solution est très simple si on sait ce qu'est un wildcard (le\n"
+"polycopié vous l'apprendra si vous ne le savez pas déjà).\n"
 msgstr ""
 
-#: generate-step-E13.sh:29
-#, sh-format
+#: generate-step-E13.sh:32
 msgid ""
 "Oui, c'est bien celui là.\n"
+"\n"
+"Beaucoup d'entre vous tentent des solutions bien compliquées comme\n"
+"\n"
+"  ls | grep '^x.*[^z]$'\n"
+"\n"
+"C'est une assez mauvaise idée pour plusieurs raisons : d'une part, la\n"
+"sortie de 'ls' n'est pas faite pour être lue par une commande ('grep'\n"
+"ici) mais par un être humain. Si votre 'ls' est configuré pour\n"
+"afficher des caractères en plus (e.g. @ pour les liens, / pour les\n"
+"répertoires, ...) alors ces caractères sont lus par 'grep' par exemple.\n"
+"D'autre part, on utilise deux processus ('ls' et 'grep') alors qu'un\n"
+"aurait suffit. Et puis, l'argument de 'grep' est une expression\n"
+"régulière (vous apprendrez bientôt ce que c'est en théorie des\n"
+"langages), c'est très puissant mais un peu lourd à utiliser (par\n"
+"exemple, * ne veut pas dire « n'importe quelle chaîne », mais\n"
+"« caractère précédent répété un nombre quelconque de fois »).\n"
+"\n"
+"Une solution plus simple :\n"
+"\n"
+"  ls x*[^z]\n"
+"\n"
+"Cette fois-ci, c'est le shell et non grep qui interprête ce x*[^z]\n"
+"(qui est un wildcard et non une expression régulière). Et comme c'est\n"
+"le shell et non la commande ls qui fait le travail, on peut même\n"
+"écrire directement :\n"
+"\n"
+"  less x*[^z]\n"
+"\n"
+"Pour afficher le fichier avec la commande 'less' en une ligne.\n"
 "\n"
 "Pour l'étape suivante, exécutez (sur votre machine de travail) le script\n"
 "\n"

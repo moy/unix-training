@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-24 20:26+0200\n"
+"POT-Creation-Date: 2014-09-25 09:25+0200\n"
 "PO-Revision-Date: 2013-08-05 18:17+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: generate-step-A2.sh:24 generate-step-B1.sh:36 generate-step-B1.sh:38
 #: generate-step-B1.sh:53 generate-step-B1.sh:55 generate-step-C1.sh:7
-#: generate-step-C3.sh:39 generate-step-D1.sh:39 generate-step-D1.sh:40
+#: generate-step-C3.sh:34 generate-step-D1.sh:39 generate-step-D1.sh:40
 #: generate-step-D1.sh:78 generate-step-D1.sh:111 generate-step-D1.sh:113
 #: generate-step-D2.sh:49 generate-step-D2.sh:54 generate-step-D2.sh:56
 #: generate-step-D2.sh:58 generate-step-D2.sh:67 generate-step-D2.sh:69
@@ -32,17 +32,17 @@ msgstr ""
 #: generate-step-E5.sh:17 generate-step-E6.sh:7 generate-step-E6.sh:8
 #: generate-step-E6.sh:9 generate-step-E9.sh:6 generate-step-E9.sh:29
 #: generate-step-F2.sh:7 generate-step-G2.sh:8 generate-step-G2.sh:69
-#: i18n-lib.sh:31 upload-to-servers.sh:63 upload-to-servers.sh:66
-#: upload-to-servers.sh:67 upload-to-servers.sh:68 upload-to-servers.sh:70
-#: upload-to-servers.sh:71 upload-to-servers.sh:72 upload-to-servers.sh:75
-#: upload-to-servers.sh:76 upload-to-servers.sh:77 upload-to-servers.sh:78
-#: upload-to-servers.sh:79 upload-to-servers.sh:80 upload-to-servers.sh:81
-#: upload-to-servers.sh:83 upload-to-servers.sh:87 upload-to-servers.sh:88
-#: upload-to-servers.sh:97 upload-to-servers.sh:98 upload-to-servers.sh:99
-#: upload-to-servers.sh:100 upload-to-servers.sh:101 upload-to-servers.sh:102
-#: upload-to-servers.sh:103 upload-to-servers.sh:104 upload-to-servers.sh:105
-#: upload-to-servers.sh:106 upload-to-servers.sh:107 upload-to-servers.sh:108
-#: upload-to-servers.sh:109
+#: i18n-lib.sh:31 upload-to-servers.sh:65 upload-to-servers.sh:68
+#: upload-to-servers.sh:69 upload-to-servers.sh:70 upload-to-servers.sh:72
+#: upload-to-servers.sh:73 upload-to-servers.sh:74 upload-to-servers.sh:77
+#: upload-to-servers.sh:78 upload-to-servers.sh:79 upload-to-servers.sh:80
+#: upload-to-servers.sh:81 upload-to-servers.sh:82 upload-to-servers.sh:83
+#: upload-to-servers.sh:85 upload-to-servers.sh:89 upload-to-servers.sh:90
+#: upload-to-servers.sh:99 upload-to-servers.sh:100 upload-to-servers.sh:101
+#: upload-to-servers.sh:102 upload-to-servers.sh:103 upload-to-servers.sh:104
+#: upload-to-servers.sh:105 upload-to-servers.sh:106 upload-to-servers.sh:107
+#: upload-to-servers.sh:108 upload-to-servers.sh:109 upload-to-servers.sh:110
+#: upload-to-servers.sh:111
 msgid "etape"
 msgstr ""
 
@@ -80,8 +80,8 @@ msgid "jeu-de-piste.sh"
 msgstr ""
 
 #: generate-step-A5.sh:35 generate-step-A5.sh:91 generate-step-E11.sh:35
-#: upload-to-servers.sh:84 upload-to-servers.sh:85 generate-all.sh:25
-#: generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
+#: upload-to-servers.sh:66 upload-to-servers.sh:86 upload-to-servers.sh:87
+#: generate-all.sh:25 generate-all.sh:26 generate-all.sh:27 generate-all.sh:30
 msgid "fr"
 msgstr ""
 
@@ -189,22 +189,21 @@ msgid ""
 "quelle application ouvrir ce fichier ..."
 msgstr ""
 
-#: generate-step-C3.sh:7
+#: generate-step-C3.sh:8
 #, sh-format
 msgid ""
 "Voilà, cette image est une image au format PNG.\n"
 "\n"
-"On peut l'éditer avec The Gimp (commande gimp), la\n"
-"visualiser avec Eye of Gnome (commande eog), par\n"
-"exemple.\n"
+"On peut l'éditer avec The Gimp (commande gimp), la visualiser avec Eye of "
+"Gnome\n"
+"(commande eog), par exemple.\n"
 "\n"
-"Pour les curieux, vous remarquerez que l'image\n"
-"ressemble à ce que produit l'utilitaire a2ps. Ce n'est\n"
-"pas une coincidence, il a été généré avec a2ps et\n"
+"Pour les curieux, vous remarquerez que l'image ressemble à ce que produit\n"
+"l'utilitaire a2ps. Ce n'est pas une coincidence, il a été généré avec a2ps "
+"et\n"
 "convert pour passer du format ps au format PNG.\n"
 "\n"
-"Nous pouvons maintenant passer à la partie sur les\n"
-"éditeurs de textes.\n"
+"Nous pouvons maintenant passer à la partie sur les éditeurs de textes.\n"
 "\n"
 "Vous trouverez l'étape suivante dans le fichier\n"
 "\n"
@@ -214,19 +213,19 @@ msgid ""
 "\n"
 "$web_url/abc/etape_d1.c\n"
 "\n"
-"Malheureusement, cette fois-ci, le fichier n'est pas\n"
-"directement compilable. Il faudra corriger quelques\n"
-"erreurs de syntaxes.\n"
+"Malheureusement, cette fois-ci, le fichier n'est pas directement compilable. "
+"Il\n"
+"faudra corriger quelques erreurs de syntaxes.\n"
 "\n"
-"Il est conseillé d'utiliser Emacs (ou un autre bon\n"
-"éditeur de texte) pour cette partie : avec la commande\n"
-"Goto Line décrite sur le Wiki, vous pourrez trouver\n"
-"l'endroit de chaque erreur de syntaxe en un clin\n"
-"d'oeil.\n"
+"Il est conseillé d'utiliser Emacs (ou un autre bon éditeur de texte) pour "
+"cette\n"
+"partie : avec la commande Goto Line décrite sur le Wiki, vous pourrez "
+"trouver\n"
+"l'endroit de chaque erreur de syntaxe en un clin d'oeil.\n"
 "\n"
 msgstr ""
 
-#: generate-step-C3.sh:41
+#: generate-step-C3.sh:36
 msgid "etape-C3.png générée"
 msgstr ""
 

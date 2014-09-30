@@ -33,9 +33,9 @@ function echo_result($result, $format=null, $count=False) {
 			<strong><center>no result</center></strong>
 			</td></tr><?
 		} else {
-			while($row=mysql_fetch_assoc($result)) {
+			while($row = mysql_fetch_assoc($result)) {
 				?><tr style="white-space:nowrap"><?
-				foreach($row as $key=>$value) {
+				foreach($row as $key => $value) {
 					if ($value != "" && $value != "0") {
 						$counts[$key]++;
 					}
@@ -70,7 +70,7 @@ $query = 'SELECT DISTINCT access.step FROM hunt_access'. $exam_suffix .' as acce
 $result = exam_query($query);
 $step_fields = '';
 $step_join = '';
-while($row=mysql_fetch_assoc($result)) {
+while($row = mysql_fetch_assoc($result)) {
 	$step = $row['step'];
 	if (preg_match('/^[a-zA-Z][a-zA-Z0-9]*$/', $step)) {
 		// ignore potentially harmfull step names for security reason

@@ -26,4 +26,7 @@ Un message code se trouve dans le fichier etape-E4.txt, decodez-le
 en utilisant decoder.
 " > $(gettext etape)-E3/$(gettext etape)-E3.txt
 
-tar czvf $(gettext etape)-E3.tar.gz $(gettext etape)-E3/*.txt $(gettext etape)-E3/*.adb
+tar czvf $(gettext etape)-E3.tar.gz \
+    $(gettext etape)-E3/*.txt \
+    $(gettext etape)-E3/*.adb \
+    $(gettext etape)-E3/*.c

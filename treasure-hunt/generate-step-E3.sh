@@ -14,8 +14,8 @@ Vous trouverez dans cette archive un fichier decoder.adb. Compilez-le
 (si vous préférez le C, le programme decoder.c fait la même chose, à
 compiler avec gcc).
 
-Ce fichier lit sur son entree une suite de caractères "codee", et
-affiche sur sa sortie une version "decodee" de cette suite de
+Ce fichier lit sur son entree une suite de caractères \"codee\", et
+affiche sur sa sortie une version \"decodee\" de cette suite de
 caractères.
 
 Si vous l'executez tel quel, le programme va lire au clavier et

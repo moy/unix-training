@@ -8,6 +8,17 @@ mkdir -p $(gettext etape)-E3/
 
 gettext "Bien, vous avez reussi a decoder le message.
 
+La solution la plus élégante était d'utiliser une redirection, comme
+ceci :
+
+  ./decoder < etape-E4.txt
+
+Si on veut sauvegarder le résultat, on peut aussi écrire
+
+  ./decoder < etape-E4.txt > etape-E4-decodee.txt
+
+puis regarder le contenu du fichier etape-E4-decodee.txt.
+
 Pour l'etape suivante, le message se trouve dans etape-E5.txt, mais
 il est doublement code : pour le decoder, il va falloir passer dans
 deux filtres differents.

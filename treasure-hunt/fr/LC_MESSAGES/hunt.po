@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-25 09:49+0200\n"
+"POT-Creation-Date: 2014-10-07 08:12+0200\n"
 "PO-Revision-Date: 2013-08-05 18:17+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,8 @@ msgstr ""
 #: generate-step-E13.sh:73 generate-step-E13.sh:74 generate-step-E1.sh:29
 #: generate-step-E1.sh:31 generate-step-E1.sh:32 generate-step-E2.sh:17
 #: generate-step-E3.sh:7 generate-step-E3.sh:10 generate-step-E3.sh:27
-#: generate-step-E3.sh:29 generate-step-E4.sh:7 generate-step-E4.sh:24
+#: generate-step-E3.sh:29 generate-step-E3.sh:30 generate-step-E3.sh:31
+#: generate-step-E3.sh:32 generate-step-E4.sh:7 generate-step-E4.sh:35
 #: generate-step-E5.sh:17 generate-step-E6.sh:7 generate-step-E6.sh:8
 #: generate-step-E6.sh:9 generate-step-E9.sh:6 generate-step-E9.sh:29
 #: generate-step-F2.sh:7 generate-step-G2.sh:8 generate-step-G2.sh:69
@@ -504,8 +505,8 @@ msgid ""
 "(si vous préférez le C, le programme decoder.c fait la même chose, à\n"
 "compiler avec gcc).\n"
 "\n"
-"Ce fichier lit sur son entree une suite de caractères codee, et\n"
-"affiche sur sa sortie une version decodee de cette suite de\n"
+"Ce fichier lit sur son entree une suite de caractères \"codee\", et\n"
+"affiche sur sa sortie une version \"decodee\" de cette suite de\n"
 "caractères.\n"
 "\n"
 "Si vous l'executez tel quel, le programme va lire au clavier et\n"
@@ -519,6 +520,17 @@ msgstr ""
 #: generate-step-E4.sh:9
 msgid ""
 "Bien, vous avez reussi a decoder le message.\n"
+"\n"
+"La solution la plus élégante était d'utiliser une redirection, comme\n"
+"ceci :\n"
+"\n"
+"  ./decoder < etape-E4.txt\n"
+"\n"
+"Si on veut sauvegarder le résultat, on peut aussi écrire\n"
+"\n"
+"  ./decoder < etape-E4.txt > etape-E4-decodee.txt\n"
+"\n"
+"puis regarder le contenu du fichier etape-E4-decodee.txt.\n"
 "\n"
 "Pour l'etape suivante, le message se trouve dans etape-E5.txt, mais\n"
 "il est doublement code : pour le decoder, il va falloir passer dans\n"

@@ -37,6 +37,11 @@ $(PO_TEMPLATE): $(STEP_FILES)
 msgmerge:
 	$(foreach p, $(PO_FILES), echo Updating $p ; msgmerge -U $p $(PO_TEMPLATE) ; )
 
-install: mo
+check:
+	./check-mail-regex.sh
+	./test-rotlib.sh
+	./test-i18n.sh
+
+install: check mo
 	./generate-all.sh
 	./upload-to-servers.sh

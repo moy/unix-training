@@ -46,8 +46,10 @@ par contre, cette etape est encore
 polluee par des lignes inutiles.
 En fait, les lignes pertinentes sont celles
 qui sont dans etape-E11.txt
-mais pas dans
-etape-E11-bis.txt
+mais pas dans etape-E11-bis.txt
+(etape-E11-bis.txt se trouve dans
+le meme repertoire que les deux
+autres fichiers)
 
 La commande diff devrait vous aider.
 

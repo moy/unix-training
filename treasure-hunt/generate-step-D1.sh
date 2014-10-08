@@ -20,7 +20,7 @@ Si vous lisez ceci, c'est probablement que vous avez reussi a
 compiler le fichier etape_d1.adb.
 ")
 
-part2=$(gettext "L'etape suivante est aussi un programme Ada a compiler,
+part2=$(gettext "L'etape suivante est aussi un programme %s a compiler,
 mais il a ete decoupe en plusieurs morceaux. Le premier est
 dans un fichier OpenDocument (LibreOffice, OpenOffice.org, ...) qui se
 trouve ici :
@@ -60,7 +60,7 @@ part3=$(gettext "A vous de faire les copier-coller pour remettre le tout ensembl
     echo
     Noise
 
-    printf "$part2" -ada -ada | ada_obfuscate Noise
+    printf "$part2" Ada -ada -ada | ada_obfuscate Noise
 
     echo "$part_d2_ada" | ada_obfuscate
 
@@ -95,7 +95,7 @@ gettext "etape_d1.adb genere
     echo '	dprint("")'
     echo
 
-    printf "$part2" -c -c | c_obfuscate
+    printf "$part2" C -c -c | c_obfuscate
 
     echo "$part_d2_c" | c_obfuscate
 

@@ -73,7 +73,7 @@ puis executez-le avec
 
 Le programme genere vous donnera les indications pour aller a l'etape
 suivante.
-")
+" | envsubst)
 token=92d62c27-2971-412e-9cc2-2741e406891a
 
 # Has to come after assignments to $token and $email_ok_msg
@@ -84,7 +84,7 @@ echo 'email=$(get_email "$LOGNAME")'
 printf "%s" '
 echo "'
 
-printf '%s' "$body" | envsubst | rotpipe
+printf '%s' "$body" | rotpipe
 
 echo '" | rotpipe | send_mail "'"$subject"'" "$email"'
 

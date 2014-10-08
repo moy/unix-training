@@ -39,11 +39,11 @@ Consultez cette boite mail pour avoir les instructions pour l'etape suivante.")
 subject=$(gettext "Enonce etape B1")
 body=$(gettext "Bonjour,
 
-Cet email vous est envoye par le script jeu-de-piste.sh. Il fait
+Cet email vous est envoyé par le script jeu-de-piste.sh. Il fait
 partie du TP 'Jeu de piste'.
 
-L'etape suivante est une compilation de programme Ada. Un programme
-Ada se trouve dans le fichier etape_b1.adb dans le repertoire
+L'étape suivante est une compilation de programme Ada. Un programme
+Ada se trouve dans le fichier etape_b1.adb dans le répertoire
 jeu-de-piste sur le compte de l'utilisateur \${main_user}.
 
 Si vous préférez le langage C, une version C se trouve dans le même
@@ -51,27 +51,27 @@ répertoire, dans le fichier etape_b1.c (à compiler avec la commande
 gcc).
 
 Vous n'avez pas le droit d'utiliser la commande 'ls' dans ce
-repertoire (vous pouvez essayer, mais ca ne marchera pas), mais vous
-pouvez tout de meme recuperer le fichier en question (vous verrez plus
+répertoire (vous pouvez essayer, mais ça ne marchera pas), mais vous
+pouvez tout de même récupérer le fichier en question (vous verrez plus
 tard comment utiliser la commande chmod pour obtenir ce genre de
 permissions).
 
-Recuperez ce fichier chez vous, par exemple avec
+Récupérez ce fichier chez vous, par exemple avec
 
   cp le-fichier-en-question ~
 
-(~ veut dire 'mon repertoire personnel')
+(~ veut dire 'mon répertoire personnel')
 
-Puis revenez dans votre repertoire personnel et compilez le fichier
+Puis revenez dans votre répertoire personnel et compilez le fichier
 avec la commande
 
   gnatmake etape_b1
 
-puis executez-le avec
+puis exécutez-le avec
 
   ./etape_b1
 
-Le programme genere vous donnera les indications pour aller a l'etape
+Le programme généré vous donnera les indications pour aller a l'étape
 suivante.
 " | envsubst)
 token=92d62c27-2971-412e-9cc2-2741e406891a

@@ -116,7 +116,8 @@ if (!$check_email_function_php(\$to)) {
 	die(sprintf("Sorry, email '%s' is not in the allowed list.\n", \$to));
 }
 
-\$headers = 'From: $from_addr';
+\$headers = 'From: $from_addr' . "\r\n" .
+            'Content-type: text/plain; charset=utf-8' . "\r\n";
 
 mail(\$to, \$subject, \$body, \$headers);
 

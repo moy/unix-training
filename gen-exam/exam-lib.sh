@@ -85,6 +85,10 @@ get_machine () {
     grep "^$1;" "$list_students" | cut -d \; -f 5
 }
 
+get_student_id () {
+    grep "^$1;" "$list_students" | cut -d \; -f 6
+}
+
 sql_escape_pipe () {
     sed -e "s/'/''/g" -e 's/\\/\\\\/g'
 }

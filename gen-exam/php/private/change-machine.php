@@ -46,6 +46,8 @@ if ($machine_to_edit == "" || $session_to_edit == "") {
 $new_login = "";
 $new_first_name = "";
 $new_familly_name = "";
+$new_student_id = "";
+
 if (isset($_GET['new_login'])) {
 	$new_login = $_GET['new_login'];
 }
@@ -55,14 +57,19 @@ if (isset($_GET['new_first_name'])) {
 if (isset($_GET['new_familly_name'])) {
 	$new_familly_name = $_GET['new_familly_name'];
 }
+if (isset($_GET['new_student_id'])) {
+	$new_student_id = $_GET['new_student_id'];
+}
 
 if ($new_login != "" &&
     $new_first_name != "" &&
-    $new_familly_name != "") {
+    $new_familly_name != "" &&
+    $new_student_id != "") {
 	exam_query("UPDATE exam_unix_logins
                     SET login = '". exam_escape_string($new_login) ."',
                    first_name = '". exam_escape_string($new_first_name) ."',
-                 familly_name = '". exam_escape_string($new_familly_name) ."'
+                 familly_name = '". exam_escape_string($new_familly_name) ."',
+                   student_id = '". exam_escape_string($new_student_id) ."'
                 WHERE machine = '". exam_escape_string($machine_to_edit) ."'
                   AND session = '". exam_escape_string($session_to_edit) ."'
                AND id_subject = '". exam_escape_string($subject) ."'") or die ("Failed to change info for $login");
@@ -76,9 +83,11 @@ $line = get_login($machine_to_edit, $session_to_edit, $subject);
 $login = $line['login'];
 $first_name = $line['first_name'];
 $familly_name = $line['familly_name'];
+$student_id = $line['student_id'];
 $initial_login = $line['initial_login'];
 $initial_first_name = $line['initial_first_name'];
 $initial_familly_name = $line['initial_familly_name'];
+$initial_student_id = $line['initial_student_id'];
 
 if ($login == "")
 	die("FATAL ERROR: Can not find login $login for subject $subject in database");
@@ -108,6 +117,9 @@ function display_was($old, $new) {
 	<li><strong>Familly Name</strong>:
 	    <input type="text" name="new_familly_name" value="<?php echo htmlspecialchars($familly_name) ?>" />
 	    <?php display_was($initial_familly_name, $familly_name); ?></li>
+	<li><strong>Student ID</strong>:
+	    <input type="text" name="new_student_id" value="<?php echo htmlspecialchars($student_id) ?>" />
+	    <?php display_was($initial_student_id, $student_id); ?></li>
 	</ul></div>
 	<input type="submit" value="Change information" />
 	</fieldset>

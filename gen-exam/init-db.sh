@@ -74,13 +74,15 @@ EOF
 create_table exam_unix_logins <<\EOF
     id_subject integer NOT NULL,
     session integer NOT NULL,
-    machine varchar(256) NOT NULL,
-    login varchar(256) NOT NULL,
+    machine varchar(255) NOT NULL,
+    login varchar(255) NOT NULL,
     initial_login varchar(8) NOT NULL,
     first_name text NOT NULL,
     initial_first_name text NOT NULL,
     familly_name text NOT NULL,
     initial_familly_name text NOT NULL,
+    student_id varchar(255) NOT NULL,
+    initial_student_id varchar(255) NOT NULL,
     PRIMARY KEY (id_subject, session, machine),
     FOREIGN KEY (id_subject) REFERENCES exam_unix_subject(id)
 EOF

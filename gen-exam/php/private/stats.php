@@ -63,7 +63,7 @@ AND exam_unix_question.id_subject = '". $subject ."'"
 		." GROUP BY session;");
 
 echo "<li><strong>Machine changes</strong>:";
-	$query = "SELECT machine, session, login, first_name as 'First name', familly_name as 'Familly name', initial_login as 'Initial login', initial_first_name as 'Initial first name', initial_familly_name as 'Initial familly name'
+	$query = "SELECT machine, session, login, first_name as 'First name', familly_name as 'Familly name', initial_login as 'Initial login', initial_first_name as 'Initial first name', initial_familly_name as 'Initial familly name', student_id as 'Student ID', initial_student_id as 'Initial student ID'
 FROM exam_unix_logins
 WHERE id_subject = '". exam_escape_string($subject) ."'
   AND (login <> initial_login OR

@@ -160,6 +160,7 @@ for login in $(get_logins); do
     machine=$(get_machine "$login")
     first_name=$(get_first_name "$login" | sql_escape_pipe)
     familly_name=$(get_familly_name "$login" | sql_escape_pipe)
+    student_id=$(get_student_id "$login" | sql_escape_pipe)
     echo "login = $login; session = $session; machine = $machine; first_name = $first_name; familly_name = $familly_name"
     studentdir="$outdir/php/subjects/$session/$machine"
     mkdir -p "$studentdir"
@@ -168,8 +169,8 @@ for login in $(get_logins); do
     sql_comment "Etudiant $login"
     sql_echo "Importing questions/answers for $first_name $familly_name ($login)"
     sql_raw "INSERT INTO exam_unix_logins
-                    (id_subject,   session,    machine,    login, initial_login,    first_name, initial_first_name,    familly_name, initial_familly_name)
-             VALUES ('$subject', '$session', '$machine', '$login',      '$login', '$first_name',      '$first_name', '$familly_name',      '$familly_name');"
+                    (id_subject,   session,    machine,    login, initial_login,    first_name, initial_first_name,    familly_name, initial_familly_name,    student_id, initial_student_id)
+             VALUES ('$subject', '$session', '$machine', '$login',      '$login', '$first_name',      '$first_name', '$familly_name',      '$familly_name', '$student_id',      '$student_id');"
 
     all_questions
 

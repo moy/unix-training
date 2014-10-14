@@ -260,7 +260,7 @@ if [ "$apply" = "yes" ]; then
     esac
 fi
 
-for d in "$outdir/php/subjects/"*/
+for d in "./php/subjects/"*/
 do
     ln -s "$d" session-"$(basename "$d")"
 done

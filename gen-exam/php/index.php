@@ -27,6 +27,7 @@ $points=$line["points"];
 
 $line = get_login($machine, $session, $subject);
 $login = $line['login'];
+$student_id = $line['student_id'];
 $first_name = $line['first_name'];
 $familly_name = $line['familly_name'];
 
@@ -45,6 +46,7 @@ if (subject_file_exists()) {
 	<li><strong><?php echo exam_get_string('machine') .': '. htmlspecialchars($machine) ?></strong></li>
 	<li><strong><?php echo exam_get_string('session') .': '. htmlspecialchars($session) ?></strong></li>
 	<li><strong><?php echo exam_get_string('login') .': '. htmlspecialchars($login) ?></strong></li>
+	<li><strong><?php echo exam_get_string('student_id') .': '. htmlspecialchars($student_id) ?></strong></li>
 	<li><strong><?php echo exam_get_string('name') .': '. htmlspecialchars($first_name ." ". $familly_name) ?></strong></li>
 	<li><strong><?php echo $count ." ". exam_get_string('questions') ?></strong></li>
 <?php if (!$exam_hide_points) { ?>

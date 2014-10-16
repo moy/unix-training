@@ -709,7 +709,7 @@ msgid ""
 "  ~${auxiliary_user}/etape-G1.txt\n"
 "\n"
 "Récupérez-la via sftp (cf.\n"
-"http://ensiwiki.ensimag.fr/index.php/Travailler_à_distance pour 1001\n"
+"http://ensiwiki.ensimag.fr/index.php/Travailler_a_distance pour 1001\n"
 "façons de faire cela) pour continuer.\n"
 msgstr ""
 

@@ -50,7 +50,7 @@ dans le fichier
   ~\${auxiliary_user}/etape-G1.txt
 
 Récupérez-la via sftp (cf.
-http://ensiwiki.ensimag.fr/index.php/Travailler_à_distance pour 1001
+http://ensiwiki.ensimag.fr/index.php/Travailler_a_distance pour 1001
 façons de faire cela) pour continuer.
 " | envsubst)"
     exit 0;

@@ -81,14 +81,14 @@ gettext "etape_d1.adb genere
 " >&2
 
 (
-    echo "$header" | c_comment_out
+    echo "$header" | sed 's/_d1\.adb/_d1.c/' | c_comment_out
 
     c_dprint_header
 
     echo "int main(void)"
     echo "{"
 
-    echo "$part1" | c_obfuscate
+    echo "$part1" | sed 's/_d1\.adb/_d1.c/' | c_obfuscate
 
     # missing ';'
     echo

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-08 11:54+0200\n"
-"PO-Revision-Date: 2014-10-08 11:55+0200\n"
+"POT-Creation-Date: 2014-10-16 10:21+0200\n"
+"PO-Revision-Date: 2014-10-16 10:21+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -21,8 +21,8 @@ msgstr ""
 #: generate-step-C3.sh:34 generate-step-D1.sh:39 generate-step-D1.sh:40
 #: generate-step-D1.sh:78 generate-step-D1.sh:111 generate-step-D1.sh:113
 #: generate-step-D2.sh:49 generate-step-D2.sh:54 generate-step-D2.sh:56
-#: generate-step-D2.sh:58 generate-step-D2.sh:67 generate-step-D2.sh:69
-#: generate-step-D2.sh:71 generate-step-D2.sh:73 generate-step-E10.sh:7
+#: generate-step-D2.sh:58 generate-step-D2.sh:67 generate-step-D2.sh:72
+#: generate-step-D2.sh:74 generate-step-D2.sh:76 generate-step-E10.sh:7
 #: generate-step-E11.sh:10 generate-step-E11.sh:11 generate-step-E11.sh:39
 #: generate-step-E11.sh:40 generate-step-E13.sh:7 generate-step-E13.sh:19
 #: generate-step-E13.sh:73 generate-step-E13.sh:74 generate-step-E1.sh:29
@@ -474,6 +474,10 @@ msgstr "end Step_D2;"
 #: generate-step-D2.sh:51
 msgid "etape_d2.adb genere"
 msgstr "step_d2.adb generated"
+
+#: generate-step-D2.sh:69
+msgid "etape_d2.c genere"
+msgstr "step_d2.c generated"
 
 #: generate-step-E10.sh:9
 msgid ""

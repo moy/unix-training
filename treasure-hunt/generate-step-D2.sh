@@ -66,6 +66,9 @@ sed -ne '17,$p' $(gettext etape)_d2.adb > $(gettext etape)_d2-3-ada.txt
     echo "$body" | c_obfuscate_full
 ) > $(gettext etape)_d2.c
 
+gettext "etape_d2.c genere" >&2
+echo >&2
+
 sed -ne '1,19p' $(gettext etape)_d2.c | txt2odt $(gettext etape)_d2-1-c.odt
 
 sed -ne '20,39p' $(gettext etape)_d2.c > $(gettext etape)_d2-2-c.txt

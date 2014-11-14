@@ -25,6 +25,7 @@ function exam_header($title = '', $basedir = '.') {
 	<style type="text/css">
 	@import "'. htmlspecialchars($basedir) .'/style.css";
 	</style>
+	<script src="'. htmlspecialchars($basedir) .'/sorttable.js"></script>
 </head>
 <body>
 ';

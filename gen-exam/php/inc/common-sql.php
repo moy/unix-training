@@ -219,11 +219,11 @@ WHERE exam_unix_subject_questions.id_subject  = exam_unix_subject.id
 /* Utility functions */
 
 // Display the result of an SQL query as an HTML table.
-function exam_display_result ($result) {
+function exam_display_result ($result, $format_function=null) {
 	$array = exam_fetch_array($result);
 	if ($array) {
 		$n_res = 0;
-		echo '<table>';
+		echo '<table class="sortable">';
 		echo "<tr>";
 		foreach ($array as $key => $value) {
 			if (!is_numeric($key)) {
@@ -240,7 +240,11 @@ function exam_display_result ($result) {
 			echo "<tr>";
 			foreach ($array as $key => $value) {
 				if (!is_numeric($key)) {
-					echo '<td>'. htmlspecialchars($value) .'</td>';
+					$value = htmlspecialchars($value);
+					if ($format_function[$key] != null) {
+						$value = $format_function[$key]($value, $array);
+					}					
+					echo '<td>'. $value .'</td>';
 				}
 			}
 			$n_res++;

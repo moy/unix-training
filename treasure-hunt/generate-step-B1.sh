@@ -21,7 +21,7 @@ automatique. Vous pouvez compiler ce fichier avec la commande
   pdflatex etape-C1.tex
 
 pour obtenir un fichier PDF, que vous ouvrirez ensuite avec le
-logiciel aproprie.
+logiciel approprie.
 " | envsubst)
 
 (

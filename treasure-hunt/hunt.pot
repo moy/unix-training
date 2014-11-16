@@ -156,7 +156,7 @@ msgid ""
 "  pdflatex etape-C1.tex\n"
 "\n"
 "pour obtenir un fichier PDF, que vous ouvrirez ensuite avec le\n"
-"logiciel aproprie.\n"
+"logiciel approprie.\n"
 msgstr ""
 
 #: generate-step-B1.sh:28

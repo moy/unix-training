@@ -1,9 +1,23 @@
 get_email_ensimag () {
     # Ensimag-specific, sorry.
     if command -v ldapsearch >/dev/null; then
-	ldapsearch -H ldap://ensildap.imag.fr \
-	    -x -b dc=ensimag,dc=imag,dc=fr uid="$1" \
-            | grep "^mail:" | sed "s/^mail: *//"
+	gettext "Entrez votre mot de passe Ensimag : " >&2
+	for i in $(seq 4) # limited number of attempts, and then give up.
+	do
+	    ldapout=$(ldapsearch -H ldap://ensildap.imag.fr \
+		-D uid="$1",ou=users,dc=ensimag,dc=imag,dc=fr \
+		-W \
+		-x -b dc=ensimag,dc=imag,dc=fr uid="$1")
+	    if [ "$?" -eq 0 ]
+	    then
+		echo >&2
+		echo "$ldapout" | grep "^mail:" | sed "s/^mail: *//"
+		return
+	    else
+		gettext "Echec. Entrez à nouveau votre mot de passe Ensimag : " >&2
+	    fi
+	done
+	printf "\n%s\n\n" "$(gettext "Echec de la récupération d'adresse email via LDAP.")" >&2 
     else
 	echo "$1"
     fi

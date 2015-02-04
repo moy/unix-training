@@ -89,7 +89,7 @@ FROM hunt_student'. $exam_suffix .' AS reference'. $step_join .'
 GROUP BY reference.login;';
 // echo '<pre>'. $query .'</pre>';
 $result = exam_query($query);
-echo_result($result, array('login' => '<a href="https://intranet.ensimag.fr/Zenith2/getUser?login=%s">%s</a>'), True);
+echo_result($result, array('login' => '<a href="https://intranet.ensimag.fr/Zenith2/#login=%s">%s</a>'), True);
 
 echo '<h2>Unregistered students accesses</h2>';
 
@@ -102,7 +102,7 @@ FROM (SELECT DISTINCT login
 GROUP BY reference.login;';
 // echo '<pre>'. $query .'</pre>';
 $result = exam_query($query);
-echo_result($result, array('login' => '<a href="https://intranet.ensimag.fr/Zenith2/getUser?login=%s">%s</a>'), True);
+echo_result($result, array('login' => '<a href="https://intranet.ensimag.fr/Zenith2/#login=%s">%s</a>'), True);
 
 exam_footer();
 ?>

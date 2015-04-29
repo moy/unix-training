@@ -61,10 +61,7 @@ if (isset($_GET['new_student_id'])) {
 	$new_student_id = $_GET['new_student_id'];
 }
 
-if ($new_login != "" &&
-    $new_first_name != "" &&
-    $new_familly_name != "" &&
-    $new_student_id != "") {
+if ($new_login != "") {
 	exam_query("UPDATE exam_unix_logins
                     SET login = '". exam_escape_string($new_login) ."',
                    first_name = '". exam_escape_string($new_first_name) ."',

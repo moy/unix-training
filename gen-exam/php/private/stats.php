@@ -75,7 +75,7 @@ function format_session($value, $array) {
 	return '<a href="change-machine.php?machine_to_edit='. urlencode($array['machine']) .'&session_to_edit='. urlencode($array['session']) .'">' . $value . '</a>';
 }
 
-exam_display_result($result, array('machine' => format_session));
+exam_display_result($result, array('machine' => 'format_session'));
 echo "</li>";
 
 // TODO: it would be nice to have a notion of "question id" (first

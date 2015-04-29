@@ -61,13 +61,13 @@ while ($line = exam_fetch_array($result)) {
 			display_and_flush();
 		} else {
 			if ($line["first_name"] != $previous_first_name) {
-				die("Different first names (". $line["first_name"] ." and ". $previous_first_name .") for the same login");
+				die("Different first names (". $line["first_name"] ." and ". $previous_first_name .") for the same login (" . $line["login"] .").");
 			}
 			if ($line["familly_name"] != $previous_familly_name) {
-				die("Different familly names (". $line["familly_name"] ." and ". $previous_familly_name .") for the same login");
+				die("Different familly names (". $line["familly_name"] ." and ". $previous_familly_name .") for the same login (" . $line["login"] .").");
 			}
 			if ($line["student_id"] != $previous_student_id) {
-				die("Different familly names (". $line["student_id"] ." and ". $previous_student_id .") for the same login");
+				die("Different student ID (". $line["student_id"] ." and ". $previous_student_id .") for the same login (" . $line["login"] .").");
 			}
 		}
 	}

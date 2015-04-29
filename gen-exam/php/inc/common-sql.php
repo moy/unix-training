@@ -241,7 +241,7 @@ function exam_display_result ($result, $format_function=null) {
 			foreach ($array as $key => $value) {
 				if (!is_numeric($key)) {
 					$value = htmlspecialchars($value);
-					if ($format_function[$key] != null) {
+					if (isset($format_function[$key])) {
 						$value = $format_function[$key]($value, $array);
 					}					
 					echo '<td>'. $value .'</td>';

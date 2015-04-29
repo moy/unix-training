@@ -70,7 +70,7 @@ if ($new_login != "") {
                 WHERE machine = '". exam_escape_string($machine_to_edit) ."'
                   AND session = '". exam_escape_string($session_to_edit) ."'
                AND id_subject = '". exam_escape_string($subject) ."'") or die ("Failed to change info for $login");
-	echo "<p>Information updated for $machine_to_edit on session $session.</p>\n";
+	echo "<p>Information updated for $machine_to_edit on session $session_to_edit.</p>\n";
 } else {
 	echo "<p>Nothing to update.</p>\n";
 }

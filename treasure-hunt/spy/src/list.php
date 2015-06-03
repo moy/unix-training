@@ -16,25 +16,25 @@ echo '<p>Click on table headers to sort.</p>';
 //    - %s est remplacé par le contenu de la case.
 //    - %b est remplacé par le contenu en remplacant les " " par &nbsp;
 function echo_result($result, $format=null, $count=False) {
-	?><table class="sortable"><tr><?
-	if(! $result) { ?><th>result not valid</th><? }
+	?><table class="sortable"><tr><?php
+	if(! $result) { ?><th>result not valid</th><?php }
 	else {
 		$i = 0;
 		while ($i < mysql_num_fields($result)) {
 			$meta = mysql_fetch_field($result, $i);
 			$counts[$meta->name] = 0;
-			?><th style="white-space:nowrap"><?php echo($meta->name);?></th><?
+			?><th style="white-space:nowrap"><?php echo($meta->name);?></th><?php
 			$i++;
 		}
-		?></tr><?
+		?></tr><?php
    
 		if(mysql_num_rows($result) == 0) {
 			?><tr><td colspan="<?php echo mysql_num_fields($result); ?>">
 			<strong><center>no result</center></strong>
-			</td></tr><?
+			</td></tr><?php
 		} else {
 			while($row = mysql_fetch_assoc($result)) {
-				?><tr style="white-space:nowrap"><?
+				?><tr style="white-space:nowrap"><?php
 				foreach($row as $key => $value) {
 					if ($value != "" && $value != "0") {
 						$counts[$key]++;
@@ -48,7 +48,7 @@ function echo_result($result, $format=null, $count=False) {
 					}
 					echo '<td>'. $value .'</td>';
 				}
-				?></tr><?
+				?></tr><?php
 			}
 			echo "\n";
 			if ($count) {
@@ -56,14 +56,14 @@ function echo_result($result, $format=null, $count=False) {
 				?><tfoot><tr><?php
 				while ($i < mysql_num_fields($result)) {
 					$meta = mysql_fetch_field($result, $i);
-					?><td style="white-space:nowrap"><?php echo($counts[$meta->name]);?></td><?
+					?><td style="white-space:nowrap"><?php echo($counts[$meta->name]);?></td><?php
 					$i++;
 				}
 				?></tr></tfoot><?php
 			}
 		}
 	}
-	?></table><?
+	?></table><?php
 }
 
 $query = 'SELECT DISTINCT access.step FROM hunt_access'. $exam_suffix .' as access ORDER BY access.step;';

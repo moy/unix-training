@@ -1,6 +1,13 @@
 <?php
 defined('_VALID_INCLUDE') or die('Direct access not allowed.');
 
+// In case register_globals is active (useless with recent enough PHP
+// versions, but who knows), unset variables tested with isset()
+// later. Must come before including config.php.
+unset($exam_footer_include);
+unset($lang);
+unset($mode);
+
 // Disable magic quotes
 if (get_magic_quotes_gpc()) {
 	function stripslashes_gpc(&$value)

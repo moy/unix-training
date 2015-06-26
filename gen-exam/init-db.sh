@@ -11,7 +11,7 @@ Options:
 
 Typical usage:
 
-./init-db.sh --drop-tables | mysql -h arpont.imag.fr -p --database=moy
+./init-db.sh --drop-tables | mysql -h people-verimag.imag.fr -p --database=moy
 
 EOF
 }
@@ -124,7 +124,7 @@ fi
 if [ "$apply" = "yes" ]; then
     case "$dbtype" in
 	"mysql")
-	    printf "%s%s" "$drops" "$creates" | mysql -h arpont.imag.fr -p --database=moy
+	    printf "%s%s" "$drops" "$creates" | mysql -h people-verimag.imag.fr -p --database=moy
 	    ;;
 	*)
 	    echo "dbtype $dbtype not managed with --apply, sorry"

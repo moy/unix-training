@@ -5,7 +5,7 @@ exam_dbname=moy
 exam_dbuser=moy
 
 # Host where the database is located
-exam_dbhost=arpont.imag.fr
+exam_dbhost=people-verimag.imag.fr
 
 # Database password (will be prompted interactively if not specified)
 exam_dbpass=

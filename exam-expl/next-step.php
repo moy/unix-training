@@ -3,7 +3,11 @@
 $summary = all_answers_summary();
 echo '<p>Score : ' . $summary['current'] .'/'. $summary['total'];
 // Make sure cache is refreshed with a dummy get parameter
-$n = intval($_GET['n'])+1;
+if (isset($_GET['n'])) {
+	$n = intval($_GET['n'])+1;
+} else {
+	$n = 0;
+}
 echo ' (<a href="?n='. $n . '#next-step">Click here</a> or reload the page to update score)</p>';
 if ($summary['current'] == $summary['total']) {
 	echo "<p><strong>Congratulation !</strong> The next step is located in the TAR archive available on your usual machine, in the file:<br>

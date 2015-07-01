@@ -4,6 +4,11 @@ defined('_VALID_INCLUDE') or die('Direct access not allowed.');
 session_name($exam_php_session);
 session_start();
 
+// Should never actually be used, but we need them to be set to avoid
+// PHP errors.
+$subject = 'N/A';
+$session = 'N/A';
+
 if (isset($_GET['reset'])) {
 	$_SESSION['demo_questions'] = NULL;
 	header('Location: index.php');
@@ -56,7 +61,8 @@ function get_form_array($question, $machine, $session, $subject) {
 }
 
 function get_login ($machine, $session, $subject) {
-	return array('login' => "guest", 'first_name' => "guest", 'familly_name' => "");
+	return array('login' => "guest", 'first_name' => "guest", 'familly_name' => "",
+		     'student_id' => 'N/A');
 }
 
 function set_answer($answer, $machine, $session, $subject, $question) {

@@ -1,5 +1,7 @@
 <?php
 defined('_VALID_INCLUDE') or die('Direct access not allowed.');
+// Uncomment for debugging
+//ini_set('display_errors', 'On');error_reporting(E_ALL);
 
 // In case register_globals is active (useless with recent enough PHP
 // versions, but who knows), unset variables tested with isset()
@@ -108,6 +110,7 @@ function exam_footer() {
 function all_answers_summary() {
 	$current_points = 0;
 	$total_points = 0;
+	global $machine, $session, $subject;
 	foreach (get_questions($machine, $session, $subject) as $line) {
 		if ($line["student_answer"] == $line["correct_answer"]) {
 			$current_points += $line["coeff"];

@@ -99,7 +99,7 @@ sql_escape () {
 
 # Meant to be used in double quotes => does not escape '.
 php_escape_pipe () {
-    sed -e 's/\\/\\\\/g' -e 's/"/\\"/g'
+    sed -e 's/\\/\\\\/g' -e 's/"/\\"/g' -e 's/\$/\\$/g'
 }
 
 php_escape () {

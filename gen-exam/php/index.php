@@ -2,10 +2,8 @@
 define('_VALID_INCLUDE', TRUE);
 include_once 'inc/common.php';
 
-if ($mode == "sql") {
-	isset($subject) or die("FATAL ERROR: Subject not specified, please check config.php.");
-	isset($session) or die("FATAL ERROR: Session not specified, please check config.php.");
-}
+isset($subject) or die("FATAL ERROR: Subject not specified, please check config.php.");
+isset($session) or die("FATAL ERROR: Session not specified, please check config.php.");
 
 $line = get_exam_info($subject);
 

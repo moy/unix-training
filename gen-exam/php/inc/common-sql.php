@@ -256,4 +256,3 @@ function exam_display_result ($result, $format_function=null) {
 		echo "No record found.";
 	}
 }
-?>

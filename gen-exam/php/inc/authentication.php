@@ -19,4 +19,3 @@ case "none":
 default:
 	die("Please set \$exam_auth in inc/config.php");
 }
-?>

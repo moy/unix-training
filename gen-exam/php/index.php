@@ -111,4 +111,4 @@ if ($hideok) {
 	echo ' | <a href="?n='. $n .'">'. exam_get_string('display_correct') .'</a>';
 }
 echo '  </div>';
-exam_footer(); ?>
+exam_footer();

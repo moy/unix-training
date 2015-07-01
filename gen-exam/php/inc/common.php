@@ -204,5 +204,3 @@ if ($mode == "demo") {
 	check_nonempty('machine');
 	include_once './inc/common-sql.php';
 }
-
-?>

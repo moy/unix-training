@@ -51,4 +51,3 @@ if ($form_array != null) {
 <?php
 
 exam_footer();
-?>

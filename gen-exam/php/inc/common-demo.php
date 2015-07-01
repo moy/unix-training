@@ -72,4 +72,3 @@ function set_answer($answer, $machine, $session, $subject, $question) {
 function get_answer($question, $machine, $session, $subject) {
 	return $_SESSION['demo_questions'][$question];
 }
-?>

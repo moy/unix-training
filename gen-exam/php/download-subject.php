@@ -47,4 +47,3 @@ $timestamp = date('H-i-s');
 header('Content-Disposition: attachment; filename="'.
        $timestamp .'-'. $subject_basename .'"');
 readfile_chunked($subject_filename);
-?>

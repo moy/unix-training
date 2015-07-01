@@ -21,4 +21,3 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	if ($users[$_SERVER['PHP_AUTH_USER']] != $_SERVER['PHP_AUTH_PW'])
 		die('Invalid password for user '. $_SERVER['PHP_AUTH_USER'] .'.');
 }
-?>
